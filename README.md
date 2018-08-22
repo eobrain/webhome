@@ -1,4 +1,3 @@
-# Eamonn's Web Home
+# Eamonn's Web Home Source
 
-Source for Eamonn's home page on the web, temporarily deployed at
-https://eobrain-webhome.firebaseapp.com
+Source for Eamonn's home page on the web, http://eamonn.org
