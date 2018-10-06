@@ -1,4 +1,5 @@
 .firebaserc
 /.firebase
+/public/js/app.js
+/public/*.html
 *~
-public/js/app\.js
