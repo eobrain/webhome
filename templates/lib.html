@@ -1,33 +1,55 @@
+dnl ======================================================================
 dnl Defines M4 macros for generating an HTML page
+dnl
+dnl (c) 2018, Eamonn O'Brien-Strain
+dnl ======================================================================
 
+dnl User curlies brackets as quote delimiters
 changequote({,})
+
+dnl The page template used by all pages on the site
 define({PAGE},
 
-{<html>
+{<!DOCTYPE html>
+<html>
   <head>
     <title>$1</title>
-    <link rel="stylesheet" href="css/tufte.css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/normalize.css"/>
+    <link rel="stylesheet" href="css/blog.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans|Source+Code+Pro"
+          rel="stylesheet">
   </head>
   <body>
+    <header>
+      <h2>Eamonn O'Brien-Strain</h2>
+    </header>
     <nav>
       <a href="index.html">Home</a> |
       <a href="https://twitter.com/eob">Twitter</a> |
       <a href="https://www.linkedin.com/in/eobrain/">LinkedIn</a>
     </nav>
-
-    <h1>$1</h1>
-
-    $2
+    <article>
+      <h1>$1</h1>
+      $2
+    </article>
+    <footer>
+      $3
+    </footer>
 
   </body>
 </html>})
 
 
-define({ARTICLE}, {PAGE({DATE_$1 TITLE_$1}, {$2
+dnl An article page, which has previous/next links at the bottom
+define({ARTICLE}, {PAGE({DATE_$1 TITLE_$1}, {$2}, {
     <nav>
       <a href="indir(DATE_{}eval($1-1)).html"><< indir(TITLE_{}eval($1-1))</a> |
       <a href="indir(DATE_{}eval($1+1)).html">indir(TITLE_{}eval($1+1)) >></a>
     </nav>
 })})
+
+dnl Used in data.md to give the metadata for pages
 define({PAGEREF}, {define(DATE_$1,$2)define(TITLE_$1,$3)})

@@ -1,0 +1,44 @@
+/*
+Palette:  https://coolors.co/040f0f-248232-2ba84a-2d3a3a-fcfffc
+#040F0F RICH BLACK (FOGRA29)
+#248232 FOREST GREEN (WEB)
+#2BA84A WAGENINGEN GREEN
+#2D3A3A GUNMETAL
+#FCFFFC BABY POWDER
+
+*/
+
+
+body {
+    margin: 2em;
+    font-family: 'Merriweather', serif;
+    background-color: #FCFFFC;
+    color: #040F0F;
+    line-height: 1.6;
+    max-width: 40em;
+}
+
+h1, h2 {
+    font-family: 'Merriweather Sans', sans-serif;
+    color: #2D3A3A;
+}
+
+header, nav, article, footer {
+    margin: 1em;
+}
+
+nav {
+    text-align: center;
+}
+
+a {
+    color: #248232;
+}
+
+a:visited {
+    color: #2BA84A;
+}
+
+code, pre {
+    font-family: 'Source Code Pro', monospace;
+}
