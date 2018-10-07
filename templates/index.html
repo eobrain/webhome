@@ -1,13 +1,17 @@
+define(LI, {
+  <li><a href="DATE_$1.html">DATE_$1 TITLE_$1</a></li>
+})
+
 PAGE( Eamonn O'Brien-Strain, {
 
 <p>An Irish software engineer, living in San Francisco, working
   for Google ...</p>
 
-<ol>
-  <li><a href="2018-08-21.html">2018-08-21 How to self-host a
-      blog</a></li>
-  <li><a href="2018-08-19.html">2018-08-19 From Cloud to
-      Search</a></li>
+
+
+  <ol>
+    LI(2)
+    LI(1)
 </ol>
 
 })

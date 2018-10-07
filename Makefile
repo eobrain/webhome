@@ -1,6 +1,6 @@
 P=public
 T=templates
-M4=m4 $T/page.html
+M4=m4 $T/lib.html $T/data.m4
 
 build: $P/js/app.js $P/2018-08-21.html $P/2018-08-19.html $P/404.html $P/index.html
 

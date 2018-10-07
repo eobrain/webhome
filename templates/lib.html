@@ -22,3 +22,6 @@ define({PAGE},
 
   </body>
 </html>})
+
+define({ARTICLE}, {PAGE({DATE_$1 TITLE_$1}, {$2})})
+define({PAGEREF}, {define(DATE_$1,$2)define(TITLE_$1,$3)})
