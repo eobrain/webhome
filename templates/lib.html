@@ -11,7 +11,7 @@ define({PAGE},
   </head>
   <body>
     <nav>
-      <a href="index.html">Blog</a> |
+      <a href="index.html">Home</a> |
       <a href="https://twitter.com/eob">Twitter</a> |
       <a href="https://www.linkedin.com/in/eobrain/">LinkedIn</a>
     </nav>
@@ -23,5 +23,11 @@ define({PAGE},
   </body>
 </html>})
 
-define({ARTICLE}, {PAGE({DATE_$1 TITLE_$1}, {$2})})
+
+define({ARTICLE}, {PAGE({DATE_$1 TITLE_$1}, {$2
+    <nav>
+      <a href="indir(DATE_{}eval($1-1)).html"><< indir(TITLE_{}eval($1-1))</a> |
+      <a href="indir(DATE_{}eval($1+1)).html">indir(TITLE_{}eval($1+1)) >></a>
+    </nav>
+})})
 define({PAGEREF}, {define(DATE_$1,$2)define(TITLE_$1,$3)})
