@@ -42,3 +42,25 @@ a:visited {
 code, pre {
     font-family: 'Source Code Pro', monospace;
 }
+
+
+/*
+ * Animation
+ */
+
+@keyframes slideLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(150%); }
+}
+@keyframes slideRight {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-150%); }
+}
+
+.move-left {
+  animation: 0.3s ease-out 0s 1 slideLeft;
+}
+
+.move-right {
+  animation: 0.3s ease-out 0s 1 slideRight;
+}

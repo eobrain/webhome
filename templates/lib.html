@@ -21,6 +21,7 @@ define({PAGE},
     <link rel="stylesheet" href="css/blog.css"/>
     <link href="https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans|Source+Code+Pro"
           rel="stylesheet">
+    <script src="js/app.js" defer></script>
   </head>
   <body>
     <header>
@@ -46,8 +47,8 @@ define({PAGE},
 dnl An article page, which has previous/next links at the bottom
 define({ARTICLE}, {PAGE({DATE_$1 TITLE_$1}, {$2}, {
     <nav>
-      <a href="indir(DATE_{}eval($1-1)).html"><< indir(TITLE_{}eval($1-1))</a> |
-      <a href="indir(DATE_{}eval($1+1)).html">indir(TITLE_{}eval($1+1)) >></a>
+      <a class="go-left" href="indir(DATE_{}eval($1-1)).html"><< indir(TITLE_{}eval($1-1))</a> |
+      <a class="go-right" href="indir(DATE_{}eval($1+1)).html">indir(TITLE_{}eval($1+1)) >></a>
     </nav>
 })})
 
