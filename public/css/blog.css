@@ -45,6 +45,35 @@ code, pre {
 
 
 /*
+ * Layout
+ */
+
+ul li {
+    float: left;
+    width: 10em;
+    margin: 2em;
+}
+ul li.article {
+    width: 50em;
+}
+
+nav {
+    overflow: scroll;
+}
+
+ul {
+    width: 1000000px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+time {
+    display: block;
+}
+
+
+/*
  * Animation
  */
 
@@ -64,3 +93,4 @@ code, pre {
 .move-right {
   animation: 0.3s ease-out 0s 1 slideRight;
 }
+

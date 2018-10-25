@@ -1,5 +1,8 @@
 define(LI, {
-  <li><a href="DATE_$1.html">DATE_$1 TITLE_$1</a></li>
+<li>
+  <time datetime="DATE_$1">DATE_$1</time>
+  <a href="DATE_$1.html">TITLE_$1</a>
+</li>
 })
 
 PAGE( Blog, {
@@ -7,10 +10,12 @@ PAGE( Blog, {
 <p>An Irish software engineer, living in San Francisco, working
   for Google ...</p>
 
-  <ol>
+<nav>
+  <ul>
     LI(3)
     LI(2)
     LI(1)
-</ol>
+  </ul>
+</nav>
 
 })

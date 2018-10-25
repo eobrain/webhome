@@ -10,7 +10,8 @@ changequote({,})
 dnl The page template used by all pages on the site
 define({PAGE},
 
-{<!DOCTYPE html>
+{
+<!DOCTYPE html>
 <html>
   <head>
     <title>$1</title>
@@ -27,29 +28,38 @@ define({PAGE},
     <header>
       <h2>Eamonn O'Brien-Strain</h2>
     </header>
-    <nav>
+    <nav class="up">
       <a href="index.html">Home</a> |
       <a href="https://twitter.com/eob">Twitter</a> |
       <a href="https://www.linkedin.com/in/eobrain/">LinkedIn</a>
     </nav>
-    <article>
-      <h1>$1</h1>
-      $2
-    </article>
-    <footer>
+    <ul>
       $3
-    </footer>
-
+      <li class="article">
+	<article>
+	  <h1>$1</h1>
+	  $2
+	</article>
+      </li>
+      $4
+    </ul>
   </body>
-</html>})
+</html>
+})
 
 
 dnl An article page, which has previous/next links at the bottom
 define({ARTICLE}, {PAGE({DATE_$1 TITLE_$1}, {$2}, {
-    <nav>
-      <a class="go-left" href="indir(DATE_{}eval($1-1)).html"><< indir(TITLE_{}eval($1-1))</a> |
-      <a class="go-right" href="indir(DATE_{}eval($1+1)).html">indir(TITLE_{}eval($1+1)) >></a>
-    </nav>
+<li class="left">
+  <date>indir(DATE_{}eval($1+1))</date> 
+  <a class="go-left" href="indir(DATE_{}eval($1+1)).html">indir(TITLE_{}eval($1+1))</a>
+</li>
+},
+{
+<li class="right">
+  <date>indir(DATE_{}eval($1+1))</date>
+  <a class="go-right" href="indir(DATE_{}eval($1-1)).html">indir(TITLE_{}eval($1-1))</a>
+</li>
 })})
 
 dnl Used in data.md to give the metadata for pages
