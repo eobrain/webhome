@@ -1,21 +1,14 @@
-define(LI, {
-<li>
-  <time datetime="DATE_$1">DATE_$1</time>
-  <a href="DATE_$1.html">TITLE_$1</a>
-</li>
-})
-
-PAGE( Blog, {
-
-<p>An Irish software engineer, living in San Francisco, working
-  for Google ...</p>
-
-<nav>
-  <ul>
-    LI(3)
-    LI(2)
-    LI(1)
-  </ul>
-</nav>
-
-})
+<html :DEFINE:INDEX PAGE TITLE="Blog">
+  <div :DEFINE:BODY>
+    <p>An Irish software engineer, living in San Francisco, working
+      for Google ...</p>
+    <nav>
+      <ul>
+	<li :FOR: EACH="ARTICLE" IN="$ARTICLES">
+	  <time datetime="$ARTICLE.NAME">$ARTICLE.NAME</time>
+	  <a href="${ARTICLE.NAME}.html">$ARTICLE.TITLE</a>
+	</li>
+      </ul>
+    </nav>
+  </div>
+</html>

@@ -1,25 +1,27 @@
-ARTICLE( 2, {
+<html :DEFINE:2018_08_21
+      ARTICLE NAME="2018-08-21" TITLE="How to self-host a blog">
+  <div :DEFINE:TEXT>
 
-<p>One of the purposes of this blog is to experiment with simple
-  ways put up a blog on the web without depending on any blogging
-  platform. For this I wanted a free way to deploy static web
-  pages on my own domain name. For this I chose
-  <a href="https://firebase.google.com/docs/hosting/">Firebase
-    Hosting</a>, partly because I am very familiar with it, having
-  worked on the Firebase team and personally knowing many of the
-  Hosting development team, but also because it is actually the
-  best solution I know of for what I want, and it is free for
-  sites that have the traffic of typical personal sites.</p>
+    <p>One of the purposes of this blog is to experiment with simple
+      ways put up a blog on the web without depending on any blogging
+      platform. For this I wanted a free way to deploy static web
+      pages on my own domain name. For this I chose
+      <a href="https://firebase.google.com/docs/hosting/">Firebase
+	Hosting</a>, partly because I am very familiar with it, having
+	worked on the Firebase team and personally knowing many of the
+	Hosting development team, but also because it is actually the
+	best solution I know of for what I want, and it is free for
+	sites that have the traffic of typical personal sites.</p>
 
-<p>People who are comfortable using the command line might be
-  interested in following along the steps I took.</p>
+    <p>People who are comfortable using the command line might be
+      interested in following along the steps I took.</p>
 
-<ol>
+    <ol>
   
-  <li>Go to <a href="http://firebase.com">firebase.com</a>, login,
+      <li>Go to <a href="http://firebase.com">firebase.com</a>, login,
 	and create a project.</li>
   
-  <li>Install Node. If you don’t already have it installed
+      <li>Install Node. If you don’t already have it installed
 	already, I suggest first
 	installing <a href="https://github.com/creationix/nvm">nvm</a>
 	then doing:
@@ -27,30 +29,31 @@ ARTICLE( 2, {
 	<pre>
       nvm install stable
       nvm use stable</pre>
-  </li>
+      </li>
   
-  <li>Follow the instructions in
+      <li>Follow the instructions in
 	the <a href="https://firebase.google.com/docs/hosting/quickstart">Hosting
-	  quickstart</a>.</li>
+	quickstart</a>.</li>
   
-  <li>Replace <code>index.html</code> with the HTML you want as
+      <li>Replace <code>index.html</code> with the HTML you want as
 	your home page.</lI>
   
-  <li>Do
-    <pre>
+      <li>Do
+	<pre>
       firebase deploy</pre></li>
   
-  <li>I’d recommend storing everything in Git, and you might as
+      <li>I’d recommend storing everything in Git, and you might as
 	well make it a public repo, as the web site is public
 	anyway. (Mine
 	is <a href="https://github.com/eobrain/webhome">on
-	  GitHub</a>)</li>
+	GitHub</a>)</li>
   
-  <li>You also might want to register a domain name, and use
+      <li>You also might want to register a domain name, and use
 	Firebase Hosting to use that domain name (complete with a free
 	SSL certificate so you the <code>https:</code> security for
 	free.). I did this for <code>eamonn.org</code></li>
-</ol>
+    </ol>
 
-})
+  </div>
+</html>
 

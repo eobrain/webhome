@@ -1,27 +1,21 @@
-dnl ======================================================================
-dnl Defines M4 macros for generating an HTML page
-dnl
-dnl (c) 2018, Eamonn O'Brien-Strain
-dnl ======================================================================
+<!-- ======================================================================
+     Defines templates for generating an HTML page
+     
+     (c) 2018, Eamonn O'Brien-Strain
+     ======================================================================
+-->
 
-dnl User curlies brackets as quote delimiters
-changequote({,})
-
-dnl The page template used by all pages on the site
-define({PAGE},
-
-{
-<!DOCTYPE html>
-<html>
+<!-- The page template used by all pages on the site -->
+<html :DEFINE:PAGE>
   <head>
-    <title>$1</title>
+    <title>$TITLE</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/normalize.css"/>
     <link rel="stylesheet" href="css/blog.css"/>
     <link href="https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans|Source+Code+Pro"
-          rel="stylesheet">
+	  rel="stylesheet">
     <script src="js/app.js" defer></script>
   </head>
   <body>
@@ -34,33 +28,31 @@ define({PAGE},
       <a href="https://www.linkedin.com/in/eobrain/">LinkedIn</a>
     </nav>
     <ul>
-      $3
+      <li BACK/>
       <li class="article">
 	<article>
-	  <h1>$1</h1>
-	  $2
+	  <h1>$TITLE</h1>
+	  <div BODY/>
 	</article>
       </li>
-      $4
+      <li FORWARD/>
     </ul>
   </body>
 </html>
-})
 
 
-dnl An article page, which has previous/next links at the bottom
-define({ARTICLE}, {PAGE({DATE_$1 TITLE_$1}, {$2}, {
-<li class="left">
-  <date>indir(DATE_{}eval($1+1))</date> 
-  <a class="go-left" href="indir(DATE_{}eval($1+1)).html">indir(TITLE_{}eval($1+1))</a>
+<li :DEFINE:NAV class="$DIRECTION">
+  <date>${OTHER.NAME]}</date> 
+  <a class="go-$DIRECTION" href="${OTHER.NAME}.html">${OTHER.TITLE}</a>
 </li>
-},
-{
-<li class="right">
-  <date>indir(DATE_{}eval($1+1))</date>
-  <a class="go-right" href="indir(DATE_{}eval($1-1)).html">indir(TITLE_{}eval($1-1))</a>
-</li>
-})})
 
-dnl Used in data.md to give the metadata for pages
-define({PAGEREF}, {define(DATE_$1,$2)define(TITLE_$1,$3)})
+
+
+<!-- An article page, which has previous/next links at the bottom -->
+<html :DEFINE:ARTICLE
+      PAGE TITLE="$NAME $TITLE">
+  <div :DEFINE:BODY    TEXT/>
+  <li  :DEFINE:BACK    NAV DIRECTION="left"  OTHER="$PREV"/>
+  <li  :DEFINE:FORWARD NAV DIRECTION="right" OTHER="$NEXT"/>
+</html>
+
