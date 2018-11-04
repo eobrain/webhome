@@ -10,7 +10,7 @@ Palette:  https://coolors.co/040f0f-248232-2ba84a-2d3a3a-fcfffc
 
 
 body {
-    margin: 2em;
+    margin: 2%;
     font-family: 'Merriweather', serif;
     background-color: #FCFFFC;
     color: #040F0F;
@@ -24,7 +24,7 @@ h1, h2 {
 }
 
 header, nav, article, footer {
-    margin: 1em;
+    margin: 1%;
 }
 
 nav {
@@ -48,20 +48,34 @@ code, pre {
  * Layout
  */
 
-ul li {
+nav li, li.left, li.right, li.article {
     float: left;
-    width: 10em;
-    margin: 2em;
+    margin: 1em;
+}
+nav li, li.left, li.right {
+    max-width: 10em;
+    list-style-type:none;
 }
 ul li.article {
-    width: 50em;
+    list-style-type:none;
 }
 
-nav {
-    overflow: scroll;
+body ul li article nav {
+    overflow-x: scroll;
 }
 
-ul {
+
+@media (max-width: 2000px) {  body ul li article nav { width: 1500px; } }
+@media (max-width: 1500px) {  body ul li article nav { width: 1000px; } }
+@media (max-width: 1000px) {  body ul li article nav { width: 800px; } }
+@media (max-width: 800px) {  body ul li article nav { width: 700px; } }
+@media (max-width: 700px) {  body ul li article nav { width: 600px; } }
+@media (max-width: 600px) {  body ul li article nav { width: 500px; } }
+@media (max-width: 500px) {  body ul li article nav { width: 400px; } }
+@media (max-width: 300px) {  body ul li article nav { width: 300px; } }
+@media (max-width: 200px) {  body ul li article nav { width: 150px; } }
+
+body ul li article nav ul {
     width: 1000000px;
     list-style-type: none;
     margin: 0;

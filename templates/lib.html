@@ -57,7 +57,7 @@ define({ARTICLE}, {PAGE({DATE_$1 TITLE_$1}, {$2}, {
 },
 {
 <li class="right">
-  <date>indir(DATE_{}eval($1+1))</date>
+  <date>indir(DATE_{}eval($1-1))</date>
   <a class="go-right" href="indir(DATE_{}eval($1-1)).html">indir(TITLE_{}eval($1-1))</a>
 </li>
 })})
