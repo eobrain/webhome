@@ -20,5 +20,8 @@ $P/js/app.js: src/app.ts
 $P/%.html: $T/%.html $T/data.m4
 	$(M4) $< >$@
 
+serve: build
+	cd public && python -m SimpleHTTPServer
+
 clean:
 	rm -f  $P/*.html $P/js/*.js
