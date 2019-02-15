@@ -10,7 +10,7 @@ Prerequities:
 4.  `npm install -g firebase-tools`
 5.  `firebase login`
 6.  On Linux
-    1.  sudo apt install make m4 node-typescript
+    1.  `sudo apt install make m4 node-typescript`
 
 
 Building
@@ -24,5 +24,10 @@ Local serving
 
 1.  `make serve`
 2.  open http://localhost:8000
+
+Publish
+
+1.  `firebase use --add
+2.  `make publish`
 
 [1]: https://github.com/creationix/nvm
