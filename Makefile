@@ -4,6 +4,7 @@ M4=m4 $T/lib.html $T/data.m4
 
 build: \
  $P/2019-01-21.html \
+ $P/2018-12-31.html \
  $P/2018-11-03.html \
  $P/2018-10-06.html \
  $P/2018-08-21.html \
