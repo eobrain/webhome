@@ -9,14 +9,14 @@ Prerequities:
 3.  `nvm use stable`
 4.  `npm install -g firebase-tools`
 5.  `firebase login`
-6.  On Linux
-    1.  `sudo apt install make m4 node-typescript`
+6.  On Linux or ChromeOS
+    1.  `sudo apt install make m4 node-typescript python`
 
 
 Building
 
 
-1.  `cd` to wbhome directory
+1.  `cd` to webhome directory
 2.  `make`
 
 
