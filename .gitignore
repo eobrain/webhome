@@ -1,5 +1,8 @@
 .firebaserc
 /.firebase
-/public/js/app.js
-/public/*.html
 *~
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
