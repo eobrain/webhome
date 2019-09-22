@@ -6,7 +6,6 @@ categories: [coding]
 ---
 
 ![Jekyll][4]
-
 Well, it’s been about a year a year since I started this blog, and I’ve finally
 got fed up with my idiosyncratic static site templating framework that uses the
 venerable [m4][1].

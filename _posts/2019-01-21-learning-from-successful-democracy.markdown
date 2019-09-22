@@ -5,11 +5,9 @@ date:   2019-01-21
 categories: [politics, history]
 ---
 
-![First Dáil, January 21, 1919][1]
 *First Dáil, January 21, 1919*
-
+![First Dáil, January 21, 1919][1]
 Today marks exactly one hundred years of Irish democracy.
-
 Formed from democratically elected members, the first Dáil (parliament) met on
 January 21, 1919, in Dublin. It was a promising start, with a woman cabinet
 member and a Socialist-leaning “Democratic Programme”. But that act of defiance
