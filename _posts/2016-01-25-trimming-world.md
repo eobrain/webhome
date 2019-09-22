@@ -5,8 +5,6 @@ date: 2016-01-25
 category: 
 ---
 
-<style>img {float:right}</style>
-
 ![world][1] The political map of the world is a familiar image, and we have
 become used to the shapes and relative sizes of the countries. However the map
 gives undue weight to some countries with large uninhabited areas, even when you
@@ -21,6 +19,8 @@ being distorted and sliding about as they do in a cartogram.
 
 And looking at the countries through this lens is an interesting exercise. Let’s
 take a tour …
+
+<style>img {float:right}</style>
 
 ## Australia
 
