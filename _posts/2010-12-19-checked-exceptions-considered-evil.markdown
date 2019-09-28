@@ -5,10 +5,7 @@ slug: checked-exceptions-considered-evil
 status: publish
 title: Checked Exceptions Considered Evil
 wordpress_id: '1040'
-categories:
-- Programming
-tags:
-- linkedin
+categories: Programming
 ---
 
 Many years ago when I first learned Java, I really liked the “checked exception” programming language feature.  If the code in a method can throw a checked exception then the compiler forces the programmer to either surround the code with a `try`-`catch` or include the exception in the `throws` clause of the function declaration (which will recursively cause this compiler do this check in the calling code).  Like strong typing, it seemed like a great way for the compiler to help the programmer writing more robust code with fewer error-handling problems.

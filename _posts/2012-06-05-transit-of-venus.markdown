@@ -1,8 +1,7 @@
 ---
 layout: post
 ref: http://www.flickr.com/photos/eob/7158700197
-categories:
-- Science
+categories: Science
 ---
 
 [![Transit of Venus][2]][1]

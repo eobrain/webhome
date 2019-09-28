@@ -6,8 +6,7 @@ status: publish
 ref: http://ubuntuguide.org/wiki/Dapper#How_to_mount_Windows_partitions_.28FAT.29_on_boot-up.2C_and_allow_all_users_to_read.2Fwrite
 title: Mounting windows disks under Linux
 wordpress_id: '117'
-categories:
-- Programming
+categories: Programming
 ---
 
 I followed [these instructions](http://ubuntuguide.org/wiki/Dapper#How_to_mount_Windows_partitions_.28FAT.29_on_boot-up.2C_and_allow_all_users_to_read.2Fwrite) for how to mount a FAT partition read-write for communication between Windows and Linux on my laptop.   I also followed the instructions further down to mount the main windows NTFS partition read-only.

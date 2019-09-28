@@ -6,9 +6,7 @@ status: publish
 ref: http://www.flickr.com/photos/eob/134796112/
 title: San Francisco Airport
 wordpress_id: '94'
-categories:
-- Photo
-- San Francisco
+categories: SF
 ---
 
 [![](http://static.flickr.com/48/134796112_1251768b07_t.jpg)](http://www.flickr.com/photos/eob/134796112/)

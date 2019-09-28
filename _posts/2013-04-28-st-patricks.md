@@ -2,7 +2,7 @@
 layout: post
 title:  Why don't I wear green on St. Patrick's day?
 date:   2013-04-28
-categories:
+categories: Ireland
 ---
 
 *[Originally posted a version of this on Facebook on St. Patrick’s Day, 2013]*

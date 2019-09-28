@@ -5,8 +5,7 @@ slug: amazingly-good-dinner-at-bayonna
 status: publish
 title: Amazingly good dinner at Bayonna
 wordpress_id: '62'
-categories:
-- Travel
+categories: Travel
 ---
 
 Quail salad, rabbit, lamb.

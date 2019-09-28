@@ -5,9 +5,7 @@ slug: avoid-the-rational-and-secularist-when-selling-your-innovative-product-or-
 status: publish
 title: Avoid the rational and secularist when selling your innovative product or service?
 wordpress_id: '358'
-categories:
-- Consumer Media
-- society
+categories: Society
 ---
 
 While scanning through the [The IIIP Innovation Confidence Index 2008 Report](http://unpan1.un.org/intradoc/groups/public/documents/apcity/unpan035105.pdf) published today by the [The Institute for Innovation & Information Productivity](http://www.iii-p.org/) I noticed one surprising finding that is illustrated in Figure 6 of the report.

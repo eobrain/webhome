@@ -5,10 +5,7 @@ slug: well-beings-veterinary-homeopathy
 status: publish
 title: Well Beings Veterinary Homeopathy
 wordpress_id: '979'
-categories:
-- San Francisco
-- Science
-- society
+categories: Science
 ---
 
 I just discovered that in my neighborhood is a business called Well Beings Veterinary Homeopathy.  People in the city do treat their pets like people, and belief in homeopathy is consistent with stereotypes of Californians, but what really tickled me was to see the “well” prefix (usually as in “well-woman” or “well-baby”) added to the somewhat Buddhist use of the word “being”.  This name sounds like a parody created by someone mocking San Francisco.

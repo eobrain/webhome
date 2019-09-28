@@ -2,7 +2,7 @@
 layout: post
 title:  "How to self-host a blog"
 date:   2018-08-21
-categories: [coding]
+categories: Programming
 ---
 
 One of the purposes of this blog is to experiment with simple ways put up a blog

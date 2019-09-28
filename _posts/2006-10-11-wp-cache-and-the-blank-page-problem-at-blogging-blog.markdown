@@ -6,8 +6,7 @@ status: publish
 ref: https://web.archive.org/web/20061027164106/http://www.bloggingblog.net/wp-cache-and-the-blank-page-problem/
 title: WP-Cache and the Blank Page problem at Blogging Blog
 wordpress_id: '110'
-categories:
-- Programming
+categories: Programming
 ---
 
 [WP-Cache and the Blank Page problem at Blogging Blog](https://web.archive.org/web/20061027164106/http://www.bloggingblog.net/wp-cache-and-the-blank-page-problem/)

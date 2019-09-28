@@ -6,8 +6,7 @@ status: publish
 ref: http://www.world66.com/myworld66/visitedStates/statemap?visited=ALAZCACOCTDCDEFLGAILIALAMDMAMSNENVNHNJNMNYNCORPARISCTNTXUTVTVAWAWVWI
 title: Visited States
 wordpress_id: '89'
-categories:
-- Travel
+categories: Travel
 ---
 
 Thanks to [Visited States](http://douweosinga.com/projects/visitedstates) and [Visited Countries](http://douweosinga.com/projects/visitedcountries) for these maps of all the U.S. States and countries I have visited.

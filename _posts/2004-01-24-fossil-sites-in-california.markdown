@@ -6,6 +6,7 @@ status: publish
 ref: http://www.iwaynet.net/~mperona/fossil1.htm#california
 title: Fossil Sites in California
 wordpress_id: '18'
+categories: Science
 ---
 
 [Fossil Sites in California](http://www.iwaynet.net/~mperona/fossil1.htm#california)

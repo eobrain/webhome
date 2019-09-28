@@ -5,8 +5,7 @@ slug: the-us-presidential-candidate-dating-game
 status: publish
 title: The U.S. Presidential Candidate Dating Game
 wordpress_id: '232'
-categories:
-- society
+categories: Society
 ---
 
 I'm not a U.S. citizen, but I live here and find the presidential race fascinating.  So I took some of the online tests which claim to tell me which candidates are a closest match to my opinions.

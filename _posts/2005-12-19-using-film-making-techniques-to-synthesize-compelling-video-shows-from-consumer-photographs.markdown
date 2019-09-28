@@ -6,8 +6,7 @@ status: publish
 title: Using Film-Making Techniques to Synthesize Compelling Video Shows from Consumer
   Photographs
 wordpress_id: '90'
-categories:
-- Consumer Media
+categories: Product
 ---
 
 This is what I worked on last year.

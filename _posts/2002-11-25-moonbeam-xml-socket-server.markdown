@@ -6,8 +6,7 @@ status: publish
 ref: http://openj.net/
 title: Moonbeam XML Socket Server
 wordpress_id: '3'
-categories:
-- Programming
+categories: Programming
 ---
 
 [Moonbeam – Introduction](http://openj.net/)

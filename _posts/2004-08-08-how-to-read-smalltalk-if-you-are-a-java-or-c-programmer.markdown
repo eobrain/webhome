@@ -6,6 +6,7 @@ status: publish
 ref: http://www.squeak.org/
 title: How to read Smalltalk if you are a Java or C++ programmer.
 wordpress_id: '38'
+categories: Programming
 ---
 
 My programming language trajectory has been BASIC -> FORTRAN -> Pascal -> C -> C++ -> Java with a few diversions such as Perl and Python.   On the way I have become a firm convert to object-oriented programming, and as such I always found my lack of knowledge in Smalltalk was a big gap.

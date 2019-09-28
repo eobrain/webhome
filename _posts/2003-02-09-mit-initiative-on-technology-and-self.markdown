@@ -5,6 +5,7 @@ slug: mit-initiative-on-technology-and-self
 status: publish
 title: MIT initiative on technology and self
 wordpress_id: '11'
+categories: Product
 ---
 
 I am currently listening to a Cambridge Forum speech by Sherry Turkle on our local public radio station. She is the director of the MIT initiative on technology and self.

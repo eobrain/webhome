@@ -6,9 +6,7 @@ status: publish
 ref: http://www.flickr.com/photos/87435331@N00/3550096549/
 title: Challenging "Challenging Dogma"
 wordpress_id: '971'
-categories:
-- Science
-- society
+categories: Science
 ---
 
 

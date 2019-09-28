@@ -2,7 +2,7 @@
 layout: post
 title: "How you might create a Scala matrix library in a functional programming style"
 date: 2010-01-10
-category: coding
+category: Programming
 ---
 
 Sure you can program in Scala just like you would in Java and get all the advantages of the cleaner syntax. But if you really want to explore the power of Scala you should try some functional programming.

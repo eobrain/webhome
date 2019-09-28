@@ -5,8 +5,7 @@ slug: tackling-chinese
 status: publish
 title: Tackling Chinese
 wordpress_id: '405'
-categories:
-- Travel
+categories: Language
 ---
 
 I have the misfortune of being both very interested in languages and very bad at learning them.

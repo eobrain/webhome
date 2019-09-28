@@ -6,8 +6,7 @@ status: publish
 ref: http://www.ubuntu.com/download
 title: Setting up laptop for dual booting
 wordpress_id: '112'
-categories:
-- Programming
+categories: Programming
 ---
 
 Well, I just received a new laptop at work and our IT department put their standard Windows XP image onto it.  I decided I wanted to be able to also run Linux on this machine.

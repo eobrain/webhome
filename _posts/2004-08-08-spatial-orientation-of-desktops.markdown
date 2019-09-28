@@ -6,6 +6,7 @@ status: publish
 ref: http://arstechnica.com/paedia/f/finder/finder-1.html
 title: Spatial Orientation of Desktops
 wordpress_id: '39'
+categories: Futzing
 ---
 
 John Siracusa has an written an [excellent article](http://arstechnica.com/paedia/f/finder/finder-1.html) on what, in his opinion, makes a good desktop shell, concentrating mostly on the Macintosh finder.

@@ -6,6 +6,7 @@ status: publish
 ref: http://sjsu.rudyrucker.com/nksapplets.htm
 title: Applet Demos of Wolfram Cellular Automota
 wordpress_id: '31'
+categories: Science
 ---
 
 Rudy Rucker and his class have done a good job of providing

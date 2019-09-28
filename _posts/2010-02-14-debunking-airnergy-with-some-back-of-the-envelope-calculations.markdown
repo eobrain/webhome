@@ -6,8 +6,7 @@ status: publish
 ref: http://www.engadget.com/2010/01/09/airnergy-wifi-power-system-gives-rca-a-reason-to-exist-video/
 title: Debunking Airnergy with some back-of-the-envelope calculations
 wordpress_id: '738'
-categories:
-- Science
+categories: Science
 ---
 
 I have seen several reverences to [Airnergy device by RCA](http://www.engadget.com/2010/01/09/airnergy-wifi-power-system-gives-rca-a-reason-to-exist-video/) that claims to recharge a battery by harvesting WiFi signals from the air.

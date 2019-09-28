@@ -6,8 +6,7 @@ status: publish
 ref: http://www.w3.org/2001/sw/RDFCore/Schema/200203/#ch_appendix_figs
 title: RDF Schema Diagrams
 wordpress_id: '1120'
-categories:
-- Programming
+categories: Programming
 ---
 
 For some reason the [latest (2004) version of the RDF Schema specification](http://www.w3.org/TR/rdf-schema/) does not include the useful diagrams that were included in previous drafts.  Maybe they were omitted because the diagrams sacrificed some formalism for the sake of clarity.  Nevertheless I found those older diagrams useful for getting my head around some of the concepts, so here they are:

@@ -5,6 +5,7 @@ slug: space-based-programming-blackboard-communication-on-top-of-jms
 status: publish
 title: Space-based programming (blackboard communication) on top of JMS
 wordpress_id: '13'
+categories: Programming
 ---
 
 [Using Space-Based Programming

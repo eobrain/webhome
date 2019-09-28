@@ -2,7 +2,7 @@
 layout: post
 title:  "Learning from Successful Democracy"
 date:   2019-01-21
-categories: [politics, history]
+categories: Society
 ---
 
 *First Dáil, January 21, 1919*

@@ -6,9 +6,7 @@ status: publish
 ref: https://web.archive.org/web/20120703054908/http://www.snapfishlab.com/
 title: Sneak Peek at Snapfish Lab
 wordpress_id: '229'
-categories:
-- Photo
-- Programming
+categories: Product
 ---
 
 We're still not quite ready for full public release, but as a special treat, here is an invitation code for readers of this blog:

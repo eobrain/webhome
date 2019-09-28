@@ -6,9 +6,7 @@ status: publish
 ref: http://www.edge.org/documents/archive/edge3.html
 title: Engineers need to understand how the mind works
 wordpress_id: '80'
-categories:
-- Programming
-- Science
+categories: Science
 ---
 
 I like this point of view of Pinker (From [Edge 3)](http://www.edge.org/documents/archive/edge3.html):

@@ -5,8 +5,7 @@ slug: architectural-principles-standing-on-the-shoulders-of-giants
 status: publish
 title: Architectural Principles -- Standing on the Shoulders of Giants
 wordpress_id: '249'
-categories:
-- Programming
+categories: Programming
 ---
 
 Here is one of the introductory slides I gave in a recent project proposal presentation.

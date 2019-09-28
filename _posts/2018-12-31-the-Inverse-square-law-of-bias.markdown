@@ -2,7 +2,7 @@
 layout: post
 title:  "The Inverse Square Law of Bias"
 date:   2018-12-31
-categories: [inclusion]
+categories: Society
 ---
 
 Consider a typical tech workplace where there are four men for every woman.⁽¹⁾

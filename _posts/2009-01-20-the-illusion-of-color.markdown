@@ -5,8 +5,7 @@ slug: the-illusion-of-color
 status: publish
 title: The Illusion of Color
 wordpress_id: '353'
-categories:
-- Science
+categories: Science
 ---
 
 One thing that confused me when I learned science in high school was the connection between the spectrum of colors as seen in a rainbow, and the three primary colors.  In case anyone else is confused here is my simple explanation.

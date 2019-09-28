@@ -5,10 +5,7 @@ slug: generalized-continuous-compiling-like-sbt-or-coffeescript
 status: publish
 title: Generalized continuous compiling (like sbt or coffeescript)
 wordpress_id: '3736'
-categories:
-- Programming
-tags:
-- linkedin
+categories: Programming
 ---
 
 One of the really nice things about the sbt build system (for building Scala projects) or the coffeescript compiler is that they have a "watch" mode.

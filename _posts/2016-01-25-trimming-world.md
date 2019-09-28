@@ -2,7 +2,7 @@
 layout: post
 title: Trimming the Empty Parts From The World Map
 date: 2016-01-25
-category: 
+category: Science
 ---
 
 ![world][1] The political map of the world is a familiar image, and we have

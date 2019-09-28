@@ -6,8 +6,7 @@ status: publish
 ref: http://troels.arvin.dk/db/rdbms/
 title: Comparison of different SQL implementations
 wordpress_id: '71'
-categories:
-- Programming
+categories: Programming
 ---
 
 [Comparison of different SQL implementations](http://troels.arvin.dk/db/rdbms/) is a useful reference.

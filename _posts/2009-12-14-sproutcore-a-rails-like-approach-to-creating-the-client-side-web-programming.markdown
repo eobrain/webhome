@@ -6,8 +6,7 @@ status: publish
 ref: http://www.sproutcore.com/
 title: Sproutcore, a Rails-like approach to client-side web programming
 wordpress_id: '545'
-categories:
-- Programming
+categories: Programming
 ---
 
   * [Spoutcore](http://www.sproutcore.com/)

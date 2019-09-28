@@ -6,8 +6,7 @@ status: publish
 ref: https://web.archive.org/web/20141023104118/https://developer.palm.com/webChannel/index.php?packageid=org.eamonn.nrby
 title: New Beta 0.3 Release of Nrby Photos, A Palm WebOS App to Display Nearby Photographs
 wordpress_id: '861'
-categories:
-- Consumer Media
+categories: Product
 ---
 
 Thanks to all the beta testers of the 0.2 release for your testing and reviews.

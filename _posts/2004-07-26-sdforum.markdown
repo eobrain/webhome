@@ -6,6 +6,7 @@ status: publish
 ref: http://www.sdforum.org/SDForum/Templates/Calendar.aspx
 title: SDForum
 wordpress_id: '30'
+categories: Programming
 ---
 
 Some interesting technical events sponsored by the [SDForum](http://www.sdforum.org/SDForum/Templates/Calendar.aspx).

@@ -1,8 +1,7 @@
 ---
 layout: post
 ref: http://code.google.com/p/aws-missing-tools/
-categories:
-- Programming
+categories: Programming
 ---
 
 Amazon AWS has some great monitoring tools for your cloud instances and other parts of your AWS cloud infrastructure.  However one notable missing out-of-the box feature is the ability to monitor disk usage of your instances, something crucial for reliable large-scale deployment.

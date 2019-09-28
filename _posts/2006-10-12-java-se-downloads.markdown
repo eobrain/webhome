@@ -6,8 +6,7 @@ status: publish
 ref: http://java.sun.com/javase/downloads/index.jsp
 title: Java SE Downloads
 wordpress_id: '113'
-categories:
-- Programming
+categories: Programming
 ---
 
 I had to go to Sun's [Java SE Downloads](http://java.sun.com/javase/downloads/index.jsp) web site to download Java, which is not available via the Ubuntu installer.  I considered using one of the open source Java SDKs intead but I make extensive use of Java 1.5 features which are not yet I think well supported by non-Sun compilers.

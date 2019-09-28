@@ -6,6 +6,7 @@ status: publish
 ref: https://web.archive.org/web/20161116015422im_/https://128.255.244.60/graphs/Pres04_WTA.png
 title: Let's see how well the Iowa futures market predicts the election.
 wordpress_id: '48'
+categories: Society
 ---
 
 ![](https://web.archive.org/web/20161116015422if_/https://128.255.244.60/graphs/Pres04_WTA.png)

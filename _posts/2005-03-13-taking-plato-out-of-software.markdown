@@ -5,8 +5,7 @@ slug: taking-plato-out-of-software
 status: publish
 title: Taking Plato Out Of Software
 wordpress_id: '67'
-categories:
-- Programming
+categories: Programming
 ---
 
 Object-oriented methods are considered the best way to build large, maintainable software systems.  Languages such as C++, Java, and Python now dominate in many areas, and the conventional wisdom encourages us to do analysis and design in an object-oriented manner.

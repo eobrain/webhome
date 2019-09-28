@@ -6,6 +6,7 @@ status: publish
 ref: http://photojournal.jpl.nasa.gov/catalog/PIA06072
 title: Peering at Phoebe
 wordpress_id: '20'
+categories: Science
 ---
 
 From

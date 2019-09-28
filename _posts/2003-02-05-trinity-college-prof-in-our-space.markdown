@@ -6,6 +6,7 @@ status: publish
 ref: https://web.archive.org/web/20101207184704/http://www.dsg.scss.tcd.ie/~vjcahill/
 title: Trinity College Prof In Our Space
 wordpress_id: '10'
+categories: Programming
 ---
 
 [Dr. Vinny Cahill](https://web.archive.org/web/20101207184704/http://www.dsg.scss.tcd.ie/~vjcahill/)

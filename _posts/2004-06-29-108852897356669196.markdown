@@ -5,6 +5,7 @@ slug: '108852897356669196'
 status: publish
 title: 'Got a gmail account a few days ago'
 wordpress_id: '23'
+categories: Product
 ---
 
 [![](http://photos1.blogger.com/img/248/1104/320/Fullscreen%20capture%206%2029%202004%2010%2006%2050.jpg)](/img/Fullscreen%20capture%206%2029%202004%2010%2006%2050.jpg)

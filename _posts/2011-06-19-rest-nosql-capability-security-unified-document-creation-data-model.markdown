@@ -6,11 +6,7 @@ status: publish
 ref: http://www.slideshare.net/eobrain/book-widget-embedding-automated-photodocument-publication-on-the-web-and-in-mobile-devices
 title: 'REST, noSQL, Capability Security, and a Unified Document-Creation Data Model '
 wordpress_id: '1213'
-categories:
-- HP
-- Programming
-tags:
-- linkedin
+categories: Programming
 ---
 
   * [Book Widget -- Embedding automated photo-document publication on the web and in mobile devices](http://www.slideshare.net/eobrain/book-widget-embedding-automated-photodocument-publication-on-the-web-and-in-mobile-devices)**

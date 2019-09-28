@@ -2,8 +2,7 @@
 layout: post
 title: Feeling Like JQuery Is Too Bloated?
 ref: https://web.archive.org/web/20121028233133/http://ender.no.de:80/
-categories:
-- Programming
+categories: Programming
 ---
 
  * [Ender – the no-library library](https://web.archive.org/web/20121028233133/http://ender.no.de:80/)

@@ -6,6 +6,7 @@ status: publish
 ref: http://crazybob.org/index.jsp?weblog=http://freeroller.net/page/crazyboblee/20021117
 title: Messing around with Java byte code at runtime.
 wordpress_id: '5'
+categories: Programming
 ---
 
 [crazybob.org](http://crazybob.org/index.jsp?weblog=http://freeroller.net/page/crazyboblee/20021117)

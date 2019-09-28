@@ -2,7 +2,7 @@
 layout: post
 title: What’s Wrong With HP?
 date: 2016-11-07
-category: 
+category: HP
 ---
 
 ![fissioning HP][1]

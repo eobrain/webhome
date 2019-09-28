@@ -2,7 +2,7 @@
 layout: post
 title: Will the technocratic elites suffer the same fate as 18c aristocrats and 19c capitalists?
 date: 2016-11-13
-category: history
+category: Society
 ---
 
 “History does not repeat itself, but it rhymes” Around the turn of the 19th

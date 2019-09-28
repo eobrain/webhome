@@ -6,6 +6,7 @@ status: publish
 ref: http://www.electoral-vote.com/
 title: 2004 Electoral Vote Animation
 wordpress_id: '45'
+categories: Society
 ---
 
 ![animation](https://web.archive.org/web/20040831201756if_/http://electoral-vote.caida.org:80/all2004-fast.gif)]

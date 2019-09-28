@@ -6,8 +6,7 @@ status: publish
 ref: http://www.prescod.net/rest/mistakes/
 title: Common REST Mistakes
 wordpress_id: '83'
-categories:
-- Programming
+categories: Programming
 ---
 
 Nice guidelines to REST in [Common REST Mistakes](https://web.archive.org/web/20120522065327/http://www.prescod.net/rest/mistakes/).  I particularly liked the closing summary:

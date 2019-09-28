@@ -5,10 +5,7 @@ slug: rediscovering-audio-signal-processing
 status: publish
 title: Rediscovering Audio Signal Processing
 wordpress_id: '339'
-categories:
-- Consumer Media
-- Futzing
-- Personal
+categories: Futzing
 ---
 
 This Holiday Season our household acquired a tape deck with a USB connection.  (Thanks B & J!)  Now, finally we can convert some of our hundreds of old cassette tapes to MP3s.

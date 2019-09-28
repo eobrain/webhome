@@ -6,6 +6,7 @@ status: publish
 ref: https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr-2003-24.pdf
 title: Quantitative data on distributed computing economics.
 wordpress_id: '15'
+categories: Programming
 ---
 
 Some interesting quantitative data from Jim Gray's [Distributed Computing Economics](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr-2003-24.pdf):

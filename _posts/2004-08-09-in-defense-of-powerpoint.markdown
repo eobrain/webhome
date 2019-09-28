@@ -6,6 +6,7 @@ status: publish
 ref: https://web.archive.org/web/20040806051229/http://www.computer.org/computer/homepage/0704/profession/index.htm
 title: In Defense of PowerPoint
 wordpress_id: '40'
+categories: Product
 ---
 
 From [Computer Magazine - In Defense of PowerPoint](https://web.archive.org/web/20040806051229/http://www.computer.org/computer/homepage/0704/profession/index.htm) comes an interesting approach to giving conference presentations:

@@ -6,8 +6,7 @@ status: publish
 ref: http://javascript.crockford.com/private.html
 title: 'Coffeescript classes: Coffeescript-style or Crockford-style?'
 wordpress_id: '5184'
-categories:
-- Programming
+categories: Programming
 ---
 
 Here are two different ways of defining a class in Coffeescript:

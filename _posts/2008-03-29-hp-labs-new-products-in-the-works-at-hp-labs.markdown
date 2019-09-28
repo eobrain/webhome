@@ -6,8 +6,7 @@ status: publish
 ref: http://www.siliconvalley.com/
 title: HP LABS -- New Products in the Works at HP LABS
 wordpress_id: '263'
-categories:
-- Programming
+categories: Programming
 tags:
 - snapfish lab
 ---

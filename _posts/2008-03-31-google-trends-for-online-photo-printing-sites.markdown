@@ -6,9 +6,7 @@ status: publish
 ref: http://google.com/trends?q=snapfish%2C+kodak+easyshare%2C+shutterfly%2C+walgreens+photo%2C+walmart+photo&ctab=0&geo=all&date=all&sort=0
 title: Google Trends for Online Photo Printing Sites
 wordpress_id: '266'
-categories:
-- Consumer Media
-- HP
+categories: HP
 ---
 
 This [Google Trends graph comparing photo printing sites](http://google.com/trends?q=snapfish%2C+kodak+easyshare%2C+shutterfly%2C+walgreens+photo%2C+walmart+photo&ctab=0&geo=all&date=all&sort=0) is interesting.  The seasonal Christmas surge is very evident.  It also looks as if by this measure that Snapfish has caught up with and pulled ahead of both Kodak and Shutterfly.

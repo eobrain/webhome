@@ -6,9 +6,7 @@ status: publish
 ref: http://eamonn.org/ogham.php
 title: Now you can convert any text to Ogham
 wordpress_id: '1072'
-categories:
-- Ireland
-- Language
+categories: Language
 ---
 
 In a little bit of recreational programming I threw together [a web converter](http://eamonn.org/ogham.php) that takes any text and converts it into Ogham.

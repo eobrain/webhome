@@ -6,6 +6,7 @@ status: publish
 ref: http://www.flickr.com/photos/eob/3161098473/
 title: Where the freeway tentacles have withdrawn from San Francisco
 wordpress_id: '340'
+categories: SF
 ---
 
 

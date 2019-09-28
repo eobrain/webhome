@@ -5,8 +5,7 @@ slug: a-new-irish-language-spelling-system
 status: publish
 title: A New Irish Language Spelling System
 wordpress_id: '68'
-categories:
-- Ireland
+categories: Language
 ---
 
 One of the nice things about the Irish language is that its spelling is very regular. However for non-Irish speakers some of the pronunciation rules can be confusing.

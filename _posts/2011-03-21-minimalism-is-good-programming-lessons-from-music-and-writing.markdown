@@ -6,8 +6,7 @@ status: publish
 ref: http://www.flickr.com/photos/eob/5538121276/
 title: 'Minimalism is good: programming lessons from music and writing'
 wordpress_id: '1169'
-categories:
-- Programming
+categories: Programming
 ---
 
 [![Programming and Minimalism: Lessons from Orwell & The Clash](http://farm6.static.flickr.com/5291/5538121276_be254ebb1b.jpg)](http://www.flickr.com/photos/eob/5538121276/)In his SXSW talk [Programming and Minimalism: Lessons from Orwell & The Clash](http://lanyrd.com/2011/sxsw/scpth/), Jon Dahl from Zencoder asked what other activity is programming like.  He acknowledged that it was valid to think of programming being an engineering discipline and valid to think of it as being a craft, but he mostly proposed that programming is like writing, in particular that programming is like writing musical composition.

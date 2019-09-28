@@ -2,7 +2,7 @@
 layout: post
 title:  "Simplest possible web templating?"
 date:   2018-10-06
-categories: [coding]
+categories: Programming
 ---
 
 So, I started off trying to have this blog using simple plain hand-written HTML.

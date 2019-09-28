@@ -6,8 +6,7 @@ status: publish
 ref: http://www.google.com/trends/viz?q=irish&date=all&geo=all&graph=weekly_img
 title: 'Google Trends: irish'
 wordpress_id: '96'
-categories:
-- Ireland
+categories: Ireland
 ---
 
 [![](http://www.google.com/trends/viz?q=irish&date=all&geo=all&graph=weekly_img)](http://www.google.com/trends?q=irish&ctab=0&date=all&geo=all)

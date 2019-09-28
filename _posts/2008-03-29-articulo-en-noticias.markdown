@@ -6,8 +6,7 @@ status: publish
 ref: http://www.flickr.com/photos/lalozanoni/2371790226/
 title: Artículo en Noticias
 wordpress_id: '264'
-categories:
-- HP
+categories: HP
 ---
 
 

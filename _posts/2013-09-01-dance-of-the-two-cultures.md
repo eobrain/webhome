@@ -2,7 +2,7 @@
 layout: post
 title: The Dance of the Two Cultures
 date: 2013-09-01
-category: 
+category: Society
 ---
 
 ![Heaney article in NYT][1] Today the New York Times marked the death of Seamus

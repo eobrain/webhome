@@ -6,8 +6,7 @@ status: publish
 ref: http://bit.ly/itextapi
 title: Decluttered API documentation for the iText PDF-manipulating Java library
 wordpress_id: '750'
-categories:
-- Programming
+categories: Programming
 ---
 
 The iText library is a great resource for generating and manipulating PDF files.  However its API is very complex and there is a notable lack of good online tutorial material.  So you often must resort to plowing through the Javadoc-generated API documentation trying to figure out how to use the library.

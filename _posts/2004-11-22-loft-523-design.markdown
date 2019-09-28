@@ -5,8 +5,7 @@ slug: loft-523-design
 status: publish
 title: Loft 523 Design
 wordpress_id: '60'
-categories:
-- Travel
+categories: Travel
 ---
 
 Agape Spoon tub. Modern fan co. Vola bathroom accessories. Fortuny lamp.

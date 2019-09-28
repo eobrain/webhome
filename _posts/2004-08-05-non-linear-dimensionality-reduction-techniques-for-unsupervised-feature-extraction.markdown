@@ -6,6 +6,7 @@ status: publish
 ref: https://web.archive.org/web/20041010053416/http://webhost.ua.ac.be/visielab/debacker/papers/dimred/dimred.html
 title: Non-linear Dimensionality Reduction Techniques for Unsupervised Feature Extraction
 wordpress_id: '36'
+categories: Programming
 ---
 
 [Non-linear Dimensionality Reduction Techniques for Unsupervised Feature Extraction](https://web.archive.org/web/20041010053416/http://webhost.ua.ac.be/visielab/debacker/papers/dimred/dimred.html)

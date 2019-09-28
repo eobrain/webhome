@@ -6,8 +6,7 @@ status: publish
 ref: https://web.archive.org/web/20141023104118/https://developer.palm.com/webChannel/index.php?packageid=org.eamonn.nrby
 title: Nrby Photos -- A Palm WebOS App to Display Nearby Photographs
 wordpress_id: '848'
-categories:
-- Consumer Media
+categories: Product
 ---
 
 Displays photographs that people on the Flickr have taken close to your current location. Flick left and right to browse through the photographs. Automatically updates as you move. (All photographs are copyright of their owners.)

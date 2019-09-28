@@ -5,8 +5,7 @@ slug: writely
 status: publish
 title: Writely
 wordpress_id: '85'
-categories:
-- Programming
+categories: Programming
 ---
 
 ###    Writely

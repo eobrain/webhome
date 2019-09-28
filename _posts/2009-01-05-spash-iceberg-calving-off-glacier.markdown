@@ -6,8 +6,7 @@ status: publish
 ref: http://www.flickr.com/photos/eob/3142879795/
 title: Spash! -- Iceberg calving off glacier.
 wordpress_id: '343'
-categories:
-- Photo
+categories: Travel
 ---
 
 

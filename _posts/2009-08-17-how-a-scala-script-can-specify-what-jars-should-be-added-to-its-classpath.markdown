@@ -5,8 +5,7 @@ slug: how-a-scala-script-can-specify-what-jars-should-be-added-to-its-classpath
 status: publish
 title: How a Scala script can specify what JARs should be added to its CLASSPATH
 wordpress_id: '425'
-categories:
-- Programming
+categories: Programming
 ---
 
 The reason the Scala programming language has such a name is that it is meant to be scalable, i.e. good for both small scripts and large software systems.  I am already convinced that Scala is as good, if not better than Java for the large-scale development, but what about the small scale?

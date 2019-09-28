@@ -5,8 +5,7 @@ slug: don%e2%80%99t-read-this-if-you-plan-to-listen-to-the-pimsleur-mandarin-aud
 status: publish
 title: Don’t read this if you plan to listen to the Pimsleur Mandarin audio course!
 wordpress_id: '767'
-categories:
-- Language
+categories: Language
 ---
 
 

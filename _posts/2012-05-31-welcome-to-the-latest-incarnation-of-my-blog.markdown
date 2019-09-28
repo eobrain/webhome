@@ -1,8 +1,7 @@
 ---
 layout: post
 ref: http://www.eamonn.org/blog/
-categories:
-- Meta
+categories: Meta
 ---
 
 This is now a beta location new location for my blog. Once I sort

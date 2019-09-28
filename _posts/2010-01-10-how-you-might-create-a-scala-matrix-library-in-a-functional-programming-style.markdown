@@ -5,8 +5,7 @@ slug: how-you-might-create-a-scala-matrix-library-in-a-functional-programming-st
 status: publish
 title: How you might create a Scala matrix library in a functional programming style
 wordpress_id: '613'
-categories:
-- Programming
+categories: Programming
 ---
 
 Sure you can program in Scala just like you would in Java and get all the advantages of the cleaner syntax.  But if you really want to explore the power of Scala you should try some functional programming.

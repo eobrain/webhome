@@ -6,8 +6,7 @@ status: publish
 ref: http://www.eclipse.org/downloads/
 title: Eclipse downloads home
 wordpress_id: '114'
-categories:
-- Programming
+categories: Programming
 ---
 
 Next I went to the [Eclipse downloads home](http://www.eclipse.org/downloads/) to get the next vital piece of Java development kit.  I just extracted the Linux archive file into a subdirectory of my home directory, navigated into that folder and executed it.  It started up right away using the 1.4.2 GCJ Java SDK that comes with Ubuntu.

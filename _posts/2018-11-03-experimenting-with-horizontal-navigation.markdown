@@ -2,7 +2,7 @@
 layout: post
 title:  "Experimenting with horizontal navigation"
 date:   2018-11-03
-categories: [coding]
+categories: Programming
 ---
 
 As an experiment, I'm seeing if I can use a navigational metaphor

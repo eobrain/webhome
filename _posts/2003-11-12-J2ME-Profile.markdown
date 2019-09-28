@@ -5,6 +5,7 @@ status: publish
 ref: https://web.archive.org/web/20031218102935/http://developers.sun.com/techtopics/mobility/personal/articles/pbp_pp/
 title: 'J2ME Profiles'
 wordpress_id: '16'
+categories: Programming
 ---
 
 

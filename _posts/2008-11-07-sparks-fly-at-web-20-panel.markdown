@@ -6,8 +6,7 @@ status: publish
 ref: http://www.irishnetworksanfrancisco.com/insf/index.php?option=com_content&task=view&id=38&Itemid=38
 title: Sparks Fly at Web 2.0 Panel
 wordpress_id: '313'
-categories:
-- Ireland
+categories: Ireland
 ---
 
 Well I could not go to the Web 2.0 Summit but, thanks to my Irish connections, I did get to attend one interesting event on the periphery, a panel discussion called “[Web 2.0 in Action](http://www.irishnetworksanfrancisco.com/insf/index.php?option=com_content&task=view&id=38&Itemid=38)”.

@@ -6,8 +6,7 @@ status: publish
 ref: http://www.flickr.com/photos/eob/2411816748/
 title: Snapfish Lab on HP Labs Front Page
 wordpress_id: '268'
-categories:
-- HP
+categories: HP
 ---
 
 

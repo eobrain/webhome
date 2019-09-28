@@ -6,8 +6,7 @@ status: publish
 ref: http://xkcd.com/radiation/
 title: What levels of radiation you should worry about
 wordpress_id: '1162'
-categories:
-- Science
+categories: Science
 ---
 
 There has been a lot of irresponsible reporting of the possible dangers from the damaged Japanese nuclear reactors.  Even the New York Times was guilty of providing [an interactive presentation](http://www.nytimes.com/interactive/2011/03/16/science/plume-graphic.html) that gave a misleading impression that the U.S. West Coast was in danger.

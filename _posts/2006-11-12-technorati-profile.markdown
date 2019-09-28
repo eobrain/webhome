@@ -6,8 +6,7 @@ status: publish
 ref: http://www.technorati.com/claim/ihsfh6dvwk
 title: Technorati Profile
 wordpress_id: '130'
-categories:
-- Programming
+categories: Programming
 ---
 
 [Technorati Profile](http://www.technorati.com/claim/ihsfh6dvwk)

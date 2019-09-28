@@ -6,10 +6,7 @@ status: publish
 ref: http://www.flickr.com/photos/eob/5537982085/
 title: Social Photo Sharing Sessions at SXSW
 wordpress_id: '1178'
-categories:
-- Consumer Media
-tags:
-- linkedin
+categories: Product
 ---
 
 [![Promiscuity or Private Groups: Mobile Photo Sharing](http://farm6.static.flickr.com/5214/5537982085_fd89cf913c.jpg)](http://www.flickr.com/photos/eob/5537982085/)There were two different sessions at SXSW covering social photo sharing, one a panel and the other a round-table discussion group.

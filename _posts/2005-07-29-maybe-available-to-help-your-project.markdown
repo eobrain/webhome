@@ -6,9 +6,7 @@ status: publish
 ref: http://eamonn.obrien-strain.com/bio/
 title: Maybe available to help your project
 wordpress_id: '79'
-categories:
-- Personal
-- Programming
+categories: Personal
 ---
 
 You might want to have a look at [my resume](http://eamonn.obrien-strain.com/bio/) if you are in the San Francisco area and looking for a senior technologist with a lot of programming and research experience.

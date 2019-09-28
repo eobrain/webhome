@@ -6,6 +6,7 @@ status: publish
 ref: http://developer.java.sun.com/developer/JDCTechTips/2002/tt1119.html#2
 title: New JDK 1.4 socket timeout control
 wordpress_id: '4'
+categories: Programming
 ---
 
 [Core Java Technologies Technical Tips](http://developer.java.sun.com/developer/JDCTechTips/2002/tt1119.html#2)

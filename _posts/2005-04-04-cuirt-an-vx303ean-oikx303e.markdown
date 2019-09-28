@@ -5,8 +5,7 @@ slug: cuirt-an-vx303ean-oikx303e
 status: publish
 title: Cúirt an Ṽean-Oík̃e
 wordpress_id: '69'
-categories:
-- Ireland
+categories: Language
 ---
 
 

@@ -6,8 +6,7 @@ status: publish
 ref: http://107starlite.com/
 title: Our house is going on the market soon
 wordpress_id: '102'
-categories:
-- Personal
+categories: Personal
 ---
 
 [Our house](http://107starlite.com/) will be going on the market just after Labor Day.

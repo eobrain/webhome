@@ -5,8 +5,7 @@ slug: the-reality-behind-the-hype-of-wolfram-alpha
 status: publish
 title: The Reality behind the Hype of Wolfram Alpha
 wordpress_id: '395'
-categories:
-- Science
+categories: Science
 ---
 
 After been given advance hands-on access to Wolfram Alpha, I did some testing and my conclusions about the current state of this tool are:

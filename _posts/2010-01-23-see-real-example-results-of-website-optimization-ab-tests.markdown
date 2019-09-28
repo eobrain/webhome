@@ -6,8 +6,7 @@ status: publish
 ref: https://web.archive.org/web/20121225101145/http://www.abtests.com:80/browse/
 title: See real example results of website optimization A/B tests
 wordpress_id: '632'
-categories:
-- Programming
+categories: Programming
 ---
 
 One of the big advantages of creating Web products is that effectiveness can be immediately measured.  One lucrative example of this is click-through web advertising.

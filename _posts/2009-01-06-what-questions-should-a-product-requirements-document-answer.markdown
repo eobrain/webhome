@@ -5,8 +5,7 @@ slug: what-questions-should-a-product-requirements-document-answer
 status: publish
 title: What questions should a product requirements document answer?
 wordpress_id: '345'
-categories:
-- Programming
+categories: Programming
 ---
 
 I am temporarily putting on a marketing hat and creating a product requirement document (PRD).  My first step was to create a template based on a skeleton in a Wikipedia article, together with some valuable details from my colleague Chris.  I attempted to make it a bit more “agile” by using “user stories” instead of “features” for the functional specification.

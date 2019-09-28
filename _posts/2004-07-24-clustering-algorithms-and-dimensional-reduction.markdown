@@ -5,6 +5,7 @@ slug: clustering-algorithms-and-dimensional-reduction
 status: publish
 title: Clustering Algorithms and Dimensional Reduction
 wordpress_id: '29'
+categories: Programming
 ---
 
 I am giving my self a crash course on some data mining techniques for a project I am working on. Here are some things I found useful.

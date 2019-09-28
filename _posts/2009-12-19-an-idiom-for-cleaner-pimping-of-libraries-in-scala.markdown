@@ -5,8 +5,7 @@ slug: an-idiom-for-cleaner-pimping-of-libraries-in-scala
 status: publish
 title: An idiom for cleaner pimping of libraries in Scala
 wordpress_id: '592'
-categories:
-- Programming
+categories: Programming
 ---
 
 In dynamic languages like JavaScript and Ruby you can modify existing classes, including system classes, with extra methods.  This can be a very handy, if dangerous, technique.

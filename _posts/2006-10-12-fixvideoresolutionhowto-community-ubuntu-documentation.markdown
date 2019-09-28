@@ -6,11 +6,10 @@ status: publish
 ref: https://help.ubuntu.com/community/FixVideoResolutionHowto
 title: FixVideoResolutionHowto - Community Ubuntu Documentation
 wordpress_id: '115'
-categories:
-- Programming
+categories: Futzing
 ---
 
-One problem with my Ubunto installation on my laptop is that the max resolution I can set was 1024x768 which is pretty crowded for soing software development in Eclipse.  So I followed the instructions in [FixVideoResolutionHowto - Community Ubuntu Documentation](https://help.ubuntu.com/community/FixVideoResolutionHowto):
+One problem with my Ubunto installation on my laptop is that the max resolution I can set was 1024x768 which is pretty crowded for doing software development in Eclipse.  So I followed the instructions in [FixVideoResolutionHowto - Community Ubuntu Documentation](https://help.ubuntu.com/community/FixVideoResolutionHowto):
 
 
     sudo cp /etc/X11/xorg.conf /etc/X11/xorg.conf.custom

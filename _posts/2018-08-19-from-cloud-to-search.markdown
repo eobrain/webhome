@@ -2,7 +2,7 @@
 layout: post
 title:  "From Cloud to Search"
 date:   2018-08-19
-categories: [google]
+categories: Personal
 ---
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">I&#39;m moving to the engineering team responsible for the main Google Search user interface!<br><br>Sad to be leaving my amazing colleagues in Cloud and Firebase, but so excited to be learning new tech and working on a product that has transformed the world and touches billions of people.</p>&mdash; Eamonn O&#39;Brien-Strain 👨‍💻🔍🌁🇮🇪🇪🇺🇺🇲🇺🇳⚛️ (@eob) <a href="https://twitter.com/eob/status/1030992239147638785?ref_src=twsrc%5Etfw">August 19, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

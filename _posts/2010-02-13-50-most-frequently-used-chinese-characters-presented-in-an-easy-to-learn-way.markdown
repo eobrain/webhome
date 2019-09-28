@@ -5,8 +5,7 @@ slug: 50-most-frequently-used-chinese-characters-presented-in-an-easy-to-learn-w
 status: publish
 title: 50 Most Frequently Used Chinese Characters Presented in an Easy-to-Learn Way
 wordpress_id: '722'
-categories:
-- Language
+categories: Language
 ---
 
 I created this list of Chinese characters for my own benefit in trying to learn them.  I took Jun Da's list of most frequently used characters and added a Google image search to provide some mnemonics.  I added tone-color and exaggerated tone marks to the pinyin to help remind me of the the tones.

@@ -5,10 +5,7 @@ slug: dont-confuse-users-with-customers
 status: publish
 title: Don't confuse Users with Customers
 wordpress_id: '1352'
-categories:
-- Consumer Media
-tags:
-- linkedin
+categories: Product
 ---
 
 If your users are also your customers, then you are lucky.  It makes a lot of design and marketing decisions a lot simpler.  You can focus laser-like on providing features that your users are willing to pay for.

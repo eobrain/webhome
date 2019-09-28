@@ -6,8 +6,7 @@ status: publish
 ref: http://twitter.com/eob/statuses/770649492
 title: Day Five Without Windows
 wordpress_id: '258'
-categories:
-- Futzing
+categories: Futzing
 ---
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Day 4 since Windows died on my dual-booted laptop. Can do almost everything on Linux. But no Outlook calendar or VPN, so need to reins ...</p>&mdash; Eamonn O&#39;Brien-Strain 👨‍💻🔍🌁🇮🇪🇪🇺🇺🇲🇺🇳⚛️ (@eob) <a href="https://twitter.com/eob/status/770649492?ref_src=twsrc%5Etfw">March 13, 2008</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -5,6 +5,7 @@ slug: scalable-structured-data-placement-over
 status: publish
 title: Scalable, Structured Data Placement over
 wordpress_id: '9'
+categories: Programming
 ---
 
 [Scalable, Structured Data Placement over

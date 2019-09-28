@@ -6,6 +6,7 @@ status: publish
 ref: https://web.archive.org/web/20030321113917/http://www.onjava.com/pub/a/onjava/2003/03/19/java_spaces.html
 title: Space-Based Programming
 wordpress_id: '12'
+categories: Programming
 ---
 
 [ONJava.com: Space-Based Programming [Mar. 19, 2003]](https://web.archive.org/web/20030321113917/http://www.onjava.com/pub/a/onjava/2003/03/19/java_spaces.html)

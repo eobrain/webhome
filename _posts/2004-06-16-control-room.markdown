@@ -5,7 +5,8 @@ slug: control-room
 status: publish
 ref: http://www.salon.com/ent/feature/2004/06/04/control_room/index_np.html
 title: Control Room
-wordpress_id: '22'
+wordpress_id: '22'Society
+categories: Society
 ---
 
 Last night we saw the film "Control Room", a behind-the scenes documentary of Al Jazeera covering the initial invasion of Iraq.

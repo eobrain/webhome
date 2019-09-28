@@ -6,6 +6,7 @@ status: publish
 ref: https://web.archive.org/web/20070715161926/http://epod.usra.edu/archive/epodviewer.php3?oid=152768
 title: Satellite Image of the Big Blackout
 wordpress_id: '14'
+categories: Science
 ---
 
 From [Earth Science Picture of the Day](https://web.archive.org/web/20070715161926/http://epod.usra.edu/archive/epodviewer.php3?oid=152768):

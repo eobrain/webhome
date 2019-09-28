@@ -6,6 +6,7 @@ status: publish
 ref: http://www.cs.berkeley.edu/~ravenben/stuff/cv.html
 title: Yanbin Ben Zhao
 wordpress_id: '7'
+categories: Programming
 ---
 
 [Yanbin Ben Zhao](https://web.archive.org/web/20041111050935/http://www.cs.berkeley.edu/~ravenben/stuff/cv.html)

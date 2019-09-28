@@ -6,8 +6,7 @@ status: publish
 title: Add a button to your browser to translate selected Chinese characters from
   a web page
 wordpress_id: '643'
-categories:
-- Futzing
+categories: Futzing
 ---
 
 You can now use Google to do some pretty readable translation of Chinese-language web sites.

@@ -6,10 +6,7 @@ status: publish
 ref: http://www.flickr.com/photos/eob/6740579771/
 title: 'Day after Occupy protest: Bank Modification'
 wordpress_id: '3184'
-categories:
-- Photo
-- San Francisco
-- society
+categories: Society
 ---
 
 

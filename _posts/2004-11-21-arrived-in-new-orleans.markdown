@@ -5,8 +5,7 @@ slug: arrived-in-new-orleans
 status: publish
 title: Arrived in New Orleans
 wordpress_id: '55'
-categories:
-- Travel
+categories: Travel
 ---
 
 Arrived in New Orleans yesterday for a short vacation before spending Thanksgiving in Texas.

@@ -5,8 +5,7 @@ slug: finally-got-laptop-usable-again-with-ubuntu-linux-in-vmware-under-windows
 status: publish
 title: Finally got laptop usable again -- with Ubuntu Linux in VMware under Windows
 wordpress_id: '260'
-categories:
-- Futzing
+categories: Futzing
 tags:
 - linux
 - ubuntu

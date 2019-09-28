@@ -6,8 +6,7 @@ status: publish
 ref: http://www.electoral-vote.com/
 title: Nerves are racked
 wordpress_id: '52'
-categories:
-- Personal
+categories: Society
 ---
 
 Man, it's nerve racking! [electoral-vote.com](http://www.electoral-vote.com/) is showing Kerry ahead by a single electoral vote. [Meta-Analysis of State Polls - election.princeon.edu](http://election.princeton.edu/) with somewhat more sophisticated statistical methods is predicting Kerry 311/Bush 227.  The Iowa electronic market which had shown Bush ahead for the last few months is now closing towards dead even.

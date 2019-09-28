@@ -5,8 +5,7 @@ slug: '116'
 status: publish
 title: Ubuntu as a replacement for Windows?
 wordpress_id: '116'
-categories:
-- Programming
+categories: Programming
 ---
 
 With Ubuntu it seems that Linux is getting closer to be a viable replacement for Windows.  I am several days into my experiment of running Ubuntu as my operating system on my laptop.  So far it is going fairly well, but I have hit the following problems:

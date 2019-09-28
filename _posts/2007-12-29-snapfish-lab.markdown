@@ -6,9 +6,7 @@ status: publish
 ref: https://web.archive.org/web/20120703054908/http://www.snapfishlab.com/
 title: Snapfish Lab
 wordpress_id: '221'
-categories:
-- Photo
-- Programming
+categories: Product
 ---
 
 For the last few months, I have been part of the team creating [Snapfish Lab](https://web.archive.org/web/20120703054908/http://www.snapfishlab.com/), a web site that allows users of the HP’s Snapfish photo site to try out some of the new technology coming out of HP Labs.

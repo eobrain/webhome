@@ -6,10 +6,7 @@ status: publish
 title: Hudson and Play – how to configure Hudson for continuous integration of Play
   Framework Web Applications
 wordpress_id: '1014'
-categories:
-- Programming
-tags:
-- linkedin
+categories: Programming
 ---
 
 The Play Framework is a very nice rapid-development environment for building Java web applications.  It brings many of the sensibilities of Ruby on Rails to Java web development, including a nice test framework that allows for test-driven design.  However, when you use Play you need to use its own particular build system using command-line commands such as “play run” and “play test”, and not more standard Java build systems like Ant or Maven.

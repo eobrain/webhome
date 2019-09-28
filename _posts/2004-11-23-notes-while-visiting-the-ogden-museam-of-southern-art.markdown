@@ -5,8 +5,7 @@ slug: notes-while-visiting-the-ogden-museam-of-southern-art
 status: publish
 title: Notes while visiting the Ogden Museam of Southern Art
 wordpress_id: '61'
-categories:
-- Travel
+categories: Travel
 ---
 
 George dureau, male figures, satyrs

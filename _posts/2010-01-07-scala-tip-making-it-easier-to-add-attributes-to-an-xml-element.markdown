@@ -5,8 +5,7 @@ slug: scala-tip-making-it-easier-to-add-attributes-to-an-xml-element
 status: publish
 title: 'Scala tip: Making it easier to add attributes to an XML element'
 wordpress_id: '609'
-categories:
-- Programming
+categories: Programming
 ---
 
 In most respects Scala makes it very easy to handle XML, but there are a few things that are hard to do.  One is changing the value of an existing attribute on an element, or adding a new attribute to an element.

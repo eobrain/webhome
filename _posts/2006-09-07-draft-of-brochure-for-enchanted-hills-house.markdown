@@ -6,8 +6,7 @@ status: publish
 ref: http://107starlite.com/brochure.html
 title: Draft of brochure for Enchanted Hills house
 wordpress_id: '103'
-categories:
-- Personal
+categories: Personal
 ---
 
 Well, we now have a [draft of the brochure](http://107starlite.com/brochure.html) offering our house for sale.

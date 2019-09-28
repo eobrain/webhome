@@ -6,6 +6,7 @@ status: publish
 ref: http://www.javaworld.com/javatips/jw-javatip130_p.html
 title: Memory footprint of Java Objects.
 wordpress_id: '26'
+categories: Programming
 ---
 
 A C/C++ programmer, used to using `sizeof`,  might be suprised how hard it is to figure out the memory footprint of Java object.  Of course relying on memory sizes is very bad for portability, but sometimes when tuning applications you do need this information.
