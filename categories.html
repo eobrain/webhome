@@ -7,13 +7,16 @@ title: Categories
 <style>
     .archive-group {
         float:left;
+        border: solid black 1px;
+        margin-right: 0.5em;
+        margin-bottom: 0.5em;
+        padding: 0.5em;
     }
     .archive-item {
         white-space: nowrap;
         width: 9em;
         overflow: hidden;
         text-overflow: ellipsis;
-        margin-right: 1em;
    }
 
 </style>
@@ -28,7 +31,7 @@ title: Categories
     <a name="{{ category_name | slugize }}"></a>
     {% for post in site.categories[category_name] %}
     <article class="archive-item">
-      <h4><a href="{{ site.baseurl }}{{ post.url }}" title="{{post.title}}">{{post.title}}</a></h4>
+            &bull; <a href="{{ site.baseurl }}{{ post.url }}" title="{{post.title}}">{{post.title}}</a>
     </article>
     {% endfor %}
   </div>

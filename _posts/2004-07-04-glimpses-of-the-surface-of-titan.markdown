@@ -5,7 +5,7 @@ slug: glimpses-of-the-surface-of-titan
 status: publish
 ref: http://photojournal.jpl.nasa.gov/catalog/PIA06407
 title: Glimpses of the surface of titan.
-wordpress_id: '24'Science
+wordpress_id: '24'
 categories: Science
 ---
 

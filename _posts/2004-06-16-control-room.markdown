@@ -5,7 +5,7 @@ slug: control-room
 status: publish
 ref: http://www.salon.com/ent/feature/2004/06/04/control_room/index_np.html
 title: Control Room
-wordpress_id: '22'Society
+wordpress_id: '22'
 categories: Society
 ---
 
