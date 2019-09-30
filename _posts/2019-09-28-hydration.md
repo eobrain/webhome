@@ -3,9 +3,11 @@ layout: post
 title:  Why do Americans drink so much water?
 date:   2019-09-28
 categories: Science
+image: /img/hydration.jpeg
+image-text: Figure 3 of paper by Maughan et al "BHIs for 13 commonly consumed and commercially available drinks after correction for water content of drink ingested.", with added red line
 ---
 
-![graph][3] I was intrigued enough by an article on hydration, [Which drink is best for
+I was intrigued enough by an article on hydration, [Which drink is best for
 hydration? Hint: It isn't water][1], which appeared in my news feeds that I dug
 up the original paper, [A randomized trial to assess the potential of different
 beverages to affect hydration status: development of a beverage hydration index][2],
@@ -57,7 +59,5 @@ displaces excessive consumption of alcohol or sugary drinks.
 
 [1]: https://www.cnn.com/2019/09/25/health/best-drinks-for-hydration-wellness
 [2]: https://academic.oup.com/ajcn/article/103/3/717/4564598
-[3]: /img/hydration.jpeg
-[4]: /img/twitter.com_thatgoldblatt_status_1177872435879788545.png
 [5]: https://www.nytimes.com/2015/08/25/upshot/no-you-do-not-have-to-drink-8-glasses-of-water-a-day.html
 [6]: https://www.webmd.com/food-recipes/features/quest-for-hydration

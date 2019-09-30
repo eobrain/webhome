@@ -3,9 +3,10 @@ layout: post
 title:  "Porting blog to Jekyll"
 date:   2019-09-02
 categories: Meta
+image: /img/Jekyll_%28software%29_Logo.png
+image-text: Jekyll logo
 ---
 
-![Jekyll][4]
 Well, it’s been about a year a year since I started this blog, and I’ve finally
 got fed up with my idiosyncratic static site templating framework that uses the
 venerable [m4][1].
@@ -32,7 +33,6 @@ old content such as my [Medium articles][3].
 [1]: https://en.wikipedia.org/wiki/M4_(computer_language)
 [2]: https://www.w3.org/Provider/Style/URI
 [3]: https://medium.com/@eob
-[4]: /img/Jekyll_%28software%29_Logo.png
 [5]: https://creativecommons.org/licenses/by/4.0
 [6]: https://eamonn.org/index-old.html
 [7]: https://eamonn.org

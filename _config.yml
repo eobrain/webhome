@@ -24,10 +24,12 @@ description: >- # this means to ignore newlines until "baseurl:"
   An Irish software engineer, living in San Francisco,
   working for Google ...
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://eamonn.org/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://eamonn.org" # the base hostname & protocol for your site, e.g. http://example.com
+twitter:
+  username: eob
 twitter_username: eob
 github_username:  eobrain
-
+  
 # Build settings
 theme: minima
 show_excerpts: true

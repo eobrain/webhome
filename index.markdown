@@ -23,6 +23,10 @@ layout: home
         overflow: hidden;
         text-overflow: ellipsis;
     }
+    li img.hero {
+        max-width: 100%;
+        width: 100%
+    }
 </style>
 
 
