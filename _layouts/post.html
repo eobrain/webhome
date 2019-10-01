@@ -1,12 +1,15 @@
 ---
 layout: default
 ---
+
+<script src="/js/hammer.min.js" defer></script>
+<script src="/js/swipe.js" defer></script>
 <style>
   img.hero {
     max-width: 100%;
     width: 100%
   }
-  .PageNavigation {
+  nav {
     font-size: 14px;
     display: block;
     width: auto;
@@ -15,7 +18,7 @@ layout: default
     text-overflow: ellipsis;
   }
 
-  .PageNavigation a {
+  nav a {
     display: block;
     width: 47.5%;
     float: left;
@@ -25,24 +28,40 @@ layout: default
     text-overflow: ellipsis;
   }
 
-  .PageNavigation .next {
+  nav #next {
     float: right;
 
   }
-  .PageNavigation .prev {
+  bav #prev {
     float: left;
   }
+
+  @keyframes slideLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(150%); }
+  }
+  @keyframes slideRight {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-150%); }
+  }
+  .move-prev {
+    animation: 1s ease-out 0s 1 slideLeft;
+  }
+  .move-next {
+    animation: 1s ease-out 0s 1 slideRight;
+  }
+
 </style>
 
 <!-- Based on https://david.elbe.me/jekyll/2015/06/20/how-to-link-to-next-and-previous-post-with-jekyll.html -->
-<div class="PageNavigation">
-    {% if page.previous.url %}
-      <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
-    {% endif %}
-    {% if page.next.url %}
-      <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
-    {% endif %}
-  </div>
+<nav>
+  {% if page.previous.url %}
+    <a id="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
+  {% endif %}
+  {% if page.next.url %}
+    <a id="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
+  {% endif %}
+</nav>
 
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -76,4 +95,4 @@ layout: default
   {%- endif -%}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
-</article>
+  </article>
