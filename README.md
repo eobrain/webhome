@@ -15,6 +15,15 @@ Prerequities:
    4. `npm install -g firebase-tools`
    5. `firebase login`
 
+If you want to use Google Analytics add a local file called `_secret.yml` containing
+
+```yaml
+jekyll_analytics:
+  GoogleAnalytics:
+    id: UA-XXXXXXX-X
+```
+
+(Replacing `UA-XXXXXXX-X` with your tracking ID.)
 
 
 Building
@@ -30,8 +39,8 @@ Local serving
 Publish
 
 1. `firebase use --add`
-2. `jekyll build`
-3. `firebase deploy`
+2. `JEKYLL_ENV=production jekyll build --strict_front_matter --config _config.yml,_secret.yml`
+2. `firebase deploy`
 
 [1]: https://github.com/creationix/nvm
 [2]: http://rvm.io/1

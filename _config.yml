@@ -34,7 +34,8 @@ github_username:  eobrain
 theme: minima
 show_excerpts: true
 
-#plugins:
+plugins:
+  - jekyll-analytics
 #  - jekyll-feed
 
 # Exclude from processing.

@@ -2,6 +2,7 @@
 /.firebase
 *~
 _site
+_secret.yml
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
