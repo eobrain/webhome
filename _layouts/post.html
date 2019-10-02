@@ -38,17 +38,17 @@ layout: default
 
   @keyframes slideLeft {
     0% { transform: translateX(0); }
-    100% { transform: translateX(150%); }
+    100% { transform: translateX(100%); }
   }
   @keyframes slideRight {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-150%); }
+    100% { transform: translateX(-100%); }
   }
-  .move-prev {
-    animation: 1s ease-out 0s 1 slideLeft;
+  .animate-prev {
+    animation: 0.5s ease-out 0s 1 slideLeft;
   }
-  .move-next {
-    animation: 1s ease-out 0s 1 slideRight;
+  .animate-next {
+    animation: 0.5s ease-out 0s 1 slideRight;
   }
 
 </style>
