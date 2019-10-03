@@ -37,18 +37,22 @@ layout: default
   }
 
   @keyframes slideLeft {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(100%); }
+    to {
+      transform: translateX(100%);
+      opacity: 0;
+    }
   }
   @keyframes slideRight {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
+    to {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
   }
   .animate-prev {
-    animation: 0.5s ease-out 0s 1 slideLeft;
+    animation: 0.2s ease-out 0s 1 slideLeft;
   }
   .animate-next {
-    animation: 0.5s ease-out 0s 1 slideRight;
+    animation: 0.2s ease-out 0s 1 slideRight;
   }
 
 </style>
