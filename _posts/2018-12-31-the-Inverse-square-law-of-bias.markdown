@@ -76,7 +76,9 @@ rate of `k^2` higher than majorities.
 <img src="/img/1_T1ypLwltfW2Xp7jAhRFQFg.png"/>
   
 ⁽²⁾Why Male Tech Workers Don't See the Gender Gap
-<img src="/img/1_TbFpj-NKnYz98P1mKK138A.gif"/>
+<video loop muted autoplay playsinline>
+  <source src="/img/1_TbFpj-NKnYz98P1mKK138A.mp4" type="video/mp4">
+</video>
   
 ⁽³⁾The Petrie Multiplier: Why an Attack on Sexism in Tech is NOT
 an Attack on Men

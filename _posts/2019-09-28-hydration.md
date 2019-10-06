@@ -3,7 +3,7 @@ layout: post
 title:  Why do Americans drink so much water?
 date:   2019-09-28
 categories: Science
-image: /img/hydration.jpeg
+image: /img/hydration.webp
 image-text: Figure 3 of paper by Maughan et al "BHIs for 13 commonly consumed and commercially available drinks after correction for water content of drink ingested.", with added red line
 ---
 

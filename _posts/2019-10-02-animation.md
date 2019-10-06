@@ -1,10 +1,8 @@
 ---
 layout: post
 title:  Adding Swipe Animation
-date:   2019-10-01
+date:   2019-10-02
 categories: Programming
-image: 
-image-text: 
 ---
 
 In a follow-up to the last article which described [Adding swipe actions to a web site][1],

@@ -3,7 +3,7 @@ layout: post
 title:  "Porting blog to Jekyll"
 date:   2019-09-02
 categories: Meta
-image: /img/Jekyll_%28software%29_Logo.png
+image: /img/Jekyll_%28software%29_Logo.webp
 image-text: Jekyll logo
 ---
 

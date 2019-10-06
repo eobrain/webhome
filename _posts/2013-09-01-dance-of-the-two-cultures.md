@@ -3,9 +3,11 @@ layout: post
 title: The Dance of the Two Cultures
 date: 2013-09-01
 category: Society
+image: /img/heaney.webp
+image-text: Seamus Heaney Obituary in the New York Times
 ---
 
-![Heaney article in NYT][1] Today the New York Times marked the death of Seamus
+Today the New York Times marked the death of Seamus
 Heaney with an above-the-fold front page photo, and a long article illustrated
 with quotes from his work. As I read his beautifully crafted and emotionally
 powerful lines I mourned our loss, while also feeling some pride that the world
@@ -97,5 +99,4 @@ amazing synthesis of art and technology that is Burning Man.
 It feels good that the two cultures are coming together in the two places I
 love, the place where I live and the place where I am from.
 
-[1]: /img/heaney.jpeg
 [2]: /img/stem-stats.png

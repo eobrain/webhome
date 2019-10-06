@@ -6,8 +6,11 @@ status: publish
 title: 'Got a gmail account a few days ago'
 wordpress_id: '23'
 categories: Product
+image: /img/Fullscreen%20capture%206%2029%202004%2010%2006%2050.webp
+image-text: Screenshot showing Gmail
 ---
 
-[![](http://photos1.blogger.com/img/248/1104/320/Fullscreen%20capture%206%2029%202004%2010%2006%2050.jpg)](/img/Fullscreen%20capture%206%2029%202004%2010%2006%2050.jpg)
-
-Got a gmail account a few days ago.  So far I like the interface a lot better than yahoo.  As is usual with Google it is very clean and uncluttered.  So far the targeted ads are unobjectionable, and the "related links" might actually be useful.
+Got a gmail account a few days ago. So far I like the interface a lot better
+than yahoo. As is usual with Google it is very clean and uncluttered. So far the
+targeted ads are unobjectionable, and the "related links" might actually be
+useful.

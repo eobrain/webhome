@@ -3,9 +3,10 @@ layout: post
 title: What’s Wrong With HP?
 date: 2016-11-07
 category: HP
+image: /img/1_9JTWGej6L6qab8STaaK16g.webp
+image-text: fissioning HP logo
 ---
 
-![fissioning HP][1]
 What is wrong with HP that would spur its announced fission into two daughter
 companies? My view from the technology trenches is different from what I am
 reading in the business press.
@@ -44,5 +45,3 @@ software development process.
 Maybe HP does need to split, so that at least one part of it has some chance of
 turning itself back into a real tech company. I wish my friends still there all
 the best as they navigate the transition.
-
-[1]: /img/1_9JTWGej6L6qab8STaaK16g.jpeg
