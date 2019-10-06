@@ -3,9 +3,11 @@ layout: post
 title: Trimming the Empty Parts From The World Map
 date: 2016-01-25
 category: Science
+image: /img/trimmed-world.png
+image-text: Map of the world show areas of with more than 5 people/km²
 ---
 
-![world][1] The political map of the world is a familiar image, and we have
+The political map of the world is a familiar image, and we have
 become used to the shapes and relative sizes of the countries. However the map
 gives undue weight to some countries with large uninhabited areas, even when you
 choose a map projection that does not distort areas too much.
@@ -106,7 +108,6 @@ lightly populated, and there is a Western outpost in the Turkic areas bordering
 the ‘stans.
 
 
-[1]: /img/trimmed-world.png
 [2]: /img/trimmed-australia.png
 [3]: /img/trimmed-india.png
 [4]: /img/trimmed-kazakhstan.png
