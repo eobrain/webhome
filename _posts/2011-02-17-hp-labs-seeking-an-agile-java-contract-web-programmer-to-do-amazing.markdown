@@ -9,7 +9,7 @@ categories: Programming
 ---
 
 
-[![](http://www.hpl.hp.com/about/HPLabs560.gif)](http://sfbay.craigslist.org/pen/eng/2220442902.html)If the following description sounds like you then we should talk.
+[![](/img/HPLabs560.gif)](http://sfbay.craigslist.org/pen/eng/2220442902.html)If the following description sounds like you then we should talk.
 
 You are one of the best programmers you know and have several years demonstrable experience in Java on a cloud-deployed web stack. Although Java is your prime language you are also a skilled JavaScript programmer and understand the fundamentals of web technologies, from the database to the browser UI. You may even be able to hack some C++ code in a pinch. You know the standard web stack inside-out, but also can show us engagement with Internet-scale technologies such as map-reduce computation frameworks and noSQL distributed data stores. You can architect and build a scalable deployment on an elastic cloud infrastructure such as AWS.
 
