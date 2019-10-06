@@ -2,12 +2,7 @@
 layout: default
 ---
 
-<script>
-if (window.location.hash) {
-  const dir = window.location.hash.slice(1)
-  document.body.classList.add(`animate-load-${dir}`)
-}
-</script>
+<script src="/js/blocking.js"></script>
 <script src="/js/hammer.min.js" defer></script>
 <script src="/js/swipe.js" defer></script>
 <style>
@@ -46,11 +41,15 @@ if (window.location.hash) {
   @keyframes slideOutRight { to { transform: translateX(-100%); opacity: 0}}
   @keyframes slideInLeft { from { transform: translateX(100%); opacity: 0}}
   @keyframes slideInRight { from { transform: translateX(-100%); opacity: 0}}
+  @keyframes slideInDown { from { transform: translateY(-1000px); opacity: 0}}
+  @keyframes slideInUp { from { transform: translateY(1000px); opacity: 0}}
 
   .animate-prev { animation: 0.1s ease-out 0s 1 slideOutLeft}
   .animate-next { animation: 0.1s ease-out 0s 1 slideOutRight}
   .animate-load-prev { animation: 0.5s ease-in 0s 1 slideInRight}
   .animate-load-next { animation: 0.5s ease-in 0s 1 slideInLeft}
+  .animate-load-child { animation: 0.5s ease-in 0s 1 slideInUp}
+  .animate-load-parent { animation: 0.5s ease-in 0s 1 slideInDown}
 
 </style>
 
