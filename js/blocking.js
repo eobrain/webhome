@@ -7,8 +7,8 @@ const slideIn = (cssClass) => {
 }
 
 if (window.location.hash) {
-  const dir = window.location.hash.slice(1)
-  slideIn(`animate-load-${dir}`)
+  const incoming = window.location.hash.slice(1)
+  slideIn(`animate-${incoming}`)
 } else {
-  slideIn('animate-load-child')
+  slideIn('animate-to-child')
 }
