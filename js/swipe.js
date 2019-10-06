@@ -16,7 +16,7 @@ document.body.ontouchstart = (event) => {
           const a = document.getElementById(dir)
           if (a) {
             document.body.className = `animate-${dir}`
-            window.location = a.href
+            window.location = `${a.href},${window.scrollY}`
           }
         }
       }

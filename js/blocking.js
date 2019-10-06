@@ -7,8 +7,11 @@ const slideIn = (cssClass) => {
 }
 
 if (window.location.hash) {
-  const incoming = window.location.hash.slice(1)
+  const [incoming, scrollPosn] = window.location.hash.slice(1).split(',')
   slideIn(`animate-${incoming}`)
+  document.body.onload = () => {
+    window.scrollBy(0, parseFloat(scrollPosn) || 0)
+  }
 } else {
   slideIn('animate-to-child')
 }
