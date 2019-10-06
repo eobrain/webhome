@@ -1,17 +1,3 @@
-
-/* global Hammer */
-
-const mc = new Hammer(document.body)
-
-mc.on('swipe', (ev) => {
-  const dir = (ev.deltaX < 0) ? 'next' : 'prev'
-  const a = document.getElementById(dir)
-  if (a) {
-    document.body.classList.add('animate-' + dir)
-    window.location = a.href
-  }
-})
-
 document.body.ontouchstart = (event) => {
   if (event.targetTouches.length === 1) {
     const touch0 = event.targetTouches[0]
@@ -22,12 +8,20 @@ document.body.ontouchstart = (event) => {
       if (event.targetTouches.length === 1) {
         const touch = event.targetTouches[0]
         x = touch.pageX
-        const dx = Math.max(-20, Math.min(20, x - x0))
+        const dx = x - x0
         document.body.style.transform = `translateX(${dx}px)`
+
+        if (Math.abs(dx) > 50) {
+          const dir = (dx < 0) ? 'next' : 'prev'
+          const a = document.getElementById(dir)
+          if (a) {
+            document.body.className = `animate-${dir}`
+            window.location = a.href
+          }
+        }
       }
     }
     document.body.ontouchend = (event) => {
-      document.body.style.transform = ''
       document.body.ontouchmove = null
       document.body.ontouchend = null
     }

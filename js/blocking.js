@@ -1,5 +1,5 @@
 const slideIn = (cssClass) => {
-  document.body.classList.add(cssClass)
+  document.body.className = cssClass
   document.querySelector('.' + cssClass).addEventListener('animationend', () => {
     document.body.classList.remove(cssClass)
     document.body.onfinish = null
