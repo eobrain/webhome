@@ -7,3 +7,4 @@ _secret.yml
 .jekyll-cache
 .jekyll-metadata
 vendor
+/_includes/*.js
