@@ -8,3 +8,4 @@ _secret.yml
 .jekyll-metadata
 vendor
 /_includes/*.js
+/sw.js
