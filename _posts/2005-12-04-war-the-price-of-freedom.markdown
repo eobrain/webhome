@@ -7,6 +7,8 @@ ref: http://www.flickr.com/photos/eob/70343174/
 title: War, "The Price of Freedom"?
 wordpress_id: '87'
 categories: Travel
+image: http://static.flickr.com/34/70343174_87d839c557_m.jpg
+image-text: Flickr image
 ---
 
 [![](http://static.flickr.com/34/70343174_87d839c557_m.jpg)](http://www.flickr.com/photos/eob/70343174/)

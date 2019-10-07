@@ -5,7 +5,9 @@ if ('serviceWorker' in navigator) {
 }
 
 document.body.onload = () => {
-  document.querySelectorAll('img[data-defer]').forEach((img) => {
-    img.src = img.dataset.defer
-  })
+  document.body.onscroll = () => {
+    document.querySelectorAll('img[data-defer]').forEach((img) => {
+      img.src = img.dataset.defer
+    })
+  }
 }

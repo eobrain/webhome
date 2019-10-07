@@ -7,10 +7,9 @@ ref: http://www.flickr.com/photos/lalozanoni/2371790226/
 title: Artículo en Noticias
 wordpress_id: '264'
 categories: HP
+image: http://farm4.static.flickr.com/3025/2371790226_8c16d50326_m.jpg
+image-text: Flickr image
 ---
-
-
-[![Artículo en Noticias](http://farm4.static.flickr.com/3025/2371790226_8c16d50326_t.jpg)](http://www.flickr.com/photos/lalozanoni/2371790226/)
 
 
 [Artículo en Noticias](http://www.flickr.com/photos/lalozanoni/2371790226/),

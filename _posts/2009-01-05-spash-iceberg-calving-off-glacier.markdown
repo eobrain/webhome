@@ -7,10 +7,9 @@ ref: http://www.flickr.com/photos/eob/3142879795/
 title: Spash! -- Iceberg calving off glacier.
 wordpress_id: '343'
 categories: Travel
+image: http://farm4.static.flickr.com/3201/3142879795_e64f32dcbd_m.jpg
+image-text: Flickr photo
 ---
-
-
-[![Spash! -- Iceberg calving off glacier.](http://farm4.static.flickr.com/3201/3142879795_e64f32dcbd_t.jpg)](http://www.flickr.com/photos/eob/3142879795/)
 
 
 [Spash! -- Iceberg calving off glacier.](http://www.flickr.com/photos/eob/3142879795/),

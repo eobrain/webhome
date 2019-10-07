@@ -7,9 +7,9 @@ ref: http://photojournal.jpl.nasa.gov/catalog/PIA06407
 title: Glimpses of the surface of titan.
 wordpress_id: '24'
 categories: Science
+image: http://photojournal.jpl.nasa.gov/jpeg/PIA06407.jpg
+image-text: Titan
 ---
-
-![](http://photojournal.jpl.nasa.gov/jpeg/PIA06407.jpg)
 
 Finally we are starting to be able to see some detail of Titan's surface through the haze of its atmosphere.
 

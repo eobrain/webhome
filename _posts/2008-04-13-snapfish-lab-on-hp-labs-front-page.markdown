@@ -7,10 +7,9 @@ ref: http://www.flickr.com/photos/eob/2411816748/
 title: Snapfish Lab on HP Labs Front Page
 wordpress_id: '268'
 categories: HP
+image: http://farm4.static.flickr.com/3004/2411816748_c71cb0fc0a_m.jpg
+image-text: Flickr image
 ---
-
-
-[![Snapfish Lab on HP Labs Front Page](http://farm4.static.flickr.com/3004/2411816748_c71cb0fc0a_t.jpg)](http://www.flickr.com/photos/eob/2411816748/)
 
 
 [Snapfish Lab on HP Labs Front Page](http://www.flickr.com/photos/eob/2411816748/),

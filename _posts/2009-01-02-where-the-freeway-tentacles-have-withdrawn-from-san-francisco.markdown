@@ -7,10 +7,9 @@ ref: http://www.flickr.com/photos/eob/3161098473/
 title: Where the freeway tentacles have withdrawn from San Francisco
 wordpress_id: '340'
 categories: SF
+image: http://farm4.static.flickr.com/3111/3161098473_059de6341f_m.jpg
+image-text: Flickr photo
 ---
-
-
-[![Where the freeway tentacles have withdrawn from San Francisco](http://farm4.static.flickr.com/3111/3161098473_059de6341f_t.jpg)](http://www.flickr.com/photos/eob/3161098473/)
 
 
 [Where the freeway tentacles have withdrawn from San Francisco](http://www.flickr.com/photos/eob/3161098473/),

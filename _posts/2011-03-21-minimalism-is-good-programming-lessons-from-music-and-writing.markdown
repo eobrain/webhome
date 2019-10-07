@@ -7,9 +7,13 @@ ref: http://www.flickr.com/photos/eob/5538121276/
 title: 'Minimalism is good: programming lessons from music and writing'
 wordpress_id: '1169'
 categories: Programming
+image: http://farm6.static.flickr.com/5291/5538121276_be254ebb1b.jpg
+image-text: Jon Dahl
 ---
 
-[![Programming and Minimalism: Lessons from Orwell & The Clash](http://farm6.static.flickr.com/5291/5538121276_be254ebb1b.jpg)](http://www.flickr.com/photos/eob/5538121276/)In his SXSW talk [Programming and Minimalism: Lessons from Orwell & The Clash](http://lanyrd.com/2011/sxsw/scpth/), Jon Dahl from Zencoder asked what other activity is programming like.  He acknowledged that it was valid to think of programming being an engineering discipline and valid to think of it as being a craft, but he mostly proposed that programming is like writing, in particular that programming is like writing musical composition.
+[Programming and Minimalism: Lessons from Orwell & The Clash](http://www.flickr.com/photos/eob/5538121276/)
+
+In his SXSW talk [Programming and Minimalism: Lessons from Orwell & The Clash](http://lanyrd.com/2011/sxsw/scpth/), Jon Dahl from Zencoder asked what other activity is programming like.  He acknowledged that it was valid to think of programming being an engineering discipline and valid to think of it as being a craft, but he mostly proposed that programming is like writing, in particular that programming is like writing musical composition.
 
 One analogy he made was of how styles of programming evolve in the same way as styles of musical composition.  Music styles tend to get more and more complex over time until some new composers create a new radically simplified style, though keeping the best of the earlier style.  Witness Mozart rejecting the Baroque, Phillip Glass rejecting complex early Twentieth century classical music, and the  punk rockers rejecting the preening intellectualized operatic rock of the '70s.
 

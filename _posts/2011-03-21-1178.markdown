@@ -7,9 +7,13 @@ ref: http://www.flickr.com/photos/eob/5537982085/
 title: Social Photo Sharing Sessions at SXSW
 wordpress_id: '1178'
 categories: Product
+image: http://farm6.static.flickr.com/5214/5537982085_fd89cf913c.jpg
+image-text: SWSW Panel DIscussion
 ---
 
-[![Promiscuity or Private Groups: Mobile Photo Sharing](http://farm6.static.flickr.com/5214/5537982085_fd89cf913c.jpg)](http://www.flickr.com/photos/eob/5537982085/)There were two different sessions at SXSW covering social photo sharing, one a panel and the other a round-table discussion group.
+[Promiscuity or Private Groups: Mobile Photo Sharing](http://www.flickr.com/photos/eob/5537982085/)
+
+There were two different sessions at SXSW covering social photo sharing, one a panel and the other a round-table discussion group.
 
 The panel, [Photo Sharing – Promiscuity or Private Groups](http://lanyrd.com/2011/sxsw/sczdm/), featured Mayank Mehta from Cooliris the gee-whizz photo browsing company (who have recently added a social photo sharing) and Danny Trinh from Path, the social network that emphasizes private sharing among a select group of real friends.  Also on the panel was the blogger Louis Gray who moderated.
 

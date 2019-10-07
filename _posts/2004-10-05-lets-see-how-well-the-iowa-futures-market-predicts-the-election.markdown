@@ -7,9 +7,11 @@ ref: https://web.archive.org/web/20161116015422im_/https://128.255.244.60/graphs
 title: Let's see how well the Iowa futures market predicts the election.
 wordpress_id: '48'
 categories: Society
+image: https://web.archive.org/web/20161116015422if_/https://128.255.244.60/graphs/Pres04_WTA.png
+image-text: graph
 ---
 
-![](https://web.archive.org/web/20161116015422if_/https://128.255.244.60/graphs/Pres04_WTA.png)
+
 Lets see how well the
 [Iowa futures market](https://web.archive.org/web/20161116015422im_/https://128.255.244.60/graphs/Pres04_WTA.png)
 compares the outcome of the election compared to opinion polls as reported on
