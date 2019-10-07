@@ -2,8 +2,9 @@
 layout: default
 ---
 
-<script src="/js/blocking.js"></script>
-<script src="/js/swipe.js" defer></script>
+<script>
+    {% include post_blocking.js %}
+</script>
 <style>
   img.hero, video {
     max-width: 100%;
@@ -95,3 +96,7 @@ layout: default
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
   </article>
+
+  <script>
+      {% include post.js %}
+  </script>
