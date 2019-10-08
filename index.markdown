@@ -29,5 +29,3 @@ layout: home
     }
 </style>
 
-
-[Old Home](index-old.html)

@@ -5,6 +5,8 @@ date:   2018-10-06
 categories: Programming
 ---
 
+*[See [old version of this post][5] to see what is being described.]*
+
 So, I started off trying to have this blog using simple plain hand-written HTML.
 However, I soon start getting annoyed how much repeated boilerplate I had to
 write, such as in the `&lt;head` and in linking together the articles from the
@@ -39,6 +41,7 @@ The templates uses two M4 files:
     "next" links on the article pages.
 
 [1]: https://www.gnu.org/software/m4/manual/m4.html
-[2]: https://github.com/eobrain/webhome/blob/master/templates/2018-08-21.html
-[3]: https://github.com/eobrain/webhome/blob/master/templates/lib.htm
-[4]: https://github.com/eobrain/webhome/blob/master/templates/data.m4
+[2]: https://github.com/eobrain/webhome/blob/75e9de1daa37c5129c10a6cd05074326d41a27ec/templates/2018-08-21.html
+[3]: https://github.com/eobrain/webhome/blob/75e9de1daa37c5129c10a6cd05074326d41a27ec/templates/lib.html
+[4]: https://github.com/eobrain/webhome/blob/75e9de1daa37c5129c10a6cd05074326d41a27ec/templates/data.m4
+[5]: /old/2018-10-06.html
