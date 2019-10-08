@@ -15,13 +15,6 @@ self.addEventListener('install', (e) => {
 
 self.addEventListener('fetch', (event) => {
   event.respondWith(
-    self.caches.open('eamonn').then((cache) =>
-      cache.match(event.request).then((response) =>
-        response || fetch(event.request).then((response) => {
-          cache.put(event.request, response.clone())
-          return response
-        })
-      )
-    )
+    fetch(event.request).catch(() => self.caches.match(event.request))
   )
 })

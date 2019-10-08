@@ -6,26 +6,18 @@ layout: home
 ---
 
 <style>
-    .twitter-tweet, img[alt="Twitter screenshot"] {
-        border: solid black 1px;
-        border-bottom: solid transparent 1px;
-        max-height: 7em;
-        overflow: hidden;
-    }
-    li img {
-        max-width: 50%;
-        float: right;
-        padding: 0.5em;
-    }
-    li > p{
-        max-height: 7em;
-        clear: right;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    li img.hero {
-        max-width: 100%;
-        width: 100%
-    }
+    {% include home.css %}
 </style>
 
+## About
+
+I lead a frontend engineering team making the Google search results page easier to
+navigate. Previously Google Cloud and Firebase serverless infrastructure, HP Labs, Cadence, and Bell Labs.
+
+All opinions are my own.
+
+I'm also on [Twitter][1], [GitHub][2], and [LinkedIn][3].
+
+[1]: https://twitter.com/eob
+[2]: http://github.com/eobrain
+[3]: https://www.linkedin.com/in/eobrain/

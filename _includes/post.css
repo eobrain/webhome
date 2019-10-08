@@ -1,0 +1,97 @@
+img.hero, video {
+    max-width: 100%;
+    width: 100%
+}
+
+nav {
+    font-size: 14px;
+    display: block;
+    width: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+nav a {
+    display: block;
+    width: 47.5%;
+    float: left;
+    margin-bottom: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+nav #next {
+    float: right;
+}
+
+bav #prev {
+    float: left;
+}
+
+@keyframes slideOutLeft {
+    to {
+        transform: translateX(100%);
+        opacity: 0
+    }
+}
+
+@keyframes slideOutRight {
+    to {
+        transform: translateX(-100%);
+        opacity: 0
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(100%);
+        opacity: 0
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(-100%);
+        opacity: 0
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-1000px);
+        opacity: 0
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(1000px);
+        opacity: 0
+    }
+}
+
+.animate-prev {
+    animation: 0.5s ease-out 0s 1 slideOutLeft
+}
+
+.animate-next {
+    animation: 0.5s ease-out 0s 1 slideOutRight
+}
+
+.animate-to-prev {
+    animation: 0.5s ease-in 0s 1 slideInRight
+}
+
+.animate-to-next {
+    animation: 0.5s ease-in 0s 1 slideInLeft
+}
+
+.animate-to-child {
+    animation: 0.5s ease-in 0s 1 slideInUp
+}
+
+.animate-to-parent {
+    animation: 0.5s ease-in 0s 1 slideInDown
+}
