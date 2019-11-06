@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  
+title: Spaced Repetition Algorithm for a Flashcard App  
 date:   2019-11-05
 categories: Programming
 image: /img/step3.webp
