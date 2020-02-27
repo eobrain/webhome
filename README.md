@@ -10,6 +10,7 @@ Prerequities:
     3. `rvm use 2.6.4`
     4. [Install minify][3]
     5. `sudo apt-get install default-jdk`
+    6. `gem install bundler jekyll`
 2. For deploying to Firebase hosting
    1. install [nvm][1]
    2. `nvm install stable`
