@@ -1,0 +1,25 @@
+{
+  "name": "webhome",
+  "version": "1.0.0",
+  "description": "Source for Eamonn's home page on the web, http://eamonn.org",
+  "main": "build.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eobrain/webhome.git"
+  },
+  "author": "Eamonn O'Brien-Strain",
+  "license": "CC-BY-NC-ND-4.0",
+  "bugs": {
+    "url": "https://github.com/eobrain/webhome/issues"
+  },
+  "homepage": "https://github.com/eobrain/webhome#readme",
+  "devDependencies": {
+    "bajel": "0.0.2"
+  },
+  "dependencies": {
+    "standard": "^14.3.1"
+  }
+}

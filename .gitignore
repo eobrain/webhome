@@ -9,3 +9,4 @@ _secret.yml
 vendor
 /_includes/*.js
 /sw.js
+node_modules
