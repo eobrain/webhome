@@ -13,7 +13,7 @@ build({
   'sw.js': ['js/sw.js',
     compile],
 
-  '_includes/$1.js': [/js\/(.*).js/,
+  '_includes/%.js': ['js/%.js',
     compile],
 
   prodbuild: ['compile',
