@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/eobrain/webhome#readme",
   "devDependencies": {
-    "bajel": "0.1.0"
+    "bajel": "0.3.0"
   },
   "dependencies": {
     "standard": "^14.3.1"
