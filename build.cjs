@@ -8,11 +8,19 @@ module.exports = {
     exec: 'jekyll serve --port 8000 --strict_front_matter --watch --drafts'
   },
 
-  compile: { deps: COMPILED },
+  compile: {
+    deps: COMPILED
+  },
 
-  'sw.js': { deps: ['js/sw.js'], exec: compile },
+  'sw.js': {
+    deps: ['js/sw.js'],
+    exec: compile
+  },
 
-  '_includes/%.js': { deps: ['js/%.js'], exec: compile },
+  '_includes/%.js': {
+    deps: ['js/%.js'],
+    exec: compile
+  },
 
   prodbuild: {
     deps: ['compile'],
@@ -22,7 +30,10 @@ module.exports = {
     `
   },
 
-  deploy: { deps: ['prodbuild'], exec: 'firebase deploy' },
+  deploy: {
+    deps: ['prodbuild'],
+    exec: 'firebase deploy'
+  },
 
   clean: {
     exec: `
