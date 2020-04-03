@@ -32,8 +32,8 @@ jekyll_analytics:
 
 Local building and serving
 
-1. `make compile`
-2. `make serve`
+1. `npx bajel compile`
+2. `npx bajel serve`
 3. open http://localhost:8000
 
 Publish

@@ -1,5 +1,11 @@
 const COMPILEJS = 'java -jar tools/closure/closure-compiler-v20190929.jar -O ADVANCED'
-const COMPILED = ['sw.js', '_includes/home.js', '_includes/post.js', '_includes/post_blocking.js']
+const COMPILED = [
+  'sw.js',
+  '_includes/home.js',
+  '_includes/post.js',
+  '_includes/post_blocking.js',
+  'extra'
+]
 const compile = `${COMPILEJS} --js $< --js_output_file $@`
 
 module.exports = {
@@ -33,6 +39,10 @@ module.exports = {
   deploy: {
     deps: ['prodbuild'],
     exec: 'firebase deploy'
+  },
+
+  extra: {
+    exec: 'cd extra/covidgrowth && npx bajel'
   },
 
   clean: {

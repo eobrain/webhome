@@ -1,0 +1,13 @@
+[copy]
+deps = ["data.js", "index.js", "index.html"]
+exec = "mkdir -p ../../covidgrowth && cp $+ ../../covidgrowth"
+
+["data.js"]
+deps = ["COVID-19-geographic-disbtribution-worldwide.xlsx", "xlsx2js.js"]
+exec = "node xlsx2js.js $< >$@"
+
+["COVID-19-geographic-disbtribution-worldwide.xlsx"]
+exec = "wget https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide.xlsx"
+
+[clean]
+exec = "rm -f data.js COVID-19-geographic-disbtribution-worldwide.xlsx"
