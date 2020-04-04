@@ -45,6 +45,10 @@ module.exports = {
     exec: 'cd extra/covidgrowth && npx bajel'
   },
 
+  refetch_extra: {
+    exec: 'cd extra/covidgrowth && npx bajel clean'
+  },
+
   clean: {
     exec: `
       jekyll clean
