@@ -25,10 +25,11 @@ function drawChart () {
       subtitle: `Five-point moving average. Updated ${updated}`
     },
     legend: {
-      position: 'right'
+      textStyle: { fontSize: 12 }
     },
     curveType: 'function',
-    height: 600,
+    // height: 600,
+    // fontSize: 12,
     vAxis: {
       viewWindowMode: 'maximized',
       scaleType: 'log'
