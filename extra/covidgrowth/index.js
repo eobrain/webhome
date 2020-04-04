@@ -38,6 +38,12 @@ function drawChart () {
   const chart = new google.charts.Line(document.getElementById('chart'))
 
   chart.draw(data, google.charts.Line.convertOptions(options))
+
+  let column = 1
+  setInterval(() => {
+    chart.setSelection([{ row: null, column }])
+    column = 1 + column % (DATA.columns.length - 1)
+  }, 1000)
 }
 google.charts.load('current', { packages: ['line'] })
 google.charts.setOnLoadCallback(drawChart)
