@@ -26,9 +26,7 @@ function drawChart () {
       position: 'right'
     },
     curveType: 'function',
-    // interpolateNulls: true,
-    // width: 900,
-    height: 800,
+    height: 600,
     vAxis: {
       viewWindowMode: 'maximized',
       scaleType: 'log'
