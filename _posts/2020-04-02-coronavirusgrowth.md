@@ -7,6 +7,8 @@ image: /img/covidgrowth.png
 image-text: Graph of COVID-19 Growth
 ---
 
-See this [graph][1] I put together of COVID-19 per-capita death rates in each country.
+To make it easier to compare how COVID-19 is affecting different countries
+I created this [population-adjusted graph][1].
+
 
 [1]: /covidgrowth
