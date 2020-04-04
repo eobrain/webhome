@@ -10,6 +10,8 @@ for (let i = 0; i < DATA.rows.length; ++i) {
   DATA.rows[i][0] = excelDate2js(DATA.rows[i][0])
 }
 
+const updated = new Date(DATA.updateTime).toLocaleString()
+
 function drawChart () {
   const data = new google.visualization.DataTable()
   for (const column of DATA.columns) {
@@ -20,7 +22,7 @@ function drawChart () {
   const options = {
     chart: {
       title: 'Deaths per million (outside China)',
-      subtitle: 'Five-point moving average.'
+      subtitle: `Five-point moving average. Updated ${updated}`
     },
     legend: {
       position: 'right'

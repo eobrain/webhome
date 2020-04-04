@@ -1,9 +1,12 @@
+const fs = require('fs')
 const XLSX = require('xlsx')
 
 const MIN_DEATHS = 10
 const MIN_POINTS = 6
 
 const makeArray = (n, x) => [...Array(n)].map((_, i) => x)
+
+const fileTime = path => fs.statSync(path).mtime.getTime()
 
 const transpose = rows => {
   const m = rows.length
@@ -31,6 +34,7 @@ const columnIndex = {}
 const rowIndex = {}
 
 const data = {
+  updateTime: fileTime(inPath),
   columns: ['Date'],
   rows: []
 }
@@ -130,6 +134,7 @@ data.columns = data.columns.map(s => s.replace(/_/g, ' '))
 
 // console.log(`const DATA=${JSON.stringify(data)}`)
 console.log('const DATA={')
+console.log(`updateTime:${data.updateTime},`)
 console.log(`columns:${JSON.stringify(data.columns)},`)
 console.log('rows:[')
 for (const row of data.rows) {
