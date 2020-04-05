@@ -97,8 +97,8 @@ data.rows = data.rows.map((row, i) => {
   if (i === 0) {
     return row
   }
-  const outRow = [threshold(row[0]), threshold(row[1])]
-  for (let j = 1; j < n - 1; ++j) {
+  const outRow = []
+  for (let j = 0; j < n; ++j) {
     const [a, b, c, d, e] = [row[j - 2], row[j - 1], row[j], row[j + 1], row[j + 2]]
     let value = c
     if (a && b && c && d && e) {
