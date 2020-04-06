@@ -88,18 +88,18 @@ XLSX.utils.sheet_to_json(sheet).forEach(row => {
 
 data.rows.sort((a, b) => a[0] - b[0])
 
-data.rows = transpose(data.rows)
+let timeSeriesRows = transpose(data.rows)
 
 const threshold = x => x > 1 ? x : null
 
-const n = data.rows[0].length
-data.rows = data.rows.map((row, i) => {
+const T = timeSeriesRows[0].length
+timeSeriesRows = timeSeriesRows.map((row, i) => {
   if (i === 0) {
     return row
   }
   const outRow = []
-  for (let j = 0; j < n; ++j) {
-    const [a, b, c, d, e] = [row[j - 2], row[j - 1], row[j], row[j + 1], row[j + 2]]
+  for (let t = 0; t < T; ++t) {
+    const [a, b, c, d, e] = [row[t - 2], row[t - 1], row[t], row[t + 1], row[t + 2]]
     let value = c
     if (a && b && c && d && e) {
       value = (a + b + c + d + e) / 5
@@ -112,14 +112,14 @@ data.rows = data.rows.map((row, i) => {
     }
     outRow.push(threshold(value))
   }
-  outRow.push(row[n - 1])
+  outRow.push(row[T - 1])
   return outRow
 })
-const counts = data.rows.map(row => row.map(x => !!x).reduce((acc, x) => acc + x))
-const filter = (x, i) => counts[i] >= MIN_POINTS
+const countsPerCountry = timeSeriesRows.map(row => row.map(x => !!x).reduce((acc, x) => acc + x))
+const filter = (x, i) => countsPerCountry[i] >= MIN_POINTS
 data.columns = data.columns.filter(filter)
-data.rows = data.rows.filter(filter)
-/* data.rows = data.rows.map((row, i) => {
+timeSeriesRows = timeSeriesRows.filter(filter)
+/* timeSeriesRows = timeSeriesRows.map((row, i) => {
   if (i === 0) {
     return row
   }
@@ -129,7 +129,7 @@ data.rows = data.rows.filter(filter)
   }
   return outRow
 }) */
-data.rows = transpose(data.rows)
+data.rows = transpose(timeSeriesRows)
 data.columns = data.columns.map(s => s.replace(/_/g, ' '))
 
 // console.log(`const DATA=${JSON.stringify(data)}`)
