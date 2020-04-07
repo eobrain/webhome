@@ -1,5 +1,7 @@
 /* global google, DATA */
 
+const ANIMATION_DELAY_MS = 2000
+
 // Credit https://stackoverflow.com/a/46099731/978525
 const DAYS_BEFORE_EPOCH = 70 * 365 + 19
 const HOUR = 60 * 60 * 1000
@@ -44,7 +46,7 @@ function drawChart () {
   setInterval(() => {
     chart.setSelection([{ row: null, column }])
     column = 1 + column % (DATA.columns.length - 1)
-  }, 1000)
+  }, ANIMATION_DELAY_MS)
 }
 google.charts.load('current', { packages: ['line'] })
 google.charts.setOnLoadCallback(drawChart)
