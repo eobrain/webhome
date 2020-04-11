@@ -8,9 +8,12 @@ title: Per-Capita COVID-19 Death Rates
 <script src="data.js" defer></script>
 <script src="index.js" defer></script>
 <style>
-    #chart {height: 100vh;}
+    #chart {
+        height: 100vh;
+    }
 </style>
 <h1>COVID-19 Death Rates in Each Country</h1>
+<div id="chart"></div>
 <p>
     Source:
     <a
@@ -18,4 +21,9 @@ title: Per-Capita COVID-19 Death Rates
         European Centre for Disease Prevention and Control
     </a>
 </p>
-<div id="chart" />
+<p>
+    <a href="raw.csv">CSV (raw)</a>
+</p>
+<p>
+    <a href="smooth.csv">CSV (filtered and smoothed)</a>
+</p>

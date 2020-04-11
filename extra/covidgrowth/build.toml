@@ -1,6 +1,6 @@
 [copy]
 deps = ["data.js", "index.js", "index.html"]
-exec = "mkdir -p ../../covidgrowth && cp $+ ../../covidgrowth"
+exec = "mkdir -p ../../covidgrowth && cp $+ *.csv ../../covidgrowth"
 
 ["data.js"]
 deps = ["COVID-19-geographic-disbtribution-worldwide.xlsx", "xlsx2js.js"]

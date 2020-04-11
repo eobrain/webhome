@@ -1,6 +1,10 @@
 const fs = require('fs')
 const XLSX = require('xlsx')
 
+const writeCsv = (path, rows) => {
+  fs.writeFileSync(path, rows.map(row => row.join(',')).join('\n'))
+}
+
 const MIN_DEATHS = 10
 const MIN_POINTS = 6
 
@@ -88,6 +92,8 @@ XLSX.utils.sheet_to_json(sheet).forEach(row => {
 
 data.rows.sort((a, b) => a[0] - b[0])
 
+writeCsv('raw.csv', [data.columns, ...data.rows])
+
 let timeSeriesRows = transpose(data.rows)
 
 const threshold = x => x > 1 ? x : null
@@ -131,6 +137,7 @@ timeSeriesRows = timeSeriesRows.filter(filter)
 }) */
 data.rows = transpose(timeSeriesRows)
 data.columns = data.columns.map(s => s.replace(/_/g, ' '))
+writeCsv('smooth.csv', [data.columns, ...data.rows])
 
 // console.log(`const DATA=${JSON.stringify(data)}`)
 console.log('const DATA={')
