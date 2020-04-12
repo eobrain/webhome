@@ -7,7 +7,8 @@ const writeCsv = (path, rows) => {
 }
 
 const MIN_DEATHS = 10
-const MIN_POINTS = 6
+const MIN_DEATHS_PER_MILLION = 1
+const MIN_POINTS = 12
 
 const makeArray = (n, x) => [...Array(n)].map((_, i) => x)
 
@@ -85,7 +86,7 @@ XLSX.utils.sheet_to_json(sheet).forEach(row => {
     geoId,
     popData2018
   } = row
-  if (!deaths || deaths < MIN_DEATHS || geoId === 'CN' || geoId.length !== 2) {
+  if (!deaths || deaths < MIN_DEATHS || geoId.length !== 2) {
     return
   }
   add(countriesAndTerritories, dateRep, deaths / popData2018)
@@ -97,7 +98,7 @@ writeCsv('raw.csv', [data.columns, ...data.rows])
 
 let timeSeriesRows = transpose(data.rows)
 
-const threshold = x => x > 1 ? x : null
+const threshold = x => x > MIN_DEATHS_PER_MILLION ? x : null
 
 timeSeriesRows = timeSeriesRows.map((row, i) => {
   if (i === 0) {
@@ -109,18 +110,12 @@ const countsPerCountry = timeSeriesRows.map(row => row.map(x => !!x).reduce((acc
 const filter = (x, i) => countsPerCountry[i] >= MIN_POINTS
 data.columns = data.columns.filter(filter)
 timeSeriesRows = timeSeriesRows.filter(filter)
-/* timeSeriesRows = timeSeriesRows.map((row, i) => {
-  if (i === 0) {
-    return row
-  }
-  const outRow = [null]
-  for (let j = 1; j < row.length; ++j) {
-    outRow.push(row[j - 1] ? row[j] - row[j - 1] : null)
-  }
-  return outRow
-}) */
 data.rows = transpose(timeSeriesRows)
 data.columns = data.columns.map(s => s.replace(/_/g, ' '))
+
+const countReducer = (acc, x) => acc + !!x
+data.rows = data.rows.filter(row => row.slice(1).reduce(countReducer, 0) > 1)
+
 writeCsv('smooth.csv', [data.columns, ...data.rows])
 
 // console.log(`const DATA=${JSON.stringify(data)}`)
