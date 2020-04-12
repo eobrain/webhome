@@ -42,20 +42,21 @@ const movingAverage = (xs) => {
   return ys
 }
 
-// ee https://www.mathsisfun.com/data/least-squares-regression.html
+// See https://www.mathsisfun.com/data/least-squares-regression.html
 const leastSquares = (ys) => {
-  const N = ys.length
-  const x0 = (N - 1) / 2
+  const x0 = (ys.length - 1) / 2
 
+  let N = 0
   let sumXY = 0
   let sumX = 0
   let sumY = 0
   let sumXsq = 0
-  for (let x = 0; x < N; ++x) {
+  for (let x = 0; x < ys.length; ++x) {
     const y = ys[x]
     if (!y) {
       continue
     }
+    ++N
     sumXY += x * y
     sumX += x
     sumY += y
