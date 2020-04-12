@@ -3,7 +3,7 @@ deps = ["data.js", "index.js", "index.html"]
 exec = "mkdir -p ../../covidgrowth && cp $+ *.csv ../../covidgrowth"
 
 ["data.js"]
-deps = ["COVID-19-geographic-disbtribution-worldwide.xlsx", "xlsx2js.js"]
+deps = ["COVID-19-geographic-disbtribution-worldwide.xlsx", "xlsx2js.js", "moving_average.js"]
 exec = "node xlsx2js.js $< >$@"
 
 ["COVID-19-geographic-disbtribution-worldwide.xlsx"]
