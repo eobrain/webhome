@@ -1,6 +1,6 @@
 const fs = require('fs')
 const XLSX = require('xlsx')
-const { movingleastSquares } = require('./moving_average.js')
+const { fullSmooth } = require('smoothish')
 
 const writeCsv = (path, rows) => {
   fs.writeFileSync(path, rows.map(row => row.join(',')).join('\n'))
@@ -104,7 +104,7 @@ timeSeriesRows = timeSeriesRows.map((row, i) => {
   if (i === 0) {
     return row
   }
-  return movingleastSquares(row).map(x => threshold(x))
+  return fullSmooth(row).map(x => threshold(x))
 })
 const countsPerCountry = timeSeriesRows.map(row => row.map(x => !!x).reduce((acc, x) => acc + x))
 const filter = (x, i) => countsPerCountry[i] >= MIN_POINTS
