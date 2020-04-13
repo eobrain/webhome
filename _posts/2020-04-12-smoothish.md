@@ -21,7 +21,7 @@ npm install smoothish
 Then using it is as simple as:
 
 ```js
-const { fullSmooth } = require('./index.js')
+const { fullSmooth } = require('smoothish')
 
 const daysPerMonth = [
     31, 28, undefined, 30, 31, null, 31, 31, null, 31, 30, 31]
