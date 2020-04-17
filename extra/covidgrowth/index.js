@@ -1,6 +1,13 @@
-/* global google, DATA */
+/* global DATA, Chart, culori */
 
-const ANIMATION_DELAY_MS = 2000
+const rgb = culori.formatter('rgb')
+
+const makeArray = n => x => [...Array(n)].map((_, i) => x(i))
+
+const grays = culori.interpolate(['#f00', '#0f8', '#00f'], 'lab')
+const colors = makeArray(DATA.rows.length)(i => grays(i / (DATA.rows.length - 1))).map(lab => rgb(lab))
+
+const ctx = document.getElementById('chart').getContext('2d')
 
 // Credit https://stackoverflow.com/a/46099731/978525
 const DAYS_BEFORE_EPOCH = 70 * 365 + 19
@@ -8,45 +15,20 @@ const HOUR = 60 * 60 * 1000
 const excelDate2js = excelDate =>
   new Date(Math.round((excelDate - DAYS_BEFORE_EPOCH) * 24 * HOUR) + 12 * HOUR)
 
-for (let i = 0; i < DATA.rows.length; ++i) {
-  DATA.rows[i][0] = excelDate2js(DATA.rows[i][0])
-}
+new Chart(ctx, {
+  type: 'line',
 
-const updated = new Date(DATA.updateTime).toLocaleString()
+  // The data for our dataset
+  data: {
+    labels: DATA.rows[0].map(x => excelDate2js(x).toLocaleDateString()),
+    datasets: DATA.rows.slice(1).map((row, i) => ({
+      label: DATA.columns[i],
+      // backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: colors[i],
+      data: row
+    }))
+  },
 
-function drawChart () {
-  const data = new google.visualization.DataTable()
-  for (const column of DATA.columns) {
-    data.addColumn(column === 'Date' ? 'date' : 'number', column)
-  }
-  data.addRows(DATA.rows)
-
-  const options = {
-    chart: {
-      title: 'Deaths per million (outside China)',
-      subtitle: `Five-point moving average. Updated ${updated}`
-    },
-    legend: {
-      textStyle: { fontSize: 12 }
-    },
-    curveType: 'function',
-    // height: 600,
-    // fontSize: 12,
-    vAxis: {
-      viewWindowMode: 'maximized',
-      scaleType: 'log'
-    }
-  }
-
-  const chart = new google.charts.Line(document.getElementById('chart'))
-
-  chart.draw(data, google.charts.Line.convertOptions(options))
-
-  let column = 1
-  setInterval(() => {
-    chart.setSelection([{ row: null, column }])
-    column = 1 + column % (DATA.columns.length - 1)
-  }, ANIMATION_DELAY_MS)
-}
-google.charts.load('current', { packages: ['line'] })
-google.charts.setOnLoadCallback(drawChart)
+  // Configuration options go here
+  options: {}
+})

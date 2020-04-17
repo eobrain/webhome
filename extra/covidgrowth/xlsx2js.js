@@ -110,7 +110,7 @@ const countsPerCountry = timeSeriesRows.map(row => row.map(x => !!x).reduce((acc
 const filter = (x, i) => countsPerCountry[i] >= MIN_POINTS
 data.columns = data.columns.filter(filter)
 timeSeriesRows = timeSeriesRows.filter(filter)
-data.rows = transpose(timeSeriesRows)
+data.rows = /*transpose( */timeSeriesRows // )
 data.columns = data.columns.map(s => s.replace(/_/g, ' '))
 
 const countReducer = (acc, x) => acc + !!x
