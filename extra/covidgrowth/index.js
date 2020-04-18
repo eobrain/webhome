@@ -4,8 +4,14 @@ const rgb = culori.formatter('rgb')
 
 const makeArray = n => x => [...Array(n)].map((_, i) => x(i))
 
-const grays = culori.interpolate(['#f00', '#0f8', '#00f'], 'lab')
-const colors = makeArray(DATA.rows.length)(i => grays(i / (DATA.rows.length - 1))).map(lab => rgb(lab))
+const interpolation = culori.interpolate([
+  culori.parse('lab(70 -160   160)'),
+  culori.parse('lab(30  160  -160)'),
+  culori.parse('lab(70 -160  -160)'),
+  culori.parse('lab(40  160   160)'),
+  culori.parse('lab(70 -160   160)')
+], 'lab')
+const colors = makeArray(DATA.rows.length)(i => interpolation(i / (DATA.rows.length - 1))).map(lab => rgb(lab))
 
 const ctx = document.getElementById('chart').getContext('2d')
 
