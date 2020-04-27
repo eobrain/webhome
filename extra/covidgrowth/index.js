@@ -1,33 +1,44 @@
-/* global DATA, Chart */
+/* global DATA Chart
+   articleElement */
 
 import maxichrome from 'https://unpkg.com/maxichrome@0.1.0/src/web/index.js?module'
 
 (async () => {
-  const colors = await maxichrome(DATA.rows.length, ['white'])
-
-  const ctx = document.getElementById('chart').getContext('2d')
-
   // Credit https://stackoverflow.com/a/46099731/978525
   const DAYS_BEFORE_EPOCH = 70 * 365 + 19
   const HOUR = 60 * 60 * 1000
   const excelDate2js = excelDate =>
     new Date(Math.round((excelDate - DAYS_BEFORE_EPOCH) * 24 * HOUR) + 12 * HOUR)
+  const excelDates = DATA.rows[0]
+  const serieses = DATA.rows.slice(1)
+  const colors = await maxichrome(serieses.length, ['white'])
 
-  new Chart(ctx, {
-    type: 'line',
+  const labels = excelDates.map(x => excelDate2js(x).toLocaleDateString())
 
-    // The data for our dataset
-    data: {
-      labels: DATA.rows[0].map(x => excelDate2js(x).toLocaleDateString()),
-      datasets: DATA.rows.slice(1).map((row, i) => ({
-        label: DATA.columns[i],
-        // backgroundColor: 'rgb(255, 99, 132)',
-        borderColor: colors[i],
-        data: row
-      }))
-    },
+  const drawGraph = datasets => {
+    const canvasElement = document.createElement('CANVAS')
+    articleElement.appendChild(canvasElement)
+    const ctx = canvasElement.getContext('2d')
 
-    // Configuration options go here
-    options: {}
+    return new Chart(ctx, {
+      type: 'line',
+      data: { labels, datasets },
+      options: {}
+    })
+  }
+
+  drawGraph(serieses.map((row, i) => ({
+    label: DATA.columns[i + 1],
+    backgroundColor: colors[i] + '40',
+    borderColor: colors[i],
+    data: row
+  })))
+  serieses.forEach((series, i) => {
+    drawGraph([{
+      label: DATA.columns[i + 1],
+      backgroundColor: colors[i] + '40',
+      borderColor: colors[i],
+      data: series
+    }])
   })
 })()
