@@ -96,6 +96,8 @@ data.rows.sort((a, b) => a[0] - b[0])
 
 writeCsv('raw.csv', [data.columns, ...data.rows])
 
+// data.rows = data.rows.filter(row => row.slice(1).some(x => x))
+
 let timeSeriesRows = transpose(data.rows)
 
 const threshold = x => x > MIN_DEATHS_PER_MILLION ? x : null
@@ -110,7 +112,7 @@ const countsPerCountry = timeSeriesRows.map(row => row.map(x => !!x).reduce((acc
 const filter = (x, i) => countsPerCountry[i] >= MIN_POINTS
 data.columns = data.columns.filter(filter)
 timeSeriesRows = timeSeriesRows.filter(filter)
-data.rows = /*transpose( */timeSeriesRows // )
+data.rows = transpose(transpose(timeSeriesRows).filter(row => row.slice(1).some(x => x)))
 data.columns = data.columns.map(s => s.replace(/_/g, ' '))
 
 const countReducer = (acc, x) => acc + !!x

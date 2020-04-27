@@ -1,3 +1,5 @@
+#!node_modules/bajel/cli.js serve
+
 const COMPILEJS = 'java -jar tools/closure/closure-compiler-v20190929.jar -O ADVANCED'
 const COMPILED = [
   'sw.js',
