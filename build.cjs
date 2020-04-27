@@ -3,8 +3,7 @@ const COMPILED = [
   'sw.js',
   '_includes/home.js',
   '_includes/post.js',
-  '_includes/post_blocking.js',
-  'extra'
+  '_includes/post_blocking.js'
 ]
 const compile = `${COMPILEJS} --js $< --js_output_file $@`
 
@@ -15,7 +14,7 @@ module.exports = {
   },
 
   compile: {
-    deps: COMPILED
+    deps: ['extra', ...COMPILED]
   },
 
   'sw.js': {
@@ -45,14 +44,19 @@ module.exports = {
     exec: 'cd extra/covidgrowth && npx bajel'
   },
 
-  refetch_extra: {
-    exec: 'cd extra/covidgrowth && npx bajel clean'
+  refetch: {
+    exec: `
+    cd extra/covidgrowth
+    npx bajel clean
+    npx bajel
+    `
   },
 
   clean: {
     exec: `
       jekyll clean
       rm -f ${COMPILED.join(' ')}
+      (cd extra/covidgrowth && npx bajel clean)
     `
   }
 }
