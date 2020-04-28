@@ -1,6 +1,7 @@
 const fs = require('fs')
 const XLSX = require('xlsx')
 const { fullSmooth } = require('smoothish')
+const maxichrome = require('maxichrome')
 
 const writeCsv = (path, rows) => {
   fs.writeFileSync(path, rows.map(row => row.join(',')).join('\n'))
@@ -120,14 +121,15 @@ data.rows = data.rows.filter(row => row.slice(1).reduce(countReducer, 0) > 1)
 
 writeCsv('smooth.csv', [data.columns, ...data.rows])
 
-// console.log(`const DATA=${JSON.stringify(data)}`)
-console.log('const DATA={')
-console.log(`updateTime:${data.updateTime},`)
-console.log(`columns:${JSON.stringify(data.columns)},`)
-console.log('rows:[')
-for (const row of data.rows) {
-  // console.log(`${JSON.stringify(Array.from(row).map(cell => cell || 0))},`)
-  console.log(`${JSON.stringify(row)},`)
-}
-console.log(']')
-console.log('}')
+;(async () => {
+  console.log('const DATA={')
+  console.log(`updateTime:${data.updateTime},`)
+  console.log(`columns:${JSON.stringify(data.columns)},`)
+  console.log(`colors:${JSON.stringify(await maxichrome(data.columns.length - 1, ['white']))},`)
+  console.log('rows:[')
+  for (const row of data.rows) {
+    console.log(`${JSON.stringify(row)},`)
+  }
+  console.log(']')
+  console.log('}')
+})()
