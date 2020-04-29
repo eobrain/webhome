@@ -1,8 +1,6 @@
 /* global DATA Chart
    articleElement */
 
-import maxichrome from 'https://unpkg.com/maxichrome@0.1.0/src/web/index.js?module'
-
 (async () => {
   // Credit https://stackoverflow.com/a/46099731/978525
   const DAYS_BEFORE_EPOCH = 70 * 365 + 19
@@ -11,7 +9,7 @@ import maxichrome from 'https://unpkg.com/maxichrome@0.1.0/src/web/index.js?modu
     new Date(Math.round((excelDate - DAYS_BEFORE_EPOCH) * 24 * HOUR) + 12 * HOUR)
   const excelDates = DATA.rows[0]
   const serieses = DATA.rows.slice(1)
-  const colors = await maxichrome(serieses.length, ['white'])
+  const colors = DATA.colors
 
   const labels = excelDates.map(x => excelDate2js(x).toLocaleDateString())
 
