@@ -8,6 +8,7 @@ const excelDate2js = excelDate =>
   new Date(Math.round((excelDate - DAYS_BEFORE_EPOCH) * 24 * HOUR) + 12 * HOUR)
 const excelDates = DATA.rows[0]
 const serieses = DATA.rows.slice(1)
+const smoothedSerieses = DATA.smoothedRows.slice(1)
 const colors = DATA.colors
 
 const dates = excelDates.map(x => excelDate2js(x))
@@ -24,7 +25,7 @@ const drawGraph = datasets => {
   const ctx = canvasElement.getContext('2d')
 
   return new Chart(ctx, {
-    type: 'line',
+    type: 'bar',
     data: { datasets },
     options: {
       aspectRatio: 1,
@@ -39,6 +40,10 @@ const drawGraph = datasets => {
           }
         }],
         yAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: 'deaths per million per day'
+          },
           ticks: {
             max
           }
@@ -50,16 +55,27 @@ const drawGraph = datasets => {
 
 const toPoints = (y, i) => ({ t: dates[i], y })
 
-drawGraph(serieses.map((row, i) => ({
+drawGraph(smoothedSerieses.map((row, i) => ({
+  type: 'line',
   label: labels[i],
   backgroundColor: colors[i] + '40',
   borderColor: colors[i],
+  pointRadius: 0,
+  borderWidth: 2,
   data: row.map(toPoints)
 })))
 serieses.forEach((series, i) => {
   drawGraph([{
+    type: 'line',
+    label: '5-day moving average',
+    backgroundColor: 'transparent',
+    borderColor: 'black',
+    pointRadius: 0,
+    borderWidth: 2,
+    data: smoothedSerieses[i].map(toPoints)
+  }, {
     label: labels[i],
-    backgroundColor: colors[i] + '40',
+    backgroundColor: colors[i],
     borderColor: colors[i],
     data: series.map(toPoints)
   }])

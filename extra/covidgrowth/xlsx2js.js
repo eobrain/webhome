@@ -107,13 +107,22 @@ timeSeriesRows = timeSeriesRows.map((row, i) => {
   if (i === 0) {
     return row
   }
-  return fullSmooth(row).map(x => threshold(x))
+  return row.map(x => threshold(x))
+})
+
+let smoothedTimeSeriesRows = timeSeriesRows.map((row, i) => {
+  if (i === 0) {
+    return row
+  }
+  return fullSmooth(row).map((x, j) => timeSeriesRows[i][j] === null ? null : x)
 })
 const countsPerCountry = timeSeriesRows.map(row => row.map(x => !!x).reduce((acc, x) => acc + x))
 const filter = (x, i) => countsPerCountry[i] >= MIN_POINTS
 data.columns = data.columns.filter(filter)
 timeSeriesRows = timeSeriesRows.filter(filter)
+smoothedTimeSeriesRows = smoothedTimeSeriesRows.filter(filter)
 data.rows = transpose(transpose(timeSeriesRows).filter(row => row.slice(1).some(x => x)))
+data.smoothedRows = transpose(transpose(smoothedTimeSeriesRows).filter(row => row.slice(1).some(x => x)))
 data.columns = data.columns.map(s => s.replace(/_/g, ' '))
 
 const countReducer = (acc, x) => acc + !!x
@@ -125,9 +134,14 @@ writeCsv('smooth.csv', [data.columns, ...data.rows])
   console.log('const DATA={')
   console.log(`updateTime:${data.updateTime},`)
   console.log(`columns:${JSON.stringify(data.columns)},`)
-  console.log(`colors:${JSON.stringify(await maxichrome(data.columns.length - 1, ['white']))},`)
+  console.log(`colors:${JSON.stringify(await maxichrome(data.columns.length - 1, ['white', 'black']))},`)
   console.log('rows:[')
   for (const row of data.rows) {
+    console.log(`${JSON.stringify(row)},`)
+  }
+  console.log('],')
+  console.log('smoothedRows:[')
+  for (const row of data.smoothedRows) {
     console.log(`${JSON.stringify(row)},`)
   }
   console.log(']')
