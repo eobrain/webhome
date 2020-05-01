@@ -8,8 +8,8 @@ const writeCsv = (path, rows) => {
 }
 
 const MIN_DEATHS = 10
-const MIN_DEATHS_PER_MILLION = 1
-const MIN_POINTS = 12
+const MIN_DEATHS_PER_MILLION = 0.1
+const MIN_POINTS = 30
 
 const makeArray = (n, x) => [...Array(n)].map((_, i) => x)
 
