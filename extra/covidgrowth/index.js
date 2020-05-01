@@ -13,6 +13,11 @@ const colors = DATA.colors
 const dates = excelDates.map(x => excelDate2js(x))
 const labels = DATA.columns.slice(1)
 
+const maximum = (xs) => xs.reduce((acc, x) => Math.max(acc, x))
+
+const roundUp = x => 10 * (Math.ceil(x / 10))
+const max = roundUp(maximum(serieses.map(series => maximum(series))))
+
 const drawGraph = datasets => {
   const canvasElement = document.createElement('CANVAS')
   articleElement.appendChild(canvasElement)
@@ -28,6 +33,11 @@ const drawGraph = datasets => {
           type: 'time',
           time: {
             unit: 'week'
+          }
+        }],
+        yAxes: [{
+          ticks: {
+            max
           }
         }]
       }
