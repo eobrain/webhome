@@ -28,6 +28,9 @@ const drawGraph = datasets => {
     data: { datasets },
     options: {
       aspectRatio: 1,
+      legend: {
+        position: 'bottom'
+      },
       scales: {
         xAxes: [{
           type: 'time',
