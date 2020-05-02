@@ -8,7 +8,7 @@ const writeCsv = (path, rows) => {
 }
 
 const MIN_DEATHS = 10
-const MIN_DEATHS_PER_MILLION = 0.1
+const MIN_MORTALITY_RATE = 0.005
 const MIN_POINTS = 30
 
 const makeArray = (n, x) => [...Array(n)].map((_, i) => x)
@@ -65,7 +65,7 @@ const add = (countriesAndTerritories, dateRep, value) => {
     data.rows.push(row)
     rowIndex[dateRep] = i
   }
-  data.rows[i][j] = 1000000 * value
+  data.rows[i][j] = 365 * 100 * value // Annualized percent mortality
 }
 
 XLSX.utils.sheet_to_json(sheet).forEach(row => {
@@ -101,7 +101,7 @@ writeCsv('raw.csv', [data.columns, ...data.rows])
 
 let timeSeriesRows = transpose(data.rows)
 
-const threshold = x => x > MIN_DEATHS_PER_MILLION ? x : null
+const threshold = x => x > MIN_MORTALITY_RATE ? x : null
 
 timeSeriesRows = timeSeriesRows.map((row, i) => {
   if (i === 0) {
@@ -114,7 +114,7 @@ let smoothedTimeSeriesRows = timeSeriesRows.map((row, i) => {
   if (i === 0) {
     return row
   }
-  return fullSmooth(row, 3).map(x => threshold(x))//.map((x, j) => timeSeriesRows[i][j] === null ? null : x)
+  return fullSmooth(row, 3).map(x => threshold(x))
 })
 const countsPerCountry = timeSeriesRows.map(row => row.map(x => !!x).reduce((acc, x) => acc + x))
 const filter = (x, i) => countsPerCountry[i] >= MIN_POINTS

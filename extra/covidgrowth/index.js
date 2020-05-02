@@ -18,8 +18,8 @@ const labels = DATA.columns.slice(1)
 
 const maximum = (xs) => xs.reduce((acc, x) => Math.max(acc, x))
 
-const roundUp = x => 10 * (Math.ceil(x / 10))
-const max = roundUp(maximum(serieses.map(series => maximum(series))))
+const roundUp = dx => x => dx * Math.ceil(x / dx)
+const max = roundUp(0.1)(maximum(serieses.map(series => maximum(series))))
 const borderWidth = 2
 
 const drawGraph = datasets => {
@@ -49,16 +49,19 @@ const drawGraph = datasets => {
         yAxes: [{
           scaleLabel: {
             display: true,
-            labelString: 'deaths per million per day'
+            labelString: 'annualized mortality rate'
           },
-          ticks: { max }
+          ticks: {
+            max,
+            callback: value => value + '%'
+          }
         }]
       }
     }
   })
 }
 
-const toPoints = (series, _dates) => series.map((y, i) => ({ t: _dates[i], y })).filter(p => p.y)
+const toPoints = (series, _dates) => series.map((y, i) => ({ t: _dates[i], y }))// .filter(p => p.y)
 
 drawGraph(smoothedSerieses.map((row, i) => ({
   type: 'line',
