@@ -97,27 +97,18 @@ data.rows.sort((a, b) => a[0] - b[0])
 
 writeCsv('raw.csv', [data.columns, ...data.rows])
 
-// data.rows = data.rows.filter(row => row.slice(1).some(x => x))
-
 let timeSeriesRows = transpose(data.rows)
-
-const threshold = x => x > MIN_MORTALITY_RATE ? x : null
-
-timeSeriesRows = timeSeriesRows.map((row, i) => {
-  if (i === 0) {
-    return row
-  }
-  return row.map(x => threshold(x))
-})
 
 let smoothedTimeSeriesRows = timeSeriesRows.map((row, i) => {
   if (i === 0) {
     return row
   }
-  return fullSmooth(row, 3).map(x => threshold(x))
+  return fullSmooth(row, 3)
 })
 const countsPerCountry = timeSeriesRows.map(row => row.map(x => !!x).reduce((acc, x) => acc + x))
-const filter = (x, i) => countsPerCountry[i] >= MIN_POINTS
+const maxPerCountry = smoothedTimeSeriesRows.map(row => row.map(x => x || 0).reduce((acc, x) => Math.max(acc, x)))
+console.warn(maxPerCountry)
+const filter = (x, i) => countsPerCountry[i] >= MIN_POINTS && maxPerCountry[i] >= MIN_MORTALITY_RATE
 data.columns = data.columns.filter(filter)
 timeSeriesRows = timeSeriesRows.filter(filter)
 smoothedTimeSeriesRows = smoothedTimeSeriesRows.filter(filter)
