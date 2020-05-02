@@ -107,7 +107,6 @@ let smoothedTimeSeriesRows = timeSeriesRows.map((row, i) => {
 })
 const countsPerCountry = timeSeriesRows.map(row => row.map(x => !!x).reduce((acc, x) => acc + x))
 const maxPerCountry = smoothedTimeSeriesRows.map(row => row.map(x => x || 0).reduce((acc, x) => Math.max(acc, x)))
-console.warn(maxPerCountry)
 const filter = (x, i) => countsPerCountry[i] >= MIN_POINTS && maxPerCountry[i] >= MIN_MORTALITY_RATE
 data.columns = data.columns.filter(filter)
 timeSeriesRows = timeSeriesRows.filter(filter)
