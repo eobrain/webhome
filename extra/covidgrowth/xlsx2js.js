@@ -114,7 +114,7 @@ let smoothedTimeSeriesRows = timeSeriesRows.map((row, i) => {
   if (i === 0) {
     return row
   }
-  return fullSmooth(row).map((x, j) => timeSeriesRows[i][j] === null ? null : x)
+  return fullSmooth(row, 3).map(x => threshold(x))//.map((x, j) => timeSeriesRows[i][j] === null ? null : x)
 })
 const countsPerCountry = timeSeriesRows.map(row => row.map(x => !!x).reduce((acc, x) => acc + x))
 const filter = (x, i) => countsPerCountry[i] >= MIN_POINTS
