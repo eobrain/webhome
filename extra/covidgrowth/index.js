@@ -75,7 +75,7 @@ drawGraph(smoothedSerieses.map((row, i) => ({
 serieses.forEach((series, i) => {
   drawGraph([{
     type: 'line',
-    label: labels[i] + ' (7-day moving average)',
+    label: labels[i] + ' (weekly moving average)',
     backgroundColor: 'transparent',
     borderColor: colors[i],
     pointRadius: 0,

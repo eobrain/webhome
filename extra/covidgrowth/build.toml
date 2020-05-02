@@ -1,5 +1,5 @@
 [copy]
-deps = ["data.js", "index.js", "index.html"]
+deps = ["data.js", "index.js", "index.md"]
 exec = "mkdir -p ../../covidgrowth && cp $+ *.csv ../../covidgrowth"
 
 ["data.js"]
