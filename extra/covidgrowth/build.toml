@@ -10,4 +10,7 @@ exec = "node xlsx2js.js $< >$@"
 exec = "wget https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide.xlsx"
 
 [clean]
-exec = "rm -f data.js COVID-19-geographic-disbtribution-worldwide.xlsx"
+exec = """
+rm -f data.js COVID-19-geographic-disbtribution-worldwide.xlsx
+rm -rf ../../covidgrowth
+"""
