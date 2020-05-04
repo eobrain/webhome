@@ -1,5 +1,7 @@
 /* global DATA Chart
-   articleElement */
+   articleElement
+   updateTimeElement
+   */
 
 // Credit https://stackoverflow.com/a/46099731/978525
 const DAYS_BEFORE_EPOCH = 70 * 365 + 19
@@ -88,3 +90,5 @@ serieses.forEach((series, i) => {
     data: toPoints(series, dates)
   }])
 })
+
+updateTimeElement.innerHTML = new Date(DATA.updateTime).toLocaleString()

@@ -18,6 +18,7 @@ The first graph shows the weekly smoothed curves of all the countries superimpos
 
 <article id="articleElement"></article>
 
-Source: [European Centre for Disease Prevention and Control][1]
+Source: [European Centre for Disease Prevention and Control][1],
+updated at <span id="updateTimeElement"></span>
 
 [1]: https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide
