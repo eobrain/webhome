@@ -21,7 +21,7 @@
     "xlsx": "^0.15.6"
   },
   "dependencies": {
-    "maxichrome": "^0.2.1",
+    "maxichrome": "0.3.0",
     "smoothish": "1.0.0",
     "standard": "^14.3.1"
   }
