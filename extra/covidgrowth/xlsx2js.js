@@ -1,6 +1,6 @@
 const fs = require('fs')
 const XLSX = require('xlsx')
-const { fullSmooth } = require('smoothish')
+const smoothish = require('smoothish')
 const maxichrome = require('maxichrome')
 
 const writeCsv = (path, rows) => {
@@ -103,7 +103,7 @@ let smoothedTimeSeriesRows = timeSeriesRows.map((row, i) => {
   if (i === 0) {
     return row
   }
-  return fullSmooth(row, 3)
+  return smoothish(row, { radius: 3 })
 })
 const countsPerCountry = timeSeriesRows.map(row => row.map(x => !!x).reduce((acc, x) => acc + x))
 const maxPerCountry = smoothedTimeSeriesRows.map(row => row.map(x => x || 0).reduce((acc, x) => Math.max(acc, x)))

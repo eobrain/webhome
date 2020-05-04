@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "maxichrome": "^0.2.1",
-    "smoothish": "0.0.2",
+    "smoothish": "1.0.0",
     "standard": "^14.3.1"
   }
 }
