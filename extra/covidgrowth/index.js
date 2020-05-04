@@ -55,6 +55,7 @@ const drawGraph = datasets => {
           },
           ticks: {
             max,
+            min: 0,
             callback: value => value + '%'
           }
         }]
