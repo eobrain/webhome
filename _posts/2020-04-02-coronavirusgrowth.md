@@ -8,7 +8,7 @@ image-text: Graph of COVID-19 Growth
 ---
 
 To make it easier to compare how COVID-19 is affecting different countries
-I created this [population-adjusted graph][1].
+I created these [population-adjusted graphs][1].
 
 
 [1]: /covidgrowth
