@@ -2,3 +2,5 @@
 /data.js
 /raw.csv
 /smooth.csv
+data_us.js
+time_series_covid19_deaths_US.csv
