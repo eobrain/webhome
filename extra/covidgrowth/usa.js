@@ -3,19 +3,12 @@
    updateTimeElement
    */
 
-// Credit https://stackoverflow.com/a/46099731/978525
-const DAYS_BEFORE_EPOCH = 70 * 365 + 19
-const HOUR_MS = 60 * 60 * 1000
-const hour2js = hour => new Date(hour * HOUR_MS)
-const hours = DATA.rows[0]
-const smoothedExcelDates = DATA.smoothedRows[0]
-const serieses = DATA.rows.slice(1)
-const smoothedSerieses = DATA.smoothedRows.slice(1)
-const colors = DATA.colors
+const serieses = DATA_US.countyData
+const colors = DATA_US.colors
 
 const dates = hours.map(x => hour2js(x))
 const smoothedDates = smoothedExcelDates.map(x => hour2js(x))
-const labels = DATA.columns.slice(1)
+const labels = DATA_US.columns.slice(1)
 
 const maximum = (xs) => xs.reduce((acc, x) => Math.max(acc, x))
 
@@ -91,4 +84,4 @@ serieses.forEach((series, i) => {
   }])
 })
 
-updateTimeElement.innerHTML = new Date(DATA.updateTime).toLocaleString()
+updateTimeElement.innerHTML = new Date(DATA_US.updateTime).toLocaleString()

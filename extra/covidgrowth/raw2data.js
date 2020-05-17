@@ -2,11 +2,12 @@ const fs = require('fs')
 const { records } = require('./raw-data.json')
 const smoothish = require('smoothish')
 const maxichrome = require('maxichrome')
+const {fileTime} = require('./common.js')
 
-const tee = x => {
-  console.warn(x)
-  return x
-}
+// const tee = x => {
+//  console.warn(x)
+//  return x
+// }
 
 const writeCsv = (path, rows) => {
   fs.writeFileSync(path, rows.map(row => row.join(',')).join('\n'))
@@ -18,7 +19,6 @@ const MIN_POINTS = 30
 
 const makeArray = (n, x) => [...Array(n)].map((_, i) => x)
 
-const fileTime = path => fs.statSync(path).mtime.getTime()
 
 const transpose = rows => {
   const m = rows.length
@@ -36,7 +36,7 @@ const transpose = rows => {
 
 const [,, inPath, outPath] = process.argv
 if (!inPath && !outPath) {
-  throw new Error(`Usage:\n\t${process.argv[0]} ${process.argv[1]} xlsxFile jsFile`)
+  throw new Error(`Usage:\n\t${process.argv[0]} ${process.argv[1]} jsonFile jsFile`)
 }
 
 const columnIndex = {}
