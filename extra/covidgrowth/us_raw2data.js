@@ -3,6 +3,7 @@ const maxichrome = require('maxichrome')
 const Papa = require('papaparse')
 const { fileTime } = require('./common.js')
 const smoothish = require('smoothish')
+const STATE_CODE = require('./statecode.js')
 
 const MIN_DEATHS_PER_COUNTY = 500
 
@@ -11,7 +12,7 @@ if (!csvFilePath && !outPath) {
   throw new Error(`Usage:\n\t${process.argv[0]} ${process.argv[1]} csvFile jsFile`)
 }
 
-const tee = x => { console.warn(x); return x }
+// const tee = x => { console.warn(x); return x }
 
 const parse = callback => new Promise(resolve => {
   const csvFile = fs.readFileSync(csvFilePath)
@@ -57,11 +58,12 @@ const toTimeMs = s => {
   let seriesCount = 0
   await parse(record => {
     const { Admin2, Province_State, Population } = record
+    const state = STATE_CODE[Province_State] || Province_State
     const population = +Population
     if (!population) {
       return
     }
-    const county = `${Admin2} ${Province_State}`.trim()
+    const county = `${Admin2} ${state}`.trim()
     const cumulative = []
     for (const key in record) {
       if (isDate(key)) {

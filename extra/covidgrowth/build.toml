@@ -21,6 +21,6 @@ exec = "wget --output-document=$@ https://raw.githubusercontent.com/CSSEGISandDa
 
 [clean]
 exec = """
-rm -f data.js raw-data.json
+rm -f data.js data_us.js raw-data.json time_series_covid19_deaths_US.csv
 rm -rf ../../covidgrowth
 """

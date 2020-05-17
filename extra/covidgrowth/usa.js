@@ -13,7 +13,7 @@ const maximum = xs => xs.reduce((acc, x) => Math.max(acc, x))
 
 const roundUp = dx => x => dx * Math.ceil(x / dx)
 
-const max = roundUp(0.1)(maximum(countyNames.map(name => maximum(countyData[name]))))
+const max = roundUp(1)(maximum(countyNames.map(name => maximum(countyData[name]))))
 const borderWidth = 2
 
 const drawGraph = datasets => {
@@ -60,7 +60,7 @@ const toPoints = (series, _dates) => series.map((y, i) => ({ t: _dates[i], y }))
 
 drawGraph(countyNames.map((name, i) => ({
   type: 'line',
-  label: name,
+  label: name.slice(name.length - 2),
   backgroundColor: colors[i] + '40',
   borderColor: colors[i],
   pointRadius: 0,
