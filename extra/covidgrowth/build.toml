@@ -3,11 +3,11 @@ deps = ["data.js", "index.js", "index.md"]
 exec = "mkdir -p ../../covidgrowth && cp $+ *.csv ../../covidgrowth"
 
 ["data.js"]
-deps = ["COVID-19-geographic-disbtribution-worldwide.xlsx", "xlsx2js.js"]
-exec = "node xlsx2js.js $< >$@"
+deps = ["raw-data.json", "raw2data.js"]
+exec = "node raw2data.js $< >$@"
 
-["COVID-19-geographic-disbtribution-worldwide.xlsx"]
-exec = "wget https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide.xlsx"
+["raw-data.json"]
+exec = "wget --output-document=$@ https://opendata.ecdc.europa.eu/covid19/casedistribution/json/"
 
 [clean]
 exec = """

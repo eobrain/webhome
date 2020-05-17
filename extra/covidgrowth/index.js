@@ -5,17 +5,16 @@
 
 // Credit https://stackoverflow.com/a/46099731/978525
 const DAYS_BEFORE_EPOCH = 70 * 365 + 19
-const HOUR = 60 * 60 * 1000
-const excelDate2js = excelDate =>
-  new Date(Math.round((excelDate - DAYS_BEFORE_EPOCH) * 24 * HOUR) + 12 * HOUR)
-const excelDates = DATA.rows[0]
+const HOUR_MS = 60 * 60 * 1000
+const hour2js = hour => new Date(hour * HOUR_MS)
+const hours = DATA.rows[0]
 const smoothedExcelDates = DATA.smoothedRows[0]
 const serieses = DATA.rows.slice(1)
 const smoothedSerieses = DATA.smoothedRows.slice(1)
 const colors = DATA.colors
 
-const dates = excelDates.map(x => excelDate2js(x))
-const smoothedDates = smoothedExcelDates.map(x => excelDate2js(x))
+const dates = hours.map(x => hour2js(x))
+const smoothedDates = smoothedExcelDates.map(x => hour2js(x))
 const labels = DATA.columns.slice(1)
 
 const maximum = (xs) => xs.reduce((acc, x) => Math.max(acc, x))

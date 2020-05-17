@@ -17,8 +17,7 @@
   },
   "homepage": "https://github.com/eobrain/webhome#readme",
   "devDependencies": {
-    "bajel": "0.4.0",
-    "xlsx": "^0.15.6"
+    "bajel": "0.4.0"
   },
   "dependencies": {
     "maxichrome": "0.3.0",

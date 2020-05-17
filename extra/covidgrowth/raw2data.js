@@ -1,7 +1,12 @@
 const fs = require('fs')
-const XLSX = require('xlsx')
+const { records } = require('./raw-data.json')
 const smoothish = require('smoothish')
 const maxichrome = require('maxichrome')
+
+const tee = x => {
+  console.warn(x)
+  return x
+}
 
 const writeCsv = (path, rows) => {
   fs.writeFileSync(path, rows.map(row => row.join(',')).join('\n'))
@@ -34,9 +39,6 @@ if (!inPath && !outPath) {
   throw new Error(`Usage:\n\t${process.argv[0]} ${process.argv[1]} xlsxFile jsFile`)
 }
 
-const workbook = XLSX.readFile(inPath)
-const sheet = workbook.Sheets[workbook.SheetNames[0]]
-
 const columnIndex = {}
 const rowIndex = {}
 
@@ -55,20 +57,24 @@ const addCol = (countriesAndTerritories) => {
   }
 }
 
+const HOUR_MS = 60 * 60 * 1000
+
 const add = (countriesAndTerritories, dateRep, value) => {
+  const [day, month, year] = dateRep.split('/')
+  const date = new Date(+year, month - 1, +day).getTime() / HOUR_MS
   const j = columnIndex[countriesAndTerritories]
-  let i = rowIndex[dateRep]
+  let i = rowIndex[date]
   if (!i && i !== 0) {
     i = data.rows.length
     const row = makeArray(data.columns.length, undefined)
-    row[0] = dateRep
+    row[0] = date
     data.rows.push(row)
-    rowIndex[dateRep] = i
+    rowIndex[date] = i
   }
   data.rows[i][j] = 365 * 100 * value // Annualized percent mortality
 }
 
-XLSX.utils.sheet_to_json(sheet).forEach(row => {
+records.forEach(row => {
   const {
     deaths,
     countriesAndTerritories,
@@ -79,7 +85,7 @@ XLSX.utils.sheet_to_json(sheet).forEach(row => {
   }
   addCol(countriesAndTerritories)
 })
-XLSX.utils.sheet_to_json(sheet).forEach(row => {
+records.forEach(row => {
   const {
     dateRep,
     deaths,
