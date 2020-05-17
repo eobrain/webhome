@@ -1,19 +1,19 @@
-/* global DATA Chart
+/* global DATA_US Chart
    articleElement
    updateTimeElement
    */
 
-const serieses = DATA_US.countyData
-const colors = DATA_US.colors
+const DAY_MS = 24 * 60 * 60 * 1000
 
-const dates = hours.map(x => hour2js(x))
-const smoothedDates = smoothedExcelDates.map(x => hour2js(x))
-const labels = DATA_US.columns.slice(1)
+const { dayCount, minDay, countyData, updateTime, colors } = DATA_US
 
-const maximum = (xs) => xs.reduce((acc, x) => Math.max(acc, x))
+const dates = [...new Array(dayCount)].map((_, i) => new Date(DAY_MS * (i + minDay)))
+const countyNames = Object.keys(countyData)
+const maximum = xs => xs.reduce((acc, x) => Math.max(acc, x))
 
 const roundUp = dx => x => dx * Math.ceil(x / dx)
-const max = roundUp(0.1)(maximum(serieses.map(series => maximum(series))))
+
+const max = roundUp(0.1)(maximum(countyNames.map(name => maximum(countyData[name]))))
 const borderWidth = 2
 
 const drawGraph = datasets => {
@@ -58,30 +58,13 @@ const drawGraph = datasets => {
 
 const toPoints = (series, _dates) => series.map((y, i) => ({ t: _dates[i], y }))// .filter(p => p.y)
 
-drawGraph(smoothedSerieses.map((row, i) => ({
-  type: 'line',
-  label: labels[i],
-  backgroundColor: colors[i] + '40',
-  borderColor: colors[i],
-  pointRadius: 0,
-  borderWidth,
-  data: toPoints(row, smoothedDates)
-})))
-serieses.forEach((series, i) => {
+countyNames.forEach((name, i) => {
   drawGraph([{
-    type: 'line',
-    label: labels[i] + ' (weekly moving average)',
-    backgroundColor: 'transparent',
-    borderColor: colors[i],
-    pointRadius: 0,
-    borderWidth,
-    data: toPoints(smoothedSerieses[i], smoothedDates)
-  }, {
-    label: labels[i] + ' (daily)',
+    label: name + ' (daily)',
     backgroundColor: colors[i] + '40',
     borderColor: colors[i] + '40',
-    data: toPoints(series, dates)
+    data: toPoints(countyData[name], dates)
   }])
 })
 
-updateTimeElement.innerHTML = new Date(DATA_US.updateTime).toLocaleString()
+updateTimeElement.innerHTML = new Date(updateTime).toLocaleString()

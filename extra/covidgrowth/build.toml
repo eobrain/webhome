@@ -1,6 +1,9 @@
 [copy]
-deps = ["data.js", "data_us.js", "index.js", "index.md"]
-exec = "mkdir -p ../../covidgrowth && cp $+ *.csv ../../covidgrowth"
+deps = ["data.js", "data_us.js", "world.js", "usa.js", "index.md", "world.md", "usa.md"]
+exec = """
+mkdir -p ../../covidgrowth
+cp $+ *.csv ../../covidgrowth
+"""
 
 ["data.js"]
 deps = ["raw-data.json", "raw2data.js"]

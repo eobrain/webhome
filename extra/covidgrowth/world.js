@@ -4,7 +4,6 @@
    */
 
 // Credit https://stackoverflow.com/a/46099731/978525
-const DAYS_BEFORE_EPOCH = 70 * 365 + 19
 const HOUR_MS = 60 * 60 * 1000
 const hour2js = hour => new Date(hour * HOUR_MS)
 const hours = DATA.rows[0]

@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /covidgrowth/
+permalink: /covidgrowth/world
 title: World Per-Capita COVID-19 Death Rates
 ---
 
@@ -9,7 +9,7 @@ title: World Per-Capita COVID-19 Death Rates
 <script src="data.js" defer></script>
 <script src="world.js" type="module"></script>
 
-# COVID-19 Mortality Rates in Each Country
+# World COVID-19 Mortality Rates in Each Country
 
 The graphs below show the annualized mortality rates of the COVID deaths, so for example a value of 1% is the percentage of the country's population that would die of COVID if that daily death rate were to be sustained for a year.
 

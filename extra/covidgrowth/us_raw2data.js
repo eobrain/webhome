@@ -1,7 +1,7 @@
 const fs = require('fs')
 const maxichrome = require('maxichrome')
 const Papa = require('papaparse')
-const {fileTime} = require('./common.js')
+const { fileTime } = require('./common.js')
 
 const MIN_DEATHS_PER_COUNTY = 500
 
@@ -34,17 +34,23 @@ const toTimeMs = s => {
 
 ;(async () => {
   let minTimeMs = Infinity
+  let maxTimeMs = -Infinity
   await parse(record => {
     for (const key in record) {
       if (isDate(key)) {
-        minTimeMs = Math.min(minTimeMs, toTimeMs(key))
+        const ms = toTimeMs(key)
+        minTimeMs = Math.min(minTimeMs, ms)
+        maxTimeMs = Math.max(maxTimeMs, ms)
       }
     }
   })
   const minDay = minTimeMs / DAY_MS
+  const maxDay = maxTimeMs / DAY_MS
 
   console.log('const DATA_US = {')
   console.log(`updateTime:${fileTime(csvFilePath)},`)
+  console.log(`minDay:${minDay},`)
+  console.log(`dayCount:${maxDay - minDay + 1},`)
   console.log('countyData:{')
   let seriesCount = 0
   await parse(record => {
