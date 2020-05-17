@@ -11,6 +11,6 @@ exec = "wget --output-document=$@ https://opendata.ecdc.europa.eu/covid19/casedi
 
 [clean]
 exec = """
-rm -f data.js COVID-19-geographic-disbtribution-worldwide.xlsx
+rm -f data.js raw-data.json
 rm -rf ../../covidgrowth
 """
