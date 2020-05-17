@@ -31,7 +31,7 @@ const DAY_MS = 24 * 60 * 60 * 1000
 const isDate = s => s.match(/[0-9]+\/[0-9]+\/[0-9]+/)
 const toTimeMs = s => {
   const [month, day, year] = s.split('/')
-  return Date.UTC(year + 2000, month - 1, +day)
+  return Date.UTC(+year + 2000, month - 1, +day)
 }
 
 ;(async () => {

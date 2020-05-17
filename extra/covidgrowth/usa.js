@@ -38,6 +38,9 @@ const drawGraph = datasets => {
           type: 'time',
           time: {
             unit: 'week'
+          },
+          ticks: {
+            fontSize: 10
           }
         }],
         yAxes: [{
@@ -48,7 +51,8 @@ const drawGraph = datasets => {
           ticks: {
             max,
             min: 0,
-            callback: value => value + '%'
+            callback: value => value + '%',
+            fontSize: 10
           }
         }]
       }
