@@ -2,7 +2,7 @@ const fs = require('fs')
 const { records } = require('./raw-data.json')
 const smoothish = require('smoothish')
 const maxichrome = require('maxichrome')
-const {fileTime} = require('./common.js')
+const { fileTime } = require('./common.js')
 
 // const tee = x => {
 //  console.warn(x)
@@ -18,7 +18,6 @@ const MIN_MORTALITY_RATE = 0.05
 const MIN_POINTS = 30
 
 const makeArray = (n, x) => [...Array(n)].map((_, i) => x)
-
 
 const transpose = rows => {
   const m = rows.length

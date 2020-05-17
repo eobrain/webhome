@@ -2,6 +2,7 @@ const fs = require('fs')
 const maxichrome = require('maxichrome')
 const Papa = require('papaparse')
 const { fileTime } = require('./common.js')
+const smoothish = require('smoothish')
 
 const MIN_DEATHS_PER_COUNTY = 500
 
@@ -46,6 +47,7 @@ const toTimeMs = s => {
   })
   const minDay = minTimeMs / DAY_MS
   const maxDay = maxTimeMs / DAY_MS
+  const countyData = []
 
   console.log('const DATA_US = {')
   console.log(`updateTime:${fileTime(csvFilePath)},`)
@@ -71,14 +73,21 @@ const toTimeMs = s => {
       return
     }
     let prev = 0
-    const timeSeries = cumulative.map(c => {
+    const daily = cumulative.map(c => {
       const result = (c - prev) * 365 * 100 / population // Annualized percent mortality
       prev = c
       return result
     })
-    console.log(`"${county}":[${timeSeries.join()}],`)
+    console.log(`"${county}":[${daily.join()}],`)
+    countyData[county] = daily
     ++seriesCount
   })
+  console.log('},')
+  console.log('smoothedCountyData:{')
+  for (const county in countyData) {
+    const smoothed = smoothish(countyData[county], { radius: 3 })
+    console.log(`"${county}":[${smoothed.join()}],`)
+  }
   console.log('},')
   console.log(`colors:${JSON.stringify(await maxichrome(seriesCount, ['white', 'black']))},`)
   console.log('}')

@@ -5,7 +5,7 @@
 
 const DAY_MS = 24 * 60 * 60 * 1000
 
-const { dayCount, minDay, countyData, updateTime, colors } = DATA_US
+const { dayCount, minDay, countyData, smoothedCountyData, updateTime, colors } = DATA_US
 
 const dates = [...new Array(dayCount)].map((_, i) => new Date(DAY_MS * (i + minDay)))
 const countyNames = Object.keys(countyData)
@@ -58,8 +58,26 @@ const drawGraph = datasets => {
 
 const toPoints = (series, _dates) => series.map((y, i) => ({ t: _dates[i], y }))// .filter(p => p.y)
 
+drawGraph(countyNames.map((name, i) => ({
+  type: 'line',
+  label: name,
+  backgroundColor: colors[i] + '40',
+  borderColor: colors[i],
+  pointRadius: 0,
+  borderWidth,
+  data: toPoints(smoothedCountyData[name], dates)
+})))
+
 countyNames.forEach((name, i) => {
   drawGraph([{
+    type: 'line',
+    label: name + ' (weekly moving average)',
+    backgroundColor: 'transparent',
+    borderColor: colors[i],
+    pointRadius: 0,
+    borderWidth,
+    data: toPoints(smoothedCountyData[name], dates)
+  }, {
     label: name + ' (daily)',
     backgroundColor: colors[i] + '40',
     borderColor: colors[i] + '40',
