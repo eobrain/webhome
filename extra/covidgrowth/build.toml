@@ -1,5 +1,16 @@
 [copy]
-deps = ["data.js", "data_us.js", "world.js", "usa.js", "index.md", "world.md", "usa.md"]
+deps = [
+    "data.js",
+    "data_us.js",
+    "data_state.js",
+    "world.js",
+    "usa.js",
+    "state.js",
+    "index.md",
+    "world.md",
+    "usa.md",
+    "state.md"
+]
 exec = """
 mkdir -p ../../covidgrowth
 cp $+ *.csv ../../covidgrowth
@@ -13,6 +24,10 @@ exec = "node raw2data.js $< >$@"
 deps=["time_series_covid19_deaths_US.csv", "us_raw2data.js", "common.js"]
 exec = "node us_raw2data.js $< >$@"
 
+["data_state.js"]
+deps=["time_series_covid19_deaths_US.csv", "state_raw2data.js", "common.js"]
+exec = "node state_raw2data.js $< >$@"
+
 ["raw-data.json"]
 exec = "wget --output-document=$@ https://opendata.ecdc.europa.eu/covid19/casedistribution/json/"
 
@@ -21,6 +36,7 @@ exec = "wget --output-document=$@ https://raw.githubusercontent.com/CSSEGISandDa
 
 [clean]
 exec = """
-rm -f data.js data_us.js raw-data.json time_series_covid19_deaths_US.csv
+rm -f data.js data_us.js data_state.js
+rm -f raw-data.json time_series_covid19_deaths_US.csv
 rm -rf ../../covidgrowth
 """
