@@ -7,7 +7,7 @@ title: COVID Per-Capita (World)
 <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" defer></script>
 <script src="/covidgrowth/data.js" defer></script>
-<script src="/covidgrowth/world.js" type="module"></script>
+<script src="/covidgrowth/world.js" defer></script>
 
 # World COVID-19 Mortality Rates in Each Country
 

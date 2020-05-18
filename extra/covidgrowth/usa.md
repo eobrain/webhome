@@ -7,7 +7,7 @@ title: COVID Per-Capita (US, per county)
 <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" defer></script>
 <script src="/covidgrowth/data_us.js" defer></script>
-<script src="/covidgrowth/usa.js" type="module"></script>
+<script src="/covidgrowth/usa.js" defer></script>
 
 # United States COVID-19 Mortality Rates in Each County
 
