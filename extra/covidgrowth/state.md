@@ -1,13 +1,13 @@
 ---
 layout: page
-permalink: /covidgrowth/state
-title: USA Per-Capita COVID-19 Death Rates
+permalink: /covidgrowth/state/
+title: COVID Per-Capita (US, per state)
 ---
 
 <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" defer></script>
-<script src="data_state.js" defer></script>
-<script src="state.js" type="module"></script>
+<script src="/covidgrowth/data_state.js" defer></script>
+<script src="/covidgrowth/state.js" type="module"></script>
 
 # United States COVID-19 Mortality Rates in Each State
 

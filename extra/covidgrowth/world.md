@@ -1,13 +1,13 @@
 ---
 layout: page
-permalink: /covidgrowth/world
-title: World Per-Capita COVID-19 Death Rates
+permalink: /covidgrowth/world/
+title: COVID Per-Capita (World)
 ---
 
 <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" defer></script>
-<script src="data.js" defer></script>
-<script src="world.js" type="module"></script>
+<script src="/covidgrowth/data.js" defer></script>
+<script src="/covidgrowth/world.js" type="module"></script>
 
 # World COVID-19 Mortality Rates in Each Country
 

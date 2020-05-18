@@ -1,13 +1,13 @@
 ---
 layout: page
-permalink: /covidgrowth/usa
-title: USA Per-Capita COVID-19 Death Rates
+permalink: /covidgrowth/usa/
+title: COVID Per-Capita (US, per county)
 ---
 
 <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" defer></script>
-<script src="data_us.js" defer></script>
-<script src="usa.js" type="module"></script>
+<script src="/covidgrowth/data_us.js" defer></script>
+<script src="/covidgrowth/usa.js" type="module"></script>
 
 # United States COVID-19 Mortality Rates in Each County
 
