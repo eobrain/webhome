@@ -13,7 +13,7 @@ const maximum = xs => xs.reduce((acc, x) => Math.max(acc, x))
 
 const roundUp = dx => x => dx * Math.ceil(x / dx)
 
-const max = roundUp(1)(maximum(countyNames.map(name => maximum(countyData[name]))))
+const max = roundUp(1)(maximum(countyNames.map(name => maximum(smoothedCountyData[name]))))
 const borderWidth = 2
 
 const drawGraph = datasets => {

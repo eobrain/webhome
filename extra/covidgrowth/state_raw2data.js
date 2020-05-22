@@ -1,8 +1,7 @@
 const fs = require('fs')
 const maxichrome = require('maxichrome')
 const Papa = require('papaparse')
-const { fileTime } = require('./common.js')
-const smoothish = require('smoothish')
+const { fileTime, smooth } = require('./common.js')
 const STATE_CODE = require('./statecode.js')
 
 const MIN_DEATHS_PER_STATE = 3
@@ -102,7 +101,7 @@ const toTimeMs = s => {
   console.log('},')
   console.log('smoothedStateData:{')
   for (const state in stateData) {
-    const smoothed = smoothish(stateData[state], { radius: 3 })
+    const smoothed = smooth(stateData[state])
     console.log(`"${state}":[${smoothed.join()}],`)
   }
   console.log('},')

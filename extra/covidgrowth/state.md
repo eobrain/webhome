@@ -15,7 +15,7 @@ The graphs below show the annualized mortality rates of the COVID deaths, so for
 
 The first graph shows the weekly smoothed curves of all the states superimposed, while the rest of the graphs show for each state the daily raw values and the smoothed curve.
 
-
+<nav id="navElement"></nav>
 <article id="articleElement"></article>
 
 Source: [Center for Systems Science and Engineering (CSSE) at Johns Hopkins University][1],

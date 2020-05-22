@@ -1,8 +1,7 @@
 const fs = require('fs')
 const maxichrome = require('maxichrome')
 const Papa = require('papaparse')
-const { fileTime } = require('./common.js')
-const smoothish = require('smoothish')
+const { fileTime, smooth } = require('./common.js')
 const STATE_CODE = require('./statecode.js')
 
 const MIN_DEATHS_PER_COUNTY = 500
@@ -87,7 +86,7 @@ const toTimeMs = s => {
   console.log('},')
   console.log('smoothedCountyData:{')
   for (const county in countyData) {
-    const smoothed = smoothish(countyData[county], { radius: 3 })
+    const smoothed = smooth(countyData[county])
     console.log(`"${county}":[${smoothed.join()}],`)
   }
   console.log('},')

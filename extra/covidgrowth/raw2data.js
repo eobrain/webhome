@@ -1,8 +1,7 @@
 const fs = require('fs')
 const { records } = require('./raw-data.json')
-const smoothish = require('smoothish')
 const maxichrome = require('maxichrome')
-const { fileTime } = require('./common.js')
+const { fileTime, smooth } = require('./common.js')
 
 // const tee = x => {
 //  console.warn(x)
@@ -108,7 +107,7 @@ let smoothedTimeSeriesRows = timeSeriesRows.map((row, i) => {
   if (i === 0) {
     return row
   }
-  return smoothish(row, { radius: 3 })
+  return smooth(row)
 })
 const countsPerCountry = timeSeriesRows.map(row => row.map(x => !!x).reduce((acc, x) => acc + x))
 const maxPerCountry = smoothedTimeSeriesRows.map(row => row.map(x => x || 0).reduce((acc, x) => Math.max(acc, x)))

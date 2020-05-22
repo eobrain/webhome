@@ -3,6 +3,7 @@ deps = [
     "data.js",
     "data_us.js",
     "data_state.js",
+    "common.js",
     "world.js",
     "usa.js",
     "state.js",
@@ -17,7 +18,7 @@ cp $+ *.csv ../../covidgrowth
 """
 
 ["data.js"]
-deps = ["raw-data.json", "raw2data.js"]
+deps = ["raw-data.json", "raw2data.js", "common.js"]
 exec = "node raw2data.js $< >$@"
 
 ["data_us.js"]

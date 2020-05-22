@@ -19,7 +19,7 @@ const labels = DATA.columns.slice(1)
 const maximum = (xs) => xs.reduce((acc, x) => Math.max(acc, x))
 
 const roundUp = dx => x => dx * Math.ceil(x / dx)
-const max = roundUp(0.1)(maximum(serieses.map(series => maximum(series))))
+const max = roundUp(0.1)(maximum(smoothedSerieses.map(series => maximum(series))))
 const borderWidth = 2
 
 const drawGraph = datasets => {
