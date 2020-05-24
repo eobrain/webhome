@@ -1,0 +1,62 @@
+---
+---
+
+$minor: 1vmin;
+$basic: 4 * $minor;
+
+body {
+    background-color: #f5f1ef;
+}
+
+@media screen and (max-width: 600px) {
+    .site-nav {
+        background-color: #f5f1ef;
+        border: none;
+        box-shadow: $minor $minor $minor * 2 #d0cdcb, (-$minor) (-$minor) $minor * 2 #ffffff;
+    }
+}
+
+body {
+    margin: $basic;
+    border-radius: $minor/2;
+    background: #f5f1ef;
+    box-shadow: $minor $minor $minor * 2 #d0cdcb, (-$minor) (-$minor) $minor * 2 #ffffff;
+}
+
+a:active,
+article,
+.post-list > li {
+    border-radius: $minor/2;
+    background: #f5f1ef;
+    box-shadow: inset $minor $minor $minor * 2 #d0cdcb, inset (-$minor) (-$minor) $minor * 2 #ffffff;
+}
+
+.post-list li h3 {
+    margin: $basic;
+}
+
+.post-list li > a {
+    display: block;
+    margin: $basic;
+}
+
+article,
+.post-list li {
+    padding: $basic;
+}
+
+li img.hero {
+    max-width: 100vmin-8 * $basic;
+    width: 100vmin-8 * $basic;
+    padding: 0;
+}
+
+/*li img.hero {
+    max-width: 100vmin-2 * $basic;
+    width: 100vmin-6 * $basic;
+    padding: $basic;
+}*/
+
+.site-header {
+    border: none;
+}
