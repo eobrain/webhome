@@ -7,18 +7,18 @@
 
 li img {
     max-width: 50%;
-    float: right;
+    /* float: right; */
     padding: 0.5em;
 }
 
 li>p {
     max-height: 7em;
-    clear: right;
+    /* clear: right; */
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-li img.hero {
+/*li img.hero {
     max-width: 100%;
     width: 100%
-}
+}*/

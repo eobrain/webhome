@@ -16,7 +16,7 @@ The graphs below show the annualized mortality rates of the COVID deaths, so for
 The first graph shows the weekly smoothed curves of all the countries superimposed, while the rest of the graphs show for each country the daily raw values and the smoothed curve.
 
 
-<article id="articleElement"></article>
+<section id="sectionElement"></section>
 
 Source: [European Centre for Disease Prevention and Control][1],
 updated at <span id="updateTimeElement"></span>

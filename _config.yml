@@ -18,7 +18,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Eamonn O'Brien-Strain
+title: Yak Shavings
+author: Eamonn O'Brien-Strain
 # email: e@obrain.com
 description: >- # this means to ignore newlines until "baseurl:"
   An Irish software engineer, living in San Francisco,
@@ -29,7 +30,9 @@ twitter:
   username: eob
 twitter_username: eob
 github_username:  eobrain
-  
+instagram_username: eobrain
+linkedin_username: eobrain
+
 # Build settings
 theme: minima
 show_excerpts: true
@@ -37,6 +40,11 @@ show_excerpts: true
 plugins:
   - jekyll-analytics
 #  - jekyll-feed
+
+header_pages:
+  - about.md
+  - categories.html
+  - covidgrowth/index.md
 
 # Exclude from processing.
 # The following items will not be processed, by default.

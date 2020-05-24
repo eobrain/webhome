@@ -16,7 +16,7 @@ The graphs below show the annualized mortality rates of the COVID deaths, so for
 The first graph shows the weekly smoothed curves of all the counties superimposed, while the rest of the graphs show for each county the daily raw values and the smoothed curve.
 
 
-<article id="articleElement"></article>
+<section id="sectionElement"></section>
 
 Source: [Center for Systems Science and Engineering (CSSE) at Johns Hopkins University][1],
 updated at <span id="updateTimeElement"></span>

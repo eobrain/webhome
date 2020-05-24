@@ -1,5 +1,5 @@
 /* global DATA_STATE Chart
-   articleElement
+   sectionElement
    updateTimeElement
    navElement
    */
@@ -25,7 +25,7 @@ const drawGraph = (name, datasets) => {
 
   const canvasElement = document.createElement('CANVAS')
   canvasElement.setAttribute('id', name)
-  articleElement.appendChild(canvasElement)
+  sectionElement.appendChild(canvasElement)
   const ctx = canvasElement.getContext('2d')
 
   return new Chart(ctx, {

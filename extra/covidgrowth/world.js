@@ -1,5 +1,5 @@
 /* global DATA Chart
-   articleElement
+   sectionElement
    updateTimeElement
    */
 
@@ -24,7 +24,7 @@ const borderWidth = 2
 
 const drawGraph = datasets => {
   const canvasElement = document.createElement('CANVAS')
-  articleElement.appendChild(canvasElement)
+  sectionElement.appendChild(canvasElement)
   const ctx = canvasElement.getContext('2d')
 
   return new Chart(ctx, {
