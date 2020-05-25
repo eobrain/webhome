@@ -1,25 +1,20 @@
-/* global DATA Chart
+/* global DATA_US Chart
    sectionElement
    updateTimeElement
    */
 
-// Credit https://stackoverflow.com/a/46099731/978525
-const HOUR_MS = 60 * 60 * 1000
-const hour2js = hour => new Date(hour * HOUR_MS)
-const hours = DATA.rows[0]
-const smoothedExcelDates = DATA.smoothedRows[0]
-const serieses = DATA.rows.slice(1)
-const smoothedSerieses = DATA.smoothedRows.slice(1)
-const colors = DATA.colors
+const fontSize = 8
+const DAY_MS = 24 * 60 * 60 * 1000
 
-const dates = hours.map(x => hour2js(x))
-const smoothedDates = smoothedExcelDates.map(x => hour2js(x))
-const labels = DATA.columns.slice(1)
+const { dayCount, minDay, countyData, smoothedCountyData, updateTime, colors } = DATA_US
 
-const maximum = (xs) => xs.reduce((acc, x) => Math.max(acc, x))
+const dates = [...new Array(dayCount)].map((_, i) => new Date(DAY_MS * (i + minDay)))
+const countyNames = Object.keys(countyData)
+const maximum = xs => xs.reduce((acc, x) => Math.max(acc, x))
 
 const roundUp = dx => x => dx * Math.ceil(x / dx)
-const max = roundUp(0.1)(maximum(smoothedSerieses.map(series => maximum(series))))
+
+const max = roundUp(0.1)(maximum(countyNames.map(name => maximum(smoothedCountyData[name]))))
 const borderWidth = 2
 
 const drawGraph = datasets => {
@@ -35,7 +30,7 @@ const drawGraph = datasets => {
       legend: {
         position: 'bottom',
         labels: {
-          fontSize: 10,
+          fontSize,
           boxWidth: borderWidth
         }
       },
@@ -44,6 +39,9 @@ const drawGraph = datasets => {
           type: 'time',
           time: {
             unit: 'week'
+          },
+          ticks: {
+            fontSize
           }
         }],
         yAxes: [{
@@ -54,7 +52,8 @@ const drawGraph = datasets => {
           ticks: {
             max,
             min: 0,
-            callback: value => value + '%'
+            callback: value => value + '%',
+            fontSize
           }
         }]
       }
@@ -64,30 +63,31 @@ const drawGraph = datasets => {
 
 const toPoints = (series, _dates) => series.map((y, i) => ({ t: _dates[i], y }))// .filter(p => p.y)
 
-drawGraph(smoothedSerieses.map((row, i) => ({
+drawGraph(countyNames.map((name, i) => ({
   type: 'line',
-  label: labels[i],
+  label: name.slice(name.length - 2),
   backgroundColor: colors[i] + '40',
   borderColor: colors[i],
   pointRadius: 0,
   borderWidth,
-  data: toPoints(row, smoothedDates)
+  data: toPoints(smoothedCountyData[name], dates)
 })))
-serieses.forEach((series, i) => {
+
+countyNames.forEach((name, i) => {
   drawGraph([{
     type: 'line',
-    label: labels[i] + ' (weekly moving average)',
+    label: name + ' (weekly moving average)',
     backgroundColor: 'transparent',
     borderColor: colors[i],
     pointRadius: 0,
     borderWidth,
-    data: toPoints(smoothedSerieses[i], smoothedDates)
+    data: toPoints(smoothedCountyData[name], dates)
   }, {
-    label: labels[i] + ' (daily)',
+    label: name + ' (daily)',
     backgroundColor: colors[i] + '40',
     borderColor: colors[i] + '40',
-    data: toPoints(series, dates)
+    data: toPoints(countyData[name], dates)
   }])
 })
 
-updateTimeElement.innerHTML = new Date(DATA.updateTime).toLocaleString()
+updateTimeElement.innerHTML = new Date(updateTime).toLocaleString()

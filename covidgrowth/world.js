@@ -1,19 +1,28 @@
-/* global DATA_US Chart
+/* global DATA Chart
    sectionElement
    updateTimeElement
+   minDeathsElement
+   minMortalityRateElement
+   minPointsElement
    */
 
-const DAY_MS = 24 * 60 * 60 * 1000
+const fontSize = 8
+const HOUR_MS = 60 * 60 * 1000
+const hour2js = hour => new Date(hour * HOUR_MS)
+const hours = DATA.rows[0]
+const smoothedExcelDates = DATA.smoothedRows[0]
+const serieses = DATA.rows.slice(1)
+const smoothedSerieses = DATA.smoothedRows.slice(1)
+const colors = DATA.colors
 
-const { dayCount, minDay, countyData, smoothedCountyData, updateTime, colors } = DATA_US
+const dates = hours.map(x => hour2js(x))
+const smoothedDates = smoothedExcelDates.map(x => hour2js(x))
+const labels = DATA.columns.slice(1)
 
-const dates = [...new Array(dayCount)].map((_, i) => new Date(DAY_MS * (i + minDay)))
-const countyNames = Object.keys(countyData)
-const maximum = xs => xs.reduce((acc, x) => Math.max(acc, x))
+const maximum = (xs) => xs.reduce((acc, x) => Math.max(acc, x))
 
 const roundUp = dx => x => dx * Math.ceil(x / dx)
-
-const max = roundUp(1)(maximum(countyNames.map(name => maximum(smoothedCountyData[name]))))
+const max = roundUp(0.1)(maximum(smoothedSerieses.map(series => maximum(series))))
 const borderWidth = 2
 
 const drawGraph = datasets => {
@@ -29,7 +38,7 @@ const drawGraph = datasets => {
       legend: {
         position: 'bottom',
         labels: {
-          fontSize: 10,
+          fontSize,
           boxWidth: borderWidth
         }
       },
@@ -40,7 +49,7 @@ const drawGraph = datasets => {
             unit: 'week'
           },
           ticks: {
-            fontSize: 10
+            fontSize
           }
         }],
         yAxes: [{
@@ -51,8 +60,8 @@ const drawGraph = datasets => {
           ticks: {
             max,
             min: 0,
-            callback: value => value + '%',
-            fontSize: 10
+            fontSize,
+            callback: value => value + '%'
           }
         }]
       }
@@ -62,31 +71,33 @@ const drawGraph = datasets => {
 
 const toPoints = (series, _dates) => series.map((y, i) => ({ t: _dates[i], y }))// .filter(p => p.y)
 
-drawGraph(countyNames.map((name, i) => ({
+drawGraph(smoothedSerieses.map((row, i) => ({
   type: 'line',
-  label: name.slice(name.length - 2),
+  label: labels[i],
   backgroundColor: colors[i] + '40',
   borderColor: colors[i],
   pointRadius: 0,
   borderWidth,
-  data: toPoints(smoothedCountyData[name], dates)
+  data: toPoints(row, smoothedDates)
 })))
-
-countyNames.forEach((name, i) => {
+serieses.forEach((series, i) => {
   drawGraph([{
     type: 'line',
-    label: name + ' (weekly moving average)',
+    label: labels[i] + ' (weekly moving average)',
     backgroundColor: 'transparent',
     borderColor: colors[i],
     pointRadius: 0,
     borderWidth,
-    data: toPoints(smoothedCountyData[name], dates)
+    data: toPoints(smoothedSerieses[i], smoothedDates)
   }, {
-    label: name + ' (daily)',
+    label: labels[i] + ' (daily)',
     backgroundColor: colors[i] + '40',
     borderColor: colors[i] + '40',
-    data: toPoints(countyData[name], dates)
+    data: toPoints(series, dates)
   }])
 })
 
-updateTimeElement.innerHTML = new Date(updateTime).toLocaleString()
+updateTimeElement.innerHTML = new Date(DATA.updateTime).toLocaleString()
+minDeathsElement.innerHTML = DATA.minDeaths
+minMortalityRateElement.innerHTML = DATA.minMortalityRate
+minPointsElement.innerHTML = DATA.minPoints

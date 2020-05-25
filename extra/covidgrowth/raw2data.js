@@ -3,10 +3,7 @@ const { records } = require('./raw-data.json')
 const maxichrome = require('maxichrome')
 const { fileTime, smooth } = require('./common.js')
 
-// const tee = x => {
-//  console.warn(x)
-//  return x
-// }
+// const tee = x => {console.warn(x);return x}
 
 const writeCsv = (path, rows) => {
   fs.writeFileSync(path, rows.map(row => row.join(',')).join('\n'))
@@ -127,6 +124,9 @@ writeCsv('smooth.csv', [data.columns, ...data.rows])
 ;(async () => {
   console.log('const DATA={')
   console.log(`updateTime:${data.updateTime},`)
+  console.log(`minDeaths:${MIN_DEATHS},`)
+  console.log(`minMortalityRate:${MIN_MORTALITY_RATE},`)
+  console.log(`minPoints:${MIN_POINTS},`)
   console.log(`columns:${JSON.stringify(data.columns)},`)
   console.log(`colors:${JSON.stringify(await maxichrome(data.columns.length - 1, ['white', 'black']))},`)
   console.log('rows:[')

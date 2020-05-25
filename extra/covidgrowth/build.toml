@@ -3,14 +3,6 @@ deps = [
     "data.js",
     "data_us.js",
     "data_state.js",
-    "common.js",
-    "world.js",
-    "usa.js",
-    "state.js",
-    "index.md",
-    "world.md",
-    "usa.md",
-    "state.md"
 ]
 exec = """
 mkdir -p ../../covidgrowth

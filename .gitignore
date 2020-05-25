@@ -10,5 +10,4 @@ vendor
 /_includes/*.js
 /sw.js
 node_modules
-/covidgrowth
 

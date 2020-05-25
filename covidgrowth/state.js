@@ -2,11 +2,22 @@
    sectionElement
    updateTimeElement
    navElement
+   minTotalDeathsElement
    */
 
 const DAY_MS = 24 * 60 * 60 * 1000
 
-const { dayCount, minDay, stateData, smoothedStateData, updateTime, colors } = DATA_STATE
+const {
+  dayCount,
+  minDay,
+  stateData,
+  smoothedStateData,
+  updateTime,
+  minTotalDeaths,
+  colors
+} = DATA_STATE
+
+const fontSize = 8
 
 const dates = [...new Array(dayCount)].map((_, i) => new Date(DAY_MS * (i + minDay)))
 const countyNames = Object.keys(stateData)
@@ -14,7 +25,7 @@ const maximum = xs => xs.reduce((acc, x) => Math.max(acc, x))
 
 const roundUp = dx => x => dx * Math.ceil(x / dx)
 
-const max = roundUp(0.5)(maximum(countyNames.map(name => maximum(smoothedStateData[name]))))
+const max = roundUp(0.1)(maximum(countyNames.map(name => maximum(smoothedStateData[name]))))
 const borderWidth = 2
 
 const drawGraph = (name, datasets) => {
@@ -36,7 +47,7 @@ const drawGraph = (name, datasets) => {
       legend: {
         position: 'bottom',
         labels: {
-          fontSize: 10,
+          fontSize,
           boxWidth: borderWidth
         }
       },
@@ -47,7 +58,7 @@ const drawGraph = (name, datasets) => {
             unit: 'week'
           },
           ticks: {
-            fontSize: 10
+            fontSize
           }
         }],
         yAxes: [{
@@ -59,7 +70,7 @@ const drawGraph = (name, datasets) => {
             max,
             min: 0,
             callback: value => value + '%',
-            fontSize: 10
+            fontSize
           }
         }]
       }
@@ -97,3 +108,4 @@ countyNames.forEach((name, i) => {
 })
 
 updateTimeElement.innerHTML = new Date(updateTime).toLocaleString()
+minTotalDeathsElement.innerHTML = minTotalDeaths

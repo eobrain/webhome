@@ -51,6 +51,7 @@ const toTimeMs = s => {
 
   console.log('const DATA_US = {')
   console.log(`updateTime:${fileTime(csvFilePath)},`)
+  console.log(`minTotalDeaths:${MIN_DEATHS_PER_COUNTY},`)
   console.log(`minDay:${minDay},`)
   console.log(`dayCount:${maxDay - minDay + 1},`)
   console.log('countyData:{')

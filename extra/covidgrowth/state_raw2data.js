@@ -73,6 +73,7 @@ const toTimeMs = s => {
   const stateData = {}
   console.log('const DATA_STATE={')
   console.log(`updateTime:${fileTime(csvFilePath)},`)
+  console.log(`minTotalDeaths:${MIN_DEATHS_PER_STATE},`)
   console.log(`minDay:${minDay},`)
   console.log(`dayCount:${maxDay - minDay + 1},`)
   console.log('stateData:{')
