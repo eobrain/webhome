@@ -17,12 +17,12 @@
   },
   "homepage": "https://github.com/eobrain/webhome#readme",
   "devDependencies": {
-    "bajel": "0.4.0",
+    "bajel": "^0.7.0",
     "papaparse": "^5.2.0"
   },
   "dependencies": {
     "maxichrome": "0.3.0",
     "smoothish": "1.0.0",
-    "standard": "^14.3.1"
+    "standard": "^14.3.4"
   }
 }
