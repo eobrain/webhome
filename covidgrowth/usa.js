@@ -1,13 +1,23 @@
 /* global DATA_US Chart
    spinnerElement
    updateTimeElement
+   minMortalityRateElement
    minTotalDeathsElement
    */
 
 const fontSize = 8
 const DAY_MS = 24 * 60 * 60 * 1000
 
-const { dayCount, minDay, countyData, smoothedCountyData, minTotalDeaths, updateTime, colors } = DATA_US
+const {
+  dayCount,
+  minDay,
+  countyData,
+  smoothedCountyData,
+  minTotalDeaths,
+  minMortalityRate,
+  updateTime,
+  colors
+} = DATA_US
 
 const dates = [...new Array(dayCount)].map((_, i) => new Date(DAY_MS * (i + minDay)))
 const countyNames = Object.keys(countyData)
@@ -95,3 +105,4 @@ spinnerElement.remove()
 
 updateTimeElement.innerHTML = new Date(updateTime).toLocaleString()
 minTotalDeathsElement.innerHTML = minTotalDeaths
+minMortalityRateElement.innerHTML = minMortalityRate

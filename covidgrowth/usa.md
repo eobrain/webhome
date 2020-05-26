@@ -23,6 +23,6 @@ The graphs above show the annualized mortality rates of the COVID deaths, so for
 
 
 Source: [Center for Systems Science and Engineering (CSSE) at Johns Hopkins University][1],
-updated at <span id="updateTimeElement"></span>, showing all counties with at least <span id="minTotalDeathsElement"></span> total deaths.
+updated at <span id="updateTimeElement"></span>, showing all counties with at least <span id="minTotalDeathsElement"></span> total deaths and where the daily mortality rate exceeded <span id="minMortalityRateElement"></span>% anualized.
 
 [1]: https://github.com/CSSEGISandData/COVID-19

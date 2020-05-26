@@ -4,7 +4,8 @@ const Papa = require('papaparse')
 const { fileTime, smooth } = require('./common.js')
 const STATE_CODE = require('./statecode.js')
 
-const MIN_DEATHS_PER_COUNTY = 500
+const MIN_DEATHS_PER_COUNTY = 50
+const MIN_MORTALITY_RATE = 3
 
 const [,, csvFilePath, outPath] = process.argv
 if (!csvFilePath && !outPath) {
@@ -52,6 +53,7 @@ const toTimeMs = s => {
   console.log('const DATA_US = {')
   console.log(`updateTime:${fileTime(csvFilePath)},`)
   console.log(`minTotalDeaths:${MIN_DEATHS_PER_COUNTY},`)
+  console.log(`minMortalityRate:${MIN_MORTALITY_RATE},`)
   console.log(`minDay:${minDay},`)
   console.log(`dayCount:${maxDay - minDay + 1},`)
   console.log('countyData:{')
@@ -80,6 +82,10 @@ const toTimeMs = s => {
       prev = c
       return result
     })
+    const max = daily.reduce((acc, x) => Math.max(acc, x))
+    if (max < MIN_MORTALITY_RATE) {
+      return
+    }
     console.log(`"${county}":[${daily.join()}],`)
     countyData[county] = daily
     ++seriesCount
