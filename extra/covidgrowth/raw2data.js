@@ -1,13 +1,13 @@
-const fs = require('fs')
+// const fs = require('fs')
 const { records } = require('./raw-data.json')
 const maxichrome = require('maxichrome')
 const { fileTime, smooth } = require('./common.js')
 
 // const tee = x => {console.warn(x);return x}
 
-const writeCsv = (path, rows) => {
+/* const writeCsv = (path, rows) => {
   fs.writeFileSync(path, rows.map(row => row.join(',')).join('\n'))
-}
+} */
 
 const MIN_DEATHS = 10
 const MIN_MORTALITY_RATE = 0.05
@@ -96,7 +96,7 @@ records.forEach(row => {
 
 data.rows.sort((a, b) => a[0] - b[0])
 
-writeCsv('raw.csv', [data.columns, ...data.rows])
+// writeCsv('raw.csv', [data.columns, ...data.rows])
 
 let timeSeriesRows = transpose(data.rows)
 
@@ -119,7 +119,7 @@ data.columns = data.columns.map(s => s.replace(/_/g, ' '))
 const countReducer = (acc, x) => acc + !!x
 data.rows = data.rows.filter(row => row.slice(1).reduce(countReducer, 0) > 1)
 
-writeCsv('smooth.csv', [data.columns, ...data.rows])
+// writeCsv('smooth.csv', [data.columns, ...data.rows])
 
 ;(async () => {
   console.log('const DATA={')
