@@ -1,23 +1,22 @@
-[copy]
-deps = [
-    "data.js",
-    "data_us.js",
-    "data_state.js",
-]
-exec = """
-mkdir -p ../../covidgrowth
-cp $+ *.csv ../../covidgrowth
-"""
+WEB="../../covidgrowth"
 
-["data.js"]
+# Generate data files for web pages
+[web]
+deps = [
+    "$(WEB)/data.js",
+    "$(WEB)/data_us.js",
+    "$(WEB)/data_state.js",
+]
+
+["$(WEB)/data.js"]
 deps = ["raw-data.json", "raw2data.js", "common.js"]
 exec = "node raw2data.js $< >$@"
 
-["data_us.js"]
+["$(WEB)/data_us.js"]
 deps=["time_series_covid19_deaths_US.csv", "us_raw2data.js", "common.js"]
 exec = "node us_raw2data.js $< >$@"
 
-["data_state.js"]
+["$(WEB)/data_state.js"]
 deps=["time_series_covid19_deaths_US.csv", "state_raw2data.js", "common.js"]
 exec = "node state_raw2data.js $< >$@"
 
@@ -29,7 +28,6 @@ exec = "wget --output-document=$@ https://raw.githubusercontent.com/CSSEGISandDa
 
 [clean]
 exec = """
-rm -f data.js data_us.js data_state.js
+rm -f $(WEB)/data.js $(WEB)/data_us.js $(WEB)/data_state.js
 rm -f raw-data.json time_series_covid19_deaths_US.csv
-rm -rf ../../covidgrowth
 """
