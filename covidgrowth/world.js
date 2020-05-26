@@ -1,5 +1,5 @@
 /* global DATA Chart
-   sectionElement
+   spinnerElement
    updateTimeElement
    minDeathsElement
    minMortalityRateElement
@@ -27,7 +27,7 @@ const borderWidth = 2
 
 const drawGraph = datasets => {
   const canvasElement = document.createElement('CANVAS')
-  sectionElement.appendChild(canvasElement)
+  spinnerElement.insertAdjacentElement('beforebegin', canvasElement)
   const ctx = canvasElement.getContext('2d')
 
   return new Chart(ctx, {
@@ -96,8 +96,10 @@ serieses.forEach((series, i) => {
     data: toPoints(series, dates)
   }])
 })
+spinnerElement.remove()
 
 updateTimeElement.innerHTML = new Date(DATA.updateTime).toLocaleString()
 minDeathsElement.innerHTML = DATA.minDeaths
 minMortalityRateElement.innerHTML = DATA.minMortalityRate
 minPointsElement.innerHTML = DATA.minPoints
+

@@ -1,5 +1,5 @@
 /* global DATA_STATE Chart
-   sectionElement
+   spinnerElement
    updateTimeElement
    navElement
    minTotalDeathsElement
@@ -36,7 +36,7 @@ const drawGraph = (name, datasets) => {
 
   const canvasElement = document.createElement('CANVAS')
   canvasElement.setAttribute('id', name)
-  sectionElement.appendChild(canvasElement)
+  spinnerElement.insertAdjacentElement('beforebegin', canvasElement)
   const ctx = canvasElement.getContext('2d')
 
   return new Chart(ctx, {
@@ -106,6 +106,8 @@ countyNames.forEach((name, i) => {
     data: toPoints(stateData[name], dates)
   }])
 })
+
+spinnerElement.remove()
 
 updateTimeElement.innerHTML = new Date(updateTime).toLocaleString()
 minTotalDeathsElement.innerHTML = minTotalDeaths

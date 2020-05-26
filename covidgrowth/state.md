@@ -16,7 +16,10 @@ Per-Capita COVID-19 Death Rates
 The first graph below shows all the states superimposed, followed by one graph per state, all at the same scale.
 
 <nav id="navElement"></nav>
-<section id="sectionElement"></section>
+<section>
+  <img id="spinnerElement" src="/img/spinner32.gif">
+</section>
+
 
 The graphs above show the annualized mortality rates of the COVID deaths, so for example a value of 1% is the percentage of the state's population that would die of COVID if that daily death rate were to be sustained for a year.
 

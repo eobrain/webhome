@@ -1,5 +1,5 @@
 /* global DATA_US Chart
-   sectionElement
+   spinnerElement
    updateTimeElement
    */
 
@@ -19,7 +19,7 @@ const borderWidth = 2
 
 const drawGraph = datasets => {
   const canvasElement = document.createElement('CANVAS')
-  sectionElement.appendChild(canvasElement)
+  spinnerElement.insertAdjacentElement('beforebegin', canvasElement)
   const ctx = canvasElement.getContext('2d')
 
   return new Chart(ctx, {
@@ -89,5 +89,7 @@ countyNames.forEach((name, i) => {
     data: toPoints(countyData[name], dates)
   }])
 })
+
+spinnerElement.remove()
 
 updateTimeElement.innerHTML = new Date(updateTime).toLocaleString()
