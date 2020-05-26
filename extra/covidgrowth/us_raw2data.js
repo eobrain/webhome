@@ -5,7 +5,7 @@ const { fileTime, smooth } = require('./common.js')
 const STATE_CODE = require('./statecode.js')
 
 const MIN_DEATHS_PER_COUNTY = 50
-const MIN_MORTALITY_RATE = 3
+const MIN_MORTALITY_RATE = 1
 
 const [,, csvFilePath, outPath] = process.argv
 if (!csvFilePath && !outPath) {
@@ -56,8 +56,6 @@ const toTimeMs = s => {
   console.log(`minMortalityRate:${MIN_MORTALITY_RATE},`)
   console.log(`minDay:${minDay},`)
   console.log(`dayCount:${maxDay - minDay + 1},`)
-  console.log('countyData:{')
-  let seriesCount = 0
   await parse(record => {
     const { Admin2, Province_State, Population } = record
     const state = STATE_CODE[Province_State] || Province_State
@@ -77,24 +75,28 @@ const toTimeMs = s => {
       return
     }
     let prev = 0
-    const daily = cumulative.map(c => {
+    countyData[county] = cumulative.map(c => {
       const result = (c - prev) * 365 * 100 / population // Annualized percent mortality
       prev = c
       return result
     })
-    const max = daily.reduce((acc, x) => Math.max(acc, x))
-    if (max < MIN_MORTALITY_RATE) {
-      return
-    }
-    console.log(`"${county}":[${daily.join()}],`)
-    countyData[county] = daily
-    ++seriesCount
   })
-  console.log('},')
   console.log('smoothedCountyData:{')
+  let seriesCount = 0
   for (const county in countyData) {
     const smoothed = smooth(countyData[county])
+    const max = smoothed.reduce((acc, x) => Math.max(acc, x))
+    if (max < MIN_MORTALITY_RATE) {
+      delete countyData[county]
+      continue
+    }
+    ++seriesCount
     console.log(`"${county}":[${smoothed.join()}],`)
+  }
+  console.log('},')
+  console.log('countyData:{')
+  for (const county in countyData) {
+    console.log(`"${county}":[${countyData[county].join()}],`)
   }
   console.log('},')
   console.log(`colors:${JSON.stringify(await maxichrome(seriesCount, ['white', 'black']))},`)
