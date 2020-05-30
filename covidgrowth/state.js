@@ -21,7 +21,7 @@ const fontSize = 8
 
 const dates = [...new Array(dayCount)].map((_, i) => new Date(DAY_MS * (i + minDay)))
 const countyNames = Object.keys(stateData)
-const maximum = xs => xs.reduce((acc, x) => Math.max(acc, x))
+const maximum = xs => xs.reduce((acc, x) => Math.max(acc, x), 0)
 
 const roundUp = dx => x => dx * Math.ceil(x / dx)
 

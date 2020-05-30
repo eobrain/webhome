@@ -5,4 +5,6 @@ const fileTime = path => fs.statSync(path).mtime.getTime()
 
 const smooth = row => smoothish(row, { radius: 3 })
 
-module.exports = { fileTime, smooth }
+const stringifyArray = xs => '[' + xs.map(x => JSON.stringify(x)).join(',\n') + ']'
+
+module.exports = { fileTime, smooth, stringifyArray }

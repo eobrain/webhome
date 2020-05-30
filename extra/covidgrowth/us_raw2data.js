@@ -1,7 +1,7 @@
 const fs = require('fs')
 const maxichrome = require('maxichrome')
 const Papa = require('papaparse')
-const { fileTime, smooth } = require('./common.js')
+const { fileTime, smooth, stringifyArray } = require('./common.js')
 const STATE_CODE = require('./statecode.js')
 
 const MIN_DEATHS_PER_COUNTY = 50
@@ -91,14 +91,14 @@ const toTimeMs = s => {
       continue
     }
     ++seriesCount
-    console.log(`"${county}":[${smoothed.join()}],`)
+    console.log(`"${county}":${stringifyArray(smoothed)},`)
   }
   console.log('},')
   console.log('countyData:{')
   for (const county in countyData) {
-    console.log(`"${county}":[${countyData[county].join()}],`)
+    console.log(`"${county}":${stringifyArray(countyData[county])},`)
   }
   console.log('},')
-  console.log(`colors:${JSON.stringify(await maxichrome(seriesCount, ['white', 'black']))},`)
+  console.log(`colors:${stringifyArray(await maxichrome(seriesCount, ['white', 'black']))},`)
   console.log('}')
 })()

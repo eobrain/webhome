@@ -1,7 +1,7 @@
 // const fs = require('fs')
 const { records } = require('./raw-data.json')
 const maxichrome = require('maxichrome')
-const { fileTime, smooth } = require('./common.js')
+const { fileTime, smooth, stringifyArray } = require('./common.js')
 
 // const tee = x => {console.warn(x);return x}
 
@@ -127,16 +127,16 @@ data.rows = data.rows.filter(row => row.slice(1).reduce(countReducer, 0) > 1)
   console.log(`minDeaths:${MIN_DEATHS},`)
   console.log(`minMortalityRate:${MIN_MORTALITY_RATE},`)
   console.log(`minPoints:${MIN_POINTS},`)
-  console.log(`columns:${JSON.stringify(data.columns)},`)
-  console.log(`colors:${JSON.stringify(await maxichrome(data.columns.length - 1, ['white', 'black']))},`)
+  console.log(`columns:${stringifyArray(data.columns)},`)
+  console.log(`colors:${stringifyArray(await maxichrome(data.columns.length - 1, ['white', 'black']))},`)
   console.log('rows:[')
   for (const row of data.rows) {
-    console.log(`${JSON.stringify(row)},`)
+    console.log(`${stringifyArray(row)},`)
   }
   console.log('],')
   console.log('smoothedRows:[')
   for (const row of data.smoothedRows) {
-    console.log(`${JSON.stringify(row)},`)
+    console.log(`${stringifyArray(row)},`)
   }
   console.log(']')
   console.log('}')

@@ -19,7 +19,7 @@ const dates = hours.map(x => hour2js(x))
 const smoothedDates = smoothedExcelDates.map(x => hour2js(x))
 const labels = DATA.columns.slice(1)
 
-const maximum = (xs) => xs.reduce((acc, x) => Math.max(acc, x))
+const maximum = xs => xs.reduce((acc, x) => Math.max(acc, x), 0)
 
 const roundUp = dx => x => dx * Math.ceil(x / dx)
 const max = roundUp(0.1)(maximum(smoothedSerieses.map(series => maximum(series))))
@@ -69,7 +69,7 @@ const drawGraph = datasets => {
   })
 }
 
-const toPoints = (series, _dates) => series.map((y, i) => ({ t: _dates[i], y }))// .filter(p => p.y)
+const toPoints = (series, _dates) => series.map((y, i) => ({ t: _dates[i], y })).filter(p => !!p)
 
 drawGraph(smoothedSerieses.map((row, i) => ({
   type: 'line',
@@ -102,4 +102,3 @@ updateTimeElement.innerHTML = new Date(DATA.updateTime).toLocaleString()
 minDeathsElement.innerHTML = DATA.minDeaths
 minMortalityRateElement.innerHTML = DATA.minMortalityRate
 minPointsElement.innerHTML = DATA.minPoints
-
