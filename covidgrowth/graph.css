@@ -1,12 +1,14 @@
 .sparkline {
     position: relative;
     width: 10vmin;
+    height: 10vmin;
     margin: 1vmin 2vmin;
     display: inline-block;
     font-size: smaller;
 }
 
 .sparkline canvas {
+    height: 10vmin;
     margin-top: -2em;
 }
 

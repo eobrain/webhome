@@ -26,7 +26,9 @@ const roundUp = dx => x => dx * Math.ceil(x / dx)
 const max = roundUp(0.1)(maximum(smoothedSerieses.map(series => maximum(series))))
 const borderWidth = 2
 
-const drawSparkline = (name, datasets) => {
+const nextTick = () => new Promise(resolve => setTimeout(resolve, 0))
+
+const drawSparkline = async (name, datasets) => {
   const containerElement = document.createElement('A')
   containerElement.setAttribute('href', '#' + name)
   containerElement.innerText = name
@@ -38,6 +40,7 @@ const drawSparkline = (name, datasets) => {
   containerElement.appendChild(canvasElement)
   const ctx = canvasElement.getContext('2d')
 
+  await nextTick()
   return new Chart(ctx, {
     type: 'line',
     data: { datasets },
@@ -69,12 +72,13 @@ const drawSparkline = (name, datasets) => {
   })
 }
 
-const drawGraph = (name, datasets) => {
+const drawGraph = async (name, datasets) => {
   const canvasElement = document.createElement('CANVAS')
   canvasElement.setAttribute('id', name)
   spinnerElement.insertAdjacentElement('beforebegin', canvasElement)
   const ctx = canvasElement.getContext('2d')
 
+  await nextTick()
   return new Chart(ctx, {
     type: 'bar',
     data: { datasets },
@@ -116,8 +120,10 @@ const drawGraph = (name, datasets) => {
 
 const toPoints = (series, _dates) => series.map((y, i) => ({ t: _dates[i], y })).filter(p => !!p)
 
+const promises = []
+
 serieses.forEach((series, i) => {
-  drawSparkline(geoIds[i], [{
+  promises.push(drawSparkline(geoIds[i], [{
     fill: true,
     label: labels[i] + ' (weekly moving average)',
     backgroundColor: colors[i],
@@ -125,11 +131,11 @@ serieses.forEach((series, i) => {
     pointRadius: 0,
     borderWidth,
     data: toPoints(smoothedSerieses[i], smoothedDates)
-  }])
+  }]))
 })
 
 serieses.forEach((series, i) => {
-  drawGraph(geoIds[i], [{
+  promises.push(drawGraph(geoIds[i], [{
     type: 'line',
     label: labels[i] + ' (weekly moving average)',
     backgroundColor: 'transparent',
@@ -142,10 +148,10 @@ serieses.forEach((series, i) => {
     backgroundColor: colors[i] + '40',
     borderColor: colors[i] + '40',
     data: toPoints(series, dates)
-  }])
+  }]))
 })
 
-drawGraph('All', smoothedSerieses.map((row, i) => ({
+promises.push(drawGraph('All', smoothedSerieses.map((row, i) => ({
   type: 'line',
   label: labels[i],
   backgroundColor: colors[i] + '40',
@@ -153,9 +159,9 @@ drawGraph('All', smoothedSerieses.map((row, i) => ({
   pointRadius: 0,
   borderWidth,
   data: toPoints(row, smoothedDates)
-})))
+}))))
 
-spinnerElement.remove()
+Promise.all(promises).then(() => { spinnerElement.style.display = 'none' })
 
 updateTimeElement.innerHTML = new Date(DATA.updateTime).toLocaleString()
 minDeathsElement.innerHTML = DATA.minDeaths

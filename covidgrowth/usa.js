@@ -27,7 +27,9 @@ const roundUp = dx => x => dx * Math.ceil(x / dx)
 
 const toId = s => s.replace(/\W+/g, '-')
 
-const drawSparkline = (name, datasets) => {
+const nextTick = () => new Promise(resolve => setTimeout(resolve, 0))
+
+const drawSparkline = async (name, datasets) => {
   const shortName = name.slice(name.length - 2)
   const containerElement = document.createElement('A')
   containerElement.setAttribute('href', '#' + toId(name))
@@ -40,6 +42,7 @@ const drawSparkline = (name, datasets) => {
   containerElement.appendChild(canvasElement)
   const ctx = canvasElement.getContext('2d')
 
+  await nextTick()
   return new Chart(ctx, {
     type: 'line',
     data: { datasets },
@@ -74,12 +77,13 @@ const drawSparkline = (name, datasets) => {
 const max = roundUp(0.1)(maximum(countyNames.map(name => maximum(smoothedCountyData[name]))))
 const borderWidth = 2
 
-const drawGraph = (name, datasets) => {
+const drawGraph = async (name, datasets) => {
   const canvasElement = document.createElement('CANVAS')
   canvasElement.setAttribute('id', toId(name))
   spinnerElement.insertAdjacentElement('beforebegin', canvasElement)
   const ctx = canvasElement.getContext('2d')
 
+  await nextTick()
   return new Chart(ctx, {
     type: 'bar',
     data: { datasets },
@@ -121,8 +125,10 @@ const drawGraph = (name, datasets) => {
 
 const toPoints = (series, _dates) => series.map((y, i) => ({ t: _dates[i], y }))// .filter(p => p.y)
 
+const promises = []
+
 countyNames.forEach((name, i) => {
-  drawSparkline(name, [{
+  promises.push(drawSparkline(name, [{
     fill: true,
     label: name + ' (weekly moving average)',
     backgroundColor: colors[i],
@@ -130,11 +136,11 @@ countyNames.forEach((name, i) => {
     pointRadius: 0,
     borderWidth,
     data: toPoints(smoothedCountyData[name], dates)
-  }])
+  }]))
 })
 
 countyNames.forEach((name, i) => {
-  drawGraph(name, [{
+  promises.push(drawGraph(name, [{
     type: 'line',
     label: name + ' (weekly moving average)',
     backgroundColor: 'transparent',
@@ -147,10 +153,10 @@ countyNames.forEach((name, i) => {
     backgroundColor: colors[i] + '40',
     borderColor: colors[i] + '40',
     data: toPoints(countyData[name], dates)
-  }])
+  }]))
 })
 
-drawGraph(countyNames.map((name, i) => ({
+promises.push(drawGraph('all', countyNames.map((name, i) => ({
   type: 'line',
   label: name.slice(name.length - 2),
   backgroundColor: colors[i] + '40',
@@ -158,9 +164,9 @@ drawGraph(countyNames.map((name, i) => ({
   pointRadius: 0,
   borderWidth,
   data: toPoints(smoothedCountyData[name], dates)
-})))
+}))))
 
-spinnerElement.remove()
+Promise.all(promises).finally(() => { spinnerElement.style.display = 'none' })
 
 updateTimeElement.innerHTML = new Date(updateTime).toLocaleString()
 minTotalDeathsElement.innerHTML = minTotalDeaths
