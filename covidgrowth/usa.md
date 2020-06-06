@@ -4,16 +4,16 @@ permalink: /covidgrowth/usa/
 title: COVID (USA)
 ---
 
+<link rel="stylesheet" href="/covidgrowth/graph.css">
 <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" defer></script>
 <script src="/covidgrowth/data_us.js" defer></script>
 <script src="/covidgrowth/usa.js" defer></script>
 
-Per-Capita COVID-19 Death Rates
 
-**USA** (by county), [USA](/covidgrowth/state)  (by state), [World](/covidgrowth/world) 
+**USA (by county)**, [USA](/covidgrowth/state)  (by state), [World](/covidgrowth/world) 
 
-The first graph below shows all the high-death counties superimposed, followed by one graph per county, all at the same scale.
+### Per-Capita COVID-19 Death Rates
 
 <section>
   <img id="spinnerElement" src="/img/spinner32.gif">

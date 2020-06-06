@@ -4,22 +4,7 @@ permalink: /covidgrowth/state/
 title: COVID (USA)
 ---
 
-<style>
-.sparkline {
-  position: relative; 
-  width: 10vmin;
-  margin: 1vmin 2vmin;
-  display: inline-block;
-  font-size: smaller;
-}
-.sparkline canvas{
-  margin-top: -2em;
-}
-
-section > canvas {
-  margin: 5vmin;
-}
-</style>
+<link rel="stylesheet" href="/covidgrowth/graph.css">
 <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" defer></script>
 <script src="/covidgrowth/data_state.js" defer></script>
@@ -27,7 +12,7 @@ section > canvas {
 
 [USA](/covidgrowth/usa) (by county), **USA (by state)**, [World](/covidgrowth/world) 
 
-Per-Capita COVID-19 Death Rates, all at the same scale.
+### Per-Capita COVID-19 Death Rates
 
 <nav id="navElement"></nav>
 <section>

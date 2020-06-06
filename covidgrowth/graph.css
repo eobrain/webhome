@@ -1,0 +1,15 @@
+.sparkline {
+    position: relative;
+    width: 10vmin;
+    margin: 1vmin 2vmin;
+    display: inline-block;
+    font-size: smaller;
+}
+
+.sparkline canvas {
+    margin-top: -2em;
+}
+
+section>canvas {
+    margin: 5vmin;
+}
