@@ -4,16 +4,30 @@ permalink: /covidgrowth/state/
 title: COVID (USA)
 ---
 
+<style>
+.sparkline {
+  position: relative; 
+  width: 10vmin;
+  margin: 1vmin 2vmin;
+  display: inline-block;
+  font-size: smaller;
+}
+.sparkline canvas{
+  margin-top: -2em;
+}
+
+section > canvas {
+  margin: 5vmin;
+}
+</style>
 <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" defer></script>
 <script src="/covidgrowth/data_state.js" defer></script>
 <script src="/covidgrowth/state.js" defer></script>
 
-Per-Capita COVID-19 Death Rates
+[USA](/covidgrowth/usa) (by county), **USA (by state)**, [World](/covidgrowth/world) 
 
-[USA](/covidgrowth/usa) (by county), **USA**  (by state), [World](/covidgrowth/world) 
-
-The first graph below shows all the states superimposed, followed by one graph per state, all at the same scale.
+Per-Capita COVID-19 Death Rates, all at the same scale.
 
 <nav id="navElement"></nav>
 <section>

@@ -25,15 +25,53 @@ const maximum = xs => xs.reduce((acc, x) => Math.max(acc, x), 0)
 
 const roundUp = dx => x => dx * Math.ceil(x / dx)
 
+const drawSparkline = (name, datasets) => {
+  const containerElement = document.createElement('A')
+  containerElement.setAttribute('href', '#' + name)
+  containerElement.innerText = name
+  containerElement.setAttribute('class', 'sparkline')
+  spinnerElement.insertAdjacentElement('beforebegin', containerElement)
+
+  const canvasElement = document.createElement('CANVAS')
+  // canvasElement.setAttribute('class', 'sparkline')
+  containerElement.appendChild(canvasElement)
+  const ctx = canvasElement.getContext('2d')
+
+  return new Chart(ctx, {
+    type: 'line',
+    data: { datasets },
+    options: {
+      // responsive: false,
+      aspectRatio: 1,
+      legend: {
+        display: false
+      },
+      plugins: {
+        filler: {
+          propagate: false
+        }
+      },
+      scales: {
+        xAxes: [{
+          display: false,
+          type: 'time'
+        }],
+        yAxes: [{
+          display: false,
+          ticks: {
+            max,
+            min: 0
+          }
+        }]
+      }
+    }
+  })
+}
+
 const max = roundUp(0.1)(maximum(countyNames.map(name => maximum(smoothedStateData[name]))))
 const borderWidth = 2
 
 const drawGraph = (name, datasets) => {
-  const link = document.createElement('A')
-  link.setAttribute('href', '#' + name)
-  link.innerText = ' ' + name + ' '
-  navElement.appendChild(link)
-
   const canvasElement = document.createElement('CANVAS')
   canvasElement.setAttribute('id', name)
   spinnerElement.insertAdjacentElement('beforebegin', canvasElement)
@@ -80,15 +118,17 @@ const drawGraph = (name, datasets) => {
 
 const toPoints = (series, _dates) => series.map((y, i) => ({ t: _dates[i], y }))// .filter(p => p.y)
 
-drawGraph('all', countyNames.map((name, i) => ({
-  type: 'line',
-  label: name.slice(name.length - 2),
-  backgroundColor: colors[i] + '40',
-  borderColor: colors[i],
-  pointRadius: 0,
-  borderWidth,
-  data: toPoints(smoothedStateData[name], dates)
-})))
+countyNames.forEach((name, i) => {
+  drawSparkline(name, [{
+    fill: true,
+    label: name + ' (weekly moving average)',
+    backgroundColor: colors[i],
+    borderColor: colors[i],
+    pointRadius: 0,
+    borderWidth,
+    data: toPoints(smoothedStateData[name], dates)
+  }])
+})
 
 countyNames.forEach((name, i) => {
   drawGraph(name, [{
@@ -106,6 +146,16 @@ countyNames.forEach((name, i) => {
     data: toPoints(stateData[name], dates)
   }])
 })
+
+drawGraph('all', countyNames.map((name, i) => ({
+  type: 'line',
+  label: name.slice(name.length - 2),
+  backgroundColor: colors[i] + '40',
+  borderColor: colors[i],
+  pointRadius: 0,
+  borderWidth,
+  data: toPoints(smoothedStateData[name], dates)
+})))
 
 spinnerElement.remove()
 
