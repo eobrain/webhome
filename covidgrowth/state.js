@@ -25,7 +25,7 @@ const maximum = xs => xs.reduce((acc, x) => Math.max(acc, x), 0)
 
 const roundUp = dx => x => dx * Math.ceil(x / dx)
 
-const drawSparkline = (name, datasets) => {
+const _drawSparkline = (name, datasets) => {
   const containerElement = document.createElement('A')
   containerElement.setAttribute('href', '#' + name)
   containerElement.innerText = name
@@ -68,10 +68,12 @@ const drawSparkline = (name, datasets) => {
   })
 }
 
+const drawSparkline = (name, datasets) => setTimeout(() => _drawSparkline(name, datasets), 0)
+
 const max = roundUp(0.1)(maximum(countyNames.map(name => maximum(smoothedStateData[name]))))
 const borderWidth = 2
 
-const drawGraph = (name, datasets) => {
+const _drawGraph = (name, datasets) => {
   const canvasElement = document.createElement('CANVAS')
   canvasElement.setAttribute('id', name)
   spinnerElement.insertAdjacentElement('beforebegin', canvasElement)
@@ -116,6 +118,8 @@ const drawGraph = (name, datasets) => {
   })
 }
 
+const drawGraph = (name, datasets) => setTimeout(() => _drawGraph(name, datasets), 0)
+
 const toPoints = (series, _dates) => series.map((y, i) => ({ t: _dates[i], y }))// .filter(p => p.y)
 
 countyNames.forEach((name, i) => {
@@ -157,7 +161,7 @@ drawGraph('all', countyNames.map((name, i) => ({
   data: toPoints(smoothedStateData[name], dates)
 })))
 
-spinnerElement.remove()
+setTimeout(() => { spinnerElement.style.display = 'none' }, 0)
 
 updateTimeElement.innerHTML = new Date(updateTime).toLocaleString()
 minTotalDeathsElement.innerHTML = minTotalDeaths
