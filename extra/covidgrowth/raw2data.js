@@ -69,6 +69,8 @@ const add = (countriesAndTerritories, dateRep, value) => {
   data.rows[i][j] = 365 * 100 * value // Annualized percent mortality
 }
 
+const geoIdOfCountries = {}
+
 records.forEach(row => {
   const {
     deaths,
@@ -78,6 +80,7 @@ records.forEach(row => {
   if (!deaths || geoId.length !== 2) {
     return
   }
+  geoIdOfCountries[countriesAndTerritories.replace(/_/g, ' ')] = geoId
   addCol(countriesAndTerritories)
 })
 records.forEach(row => {
@@ -121,6 +124,8 @@ data.rows = data.rows.filter(row => row.slice(1).reduce(countReducer, 0) > 1)
 
 // writeCsv('smooth.csv', [data.columns, ...data.rows])
 
+const geoIds = data.columns.map(country => geoIdOfCountries[country])
+
 ;(async () => {
   console.log('const DATA={')
   console.log(`updateTime:${data.updateTime},`)
@@ -128,6 +133,7 @@ data.rows = data.rows.filter(row => row.slice(1).reduce(countReducer, 0) > 1)
   console.log(`minMortalityRate:${MIN_MORTALITY_RATE},`)
   console.log(`minPoints:${MIN_POINTS},`)
   console.log(`columns:${stringifyArray(data.columns)},`)
+  console.log(`geoIds:${stringifyArray(geoIds)},`)
   console.log(`colors:${stringifyArray(await maxichrome(data.columns.length - 1, ['white', 'black']))},`)
   console.log('rows:[')
   for (const row of data.rows) {

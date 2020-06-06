@@ -10,7 +10,6 @@ title: COVID (USA)
 <script src="/covidgrowth/data_us.js" defer></script>
 <script src="/covidgrowth/usa.js" defer></script>
 
-
 **USA (by county)**, [USA](/covidgrowth/state)  (by state), [World](/covidgrowth/world) 
 
 ### Per-Capita COVID-19 Death Rates

@@ -4,16 +4,15 @@ permalink: /covidgrowth/world/
 title: COVID (World)
 ---
 
+<link rel="stylesheet" href="/covidgrowth/graph.css">
 <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" defer></script>
 <script src="/covidgrowth/data.js" defer></script>
 <script src="/covidgrowth/world.js" defer></script>
 
-Per-Capita COVID-19 Death Rates
+### Per-Capita COVID-19 Death Rates
 
 [USA](/covidgrowth/usa)  (by county), [USA](/covidgrowth/state)  (by state), **World**
-
-The first graph below shows the countries superimposed, followed by one graph per country, all at the same scale.
 
 <section>
   <img id="spinnerElement" src="/img/spinner32.gif">

@@ -18,6 +18,7 @@ const colors = DATA.colors
 const dates = hours.map(x => hour2js(x))
 const smoothedDates = smoothedExcelDates.map(x => hour2js(x))
 const labels = DATA.columns.slice(1)
+const geoIds = DATA.geoIds.slice(1)
 
 const maximum = xs => xs.reduce((acc, x) => Math.max(acc, x), 0)
 
@@ -25,8 +26,52 @@ const roundUp = dx => x => dx * Math.ceil(x / dx)
 const max = roundUp(0.1)(maximum(smoothedSerieses.map(series => maximum(series))))
 const borderWidth = 2
 
-const drawGraph = datasets => {
+const drawSparkline = (name, datasets) => {
+  const containerElement = document.createElement('A')
+  containerElement.setAttribute('href', '#' + name)
+  containerElement.innerText = name
+  containerElement.setAttribute('class', 'sparkline')
+  spinnerElement.insertAdjacentElement('beforebegin', containerElement)
+
   const canvasElement = document.createElement('CANVAS')
+  // canvasElement.setAttribute('class', 'sparkline')
+  containerElement.appendChild(canvasElement)
+  const ctx = canvasElement.getContext('2d')
+
+  return new Chart(ctx, {
+    type: 'line',
+    data: { datasets },
+    options: {
+      // responsive: false,
+      aspectRatio: 1,
+      legend: {
+        display: false
+      },
+      plugins: {
+        filler: {
+          propagate: false
+        }
+      },
+      scales: {
+        xAxes: [{
+          display: false,
+          type: 'time'
+        }],
+        yAxes: [{
+          display: false,
+          ticks: {
+            max,
+            min: 0
+          }
+        }]
+      }
+    }
+  })
+}
+
+const drawGraph = (name, datasets) => {
+  const canvasElement = document.createElement('CANVAS')
+  canvasElement.setAttribute('id', name)
   spinnerElement.insertAdjacentElement('beforebegin', canvasElement)
   const ctx = canvasElement.getContext('2d')
 
@@ -71,17 +116,20 @@ const drawGraph = datasets => {
 
 const toPoints = (series, _dates) => series.map((y, i) => ({ t: _dates[i], y })).filter(p => !!p)
 
-drawGraph(smoothedSerieses.map((row, i) => ({
-  type: 'line',
-  label: labels[i],
-  backgroundColor: colors[i] + '40',
-  borderColor: colors[i],
-  pointRadius: 0,
-  borderWidth,
-  data: toPoints(row, smoothedDates)
-})))
 serieses.forEach((series, i) => {
-  drawGraph([{
+  drawSparkline(geoIds[i], [{
+    fill: true,
+    label: labels[i] + ' (weekly moving average)',
+    backgroundColor: colors[i],
+    borderColor: colors[i],
+    pointRadius: 0,
+    borderWidth,
+    data: toPoints(smoothedSerieses[i], smoothedDates)
+  }])
+})
+
+serieses.forEach((series, i) => {
+  drawGraph(geoIds[i], [{
     type: 'line',
     label: labels[i] + ' (weekly moving average)',
     backgroundColor: 'transparent',
@@ -96,6 +144,17 @@ serieses.forEach((series, i) => {
     data: toPoints(series, dates)
   }])
 })
+
+drawGraph('All', smoothedSerieses.map((row, i) => ({
+  type: 'line',
+  label: labels[i],
+  backgroundColor: colors[i] + '40',
+  borderColor: colors[i],
+  pointRadius: 0,
+  borderWidth,
+  data: toPoints(row, smoothedDates)
+})))
+
 spinnerElement.remove()
 
 updateTimeElement.innerHTML = new Date(DATA.updateTime).toLocaleString()
