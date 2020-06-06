@@ -1,5 +1,5 @@
 const DATA_US = {
-updateTime:1591412572052,
+updateTime:1591466054868,
 minTotalDeaths:50,
 minMortalityRate:1,
 minDay:18283,

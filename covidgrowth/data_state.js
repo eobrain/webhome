@@ -1,5 +1,5 @@
 const DATA_STATE={
-updateTime:1591412572052,
+updateTime:1591466054868,
 minTotalDeaths:20,
 minDay:18283,
 dayCount:136,
