@@ -1,4 +1,5 @@
 WEB="../../covidgrowth"
+ROLLUP="rollup --format iife --input $< --name state --file $@ --plugin node-resolve --context window"
 
 # Generate data files for web pages
 [web]
@@ -8,6 +9,7 @@ deps = [
     "$(WEB)/data_state.js",
     "$(WEB)/world.min.js",
     "$(WEB)/state.min.js",
+    "$(WEB)/state.js",
     "$(WEB)/usa.min.js"
 ]
 
@@ -36,9 +38,13 @@ rm -f raw-data.json time_series_covid19_deaths_US.csv
 """
 
 
+
 ["$(WEB)/%.min.js"]
 deps=["web/%.js"]
-exec="rollup --format iife --input $< --name state --file $@ --plugin node-resolve --plugin terser"
+exec="$(ROLLUP) --plugin terser"
 
+["$(WEB)/%.js"]
+deps=["web/%.js"]
+exec="$(ROLLUP)"
 
 

@@ -1,7 +1,9 @@
-/* global DATA_STATE Chart
+import Chart from 'chart.js'
+import 'chartjs-adapter-date-fns'
+
+/* global DATA_STATE
    spinnerElement
    updateTimeElement
-   navElement
    minTotalDeathsElement
    */
 
@@ -55,17 +57,15 @@ const drawSparkline = async (name, datasets) => {
         }
       },
       scales: {
-        xAxes: [{
+        x: {
           display: false,
           type: 'time'
-        }],
-        yAxes: [{
+        },
+        y: {
           display: false,
-          ticks: {
-            max,
-            min: 0
-          }
-        }]
+          max,
+          min: 0
+        }
       }
     }
   })
@@ -94,7 +94,7 @@ const drawGraph = async (name, datasets) => {
         }
       },
       scales: {
-        xAxes: [{
+        x: {
           type: 'time',
           time: {
             unit: 'week'
@@ -102,19 +102,19 @@ const drawGraph = async (name, datasets) => {
           ticks: {
             fontSize
           }
-        }],
-        yAxes: [{
+        },
+        y: {
           scaleLabel: {
             display: true,
             labelString: 'annualized mortality rate'
           },
+          max,
+          min: 0,
           ticks: {
-            max,
-            min: 0,
             callback: value => value + '%',
             fontSize
           }
-        }]
+        }
       }
     }
   })
