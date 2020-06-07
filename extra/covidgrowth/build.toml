@@ -37,8 +37,6 @@ rm -f $(WEB)/data.js $(WEB)/data_us.js $(WEB)/data_state.js
 rm -f raw-data.json time_series_covid19_deaths_US.csv
 """
 
-
-
 ["$(WEB)/%.min.js"]
 deps=["web/%.js"]
 exec="$(ROLLUP) --plugin terser"

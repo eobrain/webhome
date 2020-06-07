@@ -19,9 +19,6 @@
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^8.0.1",
     "bajel": "^0.7.1",
-    "chart.js": "3.0.0-alpha",
-    "chartjs-adapter-date-fns": "^1.0.0",
-    "date-fns": "^2.14.0",
     "papaparse": "^5.2.0",
     "rollup": "^2.13.1",
     "rollup-plugin-terser": "^6.1.0"
