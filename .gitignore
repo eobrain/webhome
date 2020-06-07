@@ -11,3 +11,4 @@ vendor
 /sw.js
 node_modules
 
+/covidgrowth/*.min.js

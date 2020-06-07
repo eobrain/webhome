@@ -6,6 +6,9 @@ deps = [
     "$(WEB)/data.js",
     "$(WEB)/data_us.js",
     "$(WEB)/data_state.js",
+    "$(WEB)/world.min.js",
+    "$(WEB)/state.min.js",
+    "$(WEB)/usa.min.js"
 ]
 
 ["$(WEB)/data.js"]
@@ -31,3 +34,11 @@ exec = """
 rm -f $(WEB)/data.js $(WEB)/data_us.js $(WEB)/data_state.js
 rm -f raw-data.json time_series_covid19_deaths_US.csv
 """
+
+
+["$(WEB)/%.min.js"]
+deps=["web/%.js"]
+exec="rollup --format iife --input $< --name state --file $@ --plugin node-resolve --plugin terser"
+
+
+

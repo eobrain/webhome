@@ -8,9 +8,9 @@ title: COVID (World)
 <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" defer></script>
 <script src="/covidgrowth/data.js" defer></script>
-<script src="/covidgrowth/world.js" defer></script>
+<script src="/covidgrowth/world.min.js" defer></script>
 
-### Per-Capita COVID-19 Death Rates
+### Per-Capita COVID-19 Death Rate
 
 [USA](/covidgrowth/usa)  (by county), [USA](/covidgrowth/state)  (by state), **World**
 

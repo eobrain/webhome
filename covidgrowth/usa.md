@@ -8,7 +8,7 @@ title: COVID (USA)
 <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" defer></script>
 <script src="/covidgrowth/data_us.js" defer></script>
-<script src="/covidgrowth/usa.js" defer></script>
+<script src="/covidgrowth/usa.min.js" defer></script>
 
 **USA (by county)**, [USA](/covidgrowth/state)  (by state), [World](/covidgrowth/world) 
 
