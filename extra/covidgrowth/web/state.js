@@ -1,12 +1,4 @@
-/* global DATA_STATE Chart
-   spinnerElement
-   updateTimeElement
-   minTotalDeathsElement
-   */
-
-const DAY_MS = 24 * 60 * 60 * 1000
-
-const {
+import {
   dayCount,
   minDay,
   stateData,
@@ -14,7 +6,15 @@ const {
   updateTime,
   minTotalDeaths,
   colors
-} = DATA_STATE
+} from './data_state.js'
+
+/* global Chart
+   spinnerElement
+   updateTimeElement
+   minTotalDeathsElement
+   */
+
+const DAY_MS = 24 * 60 * 60 * 1000
 
 const fontSize = 8
 

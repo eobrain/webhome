@@ -71,12 +71,16 @@ const toTimeMs = s => {
   })
 
   const stateData = {}
-  console.log('const DATA_STATE={')
-  console.log(`updateTime:${fileTime(csvFilePath)},`)
-  console.log(`minTotalDeaths:${MIN_DEATHS_PER_STATE},`)
-  console.log(`minDay:${minDay},`)
-  console.log(`dayCount:${maxDay - minDay + 1},`)
-  console.log('stateData:{')
+  console.log()
+  console.log(`export const updateTime=${fileTime(csvFilePath)}`)
+  console.log()
+  console.log(`export const minTotalDeaths=${MIN_DEATHS_PER_STATE}`)
+  console.log()
+  console.log(`export const minDay=${minDay}`)
+  console.log()
+  console.log(`export const dayCount=${maxDay - minDay + 1}`)
+  console.log()
+  console.log('export const stateData={')
   let seriesCount = 0
   for (const state in statePopulations) {
     const population = Number(statePopulations[state])
@@ -99,13 +103,14 @@ const toTimeMs = s => {
     stateData[state] = daily
     ++seriesCount
   }
-  console.log('},')
-  console.log('smoothedStateData:{')
+  console.log('}')
+  console.log()
+  console.log('export const smoothedStateData={')
   for (const state in stateData) {
     const smoothed = smooth(stateData[state])
     console.log(`"${state}":${stringifyArray(smoothed)},`)
   }
-  console.log('},')
-  console.log(`colors:${stringifyArray(await maxichrome(seriesCount, ['white', 'black']))},`)
   console.log('}')
+  console.log()
+  console.log(`export const colors=${stringifyArray(await maxichrome(seriesCount, ['white', 'black']))}`)
 })()

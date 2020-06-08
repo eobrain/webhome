@@ -12,3 +12,4 @@ vendor
 node_modules
 
 /covidgrowth/*.min.js
+/covidgrowth/state.js

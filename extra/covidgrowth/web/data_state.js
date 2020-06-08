@@ -1,9 +1,13 @@
-const DATA_STATE={
-updateTime:1591548285579,
-minTotalDeaths:20,
-minDay:18283,
-dayCount:137,
-stateData:{
+
+export const updateTime=1591548285579
+
+export const minTotalDeaths=20
+
+export const minDay=18283
+
+export const dayCount=137
+
+export const stateData={
 // AS has only 0 deaths
 // GU has only 5 deaths
 // Northern Mariana Islands has only 17 deaths
@@ -6591,8 +6595,9 @@ stateData:{
 // Diamond Princess has no population
 // Grand Princess has no population
 // undefined has no population
-},
-smoothedStateData:{
+}
+
+export const smoothedStateData={
 "PR":[-3.3839415600762656e-10,
 -2.837654349979672e-10,
 -2.5070148644236933e-10,
@@ -13169,8 +13174,9 @@ smoothedStateData:{
 0.059158479469520325,
 0.058423993390980505,
 0.06194360295551275],
-},
-colors:["#f14800",
+}
+
+export const colors=["#f14800",
 "#ea2a5a",
 "#ee9500",
 "#b0001b",
@@ -13217,5 +13223,4 @@ colors:["#f14800",
 "#25cab0",
 "#007cc2",
 "#00aeba",
-"#00bff5"],
-}
+"#00bff5"]

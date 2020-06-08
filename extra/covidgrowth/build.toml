@@ -1,12 +1,11 @@
-WEB="../../covidgrowth"
-ROLLUP="rollup --format iife --input $< --name state --file $@ --plugin node-resolve --context window"
+WEB = "../../covidgrowth"
+ROLLUP = "rollup --format iife --name state --file $@ --plugin node-resolve --context window"
 
 # Generate data files for web pages
 [web]
 deps = [
     "$(WEB)/data.js",
     "$(WEB)/data_us.js",
-    "$(WEB)/data_state.js",
     "$(WEB)/world.min.js",
     "$(WEB)/state.min.js",
     "$(WEB)/state.js",
@@ -18,11 +17,11 @@ deps = ["raw-data.json", "raw2data.js", "common.js"]
 exec = "node raw2data.js $< >$@"
 
 ["$(WEB)/data_us.js"]
-deps=["time_series_covid19_deaths_US.csv", "us_raw2data.js", "common.js"]
+deps = ["time_series_covid19_deaths_US.csv", "us_raw2data.js", "common.js"]
 exec = "node us_raw2data.js $< >$@"
 
-["$(WEB)/data_state.js"]
-deps=["time_series_covid19_deaths_US.csv", "state_raw2data.js", "common.js"]
+["web/data_state.js"]
+deps = ["time_series_covid19_deaths_US.csv", "state_raw2data.js", "common.js"]
 exec = "node state_raw2data.js $< >$@"
 
 ["raw-data.json"]
@@ -33,16 +32,30 @@ exec = "wget --output-document=$@ https://raw.githubusercontent.com/CSSEGISandDa
 
 [clean]
 exec = """
-rm -f $(WEB)/data.js $(WEB)/data_us.js $(WEB)/data_state.js
+rm -f $(WEB)/data.js $(WEB)/data_us.js web/data_state.js
 rm -f raw-data.json time_series_covid19_deaths_US.csv
 """
 
-["$(WEB)/%.min.js"]
-deps=["web/%.js"]
-exec="$(ROLLUP) --plugin terser"
+["$(WEB)/usa.min.js"]
+deps = ["web/usa.js"]
+exec = "$(ROLLUP) --plugin terser --input $<"
 
-["$(WEB)/%.js"]
-deps=["web/%.js"]
-exec="$(ROLLUP)"
+["$(WEB)/state.min.js"]
+deps = ["web/state.js", "web/data_state.js"]
+exec = "$(ROLLUP) --plugin terser --input $<"
 
+["$(WEB)/world.min.js"]
+deps = ["web/world.js"]
+exec = "$(ROLLUP) --plugin terser --input $<"
 
+["$(WEB)/usa.js"]
+deps = ["web/usa.js"]
+exec = "$(ROLLUP) --input $<"
+
+["$(WEB)/state.js"]
+deps = ["web/state.js", "web/data_state.js"]
+exec = "$(ROLLUP) --input $<"
+
+["$(WEB)/world.js"]
+deps = ["web/world.js"]
+exec = "$(ROLLUP) --input $<"
