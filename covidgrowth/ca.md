@@ -1,15 +1,15 @@
 ---
 layout: page
-permalink: /covidgrowth/usa/
-title: COVID (USA)
+permalink: /covidgrowth/ca/
+title: COVID (California)
 ---
 
 <link rel="stylesheet" href="/covidgrowth/graph.css">
 <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" defer></script>
-<script src="/covidgrowth/usa.min.js" defer></script>
+<script src="/covidgrowth/ca.min.js" defer></script>
 
-[California](/covidgrowth/ca), **USA (by county)**, [USA](/covidgrowth/state)  (by state), [World](/covidgrowth/world) 
+**California**, [USA](/covidgrowth/usa) (by county), [USA](/covidgrowth/state)  (by state), [World](/covidgrowth/world) 
 
 ### Per-Capita COVID-19 Death Rates
 

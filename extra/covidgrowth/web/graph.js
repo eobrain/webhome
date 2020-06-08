@@ -11,9 +11,9 @@ export const Graph = (
 
   const nextTick = () => new Promise(resolve => setTimeout(resolve, 0))
 
-  const drawSparkline = async (shortName, max, datasets) => {
+  const drawSparkline = async (i, shortName, max, datasets) => {
     const containerElement = document.createElement('A')
-    containerElement.setAttribute('href', '#' + shortName)
+    containerElement.setAttribute('href', '#g' + i)
     containerElement.innerText = shortName
     containerElement.setAttribute('class', 'sparkline')
     spinnerElement.insertAdjacentElement('beforebegin', containerElement)
@@ -57,9 +57,9 @@ export const Graph = (
 
   const borderWidth = 2
 
-  const drawGraph = async (shortName, max, datasets) => {
+  const drawGraph = async (i, shortName, max, datasets) => {
     const canvasElement = document.createElement('CANVAS')
-    canvasElement.setAttribute('id', shortName)
+    canvasElement.setAttribute('id', 'g' + i)
     spinnerElement.insertAdjacentElement('beforebegin', canvasElement)
     const ctx = canvasElement.getContext('2d')
 
@@ -106,7 +106,7 @@ export const Graph = (
   const promises = []
 
   const sparkline = (i, shortName, max, data) => {
-    promises.push(drawSparkline(shortName, max, [{
+    promises.push(drawSparkline(i, shortName, max, [{
       fill: true,
       backgroundColor: colors[i],
       borderColor: colors[i],
@@ -117,7 +117,7 @@ export const Graph = (
   }
 
   const individualGraph = (i, shortName, longName, max, smoothData, dailyData) => {
-    promises.push(drawGraph(shortName, max, [{
+    promises.push(drawGraph(i, shortName, max, [{
       type: 'line',
       label: longName + ' (weekly moving average)',
       backgroundColor: 'transparent',

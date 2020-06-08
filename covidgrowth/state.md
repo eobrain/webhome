@@ -9,7 +9,7 @@ title: COVID (USA)
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" defer></script>
 <script src="/covidgrowth/state.min.js" defer></script>
 
-[USA](/covidgrowth/usa) (by county), **USA (by state)**, [World](/covidgrowth/world) 
+[California](/covidgrowth/ca), [USA](/covidgrowth/usa) (by county), **USA (by state)**, [World](/covidgrowth/world) 
 
 ### Per-Capita COVID-19 Death Rates
 

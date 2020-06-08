@@ -15,3 +15,4 @@ node_modules
 /covidgrowth/state.js
 /covidgrowth/usa.js
 /covidgrowth/world.js
+/covidgrowth/ca.js

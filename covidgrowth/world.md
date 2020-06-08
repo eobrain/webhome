@@ -11,7 +11,7 @@ title: COVID (World)
 
 ### Per-Capita COVID-19 Death Rates
 
-[USA](/covidgrowth/usa)  (by county), [USA](/covidgrowth/state)  (by state), **World**
+[California](/covidgrowth/ca), [USA](/covidgrowth/usa)  (by county), [USA](/covidgrowth/state)  (by state), **World**
 
 <section>
   <img id="spinnerElement" src="/img/spinner32.gif">

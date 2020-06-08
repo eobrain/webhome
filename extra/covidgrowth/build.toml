@@ -4,9 +4,11 @@ ROLLUP = "rollup --format iife --name state --file $@ --plugin node-resolve --co
 # Generate data files for web pages
 [web]
 deps = [
+    "$(WEB)/ca.min.js",
     "$(WEB)/usa.min.js",
     "$(WEB)/state.min.js",
     "$(WEB)/world.min.js",
+    "$(WEB)/ca.js",
     "$(WEB)/usa.js",
     "$(WEB)/state.js",
     "$(WEB)/world.js",
@@ -15,6 +17,10 @@ deps = [
 ["web/data_world.js"]
 deps = ["raw-data.json", "raw2data.js", "common.js"]
 exec = "node raw2data.js $< >$@"
+
+["web/data_ca.js"]
+deps = ["time_series_covid19_deaths_US.csv", "ca_raw2data.js", "common.js"]
+exec = "node ca_raw2data.js $< >$@"
 
 ["web/data_usa.js"]
 deps = ["time_series_covid19_deaths_US.csv", "us_raw2data.js", "common.js"]
