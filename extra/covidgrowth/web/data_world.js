@@ -1,9 +1,12 @@
-const DATA={
-updateTime:1591518921000,
-minDeaths:10,
-minMortalityRate:0.05,
-minPoints:30,
-columns:["Date",
+export const updateTime=1591518921000
+
+export const minTotalDeaths=10
+
+export const minMortalityRate=0.05
+
+export const minPoints=30
+
+export const columns=["Date",
 "Belgium",
 "Brazil",
 "Canada",
@@ -24,8 +27,9 @@ columns:["Date",
 "Switzerland",
 "Turkey",
 "United Kingdom",
-"United States of America"],
-geoIds:[,
+"United States of America"]
+
+export const geoIds=[,
 "BE",
 "BR",
 "CA",
@@ -46,8 +50,9 @@ geoIds:[,
 "CH",
 "TR",
 "UK",
-"US"],
-colors:["#d4163e",
+"US"]
+
+export const colors=["#d4163e",
 "#c48a00",
 "#c6653e",
 "#926600",
@@ -67,8 +72,9 @@ colors:["#d4163e",
 "#008d97",
 "#2c8cff",
 "#0aa4a7",
-"#1aaffe"],
-rows:[
+"#1aaffe"]
+
+export const rows=[
 [439760,
 439784,
 439808,
@@ -2225,8 +2231,9 @@ rows:[
 0.11557996325514476,
 0.10397734146119202,
 0.07352045925206602],
-],
-smoothedRows:[
+]
+
+export const smoothedRows=[
 [439760,
 439784,
 439808,
@@ -4384,4 +4391,4 @@ smoothedRows:[
 0.09760362393128985,
 0.09034465548164516],
 ]
-}
+

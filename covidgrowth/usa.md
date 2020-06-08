@@ -7,7 +7,6 @@ title: COVID (USA)
 <link rel="stylesheet" href="/covidgrowth/graph.css">
 <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" defer></script>
-<script src="/covidgrowth/data_us.js" defer></script>
 <script src="/covidgrowth/usa.min.js" defer></script>
 
 **USA (by county)**, [USA](/covidgrowth/state)  (by state), [World](/covidgrowth/world) 
@@ -22,6 +21,6 @@ The graphs above show the annualized mortality rates of the COVID deaths, so for
 
 
 Source: [Center for Systems Science and Engineering (CSSE) at Johns Hopkins University][1],
-updated at <span id="updateTimeElement"></span>, showing all counties with at least <span id="minTotalDeathsElement"></span> total deaths and where daily smoothed mortality rate exceeded <span id="minMortalityRateElement"></span>% anualized.
+updated at <span id="updateTimeElement"></span>, showing all counties with at least <span id="minTotalDeathsElement"></span> total deaths and where daily smoothed mortality rate exceeded <span id="minMortalityRateElement"></span>% annualized.
 
 [1]: https://github.com/CSSEGISandData/COVID-19

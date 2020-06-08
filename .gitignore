@@ -13,3 +13,5 @@ node_modules
 
 /covidgrowth/*.min.js
 /covidgrowth/state.js
+/covidgrowth/usa.js
+/covidgrowth/world.js

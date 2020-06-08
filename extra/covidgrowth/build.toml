@@ -4,19 +4,19 @@ ROLLUP = "rollup --format iife --name state --file $@ --plugin node-resolve --co
 # Generate data files for web pages
 [web]
 deps = [
-    "$(WEB)/data.js",
-    "$(WEB)/data_us.js",
-    "$(WEB)/world.min.js",
+    "$(WEB)/usa.min.js",
     "$(WEB)/state.min.js",
+    "$(WEB)/world.min.js",
+    "$(WEB)/usa.js",
     "$(WEB)/state.js",
-    "$(WEB)/usa.min.js"
+    "$(WEB)/world.js",
 ]
 
-["$(WEB)/data.js"]
+["web/data_world.js"]
 deps = ["raw-data.json", "raw2data.js", "common.js"]
 exec = "node raw2data.js $< >$@"
 
-["$(WEB)/data_us.js"]
+["web/data_usa.js"]
 deps = ["time_series_covid19_deaths_US.csv", "us_raw2data.js", "common.js"]
 exec = "node us_raw2data.js $< >$@"
 
@@ -30,32 +30,16 @@ exec = "wget --output-document=$@ https://opendata.ecdc.europa.eu/covid19/casedi
 ["time_series_covid19_deaths_US.csv"]
 exec = "wget --output-document=$@ https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv"
 
+["$(WEB)/%.min.js"]
+deps = ["web/%.js", "web/data_%.js", "web/graph.js"]
+exec = "$(ROLLUP) --plugin terser --input $<"
+
+["$(WEB)/%.js"]
+deps = ["web/%.js", "web/data_%.js", "web/graph.js"]
+exec = "$(ROLLUP) --input $<"
+
 [clean]
 exec = """
-rm -f $(WEB)/data.js $(WEB)/data_us.js web/data_state.js
+rm -f web/data_world.js web/data_us.js web/data_state.js
 rm -f raw-data.json time_series_covid19_deaths_US.csv
 """
-
-["$(WEB)/usa.min.js"]
-deps = ["web/usa.js"]
-exec = "$(ROLLUP) --plugin terser --input $<"
-
-["$(WEB)/state.min.js"]
-deps = ["web/state.js", "web/data_state.js"]
-exec = "$(ROLLUP) --plugin terser --input $<"
-
-["$(WEB)/world.min.js"]
-deps = ["web/world.js"]
-exec = "$(ROLLUP) --plugin terser --input $<"
-
-["$(WEB)/usa.js"]
-deps = ["web/usa.js"]
-exec = "$(ROLLUP) --input $<"
-
-["$(WEB)/state.js"]
-deps = ["web/state.js", "web/data_state.js"]
-exec = "$(ROLLUP) --input $<"
-
-["$(WEB)/world.js"]
-deps = ["web/world.js"]
-exec = "$(ROLLUP) --input $<"

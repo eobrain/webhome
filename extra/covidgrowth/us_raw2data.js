@@ -50,12 +50,16 @@ const toTimeMs = s => {
   const maxDay = maxTimeMs / DAY_MS
   const countyData = []
 
-  console.log('const DATA_US = {')
-  console.log(`updateTime:${fileTime(csvFilePath)},`)
-  console.log(`minTotalDeaths:${MIN_DEATHS_PER_COUNTY},`)
-  console.log(`minMortalityRate:${MIN_MORTALITY_RATE},`)
-  console.log(`minDay:${minDay},`)
-  console.log(`dayCount:${maxDay - minDay + 1},`)
+  console.log('export const updateTime=', fileTime(csvFilePath))
+  console.log()
+  console.log('export const minTotalDeaths=', MIN_DEATHS_PER_COUNTY)
+  console.log()
+  console.log('export const minMortalityRate=', MIN_MORTALITY_RATE)
+  console.log()
+  console.log('export const minDay=', minDay)
+  console.log()
+  console.log('export const dayCount=', maxDay - minDay + 1)
+  console.log()
   await parse(record => {
     const { Admin2, Province_State, Population } = record
     const state = STATE_CODE[Province_State] || Province_State
@@ -81,7 +85,7 @@ const toTimeMs = s => {
       return result
     })
   })
-  console.log('smoothedCountyData:{')
+  console.log('export const smoothedCountyData={')
   let seriesCount = 0
   for (const county in countyData) {
     const smoothed = smooth(countyData[county])
@@ -93,12 +97,14 @@ const toTimeMs = s => {
     ++seriesCount
     console.log(`"${county}":${stringifyArray(smoothed)},`)
   }
-  console.log('},')
-  console.log('countyData:{')
+  console.log('}')
+  console.log()
+  console.log('export const countyData={')
   for (const county in countyData) {
     console.log(`"${county}":${stringifyArray(countyData[county])},`)
   }
-  console.log('},')
-  console.log(`colors:${stringifyArray(await maxichrome(seriesCount, ['white', 'black']))},`)
   console.log('}')
+  console.log()
+  console.log('export const colors=', stringifyArray(await maxichrome(seriesCount, ['white', 'black'])))
+  console.log()
 })()

@@ -1,169 +1,55 @@
-/* global DATA Chart
-   spinnerElement
-   updateTimeElement
-   minDeathsElement
+import {
+  updateTime,
+  minTotalDeaths,
+  minMortalityRate,
+  minPoints,
+  columns,
+  geoIds,
+  colors,
+  rows,
+  smoothedRows
+} from './data_world.js'
+import { Graph, maximum, roundUp } from './graph.js'
+
+/* global
    minMortalityRateElement
    minPointsElement
    */
 
-const fontSize = 8
 const HOUR_MS = 60 * 60 * 1000
 const hour2js = hour => new Date(hour * HOUR_MS)
-const hours = DATA.rows[0]
-const smoothedExcelDates = DATA.smoothedRows[0]
-const serieses = DATA.rows.slice(1)
-const smoothedSerieses = DATA.smoothedRows.slice(1)
-const colors = DATA.colors
+const hours = rows[0]
+const smoothedExcelDates = smoothedRows[0]
+const serieses = rows.slice(1)
+const smoothedSerieses = smoothedRows.slice(1)
 
 const dates = hours.map(x => hour2js(x))
 const smoothedDates = smoothedExcelDates.map(x => hour2js(x))
-const labels = DATA.columns.slice(1)
-const geoIds = DATA.geoIds.slice(1)
+const labels = columns.slice(1)
+const countryCodes = geoIds.slice(1)
 
-const maximum = xs => xs.reduce((acc, x) => Math.max(acc, x), 0)
-
-const roundUp = dx => x => dx * Math.ceil(x / dx)
 const max = roundUp(0.1)(maximum(smoothedSerieses.map(series => maximum(series))))
-const borderWidth = 2
 
-const nextTick = () => new Promise(resolve => setTimeout(resolve, 0))
-
-const drawSparkline = async (name, datasets) => {
-  const containerElement = document.createElement('A')
-  containerElement.setAttribute('href', '#' + name)
-  containerElement.innerText = name
-  containerElement.setAttribute('class', 'sparkline')
-  spinnerElement.insertAdjacentElement('beforebegin', containerElement)
-
-  const canvasElement = document.createElement('CANVAS')
-  // canvasElement.setAttribute('class', 'sparkline')
-  containerElement.appendChild(canvasElement)
-  const ctx = canvasElement.getContext('2d')
-
-  await nextTick()
-  return new Chart(ctx, {
-    type: 'line',
-    data: { datasets },
-    options: {
-      // responsive: false,
-      aspectRatio: 1,
-      legend: {
-        display: false
-      },
-      plugins: {
-        filler: {
-          propagate: false
-        }
-      },
-      scales: {
-        xAxes: [{
-          display: false,
-          type: 'time'
-        }],
-        yAxes: [{
-          display: false,
-          ticks: {
-            max,
-            min: 0
-          }
-        }]
-      }
-    }
-  })
-}
-
-const drawGraph = async (name, datasets) => {
-  const canvasElement = document.createElement('CANVAS')
-  canvasElement.setAttribute('id', name)
-  spinnerElement.insertAdjacentElement('beforebegin', canvasElement)
-  const ctx = canvasElement.getContext('2d')
-
-  await nextTick()
-  return new Chart(ctx, {
-    type: 'bar',
-    data: { datasets },
-    options: {
-      aspectRatio: 1,
-      legend: {
-        position: 'bottom',
-        labels: {
-          fontSize,
-          boxWidth: borderWidth
-        }
-      },
-      scales: {
-        xAxes: [{
-          type: 'time',
-          time: {
-            unit: 'week'
-          },
-          ticks: {
-            fontSize
-          }
-        }],
-        yAxes: [{
-          scaleLabel: {
-            display: true,
-            labelString: 'annualized mortality rate'
-          },
-          ticks: {
-            max,
-            min: 0,
-            fontSize,
-            callback: value => value + '%'
-          }
-        }]
-      }
-    }
-  })
-}
+const { sparkline, individualGraph, overlayedGraph, finish } = Graph(colors)
 
 const toPoints = (series, _dates) => series.map((y, i) => ({ t: _dates[i], y })).filter(p => !!p)
 
-const promises = []
-
 serieses.forEach((series, i) => {
-  promises.push(drawSparkline(geoIds[i], [{
-    fill: true,
-    label: labels[i] + ' (weekly moving average)',
-    backgroundColor: colors[i],
-    borderColor: colors[i],
-    pointRadius: 0,
-    borderWidth,
-    data: toPoints(smoothedSerieses[i], smoothedDates)
-  }]))
+  sparkline(i, countryCodes[i], max,
+    toPoints(smoothedSerieses[i], smoothedDates))
 })
 
 serieses.forEach((series, i) => {
-  promises.push(drawGraph(geoIds[i], [{
-    type: 'line',
-    label: labels[i] + ' (weekly moving average)',
-    backgroundColor: 'transparent',
-    borderColor: colors[i],
-    pointRadius: 0,
-    borderWidth,
-    data: toPoints(smoothedSerieses[i], smoothedDates)
-  }, {
-    label: labels[i] + ' (daily)',
-    backgroundColor: colors[i] + '40',
-    borderColor: colors[i] + '40',
-    data: toPoints(series, dates)
-  }]))
+  individualGraph(i, countryCodes[i], labels[i], max,
+    toPoints(smoothedSerieses[i], smoothedDates),
+    toPoints(series, dates))
 })
 
-promises.push(drawGraph('All', smoothedSerieses.map((row, i) => ({
-  type: 'line',
-  label: labels[i],
-  backgroundColor: colors[i] + '40',
-  borderColor: colors[i],
-  pointRadius: 0,
-  borderWidth,
-  data: toPoints(row, smoothedDates)
-}))))
+overlayedGraph(smoothedSerieses, max,
+  i => countryCodes[i],
+  row => toPoints(row, smoothedDates))
 
-Promise.all(promises).then(() => { spinnerElement.style.display = 'none' })
+finish(updateTime, minTotalDeaths)
 
-updateTimeElement.innerHTML = new Date(DATA.updateTime).toLocaleString()
-minDeathsElement.innerHTML = DATA.minDeaths
-minMortalityRateElement.innerHTML = DATA.minMortalityRate
-minPointsElement.innerHTML = DATA.minPoints
+minMortalityRateElement.innerHTML = minMortalityRate
+minPointsElement.innerHTML = minPoints

@@ -1,10 +1,14 @@
-const DATA_US = {
-updateTime:1591548285579,
-minTotalDeaths:50,
-minMortalityRate:1,
-minDay:18283,
-dayCount:137,
-smoothedCountyData:{
+export const updateTime= 1591548285579
+
+export const minTotalDeaths= 50
+
+export const minMortalityRate= 1
+
+export const minDay= 18283
+
+export const dayCount= 137
+
+export const smoothedCountyData={
 "Tallapoosa AL":[-5.528297821329484e-10,
 -4.6532977705215395e-10,
 -4.1340665676628674e-10,
@@ -5896,8 +5900,9 @@ smoothedCountyData:{
 0.47001193437157696,
 0.45682742442702207,
 0.42071683287167017],
-},
-countyData:{
+}
+
+export const countyData={
 "Tallapoosa AL":[0,
 0,
 0,
@@ -11789,8 +11794,9 @@ countyData:{
 0.597802053818563,
 0.4782416430548504,
 0.2391208215274252],
-},
-colors:["#ea454f",
+}
+
+export const colors= ["#ea454f",
 "#d92257",
 "#f19135",
 "#fc2eb8",
@@ -11832,5 +11838,5 @@ colors:["#ea454f",
 "#0b8eba",
 "#0cc09a",
 "#00a2b5",
-"#02b1e6"],
-}
+"#02b1e6"]
+
