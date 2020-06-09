@@ -134,7 +134,7 @@ export const Graph = (
   }
 
   const overlayedGraph = (names, max, labelOfI, dataOfName) => {
-    promises.push(drawGraph('all', max, names.map((name, i) => ({
+    promises.push(drawGraph(names.length, 'all', max, names.map((name, i) => ({
       type: 'line',
       label: labelOfI(i),
       backgroundColor: colors[i] + '40',

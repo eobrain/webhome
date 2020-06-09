@@ -62,7 +62,7 @@ const toTimeMs = s => {
   console.log()
   await parse(record => {
     const { Admin2, Province_State, Population } = record
-    if (Province_State != 'California') {
+    if (Province_State !== 'California') {
       return
     }
     const state = 'CA'
