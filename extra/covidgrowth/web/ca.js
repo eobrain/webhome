@@ -20,7 +20,7 @@ const { sparkline, individualGraph, overlayedGraph, finish } = Graph(colors)
 const DAY_MS = 24 * 60 * 60 * 1000
 
 const dates = [...new Array(dayCount)].map((_, i) => new Date(DAY_MS * (i + minDay)))
-const max = roundUp(0.1)(maximum(order.map(name => maximum(smoothedCountyData[name]))))
+const max = roundUp(0.25)(maximum(order.map(name => maximum(smoothedCountyData[name]))))
 
 const toPoints = (series, _dates) => series.map((y, i) => ({ t: _dates[i], y }))// .filter(p => p.y)
 
