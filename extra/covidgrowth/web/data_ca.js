@@ -8,6 +8,33 @@ export const minDay= 18283
 
 export const dayCount= 138
 
+export const order=["Placer CA",
+"Yolo CA",
+"Sacramento CA",
+"Solano CA",
+"Marin CA",
+"San Joaquin CA",
+"Contra Costa CA",
+"San Francisco CA",
+"Alameda CA",
+"Stanislaus CA",
+"San Mateo CA",
+"Santa Clara CA",
+"Merced CA",
+"Fresno CA",
+"Tulare CA",
+"Monterey CA",
+"Kings CA",
+"Kern CA",
+"San Bernardino CA",
+"Santa Barbara CA",
+"Ventura CA",
+"Los Angeles CA",
+"Riverside CA",
+"Orange CA",
+"Imperial CA",
+"San Diego CA"]
+
 export const smoothedCountyData={
 "Alameda CA":[-4.479247983122716e-10,
 -3.758450271135732e-10,

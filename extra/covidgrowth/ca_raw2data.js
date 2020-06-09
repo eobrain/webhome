@@ -60,8 +60,9 @@ const toTimeMs = s => {
   console.log()
   console.log('export const dayCount=', maxDay - minDay + 1)
   console.log()
+  const latitudes = {}
   await parse(record => {
-    const { Admin2, Province_State, Population } = record
+    const { Admin2, Province_State, Population, Lat } = record
     if (Province_State !== 'California') {
       return
     }
@@ -87,7 +88,12 @@ const toTimeMs = s => {
       prev = c
       return result
     })
+    latitudes[county] = Lat
   })
+  const order = Object.keys(countyData)
+  order.sort((a, b) => latitudes[b] - latitudes[a])
+  console.log(`export const order=${stringifyArray(order)}`)
+  console.log()
   console.log('export const smoothedCountyData={')
   let seriesCount = 0
   for (const county in countyData) {

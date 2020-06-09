@@ -4,7 +4,7 @@
     height: 10vmin;
     margin: 1vmin 2vmin;
     display: inline-block;
-    font-size: smaller;
+    font-size: 2.5vmin;
 }
 
 .sparkline canvas {
@@ -13,5 +13,5 @@
 }
 
 section>canvas {
-    margin: 5vmin;
+    margin: 5vmin 0;
 }
