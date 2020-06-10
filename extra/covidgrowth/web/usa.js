@@ -25,7 +25,7 @@ const max = roundUp(0.1)(maximum(countyNames.map(name => maximum(smoothedCountyD
 const toPoints = (series, _dates) => series.map((y, i) => ({ t: _dates[i], y }))// .filter(p => p.y)
 
 countyNames.forEach((name, i) => {
-  sparkline(i, name.slice(name.length - 2), max,
+  sparkline(i, name, max,
     toPoints(smoothedCountyData[name], dates))
 })
 
