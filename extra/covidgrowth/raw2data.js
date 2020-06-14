@@ -10,8 +10,9 @@ const { fileTime, smooth, stringifyArray } = require('./common.js')
 } */
 
 const MIN_DEATHS = 10
-const MIN_MORTALITY_RATE = 0.05
+const MIN_MORTALITY_MULTIPLIER = 0.05
 const MIN_POINTS = 30
+const LIVE_EXPECTANCY = 71 // of the world
 
 const makeArray = (n, x) => [...Array(n)].map((_, i) => x)
 
@@ -66,7 +67,7 @@ const add = (countriesAndTerritories, dateRep, value) => {
     data.rows.push(row)
     rowIndex[date] = i
   }
-  data.rows[i][j] = 365 * 100 * value // Annualized percent mortality
+  data.rows[i][j] = LIVE_EXPECTANCY * 365 * value + 1 // Multiplier over expected mortality
 }
 
 const geoIdOfCountries = {}
@@ -107,11 +108,11 @@ let smoothedTimeSeriesRows = timeSeriesRows.map((row, i) => {
   if (i === 0) {
     return row
   }
-  return smooth(row.map(x => x || 0))
+  return smooth(row.map(x => x || 1)) // treat undefined as one
 })
 const countsPerCountry = timeSeriesRows.map(row => row.map(x => !!x).reduce((acc, x) => acc + x))
 const maxPerCountry = smoothedTimeSeriesRows.map(row => row.map(x => x || 0).reduce((acc, x) => Math.max(acc, x)))
-const filter = (x, i) => countsPerCountry[i] >= MIN_POINTS && maxPerCountry[i] >= MIN_MORTALITY_RATE
+const filter = (x, i) => countsPerCountry[i] >= MIN_POINTS && maxPerCountry[i] >= MIN_MORTALITY_MULTIPLIER
 data.columns = data.columns.filter(filter)
 timeSeriesRows = timeSeriesRows.filter(filter)
 smoothedTimeSeriesRows = smoothedTimeSeriesRows.filter(filter)
@@ -131,7 +132,7 @@ const geoIds = data.columns.map(country => geoIdOfCountries[country])
   console.log()
   console.log(`export const minTotalDeaths=${MIN_DEATHS}`)
   console.log()
-  console.log(`export const minMortalityRate=${MIN_MORTALITY_RATE}`)
+  console.log(`export const minMortalityMultiplier=${MIN_MORTALITY_MULTIPLIER}`)
   console.log()
   console.log(`export const minPoints=${MIN_POINTS}`)
   console.log()

@@ -7,7 +7,7 @@ export const Graph = (
      minTotalDeathsElement
      */
 
-  const fontSize = 8
+  const fontSize = 9
 
   const nextTick = () => new Promise(resolve => setTimeout(resolve, 0))
 
@@ -47,7 +47,7 @@ export const Graph = (
             display: false,
             ticks: {
               max,
-              min: 0
+              min: 1
             }
           }]
         }
@@ -89,12 +89,12 @@ export const Graph = (
           yAxes: [{
             scaleLabel: {
               display: true,
-              labelString: 'annualized mortality rate'
+              labelString: 'approx multiple of normal mortality'
             },
             ticks: {
               max,
-              min: 0,
-              callback: value => value + '%',
+              min: 1,
+              callback: value => value + 'x',
               fontSize
             }
           }]

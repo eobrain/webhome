@@ -2,7 +2,7 @@ import { Graph, maximum, roundUp } from './graph.js'
 import {
   updateTime,
   minTotalDeaths,
-  minMortalityRate,
+  minMortalityMultiplier,
   minDay,
   dayCount,
   smoothedCountyData,
@@ -12,7 +12,7 @@ import {
 } from './data_ca.js'
 
 /* global
-   minMortalityRateElement
+   minMortalityMultiplierElement
    */
 
 const { sparkline, individualGraph, overlayedGraph, finish } = Graph(colors)
@@ -43,4 +43,4 @@ overlayedGraph(order, max,
 
 finish(updateTime, minTotalDeaths)
 
-minMortalityRateElement.innerHTML = minMortalityRate
+minMortalityMultiplierElement.innerHTML = minMortalityMultiplier

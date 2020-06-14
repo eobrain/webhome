@@ -18,9 +18,7 @@ title: COVID (USA)
   <img id="spinnerElement" src="/img/spinner32.gif">
 </section>
 
-
-The graphs above show the annualized mortality rates of the COVID deaths, so for example a value of 1% is the percentage of the state's population that would die of COVID if that daily death rate were to be sustained for a year.
-
+The graphs above show the how many times higher the daily mortality rate is compared to the expected normal rate (using a very rough approximation for the normal rate: that one 1/79th of the population dies every year, evenly spread throughout the year).
 
 Source: [Center for Systems Science and Engineering (CSSE) at Johns Hopkins University][1],
 updated at <span id="updateTimeElement"></span>, showing all states and territories with at least <span id="minTotalDeathsElement"></span> total deaths.

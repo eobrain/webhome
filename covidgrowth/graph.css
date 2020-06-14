@@ -15,3 +15,7 @@
 section>canvas {
     margin: 5vmin 0;
 }
+
+li {
+    float: right;
+}

@@ -5,6 +5,7 @@ const { fileTime, smooth, stringifyArray } = require('./common.js')
 const STATE_CODE = require('./statecode.js')
 
 const MIN_DEATHS_PER_STATE = 20
+const LIVE_EXPECTANCY = 78.54 // of the USA
 
 const [,, csvFilePath, outPath] = process.argv
 if (!csvFilePath && !outPath) {
@@ -95,7 +96,7 @@ const toTimeMs = s => {
     }
     let prev = 0
     const daily = cumulative.map(c => {
-      const result = (c - prev) * 365 * 100 / population // Annualized percent mortality
+      const result = 1 + (c - prev) * LIVE_EXPECTANCY * 365 / population // multiplier over normal mortality
       prev = c
       return result
     })

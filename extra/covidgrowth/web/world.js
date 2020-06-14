@@ -1,7 +1,7 @@
 import {
   updateTime,
   minTotalDeaths,
-  minMortalityRate,
+  minMortalityMultiplier,
   minPoints,
   columns,
   geoIds,
@@ -12,7 +12,7 @@ import {
 import { Graph, maximum, roundUp } from './graph.js'
 
 /* global
-   minMortalityRateElement
+   minMortalityMultiplierElement
    minPointsElement
    */
 
@@ -28,7 +28,7 @@ const smoothedDates = smoothedExcelDates.map(x => hour2js(x))
 const labels = columns.slice(1)
 const countryCodes = geoIds.slice(1)
 
-const max = roundUp(0.1)(maximum(smoothedSerieses.map(series => maximum(series))))
+const max = roundUp(0.25)(maximum(smoothedSerieses.map(series => maximum(series))))
 
 const { sparkline, individualGraph, overlayedGraph, finish } = Graph(colors)
 
@@ -51,5 +51,5 @@ overlayedGraph(smoothedSerieses, max,
 
 finish(updateTime, minTotalDeaths)
 
-minMortalityRateElement.innerHTML = minMortalityRate
+minMortalityMultiplierElement.innerHTML = minMortalityMultiplier
 minPointsElement.innerHTML = minPoints

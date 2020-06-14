@@ -5,7 +5,8 @@ const { fileTime, smooth, stringifyArray } = require('./common.js')
 const STATE_CODE = require('./statecode.js')
 
 const MIN_DEATHS_PER_COUNTY = 44
-const MIN_MORTALITY_RATE = 1
+const MIN_MORTALITY_MULTIPLIER = 1.8
+const LIVE_EXPECTANCY = 78.54 // of the USA
 
 const [,, csvFilePath, outPath] = process.argv
 if (!csvFilePath && !outPath) {
@@ -54,7 +55,7 @@ const toTimeMs = s => {
   console.log()
   console.log('export const minTotalDeaths=', MIN_DEATHS_PER_COUNTY)
   console.log()
-  console.log('export const minMortalityRate=', MIN_MORTALITY_RATE)
+  console.log('export const minMortalityMultiplier=', MIN_MORTALITY_MULTIPLIER)
   console.log()
   console.log('export const minDay=', minDay)
   console.log()
@@ -80,7 +81,7 @@ const toTimeMs = s => {
     }
     let prev = 0
     countyData[county] = cumulative.map(c => {
-      const result = (c - prev) * 365 * 100 / population // Annualized percent mortality
+      const result = 1 + (c - prev) * LIVE_EXPECTANCY * 365 / population // multiplier over normal mortality
       prev = c
       return result
     })
@@ -90,7 +91,7 @@ const toTimeMs = s => {
   for (const county in countyData) {
     const smoothed = smooth(countyData[county])
     const max = smoothed.reduce((acc, x) => Math.max(acc, x))
-    if (max < MIN_MORTALITY_RATE) {
+    if (max < MIN_MORTALITY_MULTIPLIER) {
       delete countyData[county]
       continue
     }
