@@ -4,7 +4,7 @@ const Papa = require('papaparse')
 const { fileTime, smooth, stringifyArray } = require('./common.js')
 const STATE_CODE = require('./statecode.js')
 
-const MIN_DEATHS_PER_COUNTY = 40
+const MIN_DEATHS_PER_COUNTY = 44
 const MIN_MORTALITY_RATE = 1
 
 const [,, csvFilePath, outPath] = process.argv
