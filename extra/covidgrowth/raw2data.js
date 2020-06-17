@@ -10,7 +10,7 @@ const { fileTime, smooth, stringifyArray } = require('./common.js')
 } */
 
 const MIN_DEATHS = 10
-const MIN_MORTALITY_MULTIPLIER = 0.05
+const MIN_MORTALITY_MULTIPLIER = 1.05
 const MIN_POINTS = 30
 const LIVE_EXPECTANCY = 71 // of the world
 
