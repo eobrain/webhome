@@ -2,8 +2,7 @@
 const { records } = require('./raw-data.json')
 const maxichrome = require('maxichrome')
 const { fileTime, smooth, stringifyArray } = require('./common.js')
-
-// const tee = x => {console.warn(x);return x}
+// const { pp } = require('passprint')
 
 /* const writeCsv = (path, rows) => {
   fs.writeFileSync(path, rows.map(row => row.join(',')).join('\n'))
@@ -18,6 +17,9 @@ const makeArray = (n, x) => [...Array(n)].map((_, i) => x)
 
 const transpose = rows => {
   const m = rows.length
+  if (m === 0) {
+    return []
+  }
   const n = rows[0].length
   const cols = []
   for (let j = 0; j < n; ++j) {
@@ -90,12 +92,12 @@ records.forEach(row => {
     deaths,
     countriesAndTerritories,
     geoId,
-    popData2018
+    popData2019
   } = row
   if (!deaths || deaths < MIN_DEATHS || geoId.length !== 2) {
     return
   }
-  add(countriesAndTerritories, dateRep, deaths / popData2018)
+  add(countriesAndTerritories, dateRep, deaths / popData2019)
 })
 
 data.rows.sort((a, b) => a[0] - b[0])
