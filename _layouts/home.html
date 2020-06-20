@@ -27,7 +27,10 @@ layout: default
             {%- if forloop.index0 < 4 -%}
               <img class="hero" alt="{{post.image-text | xml_escape }}" src="{{post.image}}" >
             {%- else -%}
-              <img class="hero" alt="{{post.image-text | xml_escape }}" data-defer="{{post.image}}"
+              <img class="hero" alt="{{post.image-text | xml_escape }}"
+                   data-controller="image"
+                   data-action="scroll@document->image#defer"
+                   data-image-src="{{post.image}}"
                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM88x8AAp0BzdNtlUkAAAAASUVORK5CYII=">
             {%- endif -%}
           </a>
@@ -42,6 +45,7 @@ layout: default
 
 </div>
 
+<script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
 <script>
   {% include home.js %}
 </script>

@@ -1,13 +1,14 @@
 #!node_modules/bajel/cli.js serve
 
-const COMPILEJS = 'java -jar tools/closure/closure-compiler-v20190929.jar -O ADVANCED'
+const COMPILEJS = 'java -jar tools/closure/closure-compiler-v20190929.jar -O ADVANCED --externs js/externs.js'
 const COMPILED = [
   'sw.js',
   '_includes/home.js',
   '_includes/post.js',
   '_includes/post_blocking.js'
 ]
-const compile = `${COMPILEJS} --js $< --js_output_file $@`
+// const compile = `${COMPILEJS} --js $< --js_output_file $@`
+const compile = 'cp $< $@'
 
 module.exports = {
   serve: {
@@ -25,7 +26,7 @@ module.exports = {
   },
 
   '_includes/%.js': {
-    deps: ['js/%.js'],
+    deps: ['js/%.js', 'js/externs.js'],
     exec: compile
   },
 

@@ -4,10 +4,13 @@ if ('serviceWorker' in navigator) {
     .then(function () { console.log('Service Worker Registered') })
 }
 
-document.body.onload = () => {
-  document.body.onscroll = () => {
-    document.querySelectorAll('img[data-defer]').forEach((img) => {
-      img.src = img.dataset.defer
-    })
+/* global Stimulus */
+
+const application = Stimulus.Application.start()
+
+application.register('image', class extends Stimulus.Controller {
+  defer () {
+    this.element.src = this.data.get('src')
+    this.element.removeAttribute('data-controller') // disable this controller
   }
-}
+})
