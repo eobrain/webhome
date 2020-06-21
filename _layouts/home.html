@@ -24,15 +24,11 @@ layout: default
         {%- if post.image -%}
           <a href="{{ post.url | relative_url }}"
              title="{{post.image-text | xml_escape }}"">
-            {%- if forloop.index0 < 4 -%}
-              <img class="hero" alt="{{post.image-text | xml_escape }}" src="{{post.image}}" >
-            {%- else -%}
               <img class="hero" alt="{{post.image-text | xml_escape }}"
                    data-controller="image"
-                   data-action="scroll@document->image#defer"
+                   data-action="load@document->image#defer scroll@document->image#defer resize@document->image#defer"
                    data-image-src="{{post.image}}"
                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM88x8AAp0BzdNtlUkAAAAASUVORK5CYII=">
-            {%- endif -%}
           </a>
         {%- elsif site.show_excerpts -%}
           {{ post.excerpt }}
