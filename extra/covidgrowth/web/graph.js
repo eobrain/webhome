@@ -13,11 +13,13 @@ export const Graph = (
   const nextTick = () => new Promise(resolve => setTimeout(resolve, 0))
 
   const barChartRow = (i, shortName, maxToday, datasets) => {
+    const scale = y => 50 * (y - 1) / (maxToday - 1)
     const n = datasets.length - 1
-    const todayY = datasets[n - 1].y
-    const lastWeekY = datasets[n - 8].y
-    const delta = (todayY - lastWeekY) / maxToday
-    const arrow = delta > 0 ? '⟶' : '⟵'
+    const todayY = scale(datasets[n - 1].y)
+    const lastWeekY = scale(datasets[n - 8].y)
+    const firstWidth = Math.min(lastWeekY, todayY)
+    const secondWidth = Math.abs(lastWeekY - todayY)
+    const secondColor = todayY > lastWeekY ? colors[i] : 'invis'
 
     const rowElement = document.createElement('TR')
 
@@ -31,14 +33,15 @@ export const Graph = (
     // rowElement.appendChild(arrowCellElement)
 
     const barCellElement = document.createElement('TD')
-    const barElement = document.createElement('DIV')
-    barElement.style.backgroundColor = colors[i]
-    barElement.style.width = `${50 * (todayY - 1) / (maxToday - 1)}vw`
-    barCellElement.appendChild(barElement)
-    const arrowElement = document.createElement('DIV')
-    arrowElement.innerText = arrow
-    arrowElement.style.fontSize = `${50 * Math.abs(delta)}vw`
-    barCellElement.appendChild(arrowElement)
+    const firstBarElement = document.createElement('DIV')
+    firstBarElement.style.backgroundColor = colors[i]
+    firstBarElement.style.width = `${firstWidth}vw`
+    barCellElement.appendChild(firstBarElement)
+    const secondBarElement = document.createElement('DIV')
+    secondBarElement.style.backgroundColor = secondColor
+    secondBarElement.style.width = `${secondWidth}vw`
+    secondBarElement.style.border = `1px dashed ${colors[i]}`
+    barCellElement.appendChild(secondBarElement)
     rowElement.appendChild(barCellElement)
 
     barChartsElement.appendChild(rowElement)
