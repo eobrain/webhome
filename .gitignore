@@ -16,4 +16,4 @@ node_modules
 /covidgrowth/usa.js
 /covidgrowth/world.js
 /covidgrowth/ca.js
-*.min.js.map
+*.js.map
