@@ -9,7 +9,8 @@ import {
   rows,
   smoothedRows
 } from './data_world.js'
-import { Graph, maximum, roundUp } from './graph.js'
+import { Graph, maximum, roundUp, last } from './graph.js'
+import { pp } from './passprint.js'
 
 /* global
    minMortalityMultiplierElement
@@ -29,14 +30,16 @@ const labels = columns.slice(1)
 const countryCodes = geoIds.slice(1)
 
 const max = roundUp(0.25)(maximum(smoothedSerieses.map(series => maximum(series))))
+const maxToday = pp(maximum(smoothedSerieses.map(series => last(series))))
 
-const { sparkline, individualGraph, overlayedGraph, finish } = Graph(colors)
+const { barChartRow, sparkline, individualGraph, overlayedGraph, finish } = Graph(colors)
 
 const toPoints = (series, _dates) => series.map((y, i) => ({ t: _dates[i], y })).filter(p => !!p)
 
 serieses.forEach((series, i) => {
-  sparkline(i, countryCodes[i], max,
-    toPoints(smoothedSerieses[i], smoothedDates))
+  const points = toPoints(smoothedSerieses[i], smoothedDates)
+  barChartRow(i, countryCodes[i], maxToday, points)
+  sparkline(i, countryCodes[i], max, points)
 })
 
 serieses.forEach((series, i) => {

@@ -1,5 +1,5 @@
 WEB = "../../covidgrowth"
-ROLLUP = "rollup --format iife --name state --file $@ --plugin node-resolve --context window"
+ROLLUP = "rollup --format iife --name state --file $@ --plugin node-resolve --context window --sourcemap"
 
 # Generate data files for web pages
 [web]
@@ -37,7 +37,7 @@ exec = "wget --output-document=$@ https://opendata.ecdc.europa.eu/covid19/casedi
 exec = "wget --output-document=$@ https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv"
 
 ["$(WEB)/%.min.js"]
-deps = ["web/%.js", "web/data_%.js", "web/graph.js"]
+deps = ["web/%.js", "web/data_%.js", "web/graph.js", "web/passprint.js"]
 exec = "$(ROLLUP) --plugin terser --input $<"
 
 ["$(WEB)/%.js"]

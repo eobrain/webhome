@@ -13,8 +13,8 @@ title: COVID (USA)
 
 ### Per-Capita COVID-19 Death Rates
 
-<nav id="navElement"></nav>
 <section>
+  <table id="barChartsElement"></table>
   <img id="spinnerElement" src="/img/spinner32.gif">
 </section>
 

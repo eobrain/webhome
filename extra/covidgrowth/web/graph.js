@@ -2,6 +2,7 @@ export const Graph = (
   colors
 ) => {
   /* global Chart
+     barChartsElement
      spinnerElement
      updateTimeElement
      minTotalDeathsElement
@@ -10,6 +11,38 @@ export const Graph = (
   const fontSize = 9
 
   const nextTick = () => new Promise(resolve => setTimeout(resolve, 0))
+
+  const barChartRow = (i, shortName, maxToday, datasets) => {
+    const n = datasets.length - 1
+    const todayY = datasets[n - 1].y
+    const lastWeekY = datasets[n - 8].y
+    const delta = (todayY - lastWeekY) / maxToday
+    const arrow = delta > 0 ? '⟶' : '⟵'
+
+    const rowElement = document.createElement('TR')
+
+    const nameCellElement = document.createElement('TH')
+    nameCellElement.innerText = shortName
+    rowElement.appendChild(nameCellElement)
+
+    // const arrowCellElement = document.createElement('TH')
+    // arrowCellElement.innerText = arrow
+    // arrowCellElement.style.fontSize = `${100 * Math.abs(delta)}vw`
+    // rowElement.appendChild(arrowCellElement)
+
+    const barCellElement = document.createElement('TD')
+    const barElement = document.createElement('DIV')
+    barElement.style.backgroundColor = colors[i]
+    barElement.style.width = `${50 * (todayY - 1) / (maxToday - 1)}vw`
+    barCellElement.appendChild(barElement)
+    const arrowElement = document.createElement('DIV')
+    arrowElement.innerText = arrow
+    arrowElement.style.fontSize = `${50 * Math.abs(delta)}vw`
+    barCellElement.appendChild(arrowElement)
+    rowElement.appendChild(barCellElement)
+
+    barChartsElement.appendChild(rowElement)
+  }
 
   const drawSparkline = async (i, shortName, max, datasets) => {
     const containerElement = document.createElement('A')
@@ -152,9 +185,12 @@ export const Graph = (
     minTotalDeathsElement.innerHTML = minTotalDeaths
   }
 
-  return { sparkline, individualGraph, overlayedGraph, finish }
+  return { barChartRow, sparkline, individualGraph, overlayedGraph, finish }
 }
 
 export const maximum = xs => xs.reduce((acc, x) => Math.max(acc, x), 0)
+
+export const last = a => a[a.length - 1]
+export const maxLast = (names, data) => maximum(names.map(name => last(data[name])))
 
 export const roundUp = dx => x => dx * Math.ceil(x / dx)

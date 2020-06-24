@@ -19,3 +19,29 @@ section>canvas {
 li {
     float: right;
 }
+
+#barChartsElement table {
+    border-spacing: 0;
+}
+
+#barChartsElement th, #barChartsElement td {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+#barChartsElement th {
+    font-size: 2vmin;
+}
+
+#barChartsElement td {
+    line-height: 0;
+}
+
+
+#barChartsElement td div {
+    display: inline-block;
+    height: 3vmin;
+    vertical-align: middle;
+
+}

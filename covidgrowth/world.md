@@ -14,6 +14,7 @@ title: COVID (World)
 [California](/covidgrowth/ca), [USA](/covidgrowth/usa)  (by county), [USA](/covidgrowth/state)  (by state), **World**
 
 <section>
+  <table id="barChartsElement"></table>
   <img id="spinnerElement" src="/img/spinner32.gif">
 </section>
 
