@@ -12,39 +12,34 @@ export const Graph = (
 
   const nextTick = () => new Promise(resolve => setTimeout(resolve, 0))
 
-  const barChartRow = (i, shortName, maxToday, datasets) => {
-    const scale = y => 50 * (y - 1) / (maxToday - 1)
-    const n = datasets.length - 1
-    const todayY = scale(datasets[n - 1].y)
-    const lastWeekY = scale(datasets[n - 8].y)
-    const firstWidth = Math.min(lastWeekY, todayY)
-    const secondWidth = Math.abs(lastWeekY - todayY)
-    const secondColor = todayY > lastWeekY ? colors[i] : 'invis'
+  const animation = (names, max, labelOfI, dataOfName) => {
+    const barElements = names.map((name, i) => {
+      const rowElement = document.createElement('TR')
 
-    const rowElement = document.createElement('TR')
+      const nameCellElement = document.createElement('TH')
+      nameCellElement.innerText = name
+      rowElement.appendChild(nameCellElement)
 
-    const nameCellElement = document.createElement('TH')
-    nameCellElement.innerText = shortName
-    rowElement.appendChild(nameCellElement)
+      const barCellElement = document.createElement('TD')
+      const barElement = document.createElement('DIV')
+      barElement.style.backgroundColor = colors[i]
+      barCellElement.appendChild(barElement)
+      rowElement.appendChild(barCellElement)
 
-    // const arrowCellElement = document.createElement('TH')
-    // arrowCellElement.innerText = arrow
-    // arrowCellElement.style.fontSize = `${100 * Math.abs(delta)}vw`
-    // rowElement.appendChild(arrowCellElement)
+      barChartsElement.appendChild(rowElement)
+      return barElement
+    })
 
-    const barCellElement = document.createElement('TD')
-    const firstBarElement = document.createElement('DIV')
-    firstBarElement.style.backgroundColor = colors[i]
-    firstBarElement.style.width = `${firstWidth}vw`
-    barCellElement.appendChild(firstBarElement)
-    const secondBarElement = document.createElement('DIV')
-    secondBarElement.style.backgroundColor = secondColor
-    secondBarElement.style.width = `${secondWidth}vw`
-    secondBarElement.style.border = `1px dashed ${colors[i]}`
-    barCellElement.appendChild(secondBarElement)
-    rowElement.appendChild(barCellElement)
-
-    barChartsElement.appendChild(rowElement)
+    let count = 0
+    setInterval(() => {
+      names.forEach((name, i) => {
+        const data = dataOfName(name)
+        const y = data[count % data.length].y
+        const width = 50 * (y - 1) / (max - 1)
+        barElements[i].style.width = `${width}vw`
+      })
+      ++count
+    }, 100)
   }
 
   const drawSparkline = async (i, shortName, max, datasets) => {
@@ -188,7 +183,7 @@ export const Graph = (
     minTotalDeathsElement.innerHTML = minTotalDeaths
   }
 
-  return { barChartRow, sparkline, individualGraph, overlayedGraph, finish }
+  return { animation, sparkline, individualGraph, overlayedGraph, finish }
 }
 
 export const maximum = xs => xs.reduce((acc, x) => Math.max(acc, x), 0)
