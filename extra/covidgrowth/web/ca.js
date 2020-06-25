@@ -1,4 +1,4 @@
-import { Graph, maxLast, maximum, roundUp } from './graph.js'
+import { Graph, maximum, roundUp } from './graph.js'
 import {
   updateTime,
   minTotalDeaths,
@@ -21,7 +21,6 @@ const DAY_MS = 24 * 60 * 60 * 1000
 
 const dates = [...new Array(dayCount)].map((_, i) => new Date(DAY_MS * (i + minDay)))
 const max = roundUp(0.25)(maximum(order.map(name => maximum(smoothedCountyData[name]))))
-// const maxToday = maxLast(order, smoothedCountyData)
 
 const toPoints = (series, _dates) => series.map((y, i) => ({ t: _dates[i], y }))// .filter(p => p.y)
 

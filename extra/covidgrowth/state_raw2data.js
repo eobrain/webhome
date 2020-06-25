@@ -49,11 +49,13 @@ const toTimeMs = s => {
   const maxDay = maxTimeMs / DAY_MS
   const stateCumulative = {}
   const statePopulations = {}
+  const fullNames = {}
 
   await parse(record => {
     const { Province_State, Population } = record
     const population = Number(Population)
     const state = STATE_CODE[Province_State] || Province_State
+    fullNames[state] = Province_State
     const cumulative = []
     for (const key in record) {
       if (isDate(key)) {
@@ -99,7 +101,7 @@ const toTimeMs = s => {
       prev = c
       return result
     })
-    console.log(`"${state}":${stringifyArray(daily)},`)
+    console.log(`${state}:${stringifyArray(daily)},`)
     stateData[state] = daily
     ++seriesCount
   }
@@ -108,7 +110,12 @@ const toTimeMs = s => {
   console.log('export const smoothedStateData={')
   for (const state in stateData) {
     const smoothed = smooth(stateData[state])
-    console.log(`"${state}":${stringifyArray(smoothed)},`)
+    console.log(`${state}:${stringifyArray(smoothed)},`)
+  }
+  console.log('}')
+  console.log('export const fullNames={')
+  for (const state in stateData) {
+    console.log(`${state}:'${fullNames[state]}',`)
   }
   console.log('}')
   console.log()

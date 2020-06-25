@@ -42,7 +42,7 @@ countryCodes.forEach((name, i) => {
 })
 
 animation(countryCodes, max,
-  i => countryCodes[i],
+  i => labels[i],
   name => toPoints(smoothedSerieses[iOfName[name]], smoothedDates),
   i => smoothedDates[i])
 

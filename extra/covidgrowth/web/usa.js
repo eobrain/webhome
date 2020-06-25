@@ -1,4 +1,4 @@
-import { Graph, maximum, maxLast, roundUp } from './graph.js'
+import { Graph, maximum, roundUp } from './graph.js'
 import {
   updateTime,
   minTotalDeaths,

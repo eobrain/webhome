@@ -1,4 +1,4 @@
-import { Graph, maximum, maxLast, roundUp } from './graph.js'
+import { Graph, maximum, roundUp } from './graph.js'
 import {
   dayCount,
   minDay,
@@ -6,7 +6,8 @@ import {
   smoothedStateData,
   updateTime,
   minTotalDeaths,
-  colors
+  colors,
+  fullNames
 } from './data_state.js'
 
 const { animation, sparkline, individualGraph, overlayedGraph, finish } = Graph(colors)
@@ -20,7 +21,7 @@ const max = roundUp(0.1)(maximum(stateNames.map(name => maximum(smoothedStateDat
 const toPoints = (series, _dates) => series.map((y, i) => ({ t: _dates[i], y }))// .filter(p => p.y)
 
 animation(stateNames, max,
-  i => stateNames[i],
+  i => fullNames[stateNames[i]],
   name => toPoints(smoothedStateData[name], dates),
   i => dates[i]
 )
@@ -31,7 +32,7 @@ stateNames.forEach((name, i) => {
 })
 
 stateNames.forEach((name, i) => {
-  individualGraph(i, name, name, max,
+  individualGraph(i, name, fullNames[name], max,
     toPoints(smoothedStateData[name], dates),
     toPoints(stateData[name], dates))
 })

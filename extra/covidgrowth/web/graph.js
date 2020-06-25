@@ -25,7 +25,7 @@ export const Graph = (
     dateElement.innerText = dateOfI(n - 1).toLocaleDateString()
     const barElements = names.map((name, i) => {
       const barElement = document.createElement('DIV')
-      barElement.innerText = name
+      barElement.innerText = labelOfI(i)
       barElement.style.backgroundColor = colors[i]
       setWidth(barElement, dataOfName(name), n - 1)
       barChartsElement.appendChild(barElement)
@@ -190,6 +190,5 @@ export const Graph = (
 export const maximum = xs => xs.reduce((acc, x) => Math.max(acc, x), 0)
 
 export const last = a => a[a.length - 1]
-export const maxLast = (names, data) => maximum(names.map(name => last(data[name])))
 
 export const roundUp = dx => x => dx * Math.ceil(x / dx)
