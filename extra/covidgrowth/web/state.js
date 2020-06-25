@@ -21,7 +21,9 @@ const toPoints = (series, _dates) => series.map((y, i) => ({ t: _dates[i], y }))
 
 animation(stateNames, max,
   i => stateNames[i],
-  name => toPoints(smoothedStateData[name], dates))
+  name => toPoints(smoothedStateData[name], dates),
+  i => dates[i]
+)
 
 stateNames.forEach((name, i) => {
   const points = toPoints(smoothedStateData[name], dates)

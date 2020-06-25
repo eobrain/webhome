@@ -3,6 +3,7 @@ export const Graph = (
 ) => {
   /* global Chart
      barChartsElement
+     dateElement
      spinnerElement
      updateTimeElement
      minTotalDeathsElement
@@ -12,31 +13,29 @@ export const Graph = (
 
   const nextTick = () => new Promise(resolve => setTimeout(resolve, 0))
 
-  const animation = (names, max, labelOfI, dataOfName) => {
+  const animation = (names, max, labelOfI, dataOfName, dateOfI) => {
+    const n = dataOfName(names[0]).length
+    const setWidth = (barElement, data, index) => {
+      const y = data[index].y
+      const width = Math.max(0, 100 * (y - 1) / (max - 1))
+      barElement.style.width = `${width}%`
+    }
+    dateElement.innerText = dateOfI(n - 1).toLocaleDateString()
     const barElements = names.map((name, i) => {
-      const rowElement = document.createElement('TR')
-
-      const nameCellElement = document.createElement('TH')
-      nameCellElement.innerText = name
-      rowElement.appendChild(nameCellElement)
-
-      const barCellElement = document.createElement('TD')
       const barElement = document.createElement('DIV')
+      barElement.innerText = name
       barElement.style.backgroundColor = colors[i]
-      barCellElement.appendChild(barElement)
-      rowElement.appendChild(barCellElement)
-
-      barChartsElement.appendChild(rowElement)
+      setWidth(barElement, dataOfName(name), n - 1)
+      barChartsElement.appendChild(barElement)
       return barElement
     })
 
     let count = 0
     setInterval(() => {
+      const index = Math.min(n - 1, count % n * 2)
+      dateElement.innerText = dateOfI(index).toLocaleDateString()
       names.forEach((name, i) => {
-        const data = dataOfName(name)
-        const y = data[count % data.length].y
-        const width = 50 * (y - 1) / (max - 1)
-        barElements[i].style.width = `${width}vw`
+        setWidth(barElements[i], dataOfName(name), index)
       })
       ++count
     }, 100)

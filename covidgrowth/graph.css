@@ -19,7 +19,7 @@ section>canvas {
 li {
     float: right;
 }
-
+/*
 #barChartsElement table {
     border-spacing: 0;
 }
@@ -37,11 +37,14 @@ li {
 #barChartsElement td {
     line-height: 0;
 }
+*/
 
 
-#barChartsElement td div {
-    display: inline-block;
-    height: 3vmin;
-    vertical-align: middle;
 
+#barChartsElement div {
+    /*display: inline-block;*/
+    /*height: 3vmin;*/
+    /*vertical-align: middle;*/
+    font-size: 2vmin;
+    white-space: nowrap;
 }
