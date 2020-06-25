@@ -1,7 +1,6 @@
 // const fs = require('fs')
 const { records } = require('./raw-data.json')
-const maxichrome = require('maxichrome')
-const { fileTime, smooth, stringifyArray } = require('./common.js')
+const { fileTime, smooth, stringifyArray, colors } = require('./common.js')
 // const { pp } = require('passprint')
 
 /* const writeCsv = (path, rows) => {
@@ -142,7 +141,7 @@ const geoIds = data.columns.map(country => geoIdOfCountries[country])
   console.log()
   console.log(`export const geoIds=${stringifyArray(geoIds)}`)
   console.log()
-  console.log(`export const colors=${stringifyArray(await maxichrome(data.columns.length - 1, ['white', 'black']))}`)
+  console.log(`export const colors=${stringifyArray(await colors(data.columns.length - 1))}`)
   console.log()
   console.log('export const rows=[')
   for (const row of data.rows) {

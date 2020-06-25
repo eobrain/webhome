@@ -1,7 +1,6 @@
 const fs = require('fs')
-const maxichrome = require('maxichrome')
 const Papa = require('papaparse')
-const { fileTime, smooth, stringifyArray } = require('./common.js')
+const { fileTime, smooth, stringifyArray, colors } = require('./common.js')
 const STATE_CODE = require('./statecode.js')
 
 const MIN_DEATHS_PER_COUNTY = 44
@@ -106,6 +105,6 @@ const toTimeMs = s => {
   }
   console.log('}')
   console.log()
-  console.log('export const colors=', stringifyArray(await maxichrome(seriesCount, ['white', 'black'])))
+  console.log('export const colors=', stringifyArray(await colors(seriesCount)))
   console.log()
 })()
