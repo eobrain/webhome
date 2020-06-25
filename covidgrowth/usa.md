@@ -14,10 +14,18 @@ title: COVID (USA)
 ### Per-Capita COVID-19 Death Rates
 
 <section>
+  <h4>Daily death rates on <time id="dateElement"></time></h4>
   <div id="barChartsElement">
-    <p id="dateElement"></p>
   </div>
-  <img id="spinnerElement" src="/img/spinner32.gif">
+
+  <h4>Overview of death rates over time</h4>
+  <img id="sparkSpinnerElement" src="/img/spinner32.gif">
+
+  <h4>Details of the death rates</h4>
+  <img id="detailsSpinnerElement" src="/img/spinner32.gif">
+
+  <h4>Death rates superimposed</h4>
+  <img id="superimposedSpinnerElement" src="/img/spinner32.gif">
 </section>
 
 The graphs above show the how many times higher the daily mortality rate is compared to the expected normal rate (using a very rough approximation for the normal rate: that one 1/79th of the population dies every year, evenly spread throughout the year).

@@ -1,4 +1,4 @@
-const ANIMATION_MS = 500
+const ANIMATION_MS = 200
 
 export const Graph = (
   colors
@@ -6,7 +6,9 @@ export const Graph = (
   /* global Chart
      barChartsElement
      dateElement
-     spinnerElement
+     sparkSpinnerElement
+     detailsSpinnerElement
+     superimposedSpinnerElement
      updateTimeElement
      minTotalDeathsElement
      */
@@ -34,7 +36,7 @@ export const Graph = (
 
     let count = 0
     setInterval(() => {
-      const index = Math.min(n - 1, count % n * 2)
+      const index = Math.min(n - 1, Math.round(count % n * 1.2))
       dateElement.innerText = dateOfI(index).toLocaleDateString()
       names.forEach((name, i) => {
         setWidth(barElements[i], dataOfName(name), index)
@@ -48,7 +50,7 @@ export const Graph = (
     containerElement.setAttribute('href', '#g' + i)
     containerElement.innerText = shortName
     containerElement.setAttribute('class', 'sparkline')
-    spinnerElement.insertAdjacentElement('beforebegin', containerElement)
+    sparkSpinnerElement.insertAdjacentElement('beforebegin', containerElement)
 
     const canvasElement = document.createElement('CANVAS')
     // canvasElement.setAttribute('class', 'sparkline')
@@ -89,7 +91,7 @@ export const Graph = (
 
   const borderWidth = 2
 
-  const drawGraph = async (i, shortName, max, datasets) => {
+  const drawGraph = async (i, shortName, max, datasets, spinnerElement) => {
     const canvasElement = document.createElement('CANVAS')
     canvasElement.setAttribute('id', 'g' + i)
     spinnerElement.insertAdjacentElement('beforebegin', canvasElement)
@@ -135,19 +137,19 @@ export const Graph = (
     })
   }
 
-  const promises = []
-
   const sparkline = (i, shortName, max, data) => {
-    promises.push(drawSparkline(i, shortName, max, [{
+    drawSparkline(i, shortName, max, [{
       fill: true,
       backgroundColor: colors[i],
       borderColor: colors[i],
       pointRadius: 0,
       borderWidth,
       data
-    }]))
+    }])
+    sparkSpinnerElement.style.display = 'none'
   }
 
+  const promises = []
   const individualGraph = (i, shortName, longName, max, smoothData, dailyData) => {
     promises.push(drawGraph(i, shortName, max, [{
       type: 'line',
@@ -162,11 +164,12 @@ export const Graph = (
       backgroundColor: colors[i] + '40',
       borderColor: colors[i] + '40',
       data: dailyData
-    }]))
+    }], detailsSpinnerElement))
   }
+  Promise.all(promises).then(() => { detailsSpinnerElement.style.display = 'none' })
 
   const overlayedGraph = (names, max, labelOfI, dataOfName) => {
-    promises.push(drawGraph(names.length, 'all', max, names.map((name, i) => ({
+    drawGraph(names.length, 'all', max, names.map((name, i) => ({
       type: 'line',
       label: labelOfI(i),
       backgroundColor: colors[i] + '40',
@@ -174,12 +177,11 @@ export const Graph = (
       pointRadius: 0,
       borderWidth,
       data: dataOfName(name)
-    }))))
+    })), superimposedSpinnerElement)
+    superimposedSpinnerElement.style.display = 'none'
   }
 
   const finish = (updateTime, minTotalDeaths) => {
-    Promise.all(promises).then(() => { spinnerElement.style.display = 'none' })
-
     updateTimeElement.innerHTML = new Date(updateTime).toLocaleString()
     minTotalDeathsElement.innerHTML = minTotalDeaths
   }

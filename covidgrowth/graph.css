@@ -19,33 +19,13 @@ section>canvas {
 li {
     float: right;
 }
-/*
-#barChartsElement table {
-    border-spacing: 0;
-}
-
-#barChartsElement th, #barChartsElement td {
-    margin: 0;
-    padding: 0;
-    border: none;
-}
-
-#barChartsElement th {
-    font-size: 2vmin;
-}
-
-#barChartsElement td {
-    line-height: 0;
-}
-*/
-
-
 
 #barChartsElement div {
-    /*display: inline-block;*/
-    /*height: 3vmin;*/
-    /*vertical-align: middle;*/
     font-size: 2vmin;
     white-space: nowrap;
-    transition: width 0.5s linear;
+    transition: width 0.2s linear;
+}
+
+h4 {
+    margin-top: 1em;
 }
