@@ -21,7 +21,7 @@ li {
 }
 
 #barChartsElement div {
-    font-size: 2vmin;
+    font-size: 5vmin;
     white-space: nowrap;
     transition: width 0.2s linear;
 }
