@@ -1,3 +1,5 @@
+const ANIMATION_MS = 500
+
 export const Graph = (
   colors
 ) => {
@@ -38,7 +40,7 @@ export const Graph = (
         setWidth(barElements[i], dataOfName(name), index)
       })
       ++count
-    }, 100)
+    }, ANIMATION_MS)
   }
 
   const drawSparkline = async (i, shortName, max, datasets) => {

@@ -47,4 +47,5 @@ li {
     /*vertical-align: middle;*/
     font-size: 2vmin;
     white-space: nowrap;
+    transition: width 0.5s linear;
 }
