@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Source for Eamonn's home page on the web, http://eamonn.org",
   "main": "build.js",
+  "type": "module",
   "scripts": {
     "test": "ava"
   },
