@@ -1,7 +1,7 @@
-const fs = require('fs')
-const Papa = require('papaparse')
-const { fileTime, smooth, stringifyArray, colors } = require('./common.js')
-const STATE_CODE = require('./statecode.js')
+import fs from 'fs'
+import Papa from 'papaparse'
+import { fileTime, smooth, stringifyArray, colors } from './common.js'
+import STATE_CODE from './statecode.js'
 
 const MIN_DEATHS_PER_COUNTY = 44
 const MIN_MORTALITY_MULTIPLIER = 1.8

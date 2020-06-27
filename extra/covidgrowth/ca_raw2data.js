@@ -1,6 +1,6 @@
-const fs = require('fs')
-const Papa = require('papaparse')
-const { fileTime, smooth, stringifyArray, colors } = require('./common.js')
+import fs from 'fs'
+import Papa from 'papaparse'
+import { fileTime, smooth, stringifyArray, colors } from './common.js'
 // const { pp } = require('passprint')
 
 const MIN_DEATHS_PER_COUNTY = 44

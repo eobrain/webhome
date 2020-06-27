@@ -1,13 +1,13 @@
-const fs = require('fs')
-const smoothish = require('smoothish')
-const maxichrome = require('maxichrome')
+import fs from 'fs'
+import smoothish from 'smoothish'
+import maxichrome from 'maxichrome'
 
-const fileTime = path => fs.statSync(path).mtime.getTime()
+export const fileTime = path => fs.statSync(path).mtime.getTime()
 
-const smooth = row => smoothish(row, { radius: 3 })
+export const smooth = row => smoothish(row, { radius: 3 })
 
-const stringifyArray = xs => '[' + xs.map(x => JSON.stringify(x)).join(',\n') + ']'
+export const stringifyArray = xs => '[' + xs.map(x => JSON.stringify(x)).join(',\n') + ']'
 
-const colors = async n => await maxichrome(n, ['#f5f1ef', '#111'])
+export const colors = async n => await maxichrome(n, ['#f5f1ef', '#111'])
 
-module.exports = { fileTime, smooth, stringifyArray, colors }
+export default { fileTime, smooth, stringifyArray, colors }

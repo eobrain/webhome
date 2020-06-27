@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   Alabama: 'AL',
   Alaska: 'AK',
   'American Samoa': 'AS',

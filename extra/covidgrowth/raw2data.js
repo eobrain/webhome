@@ -1,11 +1,12 @@
-// const fs = require('fs')
-const { records } = require('./raw-data.json')
-const { fileTime, smooth, stringifyArray, colors } = require('./common.js')
+import fs from 'fs'
+import { fileTime, smooth, stringifyArray, colors } from './common.js'
 // const { pp } = require('passprint')
 
 /* const writeCsv = (path, rows) => {
   fs.writeFileSync(path, rows.map(row => row.join(',')).join('\n'))
 } */
+
+const { records } = JSON.parse(fs.readFileSync('./raw-data.json'))
 
 const MIN_DEATHS = 10
 const MIN_MORTALITY_MULTIPLIER = 1.05
