@@ -16,9 +16,10 @@ const n = smoothedStateData[stateCodes[0]].length
 const orderings = []
 for (let t = 0; t < n; ++t) {
   // const dataOfT = dataOf(t)
-  const ordering = [...Array(stateCodes.length)].map((_, i) => i).sort((a, b) =>
-    smoothedStateData[stateCodes[a]][t] - smoothedStateData[stateCodes[b]][t])
+  const sorted = [...Array(stateCodes.length)].map((_, i) => i).sort((a, b) =>
+    smoothedStateData[stateCodes[b]][t] - smoothedStateData[stateCodes[a]][t])
   // const ordering = [...stateCodes)].sort((a, b) => )
+  const ordering = [...Array(stateCodes.length)].map((_, i) => sorted.findIndex(x => x === i))
   orderings.push(pp(ordering))
 }
 

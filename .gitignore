@@ -17,3 +17,5 @@ node_modules
 /covidgrowth/world.js
 /covidgrowth/ca.js
 *.js.map
+/covidgrowth/rank*.md
+/css/rank*.scss
