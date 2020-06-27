@@ -1,0 +1,18 @@
+---
+---
+
+.post-content > div {
+    position: relative;
+    height: 60vmin;
+}
+
+.post-content > div > div {
+    position: absolute;
+    height: 5vmin;
+    width: 50%;
+    //animation-timing-function: linear;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    background-color: red;
+    white-space: nowrap;
+}

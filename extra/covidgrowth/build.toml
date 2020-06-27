@@ -14,7 +14,9 @@ deps = [
     "$(WEB)/state.js",
     "$(WEB)/world.js",
     "$(WEB)/rankstate.md",
+    "$(WEB)/rankca.md",
     "$(CSS)/rankstate.scss",
+    "$(CSS)/rankca.scss",
 ]
 
 ["web/data_world.js"]
@@ -33,13 +35,13 @@ exec = "node us_raw2data.js $< >$@"
 deps = ["time_series_covid19_deaths_US.csv", "state_raw2data.js", "common.js"]
 exec = "node state_raw2data.js $< >$@"
 
-["$(WEB)/rankstate.md"]
-deps = ["web/data_state.js", "genrank_state_md.js"]
-exec = "node genrank_state_md.js >$@"
+["$(WEB)/rank%.md"]
+deps = ["web/data_%.js", "genrank_%_md.js"]
+exec = "node genrank_%_md.js >$@"
 
-["$(CSS)/rankstate.scss"]
-deps = ["web/data_state.js", "genrank_state_scss.js"]
-exec = "node genrank_state_scss.js >$@"
+["$(CSS)/rank%.scss"]
+deps = ["web/data_%.js", "genrank_%_scss.js"]
+exec = "node genrank_%_scss.js >$@"
 
 ["raw-data.json"]
 exec = "wget --output-document=$@ https://opendata.ecdc.europa.eu/covid19/casedistribution/json/"

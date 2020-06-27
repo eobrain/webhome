@@ -8,6 +8,7 @@ permalink: /covidgrowth/rankstate/
 title: COVID State Ranking
 ---
 
+<link rel="stylesheet" href="/css/rank.css">
 <link rel="stylesheet" href="/css/rankstate.css">
 
 <div>

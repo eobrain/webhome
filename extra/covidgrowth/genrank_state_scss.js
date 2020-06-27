@@ -1,32 +1,35 @@
 import { colors, smoothedStateData } from './web/data_state.js'
+import passprint from 'passprint'
 
-const stateCodes = Object.keys(smoothedStateData)
+const pp = passprint.pp
+
+const stateCodes = pp(Object.keys(smoothedStateData))
 
 console.log(`---
 ---
-
-.post-content > div {
-    position: relative;
-    height: 60vmin;
-}
-
-.post-content > div > div {
-    position: absolute;
-    height: 5vmin;
-    width: 50%;
-    animation-timing-function: linear;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    background-color: red;
-}
 `)
+
+// const dataOf = t => i => smoothedStateData[stateCodes[i]][t]
+
+const n = smoothedStateData[stateCodes[0]].length
+
+const orderings = []
+for (let t = 0; t < n; ++t) {
+  // const dataOfT = dataOf(t)
+  const ordering = [...Array(stateCodes.length)].map((_, i) => i).sort((a, b) =>
+    smoothedStateData[stateCodes[a]][t] - smoothedStateData[stateCodes[b]][t])
+  // const ordering = [...stateCodes)].sort((a, b) => )
+  orderings.push(pp(ordering))
+}
+
+const quant = x => Math.round(x * 100) / 100
 
 stateCodes.forEach((code, i) => {
   console.log(`@keyframes k${i} {`)
   const data = smoothedStateData[code]
-  const n = data.length
-  data.forEach((x, j) => {
-    console.log(`${100 * j / n}%{top:${i * 5}vmin;width:${(x - 1) * 50}%}`)
+  data.forEach((x, t) => {
+    const position = orderings[t][i]
+    console.log(`${100 * t / (n - 1)}%{top:${position * 5}vmin;width:${quant((x - 1) * 50)}%;}`)
   })
   console.log('}')
 })
