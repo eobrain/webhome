@@ -18,25 +18,25 @@ export const Graph = (
   const nextTick = () => new Promise(resolve => setTimeout(resolve, 0))
 
   const animation = (names, max, labelOfI, dataOfName, dateOfI) => {
-    const n = dataOfName(names[0]).length
+    const T = dataOfName(names[0]).length
     const setWidth = (barElement, data, index) => {
       const y = data[index].y
       const width = Math.max(0, 100 * (y - 1) / (max - 1))
       barElement.style.width = `${width}%`
     }
-    dateElement.innerText = dateOfI(n - 1).toLocaleDateString()
+    dateElement.innerText = dateOfI(T - 1).toLocaleDateString()
     const barElements = names.map((name, i) => {
       const barElement = document.createElement('DIV')
       barElement.innerText = labelOfI(i)
       barElement.style.backgroundColor = colors[i]
-      setWidth(barElement, dataOfName(name), n - 1)
+      setWidth(barElement, dataOfName(name), T - 1)
       barChartsElement.appendChild(barElement)
       return barElement
     })
 
     let count = 0
     setInterval(() => {
-      const index = Math.min(n - 1, Math.round(count % n * 1.2))
+      const index = Math.min(T - 1, Math.round(count % T * 1.2))
       dateElement.innerText = dateOfI(index).toLocaleDateString()
       names.forEach((name, i) => {
         setWidth(barElements[i], dataOfName(name), index)
