@@ -1,23 +1,7 @@
-import { fullNames } from './web/data_state.js'
+import { fullNames, minDay, dayCount, updateTime, minTotalDeaths } from './web/data_state.js'
+import generate from './genrank_md.js'
 
 const stateCodes = Object.keys(fullNames)
+const order = stateCodes.map(code => fullNames[code])
 
-console.log(`---
-layout: page
-permalink: /covidgrowth/rankstate/
-title: COVID State Ranking
----
-
-<link rel="stylesheet" href="/css/rank.css">
-<link rel="stylesheet" href="/css/rankstate.css">
-
-<div>
-`)
-
-stateCodes.forEach((code, i) => {
-  console.log(`<div id="i${i}">${fullNames[code]}</div>`)
-})
-
-console.log(`
-</div>
-`)
+generate('state', 'USA by State', order, minDay, dayCount, updateTime, minTotalDeaths)

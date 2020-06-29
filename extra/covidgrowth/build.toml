@@ -36,7 +36,7 @@ deps = ["time_series_covid19_deaths_US.csv", "state_raw2data.js", "common.js"]
 exec = "node state_raw2data.js $< >$@"
 
 ["$(WEB)/rank%.md"]
-deps = ["web/data_%.js", "genrank_%_md.js"]
+deps = ["web/data_%.js", "genrank_%_md.js", "genrank_md.js"]
 exec = "node genrank_%_md.js >$@"
 
 ["$(CSS)/rank%.scss"]
