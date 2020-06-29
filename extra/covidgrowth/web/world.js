@@ -9,7 +9,7 @@ import {
   rows,
   smoothedRows
 } from './data_world.js'
-import { Graph, maximum, roundUp, last } from './graph.js'
+import { Graph, maximum, roundUp } from './graph.js'
 // import { pp } from './passprint.js'
 
 /* global

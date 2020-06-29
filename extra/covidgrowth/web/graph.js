@@ -191,6 +191,4 @@ export const Graph = (
 
 export const maximum = xs => xs.reduce((acc, x) => Math.max(acc, x), 0)
 
-export const last = a => a[a.length - 1]
-
 export const roundUp = dx => x => dx * Math.ceil(x / dx)

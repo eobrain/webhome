@@ -13,12 +13,13 @@ deps = [
     "$(WEB)/usa.js",
     "$(WEB)/state.js",
     "$(WEB)/world.js",
-    "$(WEB)/rankstate.md",
-    "$(WEB)/rankusa.md",
     "$(WEB)/rankca.md",
-    "$(CSS)/rankstate.scss",
-    "$(CSS)/rankusa.scss",
+    "$(WEB)/rankusa.md",
+    "$(WEB)/rankstate.md",
+    "$(WEB)/rankworld.md",
     "$(CSS)/rankca.scss",
+    "$(CSS)/rankusa.scss",
+    "$(CSS)/rankstate.scss",
 ]
 
 ["web/data_world.js"]
