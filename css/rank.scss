@@ -12,6 +12,7 @@
 
 #bars > div {
     height: 5vmin;
+    font-size: 4vmin;
     width: 50%;
     white-space: nowrap;
 }
@@ -22,6 +23,7 @@
 
 #dates > time {
     animation-timing-function: cubic-bezier(1, -0.01, 0.01, 1); // quick change
+    font-size: 6vmin;
 }
 
 #bars > div,

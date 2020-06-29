@@ -14,8 +14,10 @@ deps = [
     "$(WEB)/state.js",
     "$(WEB)/world.js",
     "$(WEB)/rankstate.md",
+    "$(WEB)/rankusa.md",
     "$(WEB)/rankca.md",
     "$(CSS)/rankstate.scss",
+    "$(CSS)/rankusa.scss",
     "$(CSS)/rankca.scss",
 ]
 
