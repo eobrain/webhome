@@ -9,7 +9,10 @@ title: COVID (California)
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" defer></script>
 <script src="/covidgrowth/ca.min.js" defer></script>
 
-**California**, [USA](/covidgrowth/usa) (by county), [USA](/covidgrowth/state)  (by state), [World](/covidgrowth/world) 
+**California**,
+[USA](/covidgrowth/usa) (by county),
+[USA](/covidgrowth/state)  (by state),
+[World](/covidgrowth/world)
 
 ### Per-Capita COVID-19 Death Rates
 
@@ -17,13 +20,16 @@ title: COVID (California)
   <h4>Daily death rates on <time id="dateElement"></time></h4>
   <div id="barChartsElement">
   </div>
-
+</section>
+<section>
   <h4>Overview of death rates over time</h4>
   <img id="sparkSpinnerElement" src="/img/spinner32.gif">
-
+</section>
+<section>
   <h4>Details of the death rates</h4>
   <img id="detailsSpinnerElement" src="/img/spinner32.gif">
-
+</section>
+<section>
   <h4>Death rates superimposed</h4>
   <img id="superimposedSpinnerElement" src="/img/spinner32.gif">
 </section>

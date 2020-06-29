@@ -40,7 +40,7 @@ deps = ["web/data_%.js", "genrank_%_md.js"]
 exec = "node genrank_%_md.js >$@"
 
 ["$(CSS)/rank%.scss"]
-deps = ["web/data_%.js", "genrank_%_scss.js"]
+deps = ["web/data_%.js", "genrank_%_scss.js", "web/graph.js"]
 exec = "node genrank_%_scss.js >$@"
 
 ["raw-data.json"]

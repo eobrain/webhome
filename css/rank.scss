@@ -3,12 +3,11 @@
 
 #bars {
     position: relative;
-    height: 60vmin;
+    margin: 10vmin 0;
 }
 
 #dates {
     position: relative;
-    height: 1em;
 }
 
 #bars > div {
@@ -17,9 +16,17 @@
     white-space: nowrap;
 }
 
-#bars > div, #dates > div {
-    position: absolute;
+#bars > div {
     animation-timing-function: linear;
-    animation-duration: 20s;
+}
+
+#dates > time {
+    animation-timing-function: cubic-bezier(1, -0.01, 0.01, 1); // quick change
+}
+
+#bars > div,
+#dates > time {
+    position: absolute;
+    animation-duration: 120s;
     animation-iteration-count: infinite;
 }
