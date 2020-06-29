@@ -1,7 +1,10 @@
-import { order, colors, smoothedCountyData } from './web/data_ca.js'
+import { order, minDay, dayCount, colors, smoothedCountyData } from './web/data_ca.js'
 import passprint from 'passprint'
 
 const pp = passprint.pp
+
+const DAY_MS = 24 * 60 * 60 * 1000
+const dates = [...new Array(dayCount)].map((_, i) => new Date(DAY_MS * (i + minDay)))
 
 console.log(`---
 ---
@@ -17,7 +20,7 @@ for (let t = 0; t < n; ++t) {
   orderings.push(pp(ordering))
 }
 
-const quant = x => Math.round(x * 100) / 100
+const quant = x => Math.max(0, Math.round(x * 100) / 100)
 
 order.forEach((name, i) => {
   console.log(`/* ${name} */`)
@@ -32,4 +35,15 @@ order.forEach((name, i) => {
 
 colors.forEach((color, i) => {
   console.log(`#i${i}{animation-name: k${i};background-color:${color}}`)
+})
+dates.forEach((date, t) => {
+  console.log(`@keyframes t${t} {
+    0%{opacity: 0;}
+    ${100 * (t - 1) / (n - 1)}%{opacity: 0;}
+    ${100 * t / (n - 1)}%{opacity: 1;}
+    ${100 * (t + 1) / (n - 1)}%{opacity: 0;}
+    100%{opacity: 0;}
+  }
+  #t${t} {animation-name: t${t};opacity: 0;}
+  `)
 })

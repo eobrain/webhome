@@ -1,18 +1,25 @@
 ---
 ---
 
-.post-content > div {
+#bars {
     position: relative;
     height: 60vmin;
 }
 
-.post-content > div > div {
-    position: absolute;
+#dates {
+    position: relative;
+    height: 1em;
+}
+
+#bars > div {
     height: 5vmin;
     width: 50%;
+    white-space: nowrap;
+}
+
+#bars > div, #dates > div {
+    position: absolute;
     animation-timing-function: linear;
     animation-duration: 20s;
     animation-iteration-count: infinite;
-    background-color: red;
-    white-space: nowrap;
 }
