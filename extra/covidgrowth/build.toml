@@ -20,6 +20,7 @@ deps = [
     "$(CSS)/rankca.scss",
     "$(CSS)/rankusa.scss",
     "$(CSS)/rankstate.scss",
+    "$(CSS)/rankworld.scss",
 ]
 
 ["web/data_world.js"]

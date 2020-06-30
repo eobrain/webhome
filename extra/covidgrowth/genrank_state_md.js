@@ -4,4 +4,4 @@ import generate from './genrank_md.js'
 const stateCodes = Object.keys(fullNames)
 const order = stateCodes.map(code => fullNames[code])
 
-generate('state', 'USA by State', order, minDay, dayCount, updateTime, minTotalDeaths)
+generate('state', 'USA by State', order, order, minDay, dayCount, updateTime, minTotalDeaths)

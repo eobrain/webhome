@@ -1,4 +1,5 @@
 import {
+  columns,
   updateTime,
   minTotalDeaths,
   // minMortalityMultiplier,
@@ -7,7 +8,7 @@ import {
   geoIds,
   // rows,
   smoothedRows
-} from './data_world.js'
+} from './web/data_world.js'
 import generate from './genrank_md.js'
 
 const HOUR_MS = 60 * 60 * 1000
@@ -16,9 +17,9 @@ const hour2js = hour => new Date(hour * HOUR_MS)
 const smoothedExcelDates = smoothedRows[0]
 
 const smoothedDates = smoothedExcelDates.map(x => hour2js(x))
-const minDay = smoothedDates[0].time() / DAY_MS
+const minDay = smoothedDates[0].getTime() / DAY_MS
 const dayCount = smoothedDates.length
-// const labels = columns.slice(1)
+const labels = columns.slice(1)
 const countryCodes = geoIds.slice(1)
 
-generate('world', 'World', countryCodes, minDay, dayCount, updateTime, minTotalDeaths)
+generate('world', 'World', countryCodes, labels, minDay, dayCount, updateTime, minTotalDeaths)

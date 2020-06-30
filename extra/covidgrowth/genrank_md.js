@@ -1,5 +1,5 @@
 
-export default (whichShort, whichLong, order, minDay, dayCount, updateTime, minTotalDeaths, minMortalityMultiplier) => {
+export default (whichShort, whichLong, order, labels, minDay, dayCount, updateTime, minTotalDeaths, minMortalityMultiplier) => {
   const DAY_MS = 24 * 60 * 60 * 1000
   const dates = [...new Array(dayCount)].map((_, i) => new Date(DAY_MS * (i + minDay)))
 
@@ -29,8 +29,8 @@ title: COVID Ranking (${whichLong})
 <div id="bars">
 `)
 
-  order.forEach((name, i) => {
-    console.log(`<div id="i${i}">${name}</div>`)
+  labels.forEach((label, i) => {
+    console.log(`<div id="i${i}">${label}</div>`)
   })
 
   console.log(`

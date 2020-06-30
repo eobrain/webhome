@@ -3,4 +3,4 @@ import generate from './genrank_md.js'
 
 const countyNames = Object.keys(smoothedCountyData)
 
-generate('usa', 'USA by County', countyNames, minDay, dayCount, updateTime, minTotalDeaths, minMortalityMultiplier)
+generate('usa', 'USA by County', countyNames, countyNames, minDay, dayCount, updateTime, minTotalDeaths, minMortalityMultiplier)
