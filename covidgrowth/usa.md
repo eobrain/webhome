@@ -14,10 +14,6 @@ title: COVID (USA)
 ### Per-Capita COVID-19 Death Rates
 
 <section>
-  <h4>Daily death rates on <time id="dateElement"></time></h4>
-  <div id="barChartsElement">
-  </div>
-
   <h4>Overview of death rates over time</h4>
   <img id="sparkSpinnerElement" src="/img/spinner32.gif">
 

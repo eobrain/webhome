@@ -41,11 +41,6 @@ countryCodes.forEach((name, i) => {
   iOfName[name] = i
 })
 
-animation(countryCodes, max,
-  i => labels[i],
-  name => toPoints(smoothedSerieses[iOfName[name]], smoothedDates),
-  i => smoothedDates[i])
-
 serieses.forEach((series, i) => {
   const points = toPoints(smoothedSerieses[i], smoothedDates)
   // barChartRow(i, countryCodes[i], maxToday, points)

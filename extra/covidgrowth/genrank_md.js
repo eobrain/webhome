@@ -12,13 +12,14 @@ title: COVID Ranking (${whichLong})
 <link rel="stylesheet" href="/css/rank.css">
 <link rel="stylesheet" href="/css/rank${whichShort}.css">
 
-[California](/covidgrowth/ca),
-[USA](/covidgrowth/usa) (by county),
-[USA](/covidgrowth/state)  (by state),
-[World](/covidgrowth/world) 
+[California](/covidgrowth/rankca),
+[USA](/covidgrowth/rankusa) (by county),
+[USA](/covidgrowth/rankstate)  (by state),
+[World](/covidgrowth/rankworld) 
 
+See also [Detailed graphs for ${whichLong}](/covidgrowth/${whichShort})
 
-<h4 id="dates">Daily death ranking on<br>`)
+<h4 id="dates">Daily per-capita death ranking on<br>`)
 
   dates.forEach((date, t) => {
     console.log(`<time id="t${t}">${date.toLocaleDateString()}</time>`)

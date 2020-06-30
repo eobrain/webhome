@@ -14,9 +14,6 @@ title: COVID (World)
 [California](/covidgrowth/ca), [USA](/covidgrowth/usa)  (by county), [USA](/covidgrowth/state)  (by state), **World**
 
 <section>
-  <h4>Daily death rates on <time id="dateElement"></time></h4>
-  <div id="barChartsElement">
-  </div>
 
   <h4>Overview of death rates over time</h4>
   <img id="sparkSpinnerElement" src="/img/spinner32.gif">

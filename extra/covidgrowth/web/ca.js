@@ -26,11 +26,6 @@ const toPoints = (series, _dates) => series.map((y, i) => ({ t: _dates[i], y }))
 
 const stripState = s => s.slice(0, s.length - 3)
 
-animation(order, max,
-  i => order[i],
-  name => toPoints(smoothedCountyData[name], dates),
-  i => dates[i])
-
 order.forEach((name, i) => {
   const shortName = stripState(name)
   const points = toPoints(smoothedCountyData[name], dates)
