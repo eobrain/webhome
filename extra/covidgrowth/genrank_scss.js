@@ -2,6 +2,8 @@ import { maximum } from './web/graph.js'
 // import passprint from 'passprint'
 // const pp = passprint.pp
 
+const BAR_STRIDE = 10
+
 export default (order, keys, minDay, dayCount, colors, smoothedData) => {
   /** What percent of cycle is animation running before pausing. */
   const ANIMATION_PERCENT = 80
@@ -17,7 +19,7 @@ export default (order, keys, minDay, dayCount, colors, smoothedData) => {
 ---
 
 #bars {
-  height: ${5 * n}vmin;
+  height: ${BAR_STRIDE * n}vmin;
 }
 `)
 
@@ -31,7 +33,7 @@ export default (order, keys, minDay, dayCount, colors, smoothedData) => {
 
   const quant = x => Math.max(0, Math.round(x * 100) / 100)
   const keyFrame = (percent, t, position, x) =>
-  `${percent}%{top:${position * 5}vmin;width:${quant(100 * (x - 1) / (max - 1))}%;}`
+  `${percent}%{top:${position * BAR_STRIDE}vmin;width:${quant(100 * (x - 1) / (max - 1))}%;}`
 
   const PAUSE_PERCENT = (100 - ANIMATION_PERCENT) / 2
   keys.forEach((name, i) => {
@@ -39,7 +41,7 @@ export default (order, keys, minDay, dayCount, colors, smoothedData) => {
     console.log(`@keyframes k${i} {`)
     const data = smoothedData[name]
     console.log(keyFrame(0, T - 1, orderings[T - 1][i], data[T - 1]))
-    console.log(keyFrame(PAUSE_PERCENT * 0.999, T - 1, orderings[T - 1][i], data[T - 1]))
+    console.log(keyFrame(PAUSE_PERCENT * 0.9, T - 1, orderings[T - 1][i], data[T - 1]))
     data.forEach((x, t) => {
       const position = orderings[t][i]
       console.log(keyFrame(PAUSE_PERCENT + ANIMATION_PERCENT * t / (T - 1), t, position, x))
@@ -54,7 +56,7 @@ export default (order, keys, minDay, dayCount, colors, smoothedData) => {
   dates.forEach((date, t) => {
     console.log(`@keyframes t${t} {
     0%{opacity: ${t === T - 1 ? 1 : 0};}
-    ${PAUSE_PERCENT * 0.999}%{opacity: ${t === T - 1 ? 1 : 0};}
+    ${PAUSE_PERCENT * 0.9}%{opacity: ${t === T - 1 ? 1 : 0};}
     ${PAUSE_PERCENT}%{opacity: 0;}
     ${PAUSE_PERCENT + ANIMATION_PERCENT * (t - 1) / (T - 1)}%{opacity: 0;}
     ${PAUSE_PERCENT + ANIMATION_PERCENT * t / (T - 1)}%{opacity: 1;}
