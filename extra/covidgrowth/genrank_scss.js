@@ -33,14 +33,16 @@ export default (order, keys, minDay, dayCount, colors, smoothedData) => {
   const keyFrame = (percent, t, position, x) =>
   `${percent}%{top:${position * 5}vmin;width:${quant(100 * (x - 1) / (max - 1))}%;}`
 
+  const PAUSE_PERCENT = (100 - ANIMATION_PERCENT) / 2
   keys.forEach((name, i) => {
     console.log(`/* ${name} */`)
     console.log(`@keyframes k${i} {`)
     const data = smoothedData[name]
+    console.log(keyFrame(0, T - 1, orderings[T - 1][i], data[T - 1]))
+    console.log(keyFrame(PAUSE_PERCENT * 0.999, T - 1, orderings[T - 1][i], data[T - 1]))
     data.forEach((x, t) => {
       const position = orderings[t][i]
-      // console.log(`${100 * t / (T - 1)}%{top:${position * 5}vmin;width:${quant(100 * (x - 1) / (max - 1))}%;}`)
-      console.log(keyFrame(ANIMATION_PERCENT * t / (T - 1), t, position, x))
+      console.log(keyFrame(PAUSE_PERCENT + ANIMATION_PERCENT * t / (T - 1), t, position, x))
     })
     console.log(keyFrame(100, T - 1, orderings[T - 1][i], data[T - 1]))
     console.log('}')
@@ -51,10 +53,12 @@ export default (order, keys, minDay, dayCount, colors, smoothedData) => {
   })
   dates.forEach((date, t) => {
     console.log(`@keyframes t${t} {
-    0%{opacity: 0;}
-    ${ANIMATION_PERCENT * (t - 1) / (T - 1)}%{opacity: 0;}
-    ${ANIMATION_PERCENT * t / (T - 1)}%{opacity: 1;}
-    ${ANIMATION_PERCENT * (t + 1) / (T - 1)}%{opacity: ${t === T - 1 ? 1 : 0};}
+    0%{opacity: ${t === T - 1 ? 1 : 0};}
+    ${PAUSE_PERCENT * 0.999}%{opacity: ${t === T - 1 ? 1 : 0};}
+    ${PAUSE_PERCENT}%{opacity: 0;}
+    ${PAUSE_PERCENT + ANIMATION_PERCENT * (t - 1) / (T - 1)}%{opacity: 0;}
+    ${PAUSE_PERCENT + ANIMATION_PERCENT * t / (T - 1)}%{opacity: 1;}
+    ${PAUSE_PERCENT + ANIMATION_PERCENT * (t + 1) / (T - 1)}%{opacity: ${t === T - 1 ? 1 : 0};}
     100%{opacity: ${t === T - 1 ? 1 : 0};}
   }
   #t${t} {animation-name: t${t};opacity: 0;}
