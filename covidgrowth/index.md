@@ -4,12 +4,13 @@ permalink: /covidgrowth/
 title: COVID
 ---
 
-Per-Capita COVID-19 Death Rate Animations and Graphs
 
-* [California](/covidgrowth/rankca)
-* [USA](/covidgrowth/rankusa)  (by county)
-* [USA](/covidgrowth/rankstate)  (by state)
-* [World](/covidgrowth/rankworld) 
+* [[animation](/covidgrowth/rankca)] [[graphs](/covidgrowth/ca)] California
+* [[animation](/covidgrowth/rankusa)] [[graphs](/covidgrowth/usa)] USA (by county)
+* [[animation](/covidgrowth/rankstate)] [[graphs](/covidgrowth/state)] USA (by state)
+* [[animation](/covidgrowth/rankworld)] [[graphs](/covidgrowth/world)] World
+
+<h4>Per-Capita COVID-19 Death Rate Animations and Graphs</h4>
 
 Inspired by [this powerful visualization][1] these graphs express the COVID mortality as a multiple of normal mortality.
 

@@ -16,14 +16,13 @@ section>canvas {
     margin: 5vmin 0;
 }
 
-li {
-    float: right;
-}
+ul {
+    list-style-type: none;
+    margin-left: 0;
+  }
 
-#barChartsElement div {
-    font-size: 5vmin;
-    white-space: nowrap;
-    transition: width 0.2s linear;
+ul li {
+    margin: 2vmin 0;
 }
 
 h4 {

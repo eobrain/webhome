@@ -9,15 +9,14 @@ permalink: /covidgrowth/rank${whichShort}/
 title: COVID Ranking (${whichLong})
 ---
 
+<link rel="stylesheet" href="/covidgrowth/graph.css">
 <link rel="stylesheet" href="/css/rank.css">
 <link rel="stylesheet" href="/css/rank${whichShort}.css">
 
-[California](/covidgrowth/rankca),
-[USA](/covidgrowth/rankusa) (by county),
-[USA](/covidgrowth/rankstate)  (by state),
-[World](/covidgrowth/rankworld) 
-
-See also [Detailed graphs for ${whichLong}](/covidgrowth/${whichShort})
+* [[animation](/covidgrowth/rankca)] [[graphs](/covidgrowth/ca)] California
+* [[animation](/covidgrowth/rankusa)] [[graphs](/covidgrowth/usa)] USA (by county)
+* [[animation](/covidgrowth/rankstate)] [[graphs](/covidgrowth/state)] USA (by state)
+* [[animation](/covidgrowth/rankworld)] [[graphs](/covidgrowth/world)] World
 
 <h4 id="dates">Daily per-capita death ranking on<br>`)
 

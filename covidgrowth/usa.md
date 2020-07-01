@@ -9,9 +9,10 @@ title: COVID (USA)
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" defer></script>
 <script src="/covidgrowth/usa.min.js" defer></script>
 
-[California](/covidgrowth/ca), **USA (by county)**, [USA](/covidgrowth/state)  (by state), [World](/covidgrowth/world) 
-
-### Per-Capita COVID-19 Death Rates
+* [[animation](/covidgrowth/rankca)] [[graphs](/covidgrowth/ca)] California
+* [[animation](/covidgrowth/rankusa)] [[graphs](/covidgrowth/usa)] USA (by county)
+* [[animation](/covidgrowth/rankstate)] [[graphs](/covidgrowth/state)] USA (by state)
+* [[animation](/covidgrowth/rankworld)] [[graphs](/covidgrowth/world)] World
 
 <section>
   <h4>Overview of death rates over time</h4>
