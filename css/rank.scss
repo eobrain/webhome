@@ -49,15 +49,15 @@
     left:-1000vw;
 }
 #pause {
-    visibility: visible;
+    display: inline;
 }
 #animation:focus-within #pause{
-    visibility: hidden;
+    display: none;
 }
 
 #continue {
-    visibility: hidden;
+    display: none;
 }
 #animation:focus-within #continue {
-    visibility: visible;
+    display: inline;
 }

@@ -20,8 +20,8 @@ title: COVID Ranking (${whichLong})
 
 <div id="animation">
 <input type="checkbox" id="pause-checkbox" />
-<label for="pause-checkbox" id="pause" class="button">Pause</label>
-<span id="continue" class="button">Continue</span>
+<label for="pause-checkbox" id="pause" class="button">⏸️</label>
+<span id="continue" class="button">▶️</span>
 <h4 id="dates">Daily per-capita death ranking on<br>`)
 
   dates.forEach((date, t) => {
