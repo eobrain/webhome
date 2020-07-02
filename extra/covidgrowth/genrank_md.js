@@ -18,6 +18,10 @@ title: COVID Ranking (${whichLong})
 * [[animation](/covidgrowth/rankstate)] [[graphs](/covidgrowth/state)] USA (by state)
 * [[animation](/covidgrowth/rankworld)] [[graphs](/covidgrowth/world)] World
 
+<div id="animation">
+<input type="checkbox" id="pause-checkbox" />
+<label for="pause-checkbox" id="pause" class="button">Pause</label>
+<span id="continue" class="button">Continue</span>
 <h4 id="dates">Daily per-capita death ranking on<br>`)
 
   dates.forEach((date, t) => {
@@ -36,6 +40,7 @@ title: COVID Ranking (${whichLong})
     console.log(`<label for="c${i}" id="i${i}">${label}</label>`)
   })
   console.log(`
+</div>
 </div>
 
 The above ranks the per-capita  mortality rate.

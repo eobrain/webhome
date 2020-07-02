@@ -16,6 +16,12 @@ body {
     }
 }
 
+.button {
+    background-color: #f5f1ef;
+    border: none;
+    box-shadow: $minor $minor $minor * 2 #d0cdcb, (-$minor) (-$minor) $minor * 2 #ffffff;
+}
+
 body {
     margin: $basic;
     border-radius: $minor/2;

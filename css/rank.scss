@@ -39,3 +39,25 @@
     animation-duration: 40s;
     animation-iteration-count: infinite;
 }
+
+#animation:focus-within #bars > label,
+#animation:focus-within #dates > time {
+    animation-play-state: paused;
+}
+#pause-checkbox {
+    position: absolute;
+    left:-1000vw;
+}
+#pause {
+    visibility: visible;
+}
+#animation:focus-within #pause{
+    visibility: hidden;
+}
+
+#continue {
+    visibility: hidden;
+}
+#animation:focus-within #continue {
+    visibility: visible;
+}
