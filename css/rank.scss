@@ -48,6 +48,13 @@
     position: absolute;
     left:-1000vw;
 }
+
+#dates > time {
+    left: 8vmin;
+}
+#pause, #continue {
+    font-size: 5vmin
+}
 #pause {
     display: inline;
 }
