@@ -31,6 +31,11 @@ export default (order, keys, minDay, dayCount, colors, smoothedData) => {
     orderings.push(ordering)
   }
 
+  keys.forEach((name, i) => {
+    console.log(`#c${i}:checked ~ label {mix-blend-mode:luminosity;font-weight:100}`)
+    console.log(`#c${i}:checked ~ #i${i} {mix-blend-mode:normal;font-weight:900}`)
+  })
+
   const quant = x => Math.max(0, Math.round(x * 100) / 100)
   const keyFrame = (percent, t, position, x) =>
   `${percent}%{top:${position * BAR_STRIDE}vmin;width:${quant(100 * (x - 1) / (max - 1))}%;}`

@@ -10,7 +10,12 @@
     position: relative;
 }
 
-#bars > div {
+#bars > input {
+    visibility: hidden;
+}
+
+#bars > label {
+    display: block;
     height: 5vmin;
     font-size: 4vmin;
     width: 50%;
@@ -19,7 +24,7 @@
     text-align: right;
 }
 
-#bars > div {
+#bars > label {
     animation-timing-function: linear;
 }
 
@@ -28,7 +33,7 @@
     font-size: 6vmin;
 }
 
-#bars > div,
+#bars > label,
 #dates > time {
     position: absolute;
     animation-duration: 40s;

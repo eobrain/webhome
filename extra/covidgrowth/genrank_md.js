@@ -29,10 +29,12 @@ title: COVID Ranking (${whichLong})
 <div id="bars">
 `)
 
-  labels.forEach((label, i) => {
-    console.log(`<div id="i${i}">${label}</div>`)
+  labels.forEach((_, i) => {
+    console.log(`<input type="checkbox" id="c${i}" />`)
   })
-
+  labels.forEach((label, i) => {
+    console.log(`<label for="c${i}" id="i${i}">${label}</label>`)
+  })
   console.log(`
 </div>
 
