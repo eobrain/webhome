@@ -5,6 +5,7 @@ date:   2020-01-25
 categories: Programming
 image: /img/standard-js-sticker.svg
 image-text: standard JS logo
+image-link: https://standardjs.com/
 ---
 
 > War is over, if you want it

@@ -27,3 +27,24 @@ document.body.ontouchstart = (event) => {
     }
   }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('p > img[alt]').forEach(imgElement => {
+    if (imgElement.previousElementSibling || imgElement.nextElementSibling) {
+      return // not lone <img> in a <p>
+    }
+    const pElement = imgElement.parentNode
+    if (pElement.innerText.trim().length > 0) {
+      return // <p> has some text
+    }
+    const figureElement = document.createElement('figure')
+    pElement.replaceWith(figureElement)
+
+    imgElement.remove()
+    figureElement.appendChild(imgElement)
+
+    const figcaptionElement = document.createElement('figcaption')
+    figcaptionElement.innerText = imgElement.getAttribute('alt')
+    figureElement.appendChild(figcaptionElement)
+  })
+})

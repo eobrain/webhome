@@ -36,9 +36,7 @@ strengthened, and waged an ultimately successful rebellion that resulted in an
 independent Ireland. Strength in literature and strength in politics seemed to
 go together.
 
-![EU Stem Statistics][2] *Percentage of Working Population with Science and
-Technology Education in various Eutopean Countries in 2009 (Figure 4.7 of
-“Science, technology* and innovation in Europe, Eurostat 2011)*
+![Percentage of Working Population with Science and Technology Education in various Eutopean Countries in 2009 (Figure 4.7 of “Science, technology* and innovation in Europe, Eurostat 2011)][2]
 
 Now almost a century has passed. Look at the graph above that shows a measure of
 how high tech the workforce of each country in Europe is, and note that the

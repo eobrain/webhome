@@ -81,12 +81,18 @@ layout: default
 
   <div class="post-content e-content" itemprop="articleBody">
     {%- if page.image -%}
-      <figure>
+    {%- if page.image-link -%}
+    <a href="{{page.image-link}}">
+    {%- endif -%}
+     <figure>
         <img class="hero"
              alt="{{page.image-text | xml_escape }}"
              src="{{page.image}}">
         <figcaption>{{page.image-text | xml_escape }}</figcaption>
       </figure>
+      {%- if page.image-link -%}
+      </a>
+      {%- endif -%}
     {%- endif -%}
 
     {{ content }}

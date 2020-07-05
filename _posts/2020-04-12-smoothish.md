@@ -3,7 +3,8 @@ layout: post
 title:  Smoothish library for smoothing time series data
 categories: Programming
 image: /img/smoothish-example.png
-image-text: Example smoothing
+image-text: Smoothish
+image-link: https://www.npmjs.com/package/smoothish
 ---
 
 *[Updated 5-May-2020 to change the examples to the new 1.0.0 API.]*

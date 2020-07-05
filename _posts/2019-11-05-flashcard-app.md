@@ -5,6 +5,7 @@ date:   2019-11-05
 categories: Programming
 image: /img/step3.webp
 image-text: Flash Card
+image-link: https://www.kartoj.com/
 ---
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">So, I&#39;ll be going to Mexico in a few months and I wanted to brush up my Spanish vocabulary ...<br><br>So I built <a href="https://t.co/lNgilbwR3o">https://t.co/lNgilbwR3o</a> with flashcards that have Spanish on one side, and images from a web search in Mexico on the other side.<br><br>Source code at: <a href="https://t.co/Phl3B2Dd1K">https://t.co/Phl3B2Dd1K</a> <a href="https://t.co/xNtR6WrmZz">pic.twitter.com/xNtR6WrmZz</a></p>&mdash; Eamonn O&#39;Brien-Strain 👨‍💻🔍🌁🇮🇪🇪🇺🇺🇲🇺🇳⚛️ (@eob) <a href="https://twitter.com/eob/status/1191894849470906368?ref_src=twsrc%5Etfw">November 6, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
