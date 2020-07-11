@@ -49,7 +49,7 @@ export default (order, keys, minDay, dayCount, colors, smoothedData) => {
   })
 
   colors.forEach((color, i) => {
-    console.log(`#i${i}{animation-name: k${i};background-color:${color}}`)
+    console.log(`#i${i}{animation-name: k${i};color:${color};background-color:${color}}`)
   })
   dates.forEach((date, t) => {
     console.log(`@keyframes t${t} {
