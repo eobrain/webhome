@@ -30,6 +30,7 @@ title: COVID Ranking (${whichLong})
   <label for="pause-checkbox" id="continue" class="button">▶️</label>
   <span id="pause" class="button">⏸️</span>
   </h4>
+<div id="timebar"></div>
 <div id="bars">
 `)
 

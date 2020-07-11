@@ -3,7 +3,7 @@
 
 #bars {
     position: relative;
-    margin: 10vmin 0;
+    margin: 5vmin 0;
 }
 
 #dates {
@@ -36,6 +36,11 @@
 #bars > label,
 #dates > time {
     position: absolute;
+}
+
+#bars > label,
+#dates > time,
+#timebar {
     animation-duration: 40s;
     animation-delay: -39.9999s;
     animation-iteration-count: infinite;
@@ -43,7 +48,8 @@
 
 // Animation is paused by default
 #animation #bars > label,
-#animation #dates > time {
+#animation #dates > time,
+#timebar {
     animation-play-state: paused;
 }
 #continue {
@@ -55,7 +61,8 @@
 
 // Animation is running when invisible checkbox is checked
 #animation:focus-within #bars > label,
-#animation:focus-within #dates > time {
+#animation:focus-within #dates > time,
+#animation:focus-within #timebar {
     animation-play-state: running;
 }
 #animation:focus-within #continue{
@@ -65,7 +72,16 @@
     display: inline;
 }
 
-
+@keyframes timebar {
+    0% {width:0;}
+    100% {width:100%;}
+}
+#timebar {
+    height: 3vmin;
+    border-right: solid 1vmin black;
+    background-color: #e8e8e8;
+    animation-name: timebar;
+}
 
 // checkbox made invisible by putting way offscreen.
 #pause-checkbox {
