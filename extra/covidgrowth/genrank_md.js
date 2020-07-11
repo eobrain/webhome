@@ -27,8 +27,8 @@ title: COVID Ranking (${whichLong})
   })
 
   console.log(`
-  <label for="pause-checkbox" id="pause" class="button">⏸️</label>
-  <span id="continue" class="button">▶️</span>
+  <label for="pause-checkbox" id="continue" class="button">▶️</label>
+  <span id="pause" class="button">⏸️</span>
   </h4>
 <div id="bars">
 `)

@@ -40,10 +40,33 @@
     animation-iteration-count: infinite;
 }
 
-#animation:focus-within #bars > label,
-#animation:focus-within #dates > time {
+// Animation is paused by default
+#animation #bars > label,
+#animation #dates > time {
     animation-play-state: paused;
 }
+#continue {
+    display: inline;
+}
+#pause {
+    display: none;
+}
+
+// Animation is running when invisible checkbox is checked
+#animation:focus-within #bars > label,
+#animation:focus-within #dates > time {
+    animation-play-state: running;
+}
+#animation:focus-within #continue{
+    display: none;
+}
+#animation:focus-within #pause {
+    display: inline;
+}
+
+
+
+// checkbox made invisible by putting way offscreen.
 #pause-checkbox {
     position: absolute;
     left:-1000vw;
@@ -54,17 +77,4 @@
 }
 #pause, #continue {
     font-size: 5vmin
-}
-#pause {
-    display: inline;
-}
-#animation:focus-within #pause{
-    display: none;
-}
-
-#continue {
-    display: none;
-}
-#animation:focus-within #continue {
-    display: inline;
 }

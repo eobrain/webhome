@@ -6,7 +6,7 @@ const BAR_STRIDE = 10
 
 export default (order, keys, minDay, dayCount, colors, smoothedData) => {
   /** What percent of cycle is animation running before pausing. */
-  const ANIMATION_PERCENT = 80
+  const ANIMATION_PERCENT = 100
 
   const DAY_MS = 24 * 60 * 60 * 1000
   const dates = [...new Array(dayCount)].map((_, i) => new Date(DAY_MS * (i + minDay)))
