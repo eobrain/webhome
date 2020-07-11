@@ -36,8 +36,9 @@
 #bars > label,
 #dates > time {
     position: absolute;
-    animation-duration: 40s;
+    animation-duration: 60s;
     animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
 }
 
 // Animation is paused by default
