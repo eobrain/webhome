@@ -3,6 +3,7 @@ import { maximum } from './web/graph.js'
 // const pp = passprint.pp
 
 const BAR_STRIDE = 10
+const BOUNCY_EASE_OUT = 'cubic-bezier(0, 0, 0.6, 1.3)'
 
 export default (order, keys, minDay, dayCount, colors, smoothedData) => {
   const DAY_MS = 24 * 60 * 60 * 1000
@@ -34,22 +35,34 @@ export default (order, keys, minDay, dayCount, colors, smoothedData) => {
   })
 
   const quant = x => Math.max(0, Math.round(x * 100) / 100)
-  const keyFrame = (percent, t, position, x) =>
-  `${percent}%{top:${position * BAR_STRIDE}vmin;width:${quant(100 * (x - 1) / (max - 1))}%;}`
+  const keyFramePosition = (percent, position) =>
+  `${percent}%{top:${position * BAR_STRIDE}vmin;}`
+  const keyFrameWidth = (percent, x) =>
+  `${percent}%{width:${quant(100 * (x - 1) / (max - 1))}%;}`
 
   keys.forEach((name, i) => {
     console.log(`/* ${name} */`)
-    console.log(`@keyframes k${i} {`)
+    console.log(`@keyframes p${i} {`)
+    const data = smoothedData[name]
+    data.forEach((_, t) => {
+      const position = orderings[t][i]
+      console.log(keyFramePosition(100 * t / (T - 1), position))
+    })
+    console.log('}')
+  })
+
+  keys.forEach((name, i) => {
+    console.log(`/* ${name} */`)
+    console.log(`@keyframes w${i} {`)
     const data = smoothedData[name]
     data.forEach((x, t) => {
-      const position = orderings[t][i]
-      console.log(keyFrame(100 * t / (T - 1), t, position, x))
+      console.log(keyFrameWidth(100 * t / (T - 1), x))
     })
     console.log('}')
   })
 
   colors.forEach((color, i) => {
-    console.log(`#i${i}{animation-name: k${i};color:${color};background-color:${color}}`)
+    console.log(`#i${i}{animation: p${i} ${BOUNCY_EASE_OUT}, w${i} linear;color:${color};background-color:${color}}`)
   })
   dates.forEach((date, t) => {
     console.log(`@keyframes t${t} {

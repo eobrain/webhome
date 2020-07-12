@@ -24,10 +24,6 @@
     text-align: right;
 }
 
-#bars > label {
-    animation-timing-function: linear;
-}
-
 #dates > time {
     animation-timing-function: cubic-bezier(1, -0.01, 0.01, 1); // quick change
     font-size: 6vmin;
