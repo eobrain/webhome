@@ -6,6 +6,8 @@ $basic: 4 * $minor;
 $background-color: #f5f1ef;
 $shadow1-color: #e9e5e3;
 $shadow2-color: #fffdfb;
+// $text-color: #111;
+$link-color: #331d9d; // dark blue
 
 body {
     background-color: $background-color;
@@ -38,12 +40,14 @@ body {
 a {
     padding: 0.2em;
     margin: 0.2em;
+    color: $link-color;
 }
 a, a:visited {
-    color: black;
+    color: $link-color;
 }
 a.current:hover {
     text-decoration: none;
+    color: $link-color;
 }
 
 header.site-header {
