@@ -3,29 +3,32 @@
 
 $minor: 1vmin;
 $basic: 4 * $minor;
+$background-color: #f5f1ef;
+$shadow1-color: #e9e5e3;
+$shadow2-color: #fffdfb;
 
 body {
-    background-color: #f5f1ef;
+    background-color: $background-color;
 }
 
 @media screen and (max-width: 600px) {
     .site-nav {
-        background-color: #f5f1ef;
+        background-color: $background-color;
         border: none;
-        box-shadow: $minor $minor $minor * 2 #d0cdcb, (-$minor) (-$minor) $minor * 2 #ffffff;
+        box-shadow: $minor $minor $minor * 2 $shadow1-color, (-$minor) (-$minor) $minor * 2 $shadow2-color;
     }
 }
 
 .button {
-    background-color: #f5f1ef;
+    background-color: $background-color;
     border: none;
-    box-shadow: $minor $minor $minor * 2 #d0cdcb, (-$minor) (-$minor) $minor * 2 #ffffff;
+    box-shadow: $minor $minor $minor * 2 $shadow1-color, (-$minor) (-$minor) $minor * 2 $shadow2-color;
 }
 
 body, a[href] {
     border-radius: $minor/2;
-    background: #f5f1ef;
-    box-shadow: $minor $minor $minor * 2 #d0cdcb, (-$minor) (-$minor) $minor * 2 #ffffff;
+    background: $background-color;
+    box-shadow: $minor $minor $minor * 2 $shadow1-color, (-$minor) (-$minor) $minor * 2 $shadow2-color;
 }
 
 body {
@@ -38,6 +41,9 @@ a {
 }
 a, a:visited {
     color: black;
+}
+a.current:hover {
+    text-decoration: none;
 }
 
 header.site-header {
@@ -53,8 +59,8 @@ a.current,
 article,
 .post-list > li {
     border-radius: $minor/2;
-    background: #f5f1ef;
-    box-shadow: inset $minor $minor $minor * 2 #d0cdcb, inset (-$minor) (-$minor) $minor * 2 #ffffff;
+    background: $background-color;
+    box-shadow: inset $minor $minor $minor * 2 $shadow1-color, inset (-$minor) (-$minor) $minor * 2 $shadow2-color;
 }
 
 .home > ul {
