@@ -22,13 +22,31 @@ body {
     box-shadow: $minor $minor $minor * 2 #d0cdcb, (-$minor) (-$minor) $minor * 2 #ffffff;
 }
 
-body {
-    margin: $basic;
+body, a {
     border-radius: $minor/2;
     background: #f5f1ef;
     box-shadow: $minor $minor $minor * 2 #d0cdcb, (-$minor) (-$minor) $minor * 2 #ffffff;
 }
 
+body {
+    margin: $basic;
+}
+
+a {
+    padding: 0.2em;
+    margin: 0.2em;
+}
+a, a:visited {
+    color: black;
+}
+
+header.site-header {
+    margin: $basic $basic 0 $basic;
+}
+
+nav {
+    margin: 0 0 $minor 0;
+}
 .home > ul,
 a:active,
 article,
@@ -42,6 +60,10 @@ article,
     list-style: none;
     padding: 4vmin;
     margin-left: 0;
+}
+
+.home > ul > li {
+    margin: 2vmin 0;
 }
 
 .post-list li h3 {

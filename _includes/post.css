@@ -14,7 +14,7 @@ nav {
 
 nav a {
     display: block;
-    width: 47.5%;
+    /*width: 40%;*/
     float: left;
     margin-bottom: 1em;
     overflow: hidden;

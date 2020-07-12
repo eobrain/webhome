@@ -5,6 +5,8 @@
     margin: 1vmin 2vmin;
     display: inline-block;
     font-size: 2.5vmin;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .sparkline canvas {

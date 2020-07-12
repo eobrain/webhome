@@ -9,7 +9,7 @@ layout: home
 
 ## Covid Graphs and Animations
 
-* [[animation](/covidgrowth/rankca)] [[graphs](/covidgrowth/ca)] California
-* [[animation](/covidgrowth/rankusa)] [[graphs](/covidgrowth/usa)] USA (by county)
-* [[animation](/covidgrowth/rankstate)] [[graphs](/covidgrowth/state)] USA (by state)
-* [[animation](/covidgrowth/rankworld)] [[graphs](/covidgrowth/world)] World
+* [animation](/covidgrowth/rankca) [graphs](/covidgrowth/ca) California
+* [animation](/covidgrowth/rankusa) [graphs](/covidgrowth/usa) USA (by county)
+* [animation](/covidgrowth/rankstate) [graphs](/covidgrowth/state) USA (by state)
+* [animation](/covidgrowth/rankworld) [graphs](/covidgrowth/world) World
