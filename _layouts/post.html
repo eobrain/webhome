@@ -51,6 +51,13 @@ layout: default
   .animate-to-child { animation: 0.5s ease-in 0s 1 slideInUp}
   .animate-to-parent { animation: 0.5s ease-in 0s 1 slideInDown}
 
+  .post-meta { display:flex }
+  .post-meta time {
+    padding: 0.2em;
+    margin: 0.2em;
+    flex-grow: 1;
+    }
+
 </style>
 <link rel="stylesheet" href="/css/skin.css">
 
@@ -65,7 +72,7 @@ layout: default
   {% endif %}
 </nav>
 
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="post h-entry" itemscope itemtype="http:/</div>/schema.org/BlogPosting">
 
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
@@ -74,9 +81,8 @@ layout: default
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {{ page.date | date: date_format }}
       </time>
-      {%- if page.author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
-      {%- endif -%}</p>
+        {% include share.html title=page.title %}
+    </p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
