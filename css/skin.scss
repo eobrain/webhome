@@ -22,7 +22,7 @@ body {
     box-shadow: $minor $minor $minor * 2 #d0cdcb, (-$minor) (-$minor) $minor * 2 #ffffff;
 }
 
-body, a {
+body, a[href] {
     border-radius: $minor/2;
     background: #f5f1ef;
     box-shadow: $minor $minor $minor * 2 #d0cdcb, (-$minor) (-$minor) $minor * 2 #ffffff;
@@ -48,7 +48,8 @@ nav {
     margin: 0 0 $minor 0;
 }
 .home > ul,
-a:active,
+a[href]:active,
+a.current,
 article,
 .post-list > li {
     border-radius: $minor/2;

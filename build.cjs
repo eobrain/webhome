@@ -3,6 +3,7 @@
 // const COMPILEJS = 'java -jar tools/closure/closure-compiler-v20190929.jar -O ADVANCED --externs js/externs.js'
 const COMPILED = [
   'sw.js',
+  '_includes/every.js',
   '_includes/home.js',
   '_includes/post.js',
   '_includes/post_blocking.js'
