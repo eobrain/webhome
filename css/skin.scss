@@ -29,12 +29,19 @@ body {
     box-shadow: $minor $minor $minor * 2 #d0cdcb, (-$minor) (-$minor) $minor * 2 #ffffff;
 }
 
+.home > ul,
 a:active,
 article,
 .post-list > li {
     border-radius: $minor/2;
     background: #f5f1ef;
     box-shadow: inset $minor $minor $minor * 2 #d0cdcb, inset (-$minor) (-$minor) $minor * 2 #ffffff;
+}
+
+.home > ul {
+    list-style: none;
+    padding: 4vmin;
+    margin-left: 0;
 }
 
 .post-list li h3 {

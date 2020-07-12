@@ -44,7 +44,6 @@ plugins:
 header_pages:
   - about.md
   - categories.html
-  - covidgrowth/index.md
 
 # Exclude from processing.
 # The following items will not be processed, by default.
