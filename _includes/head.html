@@ -7,6 +7,10 @@
   {%- feed_meta -%}
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
+  {% else %}
+  <script>
+    const gtag = (...args) => console.log('Fake gtag(', args.join(','), ')') 
+  </script>
   {%- endif -%}
   <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
