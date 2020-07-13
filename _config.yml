@@ -22,8 +22,7 @@ title: Yak Shavings
 author: Eamonn O'Brien-Strain
 # email: e@obrain.com
 description: >- # this means to ignore newlines until "baseurl:"
-  An Irish software engineer, living in San Francisco,
-  working for Google ...
+  Programming Explorations
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://eamonn.org" # the base hostname & protocol for your site, e.g. http://example.com
 twitter:
