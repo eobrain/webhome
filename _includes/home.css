@@ -5,6 +5,11 @@
     overflow: hidden;
 }
 
+a.tweet {
+    float: right;
+    margin-top: -7vmin;
+    margin-right: 3vmin;}
+
 li img {
     max-width: 50%;
     /* float: right; */
@@ -17,8 +22,3 @@ li>p {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
-/*li img.hero {
-    max-width: 100%;
-    width: 100%
-}*/
