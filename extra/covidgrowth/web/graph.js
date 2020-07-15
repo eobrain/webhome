@@ -153,7 +153,7 @@ export const Graph = (
   const individualGraph = (i, shortName, longName, max, smoothData, dailyData) => {
     promises.push(drawGraph(i, shortName, max, [{
       type: 'line',
-      label: longName + ' (weekly moving average)',
+      label: longName + ' (11-day moving average)',
       backgroundColor: 'transparent',
       borderColor: colors[i],
       pointRadius: 0,

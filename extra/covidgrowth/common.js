@@ -4,7 +4,7 @@ import maxichrome from 'maxichrome'
 
 export const fileTime = path => fs.statSync(path).mtime.getTime()
 
-export const smooth = row => smoothish(row, { radius: 3 })
+export const smooth = row => smoothish(row, { radius: 5 })
 
 export const stringifyArray = xs => '[' + xs.map(x => JSON.stringify(x)).join(',\n') + ']'
 
