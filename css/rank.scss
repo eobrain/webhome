@@ -57,12 +57,7 @@
     }
 }
 
-#bars > label,
-#dates > time,
-#continue,
-#pause,
-#restart,
-#timebar {
+#animation .animated {
     animation-duration: 5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
