@@ -27,6 +27,7 @@ title: COVID Ranking (${whichLong})
   })
 
   console.log(`
+  <a href="javascript:location=location.href.replace(/#.*$/,'')" id="restart" class="button">⏮️</a>
   <label for="pause-checkbox" id="continue" class="button">▶️</label>
   <span id="pause" class="button">⏸️</span>
   </h4>

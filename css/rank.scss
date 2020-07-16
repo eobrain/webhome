@@ -34,30 +34,56 @@
     position: absolute;
 }
 
+@keyframes disappear-at-end {
+    0% {opacity:1;}
+    99% {opacity:1;}
+    100% {opacity:0;}
+}
+@keyframes appear-at-end {
+    0% {opacity:0;}
+    99% {opacity:0;}
+    100% {opacity:1;}
+}
+
+
 #bars > label,
 #dates > time,
+#continue,
+#pause,
+#restart,
 #timebar {
-    animation-duration: 40s;
-    animation-delay: -39.9999s;
-    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    //animation-delay: -39.9999s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 // Animation is paused by default
 #animation #bars > label,
 #animation #dates > time,
-#timebar {
+#animation #continue,
+#animation #pause,
+#animation #restart,
+#animation #timebar {
     animation-play-state: paused;
 }
 #continue {
     display: inline;
+    animation-name:  disappear-at-end
 }
 #pause {
     display: none;
+    animation-name:  disappear-at-end;
 }
-
+#restart {
+    animation-name:  appear-at-end;
+}
 // Animation is running when invisible checkbox is checked
 #animation:focus-within #bars > label,
 #animation:focus-within #dates > time,
+#animation:focus-within #continue,
+#animation:focus-within #pause,
+#animation:focus-within #restart,
 #animation:focus-within #timebar {
     animation-play-state: running;
 }
@@ -82,12 +108,12 @@
 
 // checkbox made invisible by putting way offscreen.
 #pause-checkbox {
-    position: absolute;
-    left:-1000vw;
+    //position: absolute;
+    //left:-1000vw;
 }
 
 #dates > time {
-    left: 8vmin;
+    left: 17vmin;
 }
 #pause, #continue {
     font-size: 5vmin
