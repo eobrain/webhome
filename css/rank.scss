@@ -1,5 +1,6 @@
 ---
 ---
+
 #bars {
     position: relative;
     margin: 5vmin 0;
@@ -113,12 +114,17 @@
 
 // checkbox made invisible by putting way offscreen.
 #pause-checkbox {
-    //position: absolute;
-    //left:-1000vw;
+    position: absolute;
+    left: -1000vw;
 }
 
 #dates > time {
     left: 18vmin;
+}
+
+#pause,
+#continue {
+    margin-left: 50vmin;
 }
 #pause,
 #continue,
