@@ -1,6 +1,5 @@
 ---
 ---
-
 #bars {
     position: relative;
     margin: 5vmin 0;
@@ -35,16 +34,27 @@
 }
 
 @keyframes disappear-at-end {
-    0% {opacity:1;}
-    99% {opacity:1;}
-    100% {opacity:0;}
+    0% {
+        opacity: 1;
+    }
+    99% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 @keyframes appear-at-end {
-    0% {opacity:0;}
-    99% {opacity:0;}
-    100% {opacity:1;}
+    0% {
+        opacity: 0;
+    }
+    99% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
-
 
 #bars > label,
 #dates > time,
@@ -52,51 +62,46 @@
 #pause,
 #restart,
 #timebar {
-    animation-duration: 10s;
-    //animation-delay: -39.9999s;
+    animation-duration: 5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
 
-// Animation is paused by default
-#animation #bars > label,
-#animation #dates > time,
-#animation #continue,
-#animation #pause,
-#animation #restart,
-#animation #timebar {
-    animation-play-state: paused;
-}
-#continue {
-    display: inline;
-    animation-name:  disappear-at-end
-}
-#pause {
-    display: none;
-    animation-name:  disappear-at-end;
-}
-#restart {
-    animation-name:  appear-at-end;
-}
-// Animation is running when invisible checkbox is checked
-#animation:focus-within #bars > label,
-#animation:focus-within #dates > time,
-#animation:focus-within #continue,
-#animation:focus-within #pause,
-#animation:focus-within #restart,
-#animation:focus-within #timebar {
+// Animation is running by default
+#animation .animated {
     animation-play-state: running;
 }
-#animation:focus-within #continue{
+#continue {
     display: none;
+    animation-name: disappear-at-end;
 }
-#animation:focus-within #pause {
+#pause {
     display: inline;
+    animation-name: disappear-at-end;
+}
+#restart {
+    animation-name: appear-at-end;
+}
+// Animation is paused when invisible checkbox is checked
+#animation:focus-within {
+    .animated {
+        animation-play-state: paused;
+    }
+    #pause {
+        display: none;
+    }
+    #continue {
+        display: inline;
+    }
 }
 
 @keyframes timebar {
-    0% {width:0;}
-    100% {width:100%;}
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
 }
 #timebar {
     height: 3vmin;
@@ -113,8 +118,10 @@
 }
 
 #dates > time {
-    left: 17vmin;
+    left: 18vmin;
 }
-#pause, #continue {
-    font-size: 5vmin
+#pause,
+#continue,
+#restart {
+    font-size: 5vmin;
 }

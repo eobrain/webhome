@@ -23,15 +23,15 @@ title: COVID Ranking (${whichLong})
 <h4 id="dates">Daily per-capita death ranking on<br>`)
 
   dates.forEach((date, t) => {
-    console.log(`<time id="t${t}">${date.toLocaleDateString()}</time>`)
+    console.log(`<time id="t${t}" class="animated">${date.toLocaleDateString()}</time>`)
   })
 
   console.log(`
-  <a href="javascript:location=location.href.replace(/#.*$/,'')" id="restart" class="button">⏮️</a>
-  <label for="pause-checkbox" id="continue" class="button">▶️</label>
-  <span id="pause" class="button">⏸️</span>
+  <a href="javascript:location=location.href.replace(/#.*$/,'')" id="restart" class="button animated">⏮️</a>
+  <label for="pause-checkbox" id="pause" class="button animated">⏸️</label>
+  <span id="continue" class="button animated">▶️</span>
   </h4>
-<div id="timebar"></div>
+<div id="timebar" class="animated"></div>
 <div id="bars">
 `)
 
@@ -39,7 +39,7 @@ title: COVID Ranking (${whichLong})
     console.log(`<input type="checkbox" id="c${i}" />`)
   })
   labels.forEach((label, i) => {
-    console.log(`<label for="c${i}" id="i${i}">${label}</label>`)
+    console.log(`<label class="animated" for="c${i}" id="i${i}">${label}</label>`)
   })
   console.log(`
 </div>
