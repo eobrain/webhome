@@ -8,8 +8,8 @@ import { fileTime, smooth, stringifyArray, colors } from './common.js'
 
 const { records } = JSON.parse(fs.readFileSync('./raw-data.json'))
 
-const MIN_DEATHS = 10
-const MIN_MORTALITY_MULTIPLIER = 1.05
+const MIN_DEATHS = 1000
+const MIN_MORTALITY_MULTIPLIER = 1.01
 const MIN_POINTS = 30
 const LIVE_EXPECTANCY = 71 // of the world
 
@@ -86,6 +86,7 @@ records.forEach(row => {
   geoIdOfCountries[countriesAndTerritories.replace(/_/g, ' ')] = geoId
   addCol(countriesAndTerritories)
 })
+const totalDeaths = {}
 records.forEach(row => {
   const {
     dateRep,
@@ -94,10 +95,15 @@ records.forEach(row => {
     geoId,
     popData2019
   } = row
-  if (!deaths || deaths < MIN_DEATHS || geoId.length !== 2) {
+  if (!deaths || geoId.length !== 2) {
     return
   }
   add(countriesAndTerritories, dateRep, deaths / popData2019)
+  const j = columnIndex[countriesAndTerritories]
+  if (!totalDeaths[j]) {
+    totalDeaths[j] = 0
+  }
+  totalDeaths[j] += deaths
 })
 
 data.rows.sort((a, b) => a[0] - b[0])
@@ -114,7 +120,7 @@ let smoothedTimeSeriesRows = timeSeriesRows.map((row, i) => {
 })
 const countsPerCountry = timeSeriesRows.map(row => row.map(x => !!x).reduce((acc, x) => acc + x))
 const maxPerCountry = smoothedTimeSeriesRows.map(row => row.map(x => x || 0).reduce((acc, x) => Math.max(acc, x)))
-const filter = (x, i) => countsPerCountry[i] >= MIN_POINTS && maxPerCountry[i] >= MIN_MORTALITY_MULTIPLIER
+const filter = (x, i) => i === 0 || (totalDeaths[i] > MIN_DEATHS && countsPerCountry[i] >= MIN_POINTS && maxPerCountry[i] >= MIN_MORTALITY_MULTIPLIER)
 data.columns = data.columns.filter(filter)
 timeSeriesRows = timeSeriesRows.filter(filter)
 smoothedTimeSeriesRows = smoothedTimeSeriesRows.filter(filter)
