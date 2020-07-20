@@ -3,4 +3,16 @@ import generate from './genrank_md.js'
 
 const countyNames = Object.keys(smoothedCountyData)
 
-generate('usa', 'USA by County', countyNames, countyNames, minDay, dayCount, updateTime, minTotalDeaths, minMortalityMultiplier)
+generate({
+  whichShort: 'usa',
+  whichLong: 'USA by County',
+  units: 'counties',
+  order: countyNames,
+  labels: countyNames,
+  minDay,
+  dayCount,
+  updateTime,
+  minTotalDeaths,
+  minMortalityMultiplier,
+  dataSource: '[Center for Systems Science and Engineering (CSSE) at Johns Hopkins University](https://github.com/CSSEGISandData/COVID-19)'
+})

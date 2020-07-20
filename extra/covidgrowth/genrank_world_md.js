@@ -2,7 +2,7 @@ import {
   columns,
   updateTime,
   minTotalDeaths,
-  // minMortalityMultiplier,
+  minMortalityMultiplier,
   // minPoints,
   // columns,
   geoIds,
@@ -22,4 +22,16 @@ const dayCount = smoothedDates.length
 const labels = columns.slice(1)
 const countryCodes = geoIds.slice(1)
 
-generate('world', 'World', countryCodes, labels, minDay, dayCount, updateTime, minTotalDeaths)
+generate({
+  whichShort: 'world',
+  whichLong: 'World',
+  units: 'countries',
+  order: countryCodes,
+  labels,
+  minDay,
+  dayCount,
+  updateTime,
+  minTotalDeaths,
+  minMortalityMultiplier,
+  dataSource: '[European Centre for Disease Prevention and Control](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide)'
+})

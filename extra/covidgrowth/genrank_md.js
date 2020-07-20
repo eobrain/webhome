@@ -1,5 +1,17 @@
 
-export default (whichShort, whichLong, order, labels, minDay, dayCount, updateTime, minTotalDeaths, minMortalityMultiplier) => {
+export default ({
+  whichShort,
+  whichLong,
+  units,
+  order,
+  labels,
+  minDay,
+  dayCount,
+  updateTime,
+  minTotalDeaths,
+  minMortalityMultiplier,
+  dataSource
+}) => {
   const DAY_MS = 24 * 60 * 60 * 1000
   const dates = [...new Array(dayCount)].map((_, i) => new Date(DAY_MS * (i + minDay)))
 
@@ -47,11 +59,11 @@ title: COVID Ranking (${whichLong})
 
 The above ranks the per-capita  mortality rate.
 
-Source: [Center for Systems Science and Engineering (CSSE) at Johns Hopkins University][1],
-updated at ${new Date(updateTime).toLocaleString()}, showing all counties with at least ${minTotalDeaths} total deaths
+Source: ${dataSource},
+updated at ${new Date(updateTime).toLocaleString()}, showing all ${units} with at least ${minTotalDeaths} total deaths`)
+  if (minMortalityMultiplier && minMortalityMultiplier > 1) {
+    console.log(`
 and where daily smoothed mortality multiplier exceeded ${minMortalityMultiplier}.
-
-[1]: https://github.com/CSSEGISandData/COVID-19
-
 `)
+  }
 }
