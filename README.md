@@ -38,7 +38,7 @@ Local building and serving
 
 Publish
 
-1. `make deploy`
+1. `npx bajel deploy`
 
 [1]: https://github.com/creationix/nvm
 [2]: http://rvm.io/1
