@@ -3,7 +3,7 @@ import Papa from 'papaparse'
 import { fileTime, smooth, stringifyArray, colors } from './common.js'
 // const { pp } = require('passprint')
 
-const MIN_DEATHS_PER_COUNTY = 44
+const MIN_DEATHS_PER_COUNTY = 13
 const MIN_MORTALITY_MULTIPLIER = 1
 const LIVE_EXPECTANCY = 78.54 // of the USA
 
