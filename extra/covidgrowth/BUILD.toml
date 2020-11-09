@@ -5,14 +5,15 @@ ROLLUP = "rollup --format iife --name state --file $@ --plugin node-resolve --co
 # Generate data files for web pages
 [web]
 deps = [
-    "$(WEB)/ca.min.js",
-    "$(WEB)/usa.min.js",
-    "$(WEB)/state.min.js",
-    "$(WEB)/world.min.js",
-    "$(WEB)/ca.js",
-    "$(WEB)/usa.js",
-    "$(WEB)/state.js",
-    "$(WEB)/world.js",
+    "$(WEB)/ca-graph.min.js",
+    "$(WEB)/usa-graph.min.js",
+    "$(WEB)/state-graph.min.js",
+    "$(WEB)/world-graph.min.js",
+    "$(WEB)/state-cartogram.js",
+    "$(WEB)/ca-graph.js",
+    "$(WEB)/usa-graph.js",
+    "$(WEB)/state-graph.js",
+    "$(WEB)/world-graph.js",
     "$(WEB)/rankca.md",
     "$(WEB)/rankusa.md",
     "$(WEB)/rankstate.md",
@@ -53,12 +54,16 @@ exec = "wget --output-document=$@ https://opendata.ecdc.europa.eu/covid19/casedi
 ["time_series_covid19_deaths_US.csv"]
 exec = "wget --output-document=$@ https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv"
 
-["$(WEB)/%.min.js"]
-deps = ["web/%.js", "web/data_%.js", "web/graph.js", "web/passprint.js"]
+["$(WEB)/%-graph.min.js"]
+deps = ["web/%-graph.js", "web/data_%.js", "web/graph.js", "web/passprint.js"]
 exec = "$(ROLLUP) --plugin terser --input $<"
 
-["$(WEB)/%.js"]
-deps = ["web/%.js", "web/data_%.js", "web/graph.js"]
+["$(WEB)/state-cartogram.js"]
+deps = [ "web/state-cartogram.js", "web/state-cartogram-links.js", "web/state-cartogram-nodes.js"]
+exec = "$(ROLLUP) --input $<"
+
+["$(WEB)/%-graph.js"]
+deps = ["web/%-graph.js", "web/data_%.js", "web/graph.js"]
 exec = "$(ROLLUP) --input $<"
 
 [clean]

@@ -11,11 +11,9 @@ vendor
 /sw.js
 node_modules
 
-/covidgrowth/*.min.js
-/covidgrowth/state.js
-/covidgrowth/usa.js
-/covidgrowth/world.js
-/covidgrowth/ca.js
+/covidgrowth/*-graph.min.js
+/covidgrowth/*-graph.js
+/covidgrowth/*-cartogram.js
 *.js.map
 /covidgrowth/rank*.md
 /css/rank*.scss

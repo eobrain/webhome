@@ -7,7 +7,7 @@ title: COVID (USA)
 <link rel="stylesheet" href="/covidgrowth/graph.css">
 <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" defer></script>
-<script src="/covidgrowth/usa.min.js" defer></script>
+<script src="/covidgrowth/usa-graph.min.js" defer></script>
 
 * [animation](/covidgrowth/rankca) [graphs](/covidgrowth/ca) California
 * [animation](/covidgrowth/rankusa) [graphs](/covidgrowth/usa) USA (by county)

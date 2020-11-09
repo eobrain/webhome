@@ -40,6 +40,23 @@ Publish
 
 1. `npx bajel deploy`
 
+
+
+
+## Guide to the Repo
+
+* **BUILD.cjs** -- Top-level build file. Invoked with `npx bajel ...`
+* **_post/** -- Source markdown for blog bosts
+* **_site/** -- Generated static files to be deployed
+* **covidgrowth/** -- Source markdown and generated JavaScript for Covid graphs
+* **css/** -- Source and generated CSS
+* **extra/**
+    * **covidgrowth/** -- Node.js code-generator code and data files for Covid graphs.
+        * **BUILD.toml** -- Build file, called from top-level build file.
+        * **web** -- Source JavaScript and generated data JavaScript for Covid graphs
+
+
+
 [1]: https://github.com/creationix/nvm
 [2]: http://rvm.io/1
 [3]: https://github.com/tdewolff/minify/tree/master/cmd/minify
