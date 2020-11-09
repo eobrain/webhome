@@ -40,6 +40,10 @@ exec = "node us_raw2data.js $< >$@"
 deps = ["time_series_covid19_deaths_US.csv", "state_raw2data.js", "common.js"]
 exec = "node state_raw2data.js $< >$@"
 
+["web/state-cartogram-nodes.js"]
+deps = ["time_series_covid19_deaths_US.csv", "gencartogram_state.js", "common.js"]
+exec = "node gencartogram_state.js $< >$@"
+
 ["$(WEB)/rank%.md"]
 deps = ["web/data_%.js", "genrank_%_md.js", "genrank_md.js"]
 exec = "node genrank_%_md.js >$@"
@@ -59,7 +63,7 @@ deps = ["web/%-graph.js", "web/data_%.js", "web/graph.js", "web/passprint.js"]
 exec = "$(ROLLUP) --plugin terser --input $<"
 
 ["$(WEB)/state-cartogram.js"]
-deps = [ "web/state-cartogram.js", "web/state-cartogram-links.js", "web/state-cartogram-nodes.js"]
+deps = [ "web/state-cartogram.js", "web/state-cartogram-links.js", "web/state-cartogram-latlons.js", "web/state-cartogram-nodes.js"]
 exec = "$(ROLLUP) --input $<"
 
 ["$(WEB)/%-graph.js"]

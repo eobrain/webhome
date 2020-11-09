@@ -1,17 +1,26 @@
 // Adapted from https://bl.ocks.org/cmgiven/9d6bc46cf586738458c13dd2b5dadd84
 
 import links from './state-cartogram-links.js'
-import nodes from './state-cartogram-nodes.js'
+import latlons from './state-cartogram-latlons.js'
+import nodesWithoutLatlon from './state-cartogram-nodes.js'
 
 /* global d3 */
+
+const nodes = nodesWithoutLatlon.filter(n => latlons[n.state]).map(n => {
+  const { state, population } = n
+  const { lat, lon } = latlons[state]
+  return { state, lat, lon, population }
+})
 
 const width = 600
 const height = 600
 
-const interval = 2000
+// const interval = 2000
+const interval = 200
 const maxSize = 140
 
-const years = d3.range(1900, 2010 + 1, 10)
+// const years = d3.range(1900, 2010 + 1, 10)
+const years = d3.range(0, 290 + 1, 1)
 let yearIndex = -1
 let year = years[0]
 const isYearFn = e => e.year === year
