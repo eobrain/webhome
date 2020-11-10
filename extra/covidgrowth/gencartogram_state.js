@@ -1,10 +1,9 @@
 import fs from 'fs'
 import Papa from 'papaparse'
-import { fileTime, smooth, stringifyArray, colors } from './common.js'
+import { smooth } from './common.js'
 import STATE_CODE from './statecode.js'
 
 const MIN_DEATHS_PER_STATE = 20
-const LIVE_EXPECTANCY = 78.54 // of the USA
 
 const [,, csvFilePath, outPath] = process.argv
 if (!csvFilePath && !outPath) {
@@ -46,7 +45,6 @@ const toTimeMs = s => {
     }
   })
   const minDay = minTimeMs / DAY_MS
-  const maxDay = maxTimeMs / DAY_MS
   const stateCumulative = {}
   const statePopulations = {}
   const fullNames = {}

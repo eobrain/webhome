@@ -21,7 +21,7 @@ const WIDTH = 600
 const HEIGHT = 600
 
 // const INTERVAL = 2000
-const INTERVAL = 200
+const INTERVAL = 100
 const MAX_SIZE = 140
 
 // const years = d3.range(1900, 2010 + 1, 10)
@@ -94,6 +94,7 @@ function initialize () {
   states.append('rect')
   states.append('text')
     .attr('text-anchor', 'middle')
+    .attr('lengthAdjust', 'spacingAndGlyphs')
     .attr('dy', '.3em')
     .text(d => d.state)
 
@@ -101,11 +102,19 @@ function initialize () {
   simulation.force('link').links(links)
   simulation.on('tick', ticked)
 
+  let dT = 1
   update()
   d3.interval(update, INTERVAL)
 
   function update () {
-    year = years[++yearIndex >= years.length ? yearIndex = 0 : yearIndex]
+    yearIndex = yearIndex + dT
+    if (dT === 1 && yearIndex === years.length - 1) {
+      dT = -1
+    }
+    if (dT === -1 && yearIndex === 0) {
+      dT = 1
+    }
+    year = years[yearIndex]
 
     yearLabel.text(dayOffsetToString(year).toLocaleDateString())
 
@@ -131,8 +140,12 @@ function initialize () {
       .attr('y', function (d) { return sizes.get(this) / -2 })
       .attr('width', function (d) { return sizes.get(this) })
       .attr('height', function (d) { return sizes.get(this) })
+    states.selectAll('text')
+      .attr('textLength', function (d) { return 2 * sizes.get(this) / 3 })
   }
 }
+
+const constant = arg => arg
 
 function rectCollide () {
   let nodes
@@ -241,8 +254,4 @@ function rectCollide () {
   }
 
   return force
-}
-
-function constant (arg) {
-  return function () { return arg }
 }
