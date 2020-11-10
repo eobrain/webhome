@@ -1,4 +1,6 @@
 export default [
+  { source: 'HI', target: 'CA' },
+  { source: 'AK', target: 'WA' },
   { source: 'WA', target: 'OR' },
   { source: 'WA', target: 'ID' },
   { source: 'OR', target: 'ID' },

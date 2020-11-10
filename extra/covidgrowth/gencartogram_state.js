@@ -96,7 +96,7 @@ const toTimeMs = s => {
   console.log()
   console.log('export default [')
   for (const state in stateData) {
-    const smoothed = smooth(stateData[state]).map(x => Math.max(0, x))
+    const smoothed = smooth(stateData[state]).map(x => Math.max(0, x) * 2)
     console.log('{')
     console.log(`state: '${state}',`)
     console.log('population: [')

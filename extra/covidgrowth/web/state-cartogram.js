@@ -59,12 +59,14 @@ const collisionForce = rectCollide()
   })
   .iterations(12)
 
+const xyStrength = 0.0125
+
 const simulation = d3.forceSimulation()
   .force('center', d3.forceCenter(width / 2, (height - maxSize) / 2))
   .force('link', linkForce)
   .force('collision', collisionForce)
-  .force('x', d3.forceX(d => d.xi).strength(0.0125))
-  .force('y', d3.forceY(d => d.yi).strength(0.0125))
+  .force('x', d3.forceX(d => d.xi).strength(xyStrength))
+  .force('y', d3.forceY(d => d.yi).strength(xyStrength))
 
 initialize()
 
