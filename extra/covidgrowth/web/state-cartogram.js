@@ -216,25 +216,25 @@ function rectCollide () {
     masses = sizes.map(d => d[0] * d[1])
   }
 
-  force.size = function (_) {
-    if (arguments.length) {
-      size = typeof _ === 'function' ? _ : constant(_)
+  force.size = function (arg) {
+    if (arg) {
+      size = typeof arg === 'function' ? arg : constant(arg)
       return force
     }
     return size
   }
 
-  force.strength = function (_) {
-    if (arguments.length) {
-      strength = +_
+  force.strength = function (arg) {
+    if (arg) {
+      strength = +arg
       return force
     }
     return strength
   }
 
-  force.iterations = function (_) {
-    if (arguments.length) {
-      iterations = +_
+  force.iterations = function (arg) {
+    if (arg) {
+      iterations = +arg
       return force
     }
     return iterations
@@ -243,6 +243,6 @@ function rectCollide () {
   return force
 }
 
-function constant (_) {
-  return function () { return _ }
+function constant (arg) {
+  return function () { return arg }
 }
