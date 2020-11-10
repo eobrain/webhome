@@ -9,7 +9,7 @@ deps = [
     "$(WEB)/usa-graph.min.js",
     "$(WEB)/state-graph.min.js",
     "$(WEB)/world-graph.min.js",
-    "$(WEB)/state-cartogram.js",
+    "$(WEB)/state-cartogram.min.js",
     "$(WEB)/ca-graph.js",
     "$(WEB)/usa-graph.js",
     "$(WEB)/state-graph.js",
@@ -65,6 +65,10 @@ exec = "$(ROLLUP) --plugin terser --input $<"
 ["$(WEB)/state-cartogram.js"]
 deps = [ "web/state-cartogram.js", "web/state-cartogram-links.js", "web/state-cartogram-latlons.js", "web/state-cartogram-nodes.js"]
 exec = "$(ROLLUP) --input $<"
+
+["$(WEB)/state-cartogram.min.js"]
+deps = [ "web/state-cartogram.js", "web/state-cartogram-links.js", "web/state-cartogram-latlons.js", "web/state-cartogram-nodes.js"]
+exec = "$(ROLLUP) --plugin terser --input $<"
 
 ["$(WEB)/%-graph.js"]
 deps = ["web/%-graph.js", "web/data_%.js", "web/graph.js"]
