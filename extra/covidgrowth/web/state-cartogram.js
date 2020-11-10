@@ -17,12 +17,12 @@ const nodes = nodesWithoutLatlon.filter(n => latlons[n.state]).map(n => {
   return { state, lat, lon, population }
 })
 
-const width = 600
-const height = 600
+const WIDTH = 600
+const HEIGHT = 600
 
-// const interval = 2000
-const interval = 200
-const maxSize = 140
+// const INTERVAL = 2000
+const INTERVAL = 200
+const MAX_SIZE = 140
 
 // const years = d3.range(1900, 2010 + 1, 10)
 const years = d3.range(0, 290 + 1, 1)
@@ -31,19 +31,19 @@ let year = years[0]
 const isYearFn = e => e.year === year
 
 const projection = d3.geoAlbersUsa()
-  .scale(width)
-  .translate([width / 2, height / 2])
+  .scale(WIDTH)
+  .translate([WIDTH / 2, HEIGHT / 2])
 
-const size = d3.scaleSqrt().range([0, maxSize])
+const size = d3.scaleSqrt().range([0, MAX_SIZE])
 
 const svg = d3.select('figure').append('svg')
-  .attr('width', width)
-  .attr('height', height)
+  .attr('width', WIDTH)
+  .attr('height', HEIGHT)
   .append('g')
 
 const yearLabel = svg.append('text')
   .attr('class', 'year')
-  .attr('x', width / 2)
+  .attr('x', WIDTH / 2)
   .attr('y', 30)
   .attr('text-anchor', 'middle')
 
@@ -64,14 +64,14 @@ const collisionForce = rectCollide()
   })
   .iterations(12)
 
-const xyStrength = 0.0125
+const XY_STRENGTH = 0.0125
 
 const simulation = d3.forceSimulation()
-  .force('center', d3.forceCenter(width / 2, (height - maxSize) / 2))
+  .force('center', d3.forceCenter(WIDTH / 2, (HEIGHT - MAX_SIZE) / 2))
   .force('link', linkForce)
   .force('collision', collisionForce)
-  .force('x', d3.forceX(d => d.xi).strength(xyStrength))
-  .force('y', d3.forceY(d => d.yi).strength(xyStrength))
+  .force('x', d3.forceX(d => d.xi).strength(XY_STRENGTH))
+  .force('y', d3.forceY(d => d.yi).strength(XY_STRENGTH))
 
 initialize()
 
@@ -102,7 +102,7 @@ function initialize () {
   simulation.on('tick', ticked)
 
   update()
-  d3.interval(update, interval)
+  d3.interval(update, INTERVAL)
 
   function update () {
     year = years[++yearIndex >= years.length ? yearIndex = 0 : yearIndex]
