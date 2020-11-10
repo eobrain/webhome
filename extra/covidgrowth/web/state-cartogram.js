@@ -6,6 +6,11 @@ import nodesWithoutLatlon from './state-cartogram-nodes.js'
 
 /* global d3 */
 
+const FIRST_DAY_MS = Date.UTC(2020, 0, 22, 12) // Noon UTC, Jan 22, 2020
+const MS_PER_DAY = 24 * 60 * 60 * 1000
+
+const dayOffsetToString = dayOffset => new Date(FIRST_DAY_MS + dayOffset * MS_PER_DAY)
+
 const nodes = nodesWithoutLatlon.filter(n => latlons[n.state]).map(n => {
   const { state, population } = n
   const { lat, lon } = latlons[state]
@@ -102,7 +107,7 @@ function initialize () {
   function update () {
     year = years[++yearIndex >= years.length ? yearIndex = 0 : yearIndex]
 
-    yearLabel.text(year)
+    yearLabel.text(dayOffsetToString(year).toLocaleDateString())
 
     if (yearIndex === 0) {
       nodes.forEach(d => {
