@@ -21,7 +21,7 @@ const WIDTH = 600
 const HEIGHT = 600
 
 // const INTERVAL = 2000
-const INTERVAL = 20
+const INTERVAL = 50
 const MAX_SIZE = 140
 
 // const years = d3.range(1900, 2010 + 1, 10)

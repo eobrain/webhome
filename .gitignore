@@ -13,7 +13,7 @@ node_modules
 
 /covidgrowth/*-graph.min.js
 /covidgrowth/*-graph.js
-/covidgrowth/*-cartogram.js
+/covidgrowth/*-cartogram.min.js
 *.js.map
 /covidgrowth/rank*.md
 /css/rank*.scss
