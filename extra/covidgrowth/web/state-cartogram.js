@@ -21,7 +21,7 @@ const WIDTH = 600
 const HEIGHT = 600
 
 // const INTERVAL = 2000
-const INTERVAL = 100
+const INTERVAL = 20
 const MAX_SIZE = 140
 
 // const years = d3.range(1900, 2010 + 1, 10)
@@ -102,18 +102,11 @@ function initialize () {
   simulation.force('link').links(links)
   simulation.on('tick', ticked)
 
-  let dT = 1
   update()
   d3.interval(update, INTERVAL)
 
   function update () {
-    yearIndex = yearIndex + dT
-    if (dT === 1 && yearIndex === years.length - 1) {
-      dT = -1
-    }
-    if (dT === -1 && yearIndex === 0) {
-      dT = 1
-    }
+    yearIndex = (yearIndex + 1) % years.length
     year = years[yearIndex]
 
     yearLabel.text(dayOffsetToString(year).toLocaleDateString())
