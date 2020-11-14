@@ -25,10 +25,7 @@ title: COVID Ranking (${whichLong})
 <link rel="stylesheet" href="/css/rank.css">
 <link rel="stylesheet" href="/css/rank${whichShort}.css">
 
-* [animation](/covidgrowth/rankca) [graphs](/covidgrowth/ca) California
-* [animation](/covidgrowth/rankusa) [graphs](/covidgrowth/usa) USA (by county)
-* [animation](/covidgrowth/rankstate) [graphs](/covidgrowth/state) USA (by state)
-* [animation](/covidgrowth/rankworld) [graphs](/covidgrowth/world) World
+{% include_relative covidnav.md %}
 
 <div id="animation">
 <input type="checkbox" id="pause-checkbox" />

@@ -4,11 +4,7 @@ permalink: /covidgrowth/
 title: COVID
 ---
 
-
-* [animation](/covidgrowth/rankca) [graphs](/covidgrowth/ca) California
-* [animation](/covidgrowth/rankusa) [graphs](/covidgrowth/usa) USA (by county)
-* [animation](/covidgrowth/rankstate) [graphs](/covidgrowth/state)  [cartogram](/covidgrowth/cartogram)  USA (by state)
-* [animation](/covidgrowth/rankworld) [graphs](/covidgrowth/world) World
+{% include_relative covidnav.md %}
 
 <h4>Per-Capita COVID-19 Death Rate Animations and Graphs</h4>
 
