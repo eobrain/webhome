@@ -4,12 +4,12 @@ import links from './state-cartogram-links.js'
 import latlons from './state-cartogram-latlons.js'
 import nodesWithoutLatlon from './state-cartogram-nodes.js'
 
-/* global d3, slowerElement, fasterElement */
+/* global d3, speedElement, restartElement */
 
 const buttonsShow = isVisible => {
   const visibility = isVisible ? 'block' : 'none'
-  slowerElement.style.display = visibility
-  fasterElement.style.display = visibility
+  speedElement.style.display = visibility
+  restartElement.style.display = visibility
 }
 
 buttonsShow(false)
@@ -133,13 +133,11 @@ function initialize () {
     }
   }
 
-  fasterElement.onclick = () => {
-    interval = 1 + interval / 2
-    timer.restart(update, interval)
-    buttonsShow(false)
+  speedElement.onchange = () => {
+    interval = 1000 / speedElement.valueAsNumber
   }
-  slowerElement.onclick = () => {
-    interval = 2 * (interval + 1)
+
+  restartElement.onclick = () => {
     timer.restart(update, interval)
     buttonsShow(false)
   }
