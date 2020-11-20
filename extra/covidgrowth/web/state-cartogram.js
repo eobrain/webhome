@@ -103,7 +103,7 @@ function initialize () {
   simulation.on('tick', ticked)
 
   update()
-  d3.interval(update, INTERVAL)
+  const timer = d3.interval(update, INTERVAL)
 
   function update () {
     yearIndex = (yearIndex + 1) % years.length
@@ -119,6 +119,9 @@ function initialize () {
     }
 
     simulation.nodes(nodes).alpha(1).restart()
+    if (yearIndex === years.length - 1) {
+      timer.stop()
+    }
   }
 
   function ticked () {
