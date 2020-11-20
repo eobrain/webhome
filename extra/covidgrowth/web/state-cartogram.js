@@ -4,7 +4,15 @@ import links from './state-cartogram-links.js'
 import latlons from './state-cartogram-latlons.js'
 import nodesWithoutLatlon from './state-cartogram-nodes.js'
 
-/* global d3 */
+/* global d3, slowerElement, fasterElement */
+
+const buttonsShow = isVisible => {
+  const visibility = isVisible ? 'block' : 'none'
+  slowerElement.style.display = visibility
+  fasterElement.style.display = visibility
+}
+
+buttonsShow(false)
 
 const FIRST_DAY_MS = Date.UTC(2020, 0, 22, 12) // Noon UTC, Jan 22, 2020
 const MS_PER_DAY = 24 * 60 * 60 * 1000
@@ -20,8 +28,8 @@ const nodes = nodesWithoutLatlon.filter(n => latlons[n.state]).map(n => {
 const WIDTH = 600
 const HEIGHT = 600
 
-// const INTERVAL = 2000
-const INTERVAL = 50
+// const interval = 2000
+let interval = 50
 const MAX_SIZE = 140
 
 // const years = d3.range(1900, 2010 + 1, 10)
@@ -103,7 +111,7 @@ function initialize () {
   simulation.on('tick', ticked)
 
   update()
-  const timer = d3.interval(update, INTERVAL)
+  const timer = d3.interval(update, interval)
 
   function update () {
     yearIndex = (yearIndex + 1) % years.length
@@ -111,17 +119,29 @@ function initialize () {
 
     yearLabel.text(dayOffsetToString(year).toLocaleDateString())
 
-    if (yearIndex === 0) {
+    /* if (yearIndex === 0) {
       nodes.forEach(d => {
         d.x = d.xi
         d.y = d.yi
       })
-    }
+    } */
 
     simulation.nodes(nodes).alpha(1).restart()
     if (yearIndex === years.length - 1) {
       timer.stop()
+      buttonsShow(true)
     }
+  }
+
+  fasterElement.onclick = () => {
+    interval = 1 + interval / 2
+    timer.restart(update, interval)
+    buttonsShow(false)
+  }
+  slowerElement.onclick = () => {
+    interval = 2 * (interval + 1)
+    timer.restart(update, interval)
+    buttonsShow(false)
   }
 
   function ticked () {

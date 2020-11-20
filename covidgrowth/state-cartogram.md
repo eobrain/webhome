@@ -13,6 +13,8 @@ title: COVID Death Cartogram (US)
 * [animation](/covidgrowth/rankstate) [graphs](/covidgrowth/state)  [cartogram](/covidgrowth/cartogram)  USA (by state)
 * [animation](/covidgrowth/rankworld) [graphs](/covidgrowth/world) World
 
+<button id="slowerElement">Slower</button>
+<button id="fasterElement">Faster</button>
 <figure></figure>
 
 

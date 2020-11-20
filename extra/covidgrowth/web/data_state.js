@@ -1,5 +1,5 @@
 
-export const updateTime=1605767557737
+export const updateTime=1605845635817
 
 export const minTotalDeaths=20
 
