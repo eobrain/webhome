@@ -13,9 +13,11 @@ title: COVID Death Cartogram (US)
 * [animation](/covidgrowth/rankstate) [graphs](/covidgrowth/state)  [cartogram](/covidgrowth/cartogram)  USA (by state)
 * [animation](/covidgrowth/rankworld) [graphs](/covidgrowth/world) World
 
-<input type="range" id="speedElement" name="speed" min="1" max="10">
-<button id="restartElement">Slower</button>
-<figure></figure>
+<div id="controls">
+<input type="range" id="speedElement" name="speed" min="1" max="100">
+</div>
+<label for="runningElement">Running</label><input type="checkbox" id="runningElement" checked>
+<figure id="figureElement"></figure>
 
 
 This animation shows the deaths per day in each state.

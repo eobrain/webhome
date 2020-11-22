@@ -4,12 +4,12 @@ import links from './state-cartogram-links.js'
 import latlons from './state-cartogram-latlons.js'
 import nodesWithoutLatlon from './state-cartogram-nodes.js'
 
-/* global d3, speedElement, restartElement */
+/* global d3, speedElement, figureElement, runningElement */
 
 const buttonsShow = isVisible => {
   const visibility = isVisible ? 'block' : 'none'
   speedElement.style.display = visibility
-  restartElement.style.display = visibility
+  // restartElement.style.display = visibility
 }
 
 buttonsShow(false)
@@ -129,18 +129,36 @@ function initialize () {
     simulation.nodes(nodes).alpha(1).restart()
     if (yearIndex === years.length - 1) {
       timer.stop()
+      runningElement.checked = true
       buttonsShow(true)
     }
   }
 
-  speedElement.onchange = () => {
-    interval = 1000 / speedElement.valueAsNumber
+  figureElement.onclick = () => {
+    if (runningElement.checked) {
+      timer.stop()
+      runningElement.checked = false
+    } else {
+      timer.restart(update, interval)
+      runningElement.checked = false
+    }
   }
 
-  restartElement.onclick = () => {
+  runningElement.onchange = () => {
+    if (runningElement.checked) {
+      timer.restart(update, interval)
+    } else {
+      timer.stop()
+    }
+  }
+
+  speedElement.onchange = () => {
+    interval = 10000 / speedElement.valueAsNumber
     timer.restart(update, interval)
+    runningElement.checked = true
     buttonsShow(false)
   }
+  interval = 1000 / speedElement.valueAsNumber
 
   function ticked () {
     const sizes = d3.local()

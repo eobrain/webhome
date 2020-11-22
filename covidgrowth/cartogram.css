@@ -12,3 +12,13 @@ text.year {
     font-weight: 700;
     fill: #555;
 }
+
+#controls {
+    display: flex;
+}
+#restartElement {
+    flex: initial;
+}
+#speedElement {
+    flex: auto;
+}
