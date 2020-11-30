@@ -14,7 +14,7 @@ title: COVID Death Cartogram (US)
 * [animation](/covidgrowth/rankworld) [graphs](/covidgrowth/world) World
 
 <div id="controls">
-<input type="range" id="speedElement" name="speed" min="1" max="100">
+<input type="range" id="timeElement" name="speed" min="0">
 </div>
 <label for="runningElement">Running</label><input type="checkbox" id="runningElement" checked>
 <figure id="figureElement"></figure>

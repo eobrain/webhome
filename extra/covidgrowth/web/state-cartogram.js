@@ -4,15 +4,7 @@ import links from './state-cartogram-links.js'
 import latlons from './state-cartogram-latlons.js'
 import nodesWithoutLatlon from './state-cartogram-nodes.js'
 
-/* global d3, speedElement, figureElement, runningElement */
-
-const buttonsShow = isVisible => {
-  const visibility = isVisible ? 'block' : 'none'
-  speedElement.style.display = visibility
-  // restartElement.style.display = visibility
-}
-
-buttonsShow(false)
+/* global d3, timeElement, figureElement, runningElement */
 
 const FIRST_DAY_MS = Date.UTC(2020, 0, 22, 12) // Noon UTC, Jan 22, 2020
 const MS_PER_DAY = 24 * 60 * 60 * 1000
@@ -29,14 +21,15 @@ const WIDTH = 600
 const HEIGHT = 600
 
 // const interval = 2000
-let interval = 50
+const interval = 50
 const MAX_SIZE = 140
 
 // const years = d3.range(1900, 2010 + 1, 10)
 const years = d3.range(0, 290 + 1, 1)
+timeElement.setAttribute('max', 290 + 1)
 let yearIndex = -1
-let year = years[0]
-const isYearFn = e => e.year === year
+timeElement.value = years[0]
+const isYearFn = e => e.year === timeElement.valueAsNumber
 
 const projection = d3.geoAlbersUsa()
   .scale(WIDTH)
@@ -115,31 +108,13 @@ function initialize () {
 
   function update () {
     yearIndex = (yearIndex + 1) % years.length
-    year = years[yearIndex]
+    timeElement.valueAsNumber = years[yearIndex]
 
-    yearLabel.text(dayOffsetToString(year).toLocaleDateString())
-
-    /* if (yearIndex === 0) {
-      nodes.forEach(d => {
-        d.x = d.xi
-        d.y = d.yi
-      })
-    } */
+    yearLabel.text(dayOffsetToString(timeElement.valueAsNumber).toLocaleDateString())
 
     simulation.nodes(nodes).alpha(1).restart()
     if (yearIndex === years.length - 1) {
       timer.stop()
-      runningElement.checked = true
-      buttonsShow(true)
-    }
-  }
-
-  figureElement.onclick = () => {
-    if (runningElement.checked) {
-      timer.stop()
-      runningElement.checked = false
-    } else {
-      timer.restart(update, interval)
       runningElement.checked = false
     }
   }
@@ -152,13 +127,22 @@ function initialize () {
     }
   }
 
-  speedElement.onchange = () => {
-    interval = 10000 / speedElement.valueAsNumber
-    timer.restart(update, interval)
-    runningElement.checked = true
-    buttonsShow(false)
+  timeElement.onchange = () => {
+    if (runningElement.checked) {
+      timer.stop()
+      runningElement.checked = false
+    }
+    d3.timeout(() => {
+      for (let i = 0; i < years.length; ++i) {
+        if (timeElement.valueAsNumber === years[i]) {
+          yearIndex = i
+          break
+        }
+      }
+      timer.restart(update, interval)
+      runningElement.checked = true
+    }, interval * 2)
   }
-  interval = 1000 / speedElement.valueAsNumber
 
   function ticked () {
     const sizes = d3.local()

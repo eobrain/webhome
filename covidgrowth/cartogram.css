@@ -16,9 +16,9 @@ text.year {
 #controls {
     display: flex;
 }
-#restartElement {
+#runningElement {
     flex: initial;
 }
-#speedElement {
+#timeElement {
     flex: auto;
 }
