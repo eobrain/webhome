@@ -4,6 +4,8 @@ import links from './state-cartogram-links.js'
 import latlons from './state-cartogram-latlons.js'
 import nodesWithoutLatlon from './state-cartogram-nodes.js'
 
+const lastYear = 312
+
 /* global d3, timeElement, figureElement, runningElement */
 
 const FIRST_DAY_MS = Date.UTC(2020, 0, 22, 12) // Noon UTC, Jan 22, 2020
@@ -25,8 +27,8 @@ const interval = 50
 const MAX_SIZE = 140
 
 // const years = d3.range(1900, 2010 + 1, 10)
-const years = d3.range(0, 290 + 1, 1)
-timeElement.setAttribute('max', 290 + 1)
+const years = d3.range(0, lastYear + 1, 1)
+timeElement.setAttribute('max', lastYear + 1)
 let yearIndex = -1
 timeElement.value = years[0]
 const isYearFn = e => e.year === timeElement.valueAsNumber
