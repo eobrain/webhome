@@ -4,7 +4,7 @@ import links from './state-cartogram-links.js'
 import latlons from './state-cartogram-latlons.js'
 import nodesWithoutLatlon from './state-cartogram-nodes.js'
 
-const lastYear = 324
+const lastYear = 325
 
 /* global d3, timeElement, figureElement, runningElement */
 
