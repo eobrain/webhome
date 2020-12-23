@@ -150,17 +150,17 @@ export const Graph = (
   }
 
   const promises = []
-  const individualGraph = (i, shortName, longName, max, smoothData, dailyData) => {
+  const individualGraph = (i, shortName, longName, max, smoothData, dailyData, stepLabel = 'daily') => {
     promises.push(drawGraph(i, shortName, max, [{
       type: 'line',
-      label: longName + ' (11-day moving average)',
+      label: longName + ` (11-day moving average of ${stepLabel})`,
       backgroundColor: 'transparent',
       borderColor: colors[i],
       pointRadius: 0,
       borderWidth,
       data: smoothData
     }, {
-      label: longName + ' (daily)',
+      label: longName + ` (${stepLabel})`,
       backgroundColor: colors[i] + '40',
       borderColor: colors[i] + '40',
       data: dailyData

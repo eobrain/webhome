@@ -32,7 +32,7 @@ const countryCodes = geoIds.slice(1)
 const max = roundUp(0.25)(maximum(smoothedSerieses.map(series => maximum(series))))
 // const maxToday = maximum(smoothedSerieses.map(series => last(series)))
 
-const { animation, sparkline, individualGraph, overlayedGraph, finish } = Graph(colors)
+const { sparkline, individualGraph, overlayedGraph, finish } = Graph(colors)
 
 const toPoints = (series, _dates) => series.map((y, i) => ({ t: _dates[i], y })).filter(p => !!p)
 
@@ -50,7 +50,7 @@ serieses.forEach((series, i) => {
 serieses.forEach((series, i) => {
   individualGraph(i, countryCodes[i], labels[i], max,
     toPoints(smoothedSerieses[i], smoothedDates),
-    toPoints(series, dates))
+    toPoints(series, dates), 'weekly moving average')
 })
 
 overlayedGraph(smoothedSerieses, max,

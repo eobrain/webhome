@@ -18,7 +18,7 @@ const makeArray = (n, x) => [...Array(n)].map((_, i) => x)
 const transpose = rows => {
   const m = rows.length
   if (m === 0) {
-    return []
+    throw new Error('no rows to transpose')
   }
   const n = rows[0].length
   const cols = []
@@ -73,37 +73,43 @@ const add = (countriesAndTerritories, dateRep, value) => {
 }
 
 const geoIdOfCountries = {}
+if (records.length <= 1) {
+  throw new Error('No records')
+}
 
 records.forEach(row => {
   const {
-    deaths,
+    deaths_weekly,
     countriesAndTerritories,
     geoId
   } = row
-  if (!deaths || geoId.length !== 2) {
+  if (!deaths_weekly || geoId.length !== 2) {
     return
   }
   geoIdOfCountries[countriesAndTerritories.replace(/_/g, ' ')] = geoId
   addCol(countriesAndTerritories)
 })
+if (data.columns.length <= 1) {
+  throw new Error('No data columns (1)')
+}
 const totalDeaths = {}
 records.forEach(row => {
   const {
     dateRep,
-    deaths,
+    deaths_weekly,
     countriesAndTerritories,
     geoId,
     popData2019
   } = row
-  if (!deaths || geoId.length !== 2) {
+  if (!deaths_weekly || geoId.length !== 2) {
     return
   }
-  add(countriesAndTerritories, dateRep, deaths / popData2019)
+  add(countriesAndTerritories, dateRep, deaths_weekly / popData2019)
   const j = columnIndex[countriesAndTerritories]
   if (!totalDeaths[j]) {
     totalDeaths[j] = 0
   }
-  totalDeaths[j] += deaths
+  totalDeaths[j] += deaths_weekly
 })
 
 data.rows.sort((a, b) => a[0] - b[0])
@@ -132,6 +138,10 @@ const countReducer = (acc, x) => acc + !!x
 data.rows = data.rows.filter(row => row.slice(1).reduce(countReducer, 0) > 1)
 
 // writeCsv('smooth.csv', [data.columns, ...data.rows])
+
+if (data.columns.length <= 1) {
+  throw new Error('No data columns (2)')
+}
 
 const geoIds = data.columns.map(country => geoIdOfCountries[country])
 
