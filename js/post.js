@@ -47,4 +47,26 @@ document.addEventListener('DOMContentLoaded', () => {
     figcaptionElement.innerText = imgElement.getAttribute('alt')
     figureElement.appendChild(figcaptionElement)
   })
+  document.querySelectorAll('p >  a > img[alt]').forEach(imgElement => {
+    if (imgElement.previousElementSibling || imgElement.nextElementSibling) {
+      return // not lone <img> in a <p>
+    }
+    const aElement = imgElement.parentNode
+    if (aElement.previousElementSibling || aElement.nextElementSibling) {
+      return // not lone <a> in a <p>
+    }
+    const pElement = aElement.parentElement
+    if (pElement.innerText.trim().length > 0) {
+      return // <p> has some text
+    }
+    const figureElement = document.createElement('figure')
+    pElement.replaceWith(figureElement)
+
+    aElement.remove()
+    figureElement.appendChild(aElement)
+
+    const figcaptionElement = document.createElement('figcaption')
+    figcaptionElement.innerText = imgElement.getAttribute('alt')
+    figureElement.appendChild(figcaptionElement)
+  })
 })
