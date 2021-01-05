@@ -42,15 +42,15 @@ slow to explore to any depth in the Mandelbrot set.
 The reason for the long compute times is that for each of the $$c$$ values of a
 million or so pixels you need to iterate $$z \gets z^2 + c$$ until it is
 diverging ($$\lvert z \rvert > 2$$). That can be fairly fast for pixels not in
-the Mandelbrot set (displayed with a color according to how many iterations. But
-for pixels that are in the Mandelbrot set (displayed as black), they will never
-diverge, so you have to pick some maximum number of iterations before giving up
-and deeming it to be non-diverging. The big problem is pixels that are outside
-the set but very close to it: they might require a large number of iterations
-before they diverge, especially at high zoom levels. To get a reasonably
-accurate set boundary you need the maximum iterations threshold to be at least
-1000 at moderate zoom and 10,000 or 100,000 at higher zooms. Thus you can easily
-be doing billions of complex-number calculations per image.
+the Mandelbrot set (displayed with a color according to how many iterations).
+But for pixels that are in the Mandelbrot set (displayed as black), they will
+never diverge, so you have to pick some maximum number of iterations before
+giving up and deeming it to be non-diverging. The big problem is pixels that are
+outside the set but very close to it: they might require a large number of
+iterations before they diverge, especially at high zoom levels. To get a
+reasonably accurate set boundary you need the maximum iterations threshold to be
+at least 1000 at moderate zoom and 10,000 or 100,000 at higher zooms. Thus you
+can easily be doing billions of complex-number calculations per image.
 
 In the end the computers I had available at the time were just too slow.
 
@@ -80,7 +80,7 @@ probably would not give me the control I wanted. So that left the choices:
    to go down that rathole)
 
 The only other performance option I considered was to investigate using GPU
-computation-- but I decided to leave that for another time.
+computation -- but I decided to leave that for another time.
 
 As a first quick prototype preserved in the now-obsolete SDL branch of [the
 code][12] on Github I used the SDL graphics library to throw up a window on my
