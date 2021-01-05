@@ -9,7 +9,6 @@ document.body.ontouchstart = (event) => {
         const touch = event.targetTouches[0]
         x = touch.pageX
         const dx = x - x0
-        document.body.style.transform = `translateX(${dx}px)`
 
         if (Math.abs(dx) > 50) {
           const dir = (dx < 0) ? 'next' : 'prev'
@@ -19,6 +18,7 @@ document.body.ontouchstart = (event) => {
             window.location = `${a.href},${window.scrollY}`
           }
         }
+        document.body.style.transform = `translateX(${dx}px)`
       }
     }
     document.body.ontouchend = (event) => {
