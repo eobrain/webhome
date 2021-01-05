@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Finding Mandelbrot images to use as videoconference background
+title:  Finding Mandelbrot images to use as video conference background
 categories: Programming
 image: /img/mandelbrot_-0.19853719075520848_1.1001770019531256_0.00390625_10000.png
 image-text: $$\text{width } 0.00391 \text{ centered at } -0.19854+i1.10018$$
@@ -23,7 +23,7 @@ book by H.O. Peitgen, P. Richter, H. Jürgens, M. Prüfer, and D.Saupe
 It upended what I thought I knew about mathematics. It was astounding how much
 complexity could emerge from extremely basic calculations.
 
-I was particularly drawn to the uncannny beauty and complexity of the Mandelbrot
+I was particularly drawn to the uncanny beauty and complexity of the Mandelbrot
 set, which is the complex values  $$c$$ for which the iteration $$z \gets z^2 +
 c$$ does not diverge when starting with $$z = 0$$. This is so simply stated[^1],
 and yet generates the images below, revealing endless variations of complexity
@@ -39,7 +39,7 @@ various workstations and PCs I had available at the time. But ultimately it was
 frustrating because each image took so long to compute that it was painfully
 slow to explore to any depth in the Mandelbrot set.
 
-The reason for the long compute times is that for each of the $$c$$ valiues of a
+The reason for the long compute times is that for each of the $$c$$ values of a
 million or so pixels you need to iterate $$z \gets z^2 + c$$ until it is
 diverging ($$\lvert z \rvert > 2$$). That can be fairly fast for pixels not in
 the Mandelbrot set (displayed with a color according to how many iterations. But
@@ -72,7 +72,7 @@ probably would not give me the control I wanted. So that left the choices:
 1. **Rust** is on my to-do list of languages to learn, but it was more than I
    wanted to tackle over the Holidays. Also the memory-safety features, which
    are the big advantages of Rust, while important for large-scale programming
-   are not so important for this rather modestly application.
+   are not so important for this rather modest application.
 2. **Go** would have been fine, but in my past experience that libraries for
    graphics and color handling are fewer and harder to use than for C++.
 3. **C++** is what I ended up choosing. Carefully written it can be faster than
@@ -142,7 +142,7 @@ megapixel images in seconds.
 However this prototype had no UI (it had hardcoded parameters) so I needed to
 figure out how to put a UI on it. What I chose was a web app that operates as follows:
 
-1. The user opens a URL with the parameters encoded in the URL hash paramters.
+1. The user opens a URL with the parameters encoded in the URL hash parameters.
 2. The client JS decodes the parameters and sets the `src` attribute of the
    `<img>` tag to a URL that invokes the server JS.
 3. If the image file for these parameters has not already been generated, the
