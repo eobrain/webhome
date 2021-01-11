@@ -4,9 +4,9 @@ import links from './state-cartogram-links.js'
 import latlons from './state-cartogram-latlons.js'
 import nodesWithoutLatlon from './state-cartogram-nodes.js'
 
-const lastYear = 337
+const lastYear = 355
 
-/* global d3, timeElement, figureElement, runningElement */
+/* global d3, timeElement, runningElement */
 
 const FIRST_DAY_MS = Date.UTC(2020, 0, 22, 12) // Noon UTC, Jan 22, 2020
 const MS_PER_DAY = 24 * 60 * 60 * 1000
