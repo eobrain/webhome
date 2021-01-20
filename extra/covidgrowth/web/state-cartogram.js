@@ -4,7 +4,7 @@ import links from './state-cartogram-links.js'
 import latlons from './state-cartogram-latlons.js'
 import nodesWithoutLatlon from './state-cartogram-nodes.js'
 
-const lastYear = 355
+const lastYear = 363 // TODO(eob) pass this in data
 
 /* global d3, timeElement, runningElement */
 
