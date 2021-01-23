@@ -3,7 +3,7 @@ import Papa from 'papaparse'
 import { fileTime, smooth, stringifyArray, colors } from './common.js'
 import STATE_CODE from './statecode.js'
 
-const MIN_DEATHS_PER_COUNTY = 44
+const MIN_DEATHS_PER_COUNTY = 200
 const MIN_MORTALITY_MULTIPLIER = 1.8
 const LIVE_EXPECTANCY = 78.54 // of the USA
 
