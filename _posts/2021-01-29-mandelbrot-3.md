@@ -73,16 +73,27 @@ double hillshade(int ix, int iy) {
 
 ### -0.7345612674879727 + i0.3601896136089664, width 4.55×13<sup>-8</sup>
 
-
 [![video][28]][28]
 [![image][27]][27]
 
-## And here are re-renderings of images from previous posts in this new style.
+## 0.1488658918 + i0.6424077239, width  5×13<sup>-7</sup>
+
+[![image][32]][32]
+
+## -0.99920853376 + i0.30236435348, width 7.45×13<sup>-9</sup>
+
+[![image][33]][33]
+
+## -0.7489856 + i0.055768, width 0.000244
+
+[![image][34]][34]
+
+## And here are re-renderings of images from previous posts in this new style
 
 Click the images to see at full resolution.
 
 [![$$\text{width } 8 \text{ centered at } 0+i0$$][5]][5]
- 
+
 [![$$\text{width } 0.000244 \text{ centered at } -0.658448+i0.466852$$][6]][6]
 
 [![$$\text{width } 0.000122 \text{ centered at } -0.715182+i0.2300282$$][7]][7]
@@ -153,3 +164,6 @@ Click the images to see at full resolution.
 [29]: https://twitter.com/AnnaThieme
 [30]: https://blog.datawrapper.de/shaded-relief-with-gdal-python/
 [31]: https://github.com/eobrain/almondbread/blob/main/main.cc
+[32]: /img/mandelbrot_0.14886589182917292_0.6424077238777159_5e-7_100000.png
+[33]: /img/mandelbrot_-0.9992085337561246_0.3023643534824564_7.450580596923828e-9_100000.png
+[34]: /img/mandelbrot_-0.748985544840495_0.05576807657877601_0.000244140625_100000.png
