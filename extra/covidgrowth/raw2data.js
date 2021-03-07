@@ -79,11 +79,11 @@ if (records.length <= 1) {
 
 records.forEach(row => {
   const {
-    deaths_weekly,
+    deaths,
     countriesAndTerritories,
     geoId
   } = row
-  if (!deaths_weekly || geoId.length !== 2) {
+  if (!deaths || geoId.length !== 2) {
     return
   }
   geoIdOfCountries[countriesAndTerritories.replace(/_/g, ' ')] = geoId
@@ -96,20 +96,20 @@ const totalDeaths = {}
 records.forEach(row => {
   const {
     dateRep,
-    deaths_weekly,
+    deaths,
     countriesAndTerritories,
     geoId,
     popData2019
   } = row
-  if (!deaths_weekly || geoId.length !== 2) {
+  if (!deaths || geoId.length !== 2) {
     return
   }
-  add(countriesAndTerritories, dateRep, deaths_weekly / popData2019)
+  add(countriesAndTerritories, dateRep, deaths / popData2019)
   const j = columnIndex[countriesAndTerritories]
   if (!totalDeaths[j]) {
     totalDeaths[j] = 0
   }
-  totalDeaths[j] += deaths_weekly
+  totalDeaths[j] += deaths
 })
 
 data.rows.sort((a, b) => a[0] - b[0])
