@@ -8,9 +8,10 @@ Prerequities:
     1. install [rvm][2]
     2. `rvm install 2.6.4`
     3. `rvm use 2.6.4`
-    4. [Install minify][3]
-    5. `sudo apt-get install default-jdk`
-    6. `gem install bundler jekyll rexml kramdown`
+    4. `bundle install`
+    5. [Install minify][3]
+    6. `sudo apt-get install default-jdk`
+    7. `gem install bundler jekyll rexml kramdown ffi public_suffix addressable`
 2. For deploying to Firebase hosting
    1. install [nvm][1]
    2. `nvm install stable`
