@@ -1,4 +1,4 @@
-#!node_modules/bajel/cli.js serve
+#!/usr/bin/env -S npx bajel serve
 
 // const COMPILEJS = 'java -jar tools/closure/closure-compiler-v20190929.jar -O ADVANCED --externs js/externs.js'
 const COMPILED = [
