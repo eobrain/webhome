@@ -35,7 +35,7 @@ module.exports = {
     deps: ['compile'],
     exec: `
       JEKYLL_ENV=production jekyll build --strict_front_matter --config _config.yml,_secret.yml
-      minify -r -o _site/ _site
+      minify --list --verbose --recursive --output _site/ _site
     `
   },
 
